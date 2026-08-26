@@ -1,11 +1,11 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "./components/Navbar";
+import Hero from "./components/home/Hero";
 
 export default function Home() {
   return (
-    <main>
+    <main className="min-h-screen bg-black">
       <Navbar />
-
-      {/* More homepage sections will come here */}
+      <Hero />
     </main>
   );
 }
