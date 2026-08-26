@@ -1,9 +1,33 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+
+const textVariant = {
+  hidden: {
+    opacity: 0,
+    y: 24,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: "easeOut",
+      duration: 0.8,
+    },
+  },
+};
+
+const containerVariant = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
 
 const sliderData = [
   {
@@ -106,48 +130,18 @@ const sliderData = [
   },
 ];
 
-const textVariant = {
-  hidden: {
-    opacity: 0,
-    y: 24,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  },
-};
-
-const containerVariant = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-export default function Hero() {
+const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const currentSlide = sliderData[currentIndex];
-
   const goToPrevious = () => {
-    setCurrentIndex((previousIndex) =>
-      previousIndex === 0
-        ? sliderData.length - 1
-        : previousIndex - 1
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? sliderData.length - 1 : prevIndex - 1
     );
   };
 
   const goToNext = () => {
-    setCurrentIndex((previousIndex) =>
-      previousIndex === sliderData.length - 1
-        ? 0
-        : previousIndex + 1
+    setCurrentIndex((prevIndex) =>
+      prevIndex === sliderData.length - 1 ? 0 : prevIndex + 1
     );
   };
 
@@ -160,12 +154,8 @@ export default function Hero() {
   }, [currentIndex]);
 
   return (
-    <section className="relative h-screen min-h-[800px] w-full overflow-hidden bg-black">
-
-      {/* =====================================================
-          BACKGROUND SLIDER
-      ===================================================== */}
-
+    <section className="relative w-full h-screen min-h-[800px] overflow-hidden bg-black">
+      {/* Background Slider */}
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
@@ -179,31 +169,19 @@ export default function Hero() {
           }}
         >
           <img
-            src={currentSlide.imageSrc}
-            alt={currentSlide.altText}
-            className="absolute inset-0 h-full w-full object-cover"
+            src={sliderData[currentIndex].imageSrc}
+            alt={sliderData[currentIndex].altText}
+            className="absolute inset-0 w-full h-full object-cover"
           />
         </motion.div>
       </AnimatePresence>
 
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/45 z-10" />
 
-      {/* =====================================================
-          DARK OVERLAY
-      ===================================================== */}
-
-      <div className="absolute inset-0 z-10 bg-black/45" />
-
-      <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/75 via-black/20 to-black/30" />
-
-
-      {/* =====================================================
-          HERO CONTENT
-      ===================================================== */}
-
-      <div className="relative z-20 flex h-full items-end">
-
-        <div className="mx-auto w-full max-w-7xl px-6 pb-16 md:px-8 md:pb-20">
-
+      {/* Hero Content */}
+      <div className="relative z-20 h-full flex items-end">
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-8 pb-16 md:pb-20">
           <motion.div
             key={`content-${currentIndex}`}
             variants={containerVariant}
@@ -211,48 +189,39 @@ export default function Hero() {
             animate="visible"
             className="max-w-5xl"
           >
-
             {/* Eyebrow */}
-
             <motion.p
               variants={textVariant}
-              className="mb-6 text-xs font-medium uppercase tracking-[0.18em] text-white/80 md:text-sm"
+              className="text-white/80 uppercase tracking-[0.18em] text-xs md:text-sm font-medium mb-6"
             >
               Luxury Event Planning in Delhi NCR
             </motion.p>
 
-
             {/* Main Heading */}
-
             <motion.h1
               variants={textVariant}
-              className="text-4xl font-bold leading-[1.05] text-white sm:text-5xl md:text-7xl"
+              className="text-white text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.05]"
             >
               Delhi NCR&apos;s Premier Event Planning &amp; Venue Company
             </motion.h1>
 
-
             {/* Subheadline */}
-
             <motion.p
               variants={textVariant}
-              className="mt-6 max-w-3xl text-lg leading-relaxed text-white/90 md:text-2xl"
+              className="text-white/90 text-lg md:text-2xl leading-relaxed max-w-3xl mt-6"
             >
               From intimate celebrations to grand corporate galas, we design
               experiences that stay with you long after the last guest leaves.
             </motion.p>
 
-
-            {/* CTA BUTTONS */}
-
+            {/* CTA Buttons */}
             <motion.div
               variants={textVariant}
-              className="mt-10 flex flex-col gap-4 sm:flex-row"
+              className="flex flex-col sm:flex-row gap-4 mt-10"
             >
-
               <Link
                 href="/search"
-                className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 font-semibold text-black transition-all duration-300 hover:bg-gray-100"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-white text-black font-semibold hover:bg-gray-100 transition-all"
               >
                 Browse Our Venues
               </Link>
@@ -261,49 +230,36 @@ export default function Hero() {
                 href="https://wa.me/917838008069"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-white px-8 py-4 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-black"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-white text-white font-semibold hover:bg-white hover:text-black transition-all"
               >
                 Talk to Us on WhatsApp
               </a>
-
             </motion.div>
-
           </motion.div>
 
-
-          {/* =====================================================
-              SLIDE CAPTION + NAVIGATION
-          ===================================================== */}
-
-          <div className="mt-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-
+          {/* Slide Caption + Navigation */}
+          <div className="mt-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             {/* Current Venue */}
-
             <Link
-              href={currentSlide.href}
-              className="block transition-opacity duration-300 hover:opacity-90"
+              href={sliderData[currentIndex].href}
+              className="block hover:opacity-90 transition-opacity"
             >
-
-              <p className="text-xl font-semibold text-white md:text-2xl">
-                {currentSlide.subText}
+              <p className="text-white text-xl md:text-2xl font-semibold">
+                {sliderData[currentIndex].subText}
               </p>
 
-              <p className="mt-1 text-sm text-white/80 md:text-base">
-                {currentSlide.location}
+              <p className="text-white/80 text-sm md:text-base mt-1">
+                {sliderData[currentIndex].location}
               </p>
-
             </Link>
 
-
-            {/* Navigation Buttons */}
-
+            {/* Slider Navigation */}
             <div className="flex gap-3">
-
               <button
                 type="button"
                 onClick={goToPrevious}
                 aria-label="Previous slide"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-black"
+                className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white hover:text-black transition-all flex items-center justify-center"
               >
                 <ChevronLeft size={20} />
               </button>
@@ -312,19 +268,16 @@ export default function Hero() {
                 type="button"
                 onClick={goToNext}
                 aria-label="Next slide"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-black"
+                className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white hover:text-black transition-all flex items-center justify-center"
               >
                 <ChevronRight size={20} />
               </button>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
-}
+};
+
+export default Hero;
