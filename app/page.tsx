@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar";
 
-import EffortLessEvent from "./components/home/EffortLessEvent";
+import Hero from "./components/home/Hero";
 import EventPlanningForm from "./components/home/EventPlanningForm";
 import TrustBar from "./components/home/TrustBar";
 import WhoWeAre from "./components/home/WhoWeAre";
@@ -28,7 +28,7 @@ export default function Home() {
           HERO SECTION
       ===================================================== */}
 
-      <EffortLessEvent />
+      <Hero />
 
 
       {/* =====================================================
