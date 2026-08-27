@@ -12,6 +12,8 @@ import ServiceAreas from "./components/home/ServiceAreas";
 import FAQSection from "./components/home/FAQSection";
 import FinalCTA from "./components/home/FinalCTA";
 
+import Footer from "./components/Footer";
+
 
 export default function Home() {
   return (
@@ -106,6 +108,13 @@ export default function Home() {
       ===================================================== */}
 
       <FinalCTA />
+
+
+      {/* =====================================================
+          FOOTER
+      ===================================================== */}
+
+      <Footer />
 
     </main>
   );
