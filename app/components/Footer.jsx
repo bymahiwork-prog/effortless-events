@@ -1,101 +1,294 @@
+"use client";
+
 import React from "react";
-import {
-  Twitter,
-  Facebook,
-  Linkedin,
-  Instagram,
-  Youtube,
-  PhoneCallIcon,
-  MapPin, // Added for address icon
-} from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-6 px-4 sm:px-6">
-      <div className="py-2 px-4 sm:px-6 md:px-12 lg:px-20">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
-          {/* Logo Section */}
-          <div className="col-span-2 sm:col-span-3 md:col-span-1">
-            <img src="/logo.png" alt="Effortless Events Logo" className="h-16 mb-4" />
-            {/* SEO REQUIREMENT: Full Business Address and Phone  */}
-            <div className="text-gray-400 text-sm space-y-2 mt-2">
-              <p className="flex items-start gap-2">
-                <MapPin size={16} className="mt-1 flex-shrink-0" />
-                <span>L57B, Block L, Malviya Nagar, New Delhi, Delhi 110017</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <PhoneCallIcon size={16} flex-shrink-0 />
-                <span>+91 78380 08069</span>
-              </p>
+    <footer className="bg-[#0F0803] text-white">
+
+      {/* Main Footer */}
+
+      <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-20">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
+
+          {/* Brand */}
+
+          <div className="lg:col-span-1">
+
+            <a href="/" className="inline-block mb-6">
+              <img
+                src="/logo.png"
+                alt="Effortless Events"
+                className="h-16 w-auto object-contain"
+              />
+            </a>
+
+            <p className="text-[#C9BEB2] leading-7 text-sm max-w-sm">
+              Effortless Events is Delhi NCR&apos;s premier event planning
+              and venue company, creating memorable experiences for weddings,
+              birthdays, corporate events and private celebrations.
+            </p>
+
+            {/* Social Links */}
+
+            <div className="flex items-center gap-3 mt-7">
+
+              <a
+                href="#"
+                aria-label="Instagram"
+                className="w-10 h-10 rounded-full border border-[#3A2E22] flex items-center justify-center text-sm hover:bg-[#C9A34A] hover:text-black hover:border-[#C9A34A] transition-all"
+              >
+                IG
+              </a>
+
+              <a
+                href="#"
+                aria-label="Facebook"
+                className="w-10 h-10 rounded-full border border-[#3A2E22] flex items-center justify-center text-sm hover:bg-[#C9A34A] hover:text-black hover:border-[#C9A34A] transition-all"
+              >
+                f
+              </a>
+
+              <a
+                href="#"
+                aria-label="YouTube"
+                className="w-10 h-10 rounded-full border border-[#3A2E22] flex items-center justify-center text-sm hover:bg-[#C9A34A] hover:text-black hover:border-[#C9A34A] transition-all"
+              >
+                YT
+              </a>
+
             </div>
+
           </div>
 
-          {/* Company Section */}
-          <div className="col-span-1">
-            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-300">
-              Company
+
+          {/* Explore */}
+
+          <div>
+
+            <h3 className="text-lg font-semibold mb-6">
+              Explore
             </h3>
-            <ul className="space-y-2 sm:space-y-3">
-              <li><a href="/about" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">About</a></li>
-              <li><a href="/about" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">Team</a></li>
-              <li><a href="/services" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">Services</a></li>
+
+            <ul className="space-y-4 text-sm text-[#C9BEB2]">
+
+              <li>
+                <a
+                  href="/"
+                  className="hover:text-[#C9A34A] transition-colors"
+                >
+                  Home
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/search"
+                  className="hover:text-[#C9A34A] transition-colors"
+                >
+                  Browse Venues
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/services"
+                  className="hover:text-[#C9A34A] transition-colors"
+                >
+                  Services
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/blogs"
+                  className="hover:text-[#C9A34A] transition-colors"
+                >
+                  Blogs
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/about"
+                  className="hover:text-[#C9A34A] transition-colors"
+                >
+                  About Us
+                </a>
+              </li>
+
             </ul>
+
           </div>
 
-          {/* Cities Section */}
-          <div className="col-span-1">
-            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-300">
-              Cities
+
+          {/* Services */}
+
+          <div>
+
+            <h3 className="text-lg font-semibold mb-6">
+              Our Services
             </h3>
-            <ul className="space-y-2 sm:space-y-3">
-              <li><a href="/search" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">Noida</a></li>
-              <li><a href="/search" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">Gurugram</a></li>
-              <li><a href="/search" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">New Delhi</a></li>
+
+            <ul className="space-y-4 text-sm text-[#C9BEB2]">
+
+              <li>
+                <a
+                  href="/services"
+                  className="hover:text-[#C9A34A] transition-colors"
+                >
+                  Wedding Planning
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/services"
+                  className="hover:text-[#C9A34A] transition-colors"
+                >
+                  Corporate Events
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/services"
+                  className="hover:text-[#C9A34A] transition-colors"
+                >
+                  Birthday Celebrations
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/services"
+                  className="hover:text-[#C9A34A] transition-colors"
+                >
+                  Private Events
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/services"
+                  className="hover:text-[#C9A34A] transition-colors"
+                >
+                  Venue Booking
+                </a>
+              </li>
+
             </ul>
+
           </div>
 
-          {/* Support Section */}
-          <div className="col-span-1">
-            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-300">
-              Support
+
+          {/* Get In Touch */}
+
+          <div>
+
+            <h3 className="text-lg font-semibold mb-6">
+              Get In Touch
             </h3>
-            <ul className="space-y-2 sm:space-y-3">
-              <li><a href="/contact" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
-              <li><a href="/rules-regulations" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="/t&c" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">Terms & Conditions</a></li>
-            </ul>
+
+            <div className="space-y-5 text-sm text-[#C9BEB2]">
+
+              {/* Address */}
+
+              <div className="flex items-start gap-3">
+
+                <span className="text-[#C9A34A] text-lg">
+                  📍
+                </span>
+
+                <p className="leading-6">
+                  L57B, Malviya Nagar,
+                  <br />
+                  New Delhi - 110017
+                </p>
+
+              </div>
+
+
+              {/* Phone */}
+
+              <div className="flex items-start gap-3">
+
+                <span className="text-[#C9A34A] text-lg">
+                  ☎
+                </span>
+
+                <a
+                  href="tel:+917838008069"
+                  className="hover:text-[#C9A34A] transition-colors"
+                >
+                  +91 78380 08069
+                </a>
+
+              </div>
+
+
+              {/* WhatsApp */}
+
+              <div className="pt-2">
+
+                <a
+                  href="https://wa.me/917838008069"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-[#C9A34A] text-black px-6 py-3 rounded-xl font-semibold hover:bg-white transition-all"
+                >
+                  Chat on WhatsApp
+                </a>
+
+              </div>
+
+            </div>
+
           </div>
+
         </div>
 
-        {/* SEO REQUIREMENT: Service Area Text  */}
-        <div className="mt-12 py-6 border-t border-gray-800">
-          <p className="text-gray-500 text-sm text-center">
-            <span className="text-gray-300 font-semibold mr-2">Service Areas:</span> 
-            Delhi, Gurgaon, Noida, Faridabad, Ghaziabad
-          </p>
-        </div>
-
-        {/* Bottom Section */}
-        <div className="flex flex-col sm:flex-row justify-between items-center pt-6 border-t border-gray-800">
-          <div className="mb-4 sm:mb-0">
-            <button className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors underline">
-              English(Us)
-            </button>
-          </div>
-
-          <div className="flex space-x-4 sm:space-x-6 md:space-x-8 lg:mr-20">
-            <a href="https://www.linkedin.com/company/effortless-events-pvt-ltd/" className="text-gray-400 hover:text-white transition-colors">
-              <Linkedin size={20} className="sm:w-6 sm:h-6 md:w-7 md:h-7" />
-            </a>
-            <a href="https://www.instagram.com/effortlesseventspvt.ltd/" className="text-gray-400 hover:text-white transition-colors">
-              <Instagram size={20} className="sm:w-6 sm:h-6 md:w-7 md:h-7" />
-            </a>
-            <a href="https://wa.me/917838008069" className="text-gray-400 hover:text-white transition-colors">
-              <PhoneCallIcon size={20} className="sm:w-6 sm:h-6 md:w-7 md:h-7" />
-            </a>
-          </div>
-        </div>
       </div>
+
+
+      {/* Bottom Bar */}
+
+      <div className="border-t border-[#2A2118]">
+
+        <div className="max-w-7xl mx-auto px-6 md:px-8 py-6">
+
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#8F8275]">
+
+            <p>
+              © {new Date().getFullYear()} Effortless Events. All rights
+              reserved.
+            </p>
+
+            <div className="flex items-center gap-5">
+
+              <a
+                href="/privacy-policy"
+                className="hover:text-white transition-colors"
+              >
+                Privacy Policy
+              </a>
+
+              <a
+                href="/terms"
+                className="hover:text-white transition-colors"
+              >
+                Terms &amp; Conditions
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </footer>
   );
 };
