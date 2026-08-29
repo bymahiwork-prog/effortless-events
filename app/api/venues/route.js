@@ -1,6 +1,67 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+
+/*
+ * Temporary venue data.
+ *
+ * We will replace this with your actual venue listings
+ * once the new data source is ready.
+ */
+const venues = [
+  {
+    id: 1,
+    image: "",
+    images: [],
+    product_category: 1,
+    rating: "5.0",
+    category_name: "Farmhouses",
+    product_name: "Farmhouse",
+    product_location: "Delhi NCR",
+    product_address: "",
+    product_price: "",
+    product_number: "",
+    product_detail:
+      "Beautiful farmhouse venue for birthdays, private parties, celebrations and events.",
+    status: 1,
+    created_date: "",
+    last_update: "",
+  },
+  {
+    id: 2,
+    image: "",
+    images: [],
+    product_category: 2,
+    rating: "5.0",
+    category_name: "Apartments",
+    product_name: "Luxury Apartment",
+    product_location: "Delhi NCR",
+    product_address: "",
+    product_price: "",
+    product_number: "",
+    product_detail:
+      "Comfortable apartment space suitable for private stays and small gatherings.",
+    status: 1,
+    created_date: "",
+    last_update: "",
+  },
+  {
+    id: 3,
+    image: "",
+    images: [],
+    product_category: 3,
+    rating: "5.0",
+    category_name: "Wedding Venues",
+    product_name: "Wedding Venue",
+    product_location: "Delhi NCR",
+    product_address: "",
+    product_price: "",
+    product_number: "",
+    product_detail:
+      "Elegant venue suitable for weddings, receptions and special celebrations.",
+    status: 1,
+    created_date: "",
+    last_update: "",
+  },
+];
 
 export async function GET(req) {
   try {
@@ -43,59 +104,23 @@ export async function GET(req) {
     /*
      * CATEGORY
      *
-     * Examples:
-     * categoryId=1 → Farmhouses
-     * categoryId=2 → Apartments
-     * categoryId=3 → Wedding Venues
+     * 1 = Farmhouses
+     * 2 = Apartments
+     * 3 = Wedding Venues
      */
     const categoryId = (
       searchParams.get("categoryId") || ""
     ).trim();
 
     /*
-     * LOAD VENUE DATA
-     *
-     * Data is stored locally in:
-     *
-     * /public/data/venues.json
+     * COPY VENUES
      */
-    const filePath = path.join(
-      process.cwd(),
-      "public",
-      "data",
-      "venues.json"
-    );
-
-    if (!fs.existsSync(filePath)) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: "Venue data file not found",
-          products: [],
-        },
-        {
-          status: 500,
-        }
-      );
-    }
-
-    const fileData = fs.readFileSync(
-      filePath,
-      "utf-8"
-    );
-
-    const data = JSON.parse(fileData);
-
-    let venues = Array.isArray(data)
-      ? data
-      : Array.isArray(data?.products)
-      ? data.products
-      : [];
+    let filteredVenues = [...venues];
 
     /*
      * ONLY ACTIVE VENUES
      */
-    venues = venues.filter(
+    filteredVenues = filteredVenues.filter(
       (venue) =>
         venue.status === undefined ||
         venue.status === 1 ||
@@ -106,14 +131,10 @@ export async function GET(req) {
      * CATEGORY FILTER
      */
     if (categoryId) {
-      venues = venues.filter(
+      filteredVenues = filteredVenues.filter(
         (venue) =>
-          String(
-            venue.product_category ||
-              venue.categoryId ||
-              venue.category_id ||
-              ""
-          ) === String(categoryId)
+          String(venue.product_category) ===
+          String(categoryId)
       );
     }
 
@@ -121,38 +142,38 @@ export async function GET(req) {
      * SEARCH FILTER
      */
     if (search) {
-      venues = venues.filter((venue) => {
-        const name = String(
-          venue.product_name || ""
-        ).toLowerCase();
+      filteredVenues = filteredVenues.filter(
+        (venue) => {
+          const name = String(
+            venue.product_name || ""
+          ).toLowerCase();
 
-        const location = String(
-          venue.product_location || ""
-        ).toLowerCase();
+          const location = String(
+            venue.product_location || ""
+          ).toLowerCase();
 
-        const detail = String(
-          venue.product_detail || ""
-        ).toLowerCase();
+          const detail = String(
+            venue.product_detail || ""
+          ).toLowerCase();
 
-        const category = String(
-          venue.category_name || ""
-        ).toLowerCase();
+          const category = String(
+            venue.category_name || ""
+          ).toLowerCase();
 
-        return (
-          name.includes(search) ||
-          location.includes(search) ||
-          detail.includes(search) ||
-          category.includes(search)
-        );
-      });
+          return (
+            name.includes(search) ||
+            location.includes(search) ||
+            detail.includes(search) ||
+            category.includes(search)
+          );
+        }
+      );
     }
 
     /*
      * SORT
-     *
-     * Newest listings first when an ID is available.
      */
-    venues.sort((a, b) => {
+    filteredVenues.sort((a, b) => {
       const idA = Number(a.id || 0);
       const idB = Number(b.id || 0);
 
@@ -162,102 +183,82 @@ export async function GET(req) {
     /*
      * TOTAL
      */
-    const total = venues.length;
+    const total = filteredVenues.length;
 
     /*
      * PAGINATION
      */
     const offset = (page - 1) * limit;
 
-    const paginatedVenues = venues.slice(
-      offset,
-      offset + limit
-    );
+    const paginatedVenues =
+      filteredVenues.slice(
+        offset,
+        offset + limit
+      );
 
     /*
-     * FORMAT RESPONSE
+     * RESPONSE FORMAT
      */
     const products = paginatedVenues.map(
-      (venue) => {
-        return {
-          id: venue.id,
+      (venue) => ({
+        id: venue.id,
 
-          image:
-            venue.image ||
-            venue.main_image ||
-            null,
+        image: venue.image || null,
 
-          images: Array.isArray(venue.images)
-            ? venue.images
-            : [],
+        images: Array.isArray(venue.images)
+          ? venue.images
+          : [],
 
-          product_category:
-            venue.product_category ||
-            venue.categoryId ||
-            venue.category_id ||
-            null,
+        product_category:
+          venue.product_category || null,
 
-          rating:
-            venue.rating || "5.0",
+        rating:
+          venue.rating || "5.0",
 
-          category_name:
-            venue.category_name || "",
+        category_name:
+          venue.category_name || "",
 
-          product_name:
-            venue.product_name ||
-            "Venue",
+        product_name:
+          venue.product_name || "Venue",
 
-          product_location:
-            venue.product_location ||
-            "",
+        product_location:
+          venue.product_location || "",
 
-          product_address:
-            venue.product_address ||
-            "",
+        product_address:
+          venue.product_address || "",
 
-          product_price:
-            venue.product_price ||
-            "",
+        product_price:
+          venue.product_price || "",
 
-          product_number:
-            venue.product_number ||
-            "",
+        product_number:
+          venue.product_number || "",
 
-          product_detail:
-            venue.product_detail ||
-            "",
+        product_detail:
+          venue.product_detail || "",
 
-          status:
-            venue.status === undefined
-              ? 1
-              : venue.status,
+        status:
+          venue.status === undefined
+            ? 1
+            : venue.status,
 
-          created_date:
-            venue.created_date ||
-            "",
+        created_date:
+          venue.created_date || "",
 
-          last_update:
-            venue.last_update ||
-            "",
-        };
-      }
+        last_update:
+          venue.last_update || "",
+      })
     );
 
     /*
-     * RESPONSE
+     * FINAL RESPONSE
      */
     return NextResponse.json({
       success: true,
-
       page,
-
       limit,
-
       total,
-
       totalPages:
         Math.ceil(total / limit),
-
       products,
     });
   } catch (error) {
