@@ -331,13 +331,12 @@ const Farms = () => {
                       "Discover this beautiful farmhouse with Effortless Events."}
                   </p>
 
-                  {/* ENQUIRE BUTTON */}
                   <Link
-                    href="/#get-in-touch"
-                    className="block w-full text-center border border-[#C9A34A] text-[#C9A34A] py-3 rounded-md font-medium hover:bg-[#C9A34A] hover:text-[#0F0803] transition"
-                  >
-                    Enquire About This Farmhouse
-                  </Link>
+  href={`/farmhouses/${venue.id}`}
+  className="block w-full text-center border border-[#C9A34A] text-[#C9A34A] py-3 rounded-md font-medium hover:bg-[#C9A34A] hover:text-[#0F0803] transition"
+>
+  View Details
+</Link>
 
                 </div>
 
