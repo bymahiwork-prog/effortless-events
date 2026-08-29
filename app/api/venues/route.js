@@ -1,14 +1,23 @@
 import { NextResponse } from "next/server";
-import { connectToDatabase } from "../../../lib/db";
+import fs from "fs";
+import path from "path";
 
 export async function GET(req) {
   try {
-    const db = await connectToDatabase();
-
     const { searchParams } = new URL(req.url);
 
-    const pageParam = parseInt(searchParams.get("page") || "1", 10);
-    const limitParam = parseInt(searchParams.get("limit") || "9", 10);
+    /*
+     * PAGINATION
+     */
+    const pageParam = parseInt(
+      searchParams.get("page") || "1",
+      10
+    );
+
+    const limitParam = parseInt(
+      searchParams.get("limit") || "9",
+      10
+    );
 
     const page =
       Number.isFinite(pageParam) && pageParam > 0
@@ -22,241 +31,246 @@ export async function GET(req) {
         ? limitParam
         : 9;
 
+    /*
+     * SEARCH
+     */
     const search = (
       searchParams.get("search") || ""
-    ).trim();
+    )
+      .trim()
+      .toLowerCase();
 
+    /*
+     * CATEGORY
+     *
+     * Examples:
+     * categoryId=1 → Farmhouses
+     * categoryId=2 → Apartments
+     * categoryId=3 → Wedding Venues
+     */
     const categoryId = (
       searchParams.get("categoryId") || ""
     ).trim();
 
-    const offset = (page - 1) * limit;
-
-    let whereClause = "WHERE p.status = 1";
-
-    const queryParams = [];
-
     /*
-     * SEARCH
+     * LOAD VENUE DATA
+     *
+     * Data is stored locally in:
+     *
+     * /public/data/venues.json
      */
-    if (search) {
-      whereClause += `
-        AND (
-          p.product_name LIKE ?
-          OR p.product_detail LIKE ?
-          OR p.product_location LIKE ?
-        )
-      `;
+    const filePath = path.join(
+      process.cwd(),
+      "public",
+      "data",
+      "venues.json"
+    );
 
-      const searchTerm = `%${search}%`;
-
-      queryParams.push(
-        searchTerm,
-        searchTerm,
-        searchTerm
+    if (!fs.existsSync(filePath)) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Venue data file not found",
+          products: [],
+        },
+        {
+          status: 500,
+        }
       );
     }
+
+    const fileData = fs.readFileSync(
+      filePath,
+      "utf-8"
+    );
+
+    const data = JSON.parse(fileData);
+
+    let venues = Array.isArray(data)
+      ? data
+      : Array.isArray(data?.products)
+      ? data.products
+      : [];
+
+    /*
+     * ONLY ACTIVE VENUES
+     */
+    venues = venues.filter(
+      (venue) =>
+        venue.status === undefined ||
+        venue.status === 1 ||
+        venue.status === true
+    );
 
     /*
      * CATEGORY FILTER
      */
     if (categoryId) {
-      whereClause += `
-        AND p.product_category = ?
-      `;
-
-      queryParams.push(categoryId);
+      venues = venues.filter(
+        (venue) =>
+          String(
+            venue.product_category ||
+              venue.categoryId ||
+              venue.category_id ||
+              ""
+          ) === String(categoryId)
+      );
     }
 
     /*
-     * COUNT TOTAL VENUES
+     * SEARCH FILTER
      */
-    const countQuery = `
-      SELECT COUNT(DISTINCT p.id) AS total
-      FROM tbl_product p
-      ${whereClause}
-    `;
+    if (search) {
+      venues = venues.filter((venue) => {
+        const name = String(
+          venue.product_name || ""
+        ).toLowerCase();
 
-    const [totalResult] = await db.query(
-      countQuery,
-      queryParams
-    );
+        const location = String(
+          venue.product_location || ""
+        ).toLowerCase();
 
-    const total = Number(
-      totalResult?.[0]?.total || 0
-    );
+        const detail = String(
+          venue.product_detail || ""
+        ).toLowerCase();
+
+        const category = String(
+          venue.category_name || ""
+        ).toLowerCase();
+
+        return (
+          name.includes(search) ||
+          location.includes(search) ||
+          detail.includes(search) ||
+          category.includes(search)
+        );
+      });
+    }
 
     /*
-     * FETCH VENUES
+     * SORT
      *
-     * limit and offset are already validated integers,
-     * so they are inserted directly into the query.
+     * Newest listings first when an ID is available.
      */
-    const selectQuery = `
-      SELECT
-        p.*,
-        c.category_name,
+    venues.sort((a, b) => {
+      const idA = Number(a.id || 0);
+      const idB = Number(b.id || 0);
 
-        (
-          SELECT GROUP_CONCAT(pi.image)
-          FROM tbl_product_images pi
-          WHERE pi.product_id = p.id
-        ) AS images_list
+      return idB - idA;
+    });
 
-      FROM tbl_product p
+    /*
+     * TOTAL
+     */
+    const total = venues.length;
 
-      LEFT JOIN tbl_category c
-        ON p.product_category = c.id
+    /*
+     * PAGINATION
+     */
+    const offset = (page - 1) * limit;
 
-      ${whereClause}
-
-      ORDER BY p.id DESC
-
-      LIMIT ${limit}
-      OFFSET ${offset}
-    `;
-
-    const [rows] = await db.query(
-      selectQuery,
-      queryParams
+    const paginatedVenues = venues.slice(
+      offset,
+      offset + limit
     );
 
     /*
      * FORMAT RESPONSE
      */
-    const products = (rows || []).map((row) => {
+    const products = paginatedVenues.map(
+      (venue) => {
+        return {
+          id: venue.id,
 
-      const mainImage = row.image
-        ? `https://admin.effortlessevents.in/admin/${String(
-            row.image
-          ).replace(/^\/+/, "")}`
-        : null;
+          image:
+            venue.image ||
+            venue.main_image ||
+            null,
 
-      const images = row.images_list
-        ? String(row.images_list)
-            .split(",")
-            .map((img) => img.trim())
-            .filter(Boolean)
-            .map(
-              (img) =>
-                `https://admin.effortlessevents.in/admin/${img.replace(
-                  /^\/+/,
-                  ""
-                )}`
-            )
-        : [];
+          images: Array.isArray(venue.images)
+            ? venue.images
+            : [],
 
-      /*
-       * Use main image if gallery images are unavailable.
-       */
-      const allImages =
-        images.length > 0
-          ? images
-          : mainImage
-          ? [mainImage]
-          : [];
+          product_category:
+            venue.product_category ||
+            venue.categoryId ||
+            venue.category_id ||
+            null,
 
-      return {
-        id: row.id,
+          rating:
+            venue.rating || "5.0",
 
-        image: mainImage,
+          category_name:
+            venue.category_name || "",
 
-        images: allImages,
+          product_name:
+            venue.product_name ||
+            "Venue",
 
-        product_category:
-          row.product_category,
+          product_location:
+            venue.product_location ||
+            "",
 
-        rating:
-          row.rating,
+          product_address:
+            venue.product_address ||
+            "",
 
-        category_name:
-          row.category_name,
+          product_price:
+            venue.product_price ||
+            "",
 
-        product_name:
-          row.product_name,
+          product_number:
+            venue.product_number ||
+            "",
 
-        product_location:
-          row.product_location,
+          product_detail:
+            venue.product_detail ||
+            "",
 
-        product_address:
-          row.product_address || "",
+          status:
+            venue.status === undefined
+              ? 1
+              : venue.status,
 
-        product_price:
-          row.product_price,
+          created_date:
+            venue.created_date ||
+            "",
 
-        product_number:
-          row.product_number,
+          last_update:
+            venue.last_update ||
+            "",
+        };
+      }
+    );
 
-        product_detail:
-          row.product_detail || "",
-
-        status:
-          row.status,
-
-        created_date:
-          row.created_date,
-
-        last_update:
-          row.last_update,
-      };
-    });
-
+    /*
+     * RESPONSE
+     */
     return NextResponse.json({
       success: true,
+
       page,
+
       limit,
+
       total,
+
       totalPages:
         Math.ceil(total / limit),
 
       products,
     });
-
   } catch (error) {
-
     console.error(
-      "================================="
-    );
-
-    console.error(
-      "VENUES API ERROR"
-    );
-
-    console.error(
-      "================================="
-    );
-
-    console.error(error);
-
-    console.error(
-      "Message:",
-      error?.message
-    );
-
-    console.error(
-      "Code:",
-      error?.code
-    );
-
-    console.error(
-      "SQL State:",
-      error?.sqlState
-    );
-
-    console.error(
-      "================================="
+      "VENUES API ERROR:",
+      error
     );
 
     return NextResponse.json(
       {
         success: false,
         error: "Unable to load venues",
-
-        details:
-          process.env.NODE_ENV ===
-          "development"
-            ? error?.message
-            : undefined,
+        products: [],
       },
       {
         status: 500,
