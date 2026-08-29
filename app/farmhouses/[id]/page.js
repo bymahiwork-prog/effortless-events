@@ -2,23 +2,16 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ArrowLeft } from "lucide-react";
 
-export default function FarmhouseDetailsPage() {
-  const params = useParams();
-  const id = params?.id;
-
+export default function FarmhouseDetailsPage({ params }) {
   const [venue, setVenue] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   const [selectedDate, setSelectedDate] = useState("");
-  const [checkIn, setCheckIn] = useState("9:30 am");
-  const [checkOut, setCheckOut] = useState("9:30 pm");
-
-  const [isDescriptionExpanded, setIsDescriptionExpanded] =
-    useState(false);
+  const [checkInTime, setCheckInTime] = useState("9:30 am");
+  const [checkOutTime, setCheckOutTime] = useState("9:30 pm");
 
   const [expandedSections, setExpandedSections] = useState({
     food: true,
@@ -31,95 +24,141 @@ export default function FarmhouseDetailsPage() {
   });
 
   const toggleSection = (section) => {
-    setExpandedSections((prev) => ({
-      ...prev,
-      [section]: !prev[section],
+    setExpandedSections((previous) => ({
+      ...previous,
+      [section]: !previous[section],
     }));
   };
 
-  /*
-   * FETCH FARMHOUSE
-   *
-   * We use the same API that is already working
-   * on the Farmhouses listing page.
-   */
   useEffect(() => {
-    if (!id) return;
-
-    const fetchFarmhouse = async () => {
+    const fetchVenue = async () => {
       try {
         setLoading(true);
         setError("");
 
-        const response = await fetch(
-          "/api/venues?categoryId=1&limit=100",
-          {
-            cache: "no-store",
-          }
-        );
+        const id = params?.id;
+
+        if (!id) {
+          throw new Error("Farmhouse ID is missing.");
+        }
+
+        const response = await fetch(`/api/venues/${id}`, {
+          cache: "no-store",
+        });
 
         if (!response.ok) {
           throw new Error(
-            `Failed to fetch farmhouses: ${response.status}`
+            `Failed to fetch farmhouse: ${response.status}`
           );
         }
 
         const data = await response.json();
 
-        if (
-          !data?.success ||
-          !Array.isArray(data?.products)
-        ) {
-          throw new Error("Invalid farmhouse data.");
-        }
+        /*
+         * Supports common API response formats:
+         *
+         * {
+         *   success: true,
+         *   product: {...}
+         * }
+         *
+         * or
+         *
+         * {
+         *   success: true,
+         *   venue: {...}
+         * }
+         *
+         * or directly:
+         *
+         * {
+         *   id: 144,
+         *   product_name: "..."
+         * }
+         */
 
-        const foundVenue = data.products.find(
-          (item) => String(item.id) === String(id)
-        );
+        const product =
+          data?.product ||
+          data?.venue ||
+          data?.data ||
+          data;
 
-        if (!foundVenue) {
+        if (!product || !product.id) {
           throw new Error("Farmhouse not found.");
         }
 
-        setVenue(foundVenue);
-      } catch (err) {
-        console.error(
-          "Error fetching farmhouse:",
-          err
-        );
+        setVenue(product);
+      } catch (fetchError) {
+        console.error("Error fetching farmhouse:", fetchError);
 
         setVenue(null);
 
         setError(
-          "We&apos;re unable to load this farmhouse right now. Please try again."
+          "We are unable to load this farmhouse right now. Please try again."
         );
       } finally {
         setLoading(false);
       }
     };
 
-    fetchFarmhouse();
-  }, [id]);
+    fetchVenue();
+  }, [params]);
 
-  /*
-   * BOOKING
-   */
   const handleBooking = () => {
     if (!selectedDate) {
-      alert("Please select your event date.");
+      alert("Please select your preferred date.");
       return;
     }
 
     alert(
-      `Booking initiated for ${
+      `Booking enquiry for ${
         venue?.product_name || "this farmhouse"
-      } on ${selectedDate} from ${checkIn} to ${checkOut}.`
+      }\n\nDate: ${selectedDate}\nCheck-in: ${checkInTime}\nCheck-out: ${checkOutTime}`
     );
   };
 
   /*
+   * ADMIN PANEL DATA
+   *
+   * These values come directly from the API response.
+   */
+
+  const venueName =
+    venue?.product_name ||
+    venue?.name ||
+    "Farmhouse";
+
+  const venueLocation =
+    venue?.product_location ||
+    venue?.location ||
+    "Delhi NCR";
+
+  const venueDescription =
+    venue?.product_detail ||
+    venue?.description ||
+    "Discover this beautiful farmhouse with Effortless Events.";
+
+  const venuePrice =
+    venue?.product_price ||
+    venue?.price ||
+    "";
+
+  /*
+   * IMAGE HANDLING
+   */
+
+  const primaryImage =
+    venue?.image ||
+    venue?.product_image ||
+    venue?.image_url ||
+    venue?.product_image_url ||
+    venue?.images?.[0] ||
+    "https://placehold.co/1200x800/17110B/C9A34A?text=Farmhouse";
+
+  /*
    * TIME OPTIONS
    */
+
   const timeOptions = [
     "12:00 am",
     "12:30 am",
@@ -174,6 +213,7 @@ export default function FarmhouseDetailsPage() {
   /*
    * LOADING
    */
+
   if (loading) {
     return (
       <main className="min-h-screen bg-[#0F0803] text-white flex items-center justify-center">
@@ -193,493 +233,110 @@ export default function FarmhouseDetailsPage() {
   }
 
   /*
-   * NOT FOUND
+   * ERROR
    */
-  if (!venue) {
+
+  if (error || !venue) {
     return (
-      <main className="min-h-screen bg-[#0F0803] text-white flex items-center justify-center">
-        <div className="text-center px-6 max-w-xl">
-          <h1 className="text-3xl md:text-4xl font-serif mb-4">
+      <main className="min-h-screen bg-[#0F0803] text-white flex items-center justify-center px-6">
+        <div className="text-center max-w-xl">
+          <p className="text-sm uppercase tracking-[0.2em] text-[#C9A34A] mb-4">
+            Farmhouse
+          </p>
+
+          <h1 className="text-3xl md:text-5xl font-serif mb-4">
             Farmhouse not found
           </h1>
 
           <p className="text-[#B8AFA5] mb-8">
-            {error}
+            {error ||
+              "We are unable to load this farmhouse right now."}
           </p>
 
           <Link
             href="/farmhouses"
-            className="inline-flex items-center justify-center px-7 py-3 bg-[#C9A34A] text-[#0F0803] font-medium rounded-md hover:bg-[#D8B25B] transition"
+            className="inline-flex items-center gap-2 px-7 py-3 bg-[#C9A34A] text-[#0F0803] rounded-md font-medium hover:bg-[#D8B25B] transition"
           >
-            ← Back to Farmhouses
+            <ArrowLeft className="w-4 h-4" />
+            Back to Farmhouses
           </Link>
         </div>
       </main>
     );
   }
 
-  /*
-   * ADMIN DATA
-   *
-   * These values are coming directly from the API,
-   * which gets them from the Admin panel.
-   */
-  const venueName =
-    venue.product_name || "Farmhouse";
-
-  const venueLocation =
-    venue.product_location || "Delhi NCR";
-
-  const venuePrice =
-    venue.product_price || "Price on request";
-
-  const venueDescription =
-    venue.product_detail ||
-    "Discover this beautiful farmhouse with Effortless Events.";
-
-  /*
-   * ADMIN IMAGES
-   */
-  const galleryImages = [
-    venue.image,
-    ...(Array.isArray(venue.images)
-      ? venue.images
-      : []),
-  ].filter(Boolean);
-
-  const mainImage =
-    galleryImages[0] ||
-    "https://placehold.co/1200x800/17110B/C9A34A?text=Farmhouse";
-
   return (
     <main className="min-h-screen bg-white text-black">
 
-      {/* =========================================
+      {/* =====================================================
           HERO
-      ========================================= */}
+      ====================================================== */}
 
       <section className="bg-[#0F0803] text-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-8 py-12">
-
-          <Link
-            href="/farmhouses"
-            className="inline-flex items-center text-[#C9A34A] text-sm mb-8 hover:text-[#E1C56E] transition"
-          >
-            ← Back to Farmhouses
-          </Link>
+        <div className="max-w-7xl mx-auto px-6 md:px-8 py-10 md:py-14">
 
           <p className="text-sm uppercase tracking-[0.2em] text-[#C9A34A] mb-4">
             Farmhouse
           </p>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium leading-tight">
             {venueName}
           </h1>
 
-          <p className="text-[#B8AFA5] mt-4">
+          <p className="text-[#D4C7B8] text-base md:text-lg mt-5">
             {venueLocation}
           </p>
 
         </div>
       </section>
 
-
-      {/* =========================================
+      {/* =====================================================
           MAIN CONTENT
-      ========================================= */}
+      ====================================================== */}
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <section className="max-w-7xl mx-auto px-6 md:px-8 py-10 md:py-12">
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-          {/* =====================================
-              LEFT COLUMN
-          ===================================== */}
+          {/* =================================================
+              LEFT SIDE
+          ================================================= */}
 
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2">
 
             {/* IMAGE */}
 
-            <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[560px] rounded-2xl overflow-hidden bg-[#17110B]">
+            <div className="w-full h-[320px] sm:h-[450px] lg:h-[560px] rounded-2xl overflow-hidden bg-[#17110B] mb-8">
 
               <img
-                src={mainImage}
+                src={primaryImage}
                 alt={venueName}
                 className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.src =
+                onError={(event) => {
+                  event.currentTarget.src =
                     "https://placehold.co/1200x800/17110B/C9A34A?text=Image+Not+Available";
                 }}
               />
 
             </div>
 
+            {/* ABOUT */}
 
-            {/* ADDITIONAL IMAGES */}
+            <div className="mb-10">
 
-            {galleryImages.length > 1 && (
-              <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
-
-                {galleryImages.slice(0, 8).map(
-                  (image, index) => (
-                    <div
-                      key={`${image}-${index}`}
-                      className="h-24 sm:h-32 rounded-lg overflow-hidden"
-                    >
-                      <img
-                        src={image}
-                        alt={`${venueName} ${index + 1}`}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {
-                          e.currentTarget.src =
-                            "https://placehold.co/600x400/17110B/C9A34A?text=Image";
-                        }}
-                      />
-                    </div>
-                  )
-                )}
-
-              </div>
-            )}
-
-
-            {/* =================================
-                ABOUT
-            ================================= */}
-
-            <div>
-
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-medium mb-4">
+              <h2 className="text-3xl md:text-4xl font-serif mb-5">
                 About {venueName}
               </h2>
 
-              <p
-                className={`text-gray-600 text-sm sm:text-base leading-relaxed ${
-                  !isDescriptionExpanded
-                    ? "line-clamp-4"
-                    : ""
-                }`}
-              >
+              <p className="text-gray-600 text-base leading-8 whitespace-pre-line">
                 {venueDescription}
               </p>
 
-              {venueDescription.length > 250 && (
-                <button
-                  type="button"
-                  onClick={() =>
-                    setIsDescriptionExpanded(
-                      (prev) => !prev
-                    )
-                  }
-                  className="text-purple-600 hover:text-purple-700 text-sm font-medium mt-3"
-                >
-                  {isDescriptionExpanded
-                    ? "Read less"
-                    : "Read more"}
-                </button>
-              )}
-
             </div>
 
+            {/* BASIC DETAILS */}
 
-            {/* =================================
-                AMENITIES / INFORMATION
-            ================================= */}
-
-            <div className="space-y-3 text-black">
-
-              {/* FOOD */}
-
-              <div className="border border-gray-200 rounded-lg">
-
-                <button
-                  onClick={() =>
-                    toggleSection("food")
-                  }
-                  className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition"
-                >
-
-                  <span className="font-medium text-gray-700">
-                    Food and Beverage
-                  </span>
-
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
-                      expandedSections.food
-                        ? "rotate-180"
-                        : ""
-                    }`}
-                  />
-
-                </button>
-
-                {expandedSections.food && (
-                  <div className="px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                    <p>
-                      Full catering services are available
-                      with a wide range of local and
-                      international cuisine options.
-                      Catering arrangements can be planned
-                      according to the event type, guest
-                      count, menu preferences, and specific
-                      requirements of the celebration.
-                    </p>
-                  </div>
-                )}
-
-              </div>
-
-
-              {/* ALCOHOL */}
-
-              <div className="border border-gray-200 rounded-lg">
-
-                <button
-                  onClick={() =>
-                    toggleSection("alcohol")
-                  }
-                  className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition"
-                >
-
-                  <span className="font-medium text-gray-700">
-                    Alcoholic and Beverage
-                  </span>
-
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
-                      expandedSections.alcohol
-                        ? "rotate-180"
-                        : ""
-                    }`}
-                  />
-
-                </button>
-
-                {expandedSections.alcohol && (
-                  <div className="px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                    <p>
-                      Alcoholic and beverage services can
-                      be arranged according to the venue&apos;s
-                      policies and event requirements.
-                      Beverage options may include wines,
-                      beers, spirits, mocktails, soft drinks,
-                      and other refreshments.
-                    </p>
-                  </div>
-                )}
-
-              </div>
-
-
-              {/* FURNITURE */}
-
-              <div className="border border-gray-200 rounded-lg">
-
-                <button
-                  onClick={() =>
-                    toggleSection("furniture")
-                  }
-                  className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition"
-                >
-
-                  <span className="font-medium text-gray-700">
-                    Furniture
-                  </span>
-
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
-                      expandedSections.furniture
-                        ? "rotate-180"
-                        : ""
-                    }`}
-                  />
-
-                </button>
-
-                {expandedSections.furniture && (
-                  <div className="px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                    <p>
-                      Furniture arrangements are available
-                      for different types of events and
-                      celebrations. Tables, chairs, seating
-                      arrangements, and other required
-                      furniture can be organized according
-                      to the event layout and guest count.
-                    </p>
-                  </div>
-                )}
-
-              </div>
-
-
-              {/* RESTROOMS */}
-
-              <div className="border border-gray-200 rounded-lg">
-
-                <button
-                  onClick={() =>
-                    toggleSection("restrooms")
-                  }
-                  className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition"
-                >
-
-                  <span className="font-medium text-gray-700">
-                    Restrooms
-                  </span>
-
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
-                      expandedSections.restrooms
-                        ? "rotate-180"
-                        : ""
-                    }`}
-                  />
-
-                </button>
-
-                {expandedSections.restrooms && (
-                  <div className="px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                    <p>
-                      Clean and convenient restroom
-                      facilities are available for guests
-                      throughout the event.
-                    </p>
-                  </div>
-                )}
-
-              </div>
-
-
-              {/* AV */}
-
-              <div className="border border-gray-200 rounded-lg">
-
-                <button
-                  onClick={() =>
-                    toggleSection("av")
-                  }
-                  className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition"
-                >
-
-                  <span className="font-medium text-gray-700">
-                    AV and Music
-                  </span>
-
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
-                      expandedSections.av
-                        ? "rotate-180"
-                        : ""
-                    }`}
-                  />
-
-                </button>
-
-                {expandedSections.av && (
-                  <div className="px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                    <p>
-                      Audio-visual and music facilities can
-                      be arranged for different event
-                      requirements, including sound systems,
-                      microphones, music equipment and
-                      lighting.
-                    </p>
-                  </div>
-                )}
-
-              </div>
-
-
-              {/* PARKING */}
-
-              <div className="border border-gray-200 rounded-lg">
-
-                <button
-                  onClick={() =>
-                    toggleSection("parking")
-                  }
-                  className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition"
-                >
-
-                  <span className="font-medium text-gray-700">
-                    Parking
-                  </span>
-
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
-                      expandedSections.parking
-                        ? "rotate-180"
-                        : ""
-                    }`}
-                  />
-
-                </button>
-
-                {expandedSections.parking && (
-                  <div className="px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                    <p>
-                      Ample parking space is available for
-                      guests attending events at the venue.
-                      Parking arrangements are designed to
-                      make arrival and departure convenient
-                      for guests.
-                    </p>
-                  </div>
-                )}
-
-              </div>
-
-
-              {/* EVENTS */}
-
-              <div className="border border-gray-200 rounded-lg">
-
-                <button
-                  onClick={() =>
-                    toggleSection("events")
-                  }
-                  className="w-full flex items-center justify-between p-4 text-left hover:bg-gray-50 transition"
-                >
-
-                  <span className="font-medium text-gray-700">
-                    Events Rules
-                  </span>
-
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
-                      expandedSections.events
-                        ? "rotate-180"
-                        : ""
-                    }`}
-                  />
-
-                </button>
-
-                {expandedSections.events && (
-                  <div className="px-4 pb-4 text-sm text-gray-600 leading-relaxed">
-                    <p>
-                      Event guidelines and venue policies
-                      are followed to ensure a smooth, safe,
-                      and enjoyable experience for all guests.
-                      Specific arrangements relating to
-                      event timings, setup, music, catering,
-                      alcohol, decorations, parking and guest
-                      capacity can be discussed with the venue
-                      team before booking.
-                    </p>
-                  </div>
-                )}
-
-              </div>
-
-            </div>
-
-
-            {/* =================================
-                VENUE SUMMARY
-            ================================= */}
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
 
               <div className="border border-gray-200 rounded-xl p-5">
 
@@ -687,7 +344,7 @@ export default function FarmhouseDetailsPage() {
                   Location
                 </p>
 
-                <p className="font-medium text-black">
+                <p className="text-black font-medium">
                   {venueLocation}
                 </p>
 
@@ -699,8 +356,8 @@ export default function FarmhouseDetailsPage() {
                   Guest Rating
                 </p>
 
-                <p className="font-medium text-black">
-                  ★ {venue.rating || "5.0"}
+                <p className="text-black font-medium">
+                  ★ {venue?.rating || "5.0"}
                 </p>
 
               </div>
@@ -711,7 +368,7 @@ export default function FarmhouseDetailsPage() {
                   Category
                 </p>
 
-                <p className="font-medium text-black">
+                <p className="text-black font-medium">
                   Farmhouse
                 </p>
 
@@ -719,50 +376,315 @@ export default function FarmhouseDetailsPage() {
 
             </div>
 
+            {/* =================================================
+                AMENITIES / INFORMATION
+            ================================================== */}
+
+            <div className="space-y-3">
+
+              {/* FOOD */}
+
+              <div className="border border-gray-200 rounded-xl">
+
+                <button
+                  type="button"
+                  onClick={() => toggleSection("food")}
+                  className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition"
+                >
+
+                  <span className="font-medium text-gray-800">
+                    Food and Beverage
+                  </span>
+
+                  <ChevronDown
+                    className={`w-5 h-5 transition-transform ${
+                      expandedSections.food
+                        ? "rotate-180"
+                        : ""
+                    }`}
+                  />
+
+                </button>
+
+                {expandedSections.food && (
+                  <div className="px-5 pb-5 text-sm text-gray-600 leading-7">
+                    Full catering services are available with a wide range
+                    of local and international cuisine options. Catering
+                    arrangements can be planned according to the event type,
+                    guest count, menu preferences, and specific requirements
+                    of the celebration.
+                  </div>
+                )}
+
+              </div>
+
+              {/* ALCOHOL */}
+
+              <div className="border border-gray-200 rounded-xl">
+
+                <button
+                  type="button"
+                  onClick={() => toggleSection("alcohol")}
+                  className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition"
+                >
+
+                  <span className="font-medium text-gray-800">
+                    Alcoholic and Beverage
+                  </span>
+
+                  <ChevronDown
+                    className={`w-5 h-5 transition-transform ${
+                      expandedSections.alcohol
+                        ? "rotate-180"
+                        : ""
+                    }`}
+                  />
+
+                </button>
+
+                {expandedSections.alcohol && (
+                  <div className="px-5 pb-5 text-sm text-gray-600 leading-7">
+                    Alcoholic and beverage services can be arranged
+                    according to the venue&apos;s policies and event
+                    requirements. Beverage options may include wines,
+                    beers, spirits, mocktails, soft drinks, and other
+                    refreshments.
+                  </div>
+                )}
+
+              </div>
+
+              {/* FURNITURE */}
+
+              <div className="border border-gray-200 rounded-xl">
+
+                <button
+                  type="button"
+                  onClick={() => toggleSection("furniture")}
+                  className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition"
+                >
+
+                  <span className="font-medium text-gray-800">
+                    Furniture
+                  </span>
+
+                  <ChevronDown
+                    className={`w-5 h-5 transition-transform ${
+                      expandedSections.furniture
+                        ? "rotate-180"
+                        : ""
+                    }`}
+                  />
+
+                </button>
+
+                {expandedSections.furniture && (
+                  <div className="px-5 pb-5 text-sm text-gray-600 leading-7">
+                    Furniture arrangements are available for different
+                    types of events and celebrations. Tables, chairs,
+                    seating arrangements, and other required furniture
+                    can be organized according to the event layout,
+                    guest count, dining requirements, and overall setup.
+                  </div>
+                )}
+
+              </div>
+
+              {/* RESTROOMS */}
+
+              <div className="border border-gray-200 rounded-xl">
+
+                <button
+                  type="button"
+                  onClick={() => toggleSection("restrooms")}
+                  className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition"
+                >
+
+                  <span className="font-medium text-gray-800">
+                    Restrooms
+                  </span>
+
+                  <ChevronDown
+                    className={`w-5 h-5 transition-transform ${
+                      expandedSections.restrooms
+                        ? "rotate-180"
+                        : ""
+                    }`}
+                  />
+
+                </button>
+
+                {expandedSections.restrooms && (
+                  <div className="px-5 pb-5 text-sm text-gray-600 leading-7">
+                    Clean and convenient restroom facilities are available
+                    for guests throughout the event. Facilities are
+                    designed to support gatherings of different sizes
+                    and provide guests with easy access during weddings,
+                    parties, celebrations, corporate events, and other
+                    functions.
+                  </div>
+                )}
+
+              </div>
+
+              {/* AV */}
+
+              <div className="border border-gray-200 rounded-xl">
+
+                <button
+                  type="button"
+                  onClick={() => toggleSection("av")}
+                  className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition"
+                >
+
+                  <span className="font-medium text-gray-800">
+                    AV and Music
+                  </span>
+
+                  <ChevronDown
+                    className={`w-5 h-5 transition-transform ${
+                      expandedSections.av
+                        ? "rotate-180"
+                        : ""
+                    }`}
+                  />
+
+                </button>
+
+                {expandedSections.av && (
+                  <div className="px-5 pb-5 text-sm text-gray-600 leading-7">
+                    Audio-visual and music facilities can be arranged for
+                    different event requirements. Depending on the venue
+                    and event, facilities may include professional sound
+                    systems, microphones, music equipment, lighting, and
+                    other audio-visual requirements.
+                  </div>
+                )}
+
+              </div>
+
+              {/* PARKING */}
+
+              <div className="border border-gray-200 rounded-xl">
+
+                <button
+                  type="button"
+                  onClick={() => toggleSection("parking")}
+                  className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition"
+                >
+
+                  <span className="font-medium text-gray-800">
+                    Parking
+                  </span>
+
+                  <ChevronDown
+                    className={`w-5 h-5 transition-transform ${
+                      expandedSections.parking
+                        ? "rotate-180"
+                        : ""
+                    }`}
+                  />
+
+                </button>
+
+                {expandedSections.parking && (
+                  <div className="px-5 pb-5 text-sm text-gray-600 leading-7">
+                    Ample parking space is available for guests attending
+                    events at the venue. Parking arrangements are designed
+                    to make arrival and departure more convenient,
+                    particularly during larger weddings, celebrations,
+                    and private events.
+                  </div>
+                )}
+
+              </div>
+
+              {/* EVENT RULES */}
+
+              <div className="border border-gray-200 rounded-xl">
+
+                <button
+                  type="button"
+                  onClick={() => toggleSection("events")}
+                  className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition"
+                >
+
+                  <span className="font-medium text-gray-800">
+                    Events Rules
+                  </span>
+
+                  <ChevronDown
+                    className={`w-5 h-5 transition-transform ${
+                      expandedSections.events
+                        ? "rotate-180"
+                        : ""
+                    }`}
+                  />
+
+                </button>
+
+                {expandedSections.events && (
+                  <div className="px-5 pb-5 text-sm text-gray-600 leading-7">
+                    Event guidelines and venue policies are followed to
+                    ensure a smooth, safe, and enjoyable experience for
+                    all guests. Specific arrangements relating to event
+                    timings, setup, music, catering, alcohol, decorations,
+                    parking, guest capacity, and other venue requirements
+                    can be discussed with the venue team before booking.
+                  </div>
+                )}
+
+              </div>
+
+            </div>
+
           </div>
 
-
-          {/* =====================================
-              RIGHT BOOKING CARD
-          ===================================== */}
+          {/* =================================================
+              RIGHT SIDE - BOOKING
+          ================================================== */}
 
           <div className="lg:col-span-1">
 
-            <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-4 lg:p-6 sticky top-4">
+            <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-5 md:p-6 sticky top-6">
 
               {/* PRICE */}
 
               <div className="mb-6">
 
-                <div className="text-2xl lg:text-3xl font-bold text-gray-900">
+                <p className="text-sm text-gray-500 mb-2">
+                  Starting from
+                </p>
 
-                  {String(venuePrice).startsWith("₹")
-                    ? venuePrice
-                    : venuePrice ===
-                      "Price on request"
-                    ? venuePrice
-                    : `₹${venuePrice}`}
+                <div className="text-2xl md:text-3xl font-bold text-gray-900">
 
-                </div>
+                  {venuePrice
+                    ? String(venuePrice).startsWith("₹")
+                      ? venuePrice
+                      : `₹${venuePrice}`
+                    : "Price on request"}
 
-                <div className="text-sm text-[#E4D078]">
-                  onwards
+                  {venuePrice && (
+                    <span className="text-base font-normal ml-1">
+                      onwards
+                    </span>
+                  )}
+
                 </div>
 
               </div>
 
-
               {/* DISCOUNT */}
 
-              <div className="border-t border-gray-200 pt-4 mb-6">
+              <div className="border-t border-gray-200 pt-5 mb-6">
 
-                <div className="flex justify-between items-center">
+                <div className="flex items-center justify-between">
 
                   <span className="text-sm text-gray-600">
                     2+ days discount
                   </span>
 
-                  <span className="text-sm bg-gray-100 text-gray-700 px-2 py-1 rounded">
+                  <span className="text-sm bg-gray-100 text-gray-700 px-3 py-1 rounded-full">
                     10% off
                   </span>
 
@@ -770,16 +692,17 @@ export default function FarmhouseDetailsPage() {
 
               </div>
 
+              {/* BOOKING */}
 
-              {/* DATE */}
+              <div className="space-y-4">
 
-              <div className="space-y-4 mb-6">
+                {/* DATE */}
 
                 <div>
 
-                  <label className="block text-sm text-black mb-2">
-                    Date
-                    <span className="text-gray-400">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Preferred Date
+                    <span className="text-gray-400 font-normal">
                       {" "}
                       (required)
                     </span>
@@ -788,21 +711,18 @@ export default function FarmhouseDetailsPage() {
                   <input
                     type="date"
                     value={selectedDate}
-                    onChange={(e) =>
-                      setSelectedDate(
-                        e.target.value
-                      )
+                    onChange={(event) =>
+                      setSelectedDate(event.target.value)
                     }
                     min={
                       new Date()
                         .toISOString()
                         .split("T")[0]
                     }
-                    className="w-full text-black px-3 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E4D078] focus:border-[#E4D078] text-sm bg-white cursor-pointer"
+                    className="w-full text-black px-3 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#C9A34A] focus:border-[#C9A34A] bg-white"
                   />
 
                 </div>
-
 
                 {/* CHECK IN / CHECK OUT */}
 
@@ -810,63 +730,50 @@ export default function FarmhouseDetailsPage() {
 
                   <div>
 
-                    <label className="block text-xs text-gray-600 mb-1">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                       Check-in
                     </label>
 
                     <select
-                      value={checkIn}
-                      onChange={(e) =>
-                        setCheckIn(
-                          e.target.value
-                        )
+                      value={checkInTime}
+                      onChange={(event) =>
+                        setCheckInTime(event.target.value)
                       }
-                      className="w-full px-3 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E4D078] focus:border-[#E4D078] text-sm appearance-none bg-white text-black"
+                      className="w-full text-black px-3 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#C9A34A] focus:border-[#C9A34A] bg-white"
                     >
-
-                      {timeOptions.map(
-                        (time) => (
-                          <option
-                            key={`in-${time}`}
-                            value={time}
-                          >
-                            {time}
-                          </option>
-                        )
-                      )}
-
+                      {timeOptions.map((time) => (
+                        <option
+                          key={`check-in-${time}`}
+                          value={time}
+                        >
+                          {time}
+                        </option>
+                      ))}
                     </select>
 
                   </div>
 
-
                   <div>
 
-                    <label className="block text-xs text-gray-600 mb-1">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                       Check-out
                     </label>
 
                     <select
-                      value={checkOut}
-                      onChange={(e) =>
-                        setCheckOut(
-                          e.target.value
-                        )
+                      value={checkOutTime}
+                      onChange={(event) =>
+                        setCheckOutTime(event.target.value)
                       }
-                      className="w-full px-3 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E4D078] focus:border-[#E4D078] text-sm appearance-none bg-white text-black"
+                      className="w-full text-black px-3 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#C9A34A] focus:border-[#C9A34A] bg-white"
                     >
-
-                      {timeOptions.map(
-                        (time) => (
-                          <option
-                            key={`out-${time}`}
-                            value={time}
-                          >
-                            {time}
-                          </option>
-                        )
-                      )}
-
+                      {timeOptions.map((time) => (
+                        <option
+                          key={`check-out-${time}`}
+                          value={time}
+                        >
+                          {time}
+                        </option>
+                      ))}
                     </select>
 
                   </div>
@@ -875,9 +782,67 @@ export default function FarmhouseDetailsPage() {
 
               </div>
 
-
-              {/* START BOOKING */}
+              {/* BUTTON */}
 
               <button
+                type="button"
                 onClick={handleBooking}
-                className="w-full bg-[#E4D078] text-black py-3.5 px-4 rounded-md font-medium hover:bg-[#d6bd5e] transition
+                className="w-full mt-6 bg-[#C9A34A] text-[#0F0803] py-3.5 px-4 rounded-md font-medium hover:bg-[#D8B25B] transition-all duration-200"
+              >
+                Enquire About This Farmhouse
+              </button>
+
+              {/* RESPONSE */}
+
+              <div className="flex items-center justify-center gap-2 text-xs text-gray-500 mt-5">
+
+                <span className="w-2 h-2 rounded-full bg-green-500" />
+
+                Our Agent typically responds within 12 hr
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* =====================================================
+          BOTTOM CTA
+      ====================================================== */}
+
+      <section className="bg-[#0F0803] text-white">
+
+        <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 text-center">
+
+          <p className="text-sm uppercase tracking-[0.18em] text-[#C9A34A] mb-4">
+            Plan Your Celebration
+          </p>
+
+          <h2 className="text-3xl md:text-5xl font-serif mb-5">
+            Ready to celebrate at {venueName}?
+          </h2>
+
+          <p className="text-[#B8AFA5] max-w-2xl mx-auto mb-8">
+            Share your preferred date and event requirements with
+            Effortless Events and our team will help you take the next
+            step.
+          </p>
+
+          <Link
+            href="/#get-in-touch"
+            className="inline-flex items-center justify-center px-8 py-3 bg-[#C9A34A] text-[#0F0803] font-medium rounded-md hover:bg-[#D8B25B] transition"
+          >
+            Get in Touch
+          </Link>
+
+        </div>
+
+      </section>
+
+    </main>
+  );
+}
