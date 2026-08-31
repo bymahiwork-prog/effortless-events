@@ -3,14 +3,11 @@
 import React, { useState } from "react";
 import {
   ChevronDown,
-  Calendar,
-  Clock,
   CheckCircle,
   Utensils,
   Wine,
   Users,
   Bath,
-  Tv,
   Music,
   Car,
   CheckCircle2,
@@ -40,14 +37,67 @@ export default function FarmBookingPage({ venue }) {
     }));
   };
 
+  /*
+   * =========================================
+   * BOOKING -> WHATSAPP
+   * =========================================
+   */
+
   const handleBooking = () => {
     if (!selectedDate) {
       alert("Please select a date first.");
       return;
     }
 
-    alert(
-      `Booking initiated for ${selectedDate} from ${checkInTime} to ${checkOutTime}`
+    /*
+     * Convert YYYY-MM-DD into DD-MM-YYYY
+     */
+
+    const formattedDate = selectedDate
+      .split("-")
+      .reverse()
+      .join("-");
+
+    /*
+     * Get farmhouse name
+     */
+
+    const farmhouseName =
+      venue?.product_name || "Farmhouse";
+
+    /*
+     * WhatsApp message
+     */
+
+    const message = `Hello Effortless Events,
+
+I am interested in booking the following farmhouse.
+
+Farmhouse: ${farmhouseName}
+Date: ${formattedDate}
+Check-in: ${checkInTime}
+Check-out: ${checkOutTime}
+
+Please confirm the availability and booking details.
+
+Thank you.`;
+
+    /*
+     * Encode WhatsApp message
+     */
+
+    const whatsappUrl = `https://wa.me/917838008069?text=${encodeURIComponent(
+      message
+    )}`;
+
+    /*
+     * Open WhatsApp
+     */
+
+    window.open(
+      whatsappUrl,
+      "_blank",
+      "noopener,noreferrer"
     );
   };
 
@@ -76,7 +126,9 @@ export default function FarmBookingPage({ venue }) {
               <div>
                 <p
                   className={`text-gray-600 text-sm leading-relaxed mb-4 ${
-                    !isDescriptionExpanded ? "line-clamp-4" : ""
+                    !isDescriptionExpanded
+                      ? "line-clamp-4"
+                      : ""
                   }`}
                 >
                   {venue?.product_detail ||
@@ -157,7 +209,9 @@ export default function FarmBookingPage({ venue }) {
               <div className="border border-gray-200 rounded-lg">
                 <button
                   type="button"
-                  onClick={() => toggleSection("alcohol")}
+                  onClick={() =>
+                    toggleSection("alcohol")
+                  }
                   className="w-full flex items-center justify-between p-3 sm:p-4 text-left hover:bg-gray-50 transition-colors"
                 >
                   <div className="flex items-center gap-3">
@@ -457,14 +511,18 @@ export default function FarmBookingPage({ venue }) {
                 </div>
               </div>
 
-              {/* Date and Time Selection */}
+              {/* ========================================= */}
+              {/* DATE + CHECK-IN + CHECK-OUT */}
+              {/* ========================================= */}
 
               <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
 
+                {/* Date */}
+
                 <div>
-                  <label className="block text-xs sm:text-sm text-black mb-2">
-                    Date and time{" "}
-                    <span className="text-gray-400">
+                  <label className="block text-xs sm:text-sm text-black mb-2 font-medium">
+                    Date{" "}
+                    <span className="text-gray-400 font-normal">
                       (required)
                     </span>
                   </label>
@@ -484,12 +542,14 @@ export default function FarmBookingPage({ venue }) {
                   />
                 </div>
 
+                {/* Check-in / Check-out */}
+
                 <div className="grid grid-cols-2 gap-2 sm:gap-3 text-black">
 
                   {/* Check-in */}
 
                   <div>
-                    <label className="block text-xs text-gray-600 mb-1 sm:hidden">
+                    <label className="block text-xs sm:text-sm text-gray-700 mb-2 font-medium">
                       Check-in
                     </label>
 
@@ -650,7 +710,7 @@ export default function FarmBookingPage({ venue }) {
                   {/* Check-out */}
 
                   <div>
-                    <label className="block text-xs text-gray-600 mb-1 sm:hidden">
+                    <label className="block text-xs sm:text-sm text-gray-700 mb-2 font-medium">
                       Check-out
                     </label>
 
@@ -811,7 +871,9 @@ export default function FarmBookingPage({ venue }) {
                 </div>
               </div>
 
-              {/* Start Booking */}
+              {/* ========================================= */}
+              {/* START BOOKING */}
+              {/* ========================================= */}
 
               <button
                 type="button"
