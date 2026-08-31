@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -11,13 +10,17 @@ const Weddings = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+  // =====================================================
+  // FETCH WEDDING VENUES
+  // =====================================================
+
   const fetchWeddingVenues = async () => {
     try {
       setLoading(true);
       setError("");
 
       const response = await fetch(
-        "/api/venues?categoryId=3&limit=100",
+        "/api/farmhouses?categoryId=3&limit=100",
         {
           cache: "no-store",
         }
@@ -31,24 +34,21 @@ const Weddings = () => {
 
       const data = await response.json();
 
-      if (
-        data?.success &&
-        Array.isArray(data?.products)
-      ) {
+      if (data?.success && Array.isArray(data?.products)) {
         setVenues(data.products);
       } else {
         setVenues([]);
       }
-    } catch (err) {
+    } catch (error) {
       console.error(
         "Error fetching wedding venues:",
-        err
+        error
       );
 
       setVenues([]);
 
       setError(
-        "We&apos;re unable to load the wedding venues right now. Please try again."
+        "We're unable to load the wedding venues right now. Please try again."
       );
     } finally {
       setLoading(false);
@@ -59,11 +59,9 @@ const Weddings = () => {
     fetchWeddingVenues();
   }, []);
 
-  /*
-   * =========================================
-   * LOADING STATE
-   * =========================================
-   */
+  // =====================================================
+  // LOADING STATE
+  // =====================================================
 
   if (loading) {
     return (
@@ -83,7 +81,7 @@ const Weddings = () => {
 
             <p className="text-[#B8AFA5] mt-3">
               Please wait while we load our latest
-              wedding listings.
+              wedding venue listings.
             </p>
 
           </div>
@@ -99,16 +97,11 @@ const Weddings = () => {
   return (
     <main className="min-h-screen bg-[#0F0803] text-white">
 
-      {/* =========================================
-          NAVBAR
-      ========================================= */}
-
       <Navbar variant="transparent" />
 
-
-      {/* =========================================
+      {/* =====================================================
           HERO
-      ========================================= */}
+      ===================================================== */}
 
       <section className="relative overflow-hidden">
 
@@ -119,28 +112,29 @@ const Weddings = () => {
           <div className="max-w-4xl">
 
             <p className="text-sm uppercase tracking-[0.2em] text-[#C9A34A] mb-5">
-              Weddings
+              Wedding Venues
             </p>
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-medium leading-tight">
-              Wedding Venues Across Delhi NCR
+              Beautiful Wedding Venues Across Delhi NCR
             </h1>
 
             <p className="text-[#D4C7B8] text-base md:text-lg leading-8 mt-6 max-w-3xl">
-              Discover beautiful wedding venues for
-              intimate ceremonies, grand celebrations,
-              receptions, engagements and unforgettable
-              wedding experiences.
+              Discover elegant wedding venues for intimate
+              ceremonies, grand celebrations, receptions,
+              engagement parties and unforgettable wedding
+              experiences.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
 
-              <Link
-  href={`/weddings/${venue.id}`}
-  className="block w-full text-center border border-[#C9A34A] text-[#C9A34A] py-3 rounded-md font-medium hover:bg-[#C9A34A] hover:text-[#0F0803] transition"
->
-  View Details
-</Link>
+              <a
+                href="#wedding-venues"
+                className="inline-flex items-center justify-center px-7 py-3 bg-[#C9A34A] text-[#0F0803] font-medium rounded-md hover:bg-[#D8B25B] transition"
+              >
+                Explore Wedding Venues
+              </a>
+
               <Link
                 href="/"
                 className="inline-flex items-center justify-center px-7 py-3 border border-[#3A2E22] text-white rounded-md hover:bg-[#17110B] transition"
@@ -156,10 +150,9 @@ const Weddings = () => {
 
       </section>
 
-
-      {/* =========================================
+      {/* =====================================================
           WEDDING LISTINGS
-      ========================================= */}
+      ===================================================== */}
 
       <section
         id="wedding-venues"
@@ -184,23 +177,18 @@ const Weddings = () => {
 
           <p className="text-[#B8AFA5] text-sm">
             Showing {venues.length}{" "}
-            {venues.length === 1
-              ? "wedding venue"
-              : "wedding venues"}
+            {venues.length === 1 ? "venue" : "venues"}
           </p>
 
         </div>
 
-
-        {/* =========================================
-            ERROR STATE
-        ========================================= */}
+        {/* ERROR */}
 
         {error && (
           <div className="border border-[#3A2E22] bg-[#17110B] rounded-2xl p-10 text-center">
 
             <h2 className="text-2xl font-serif mb-3">
-              Wedding venues are temporarily unavailable
+              Wedding Venues are temporarily unavailable
             </h2>
 
             <p className="text-[#B8AFA5] mb-6">
@@ -208,7 +196,6 @@ const Weddings = () => {
             </p>
 
             <button
-              type="button"
               onClick={fetchWeddingVenues}
               className="px-7 py-3 bg-[#C9A34A] text-[#0F0803] font-medium rounded-md hover:bg-[#D8B25B] transition"
             >
@@ -218,30 +205,26 @@ const Weddings = () => {
           </div>
         )}
 
-
-        {/* =========================================
-            EMPTY STATE
-        ========================================= */}
+        {/* EMPTY STATE */}
 
         {!error && venues.length === 0 && (
           <div className="border border-[#3A2E22] bg-[#17110B] rounded-2xl p-12 text-center">
 
             <h2 className="text-2xl font-serif mb-3">
-              No wedding venues available
+              No Wedding Venues Available
             </h2>
 
             <p className="text-[#B8AFA5]">
-              Please check back shortly for new
-              wedding venue listings.
+              Please check back shortly for new wedding
+              venue listings.
             </p>
 
           </div>
         )}
 
-
-        {/* =========================================
+        {/* =====================================================
             VENUE GRID
-        ========================================= */}
+        ===================================================== */}
 
         {!error && venues.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
@@ -276,19 +259,17 @@ const Weddings = () => {
 
                   <div className="absolute inset-0 bg-gradient-to-t from-[#17110B] via-transparent to-transparent opacity-80" />
 
-
                   {/* CATEGORY */}
 
                   <div className="absolute top-4 left-4">
 
                     <span className="inline-block bg-[#0F0803]/80 backdrop-blur-sm border border-[#C9A34A]/40 text-[#E1C56E] text-xs px-3 py-1.5 rounded-full">
-                      Wedding
+                      Wedding Venue
                     </span>
 
                   </div>
 
                 </div>
-
 
                 {/* CONTENT */}
 
@@ -300,7 +281,6 @@ const Weddings = () => {
                     {venue.product_name ||
                       "Wedding Venue"}
                   </h3>
-
 
                   {/* LOCATION */}
 
@@ -316,7 +296,6 @@ const Weddings = () => {
                     </span>
 
                   </div>
-
 
                   {/* RATING */}
 
@@ -336,23 +315,17 @@ const Weddings = () => {
 
                   </div>
 
-
                   {/* PRICE */}
 
                   {venue.product_price && (
                     <div className="mb-4">
 
                       <p className="text-[#C9A34A] text-xl font-medium">
-                        {String(
-                          venue.product_price
-                        ).startsWith("₹")
-                          ? venue.product_price
-                          : `₹${venue.product_price}`}
+                        {venue.product_price}
                       </p>
 
                     </div>
                   )}
-
 
                   {/* DESCRIPTION */}
 
@@ -361,11 +334,10 @@ const Weddings = () => {
                       "Discover this beautiful wedding venue with Effortless Events."}
                   </p>
 
-
                   {/* VIEW DETAILS */}
 
                   <Link
-                    href={`/wedding/${venue.id}`}
+                    href={`/weddings/${venue.id}`}
                     className="block w-full text-center border border-[#C9A34A] text-[#C9A34A] py-3 rounded-md font-medium hover:bg-[#C9A34A] hover:text-[#0F0803] transition"
                   >
                     View Details
@@ -382,10 +354,9 @@ const Weddings = () => {
 
       </section>
 
-
-      {/* =========================================
-          WHY WEDDING VENUES
-      ========================================= */}
+      {/* =====================================================
+          WHY CHOOSE A WEDDING VENUE
+      ===================================================== */}
 
       <section className="border-t border-[#2A2118] bg-[#120B05]">
 
@@ -394,54 +365,49 @@ const Weddings = () => {
           <div className="max-w-3xl mb-12">
 
             <p className="text-sm uppercase tracking-[0.18em] text-[#C9A34A] mb-4">
-              Why Choose a Wedding Venue
+              Why Choose Our Wedding Venues
             </p>
 
             <h2 className="text-3xl md:text-5xl font-serif leading-tight">
-              A beautiful setting for your perfect wedding
+              The right setting for your special day
             </h2>
 
             <p className="text-[#B8AFA5] leading-8 mt-5">
-              From intimate ceremonies to grand wedding
-              celebrations, our wedding venue collection
-              gives you the flexibility, space and ambience
-              to create your special day your way.
+              From intimate wedding ceremonies to grand
+              celebrations, our wedding venues provide
+              beautiful spaces and flexible options for
+              creating unforgettable memories.
             </p>
 
           </div>
-
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
             <div className="border border-[#2A2118] rounded-2xl p-7 bg-[#17110B]">
 
               <h3 className="text-xl font-serif mb-3">
-                Beautiful Celebrations
+                Elegant Celebrations
               </h3>
 
               <p className="text-[#B8AFA5] text-sm leading-7">
-                Perfect for weddings, receptions,
-                engagements and memorable family
-                celebrations.
+                Beautiful venues for weddings, receptions,
+                engagements and intimate ceremonies.
               </p>
 
             </div>
-
 
             <div className="border border-[#2A2118] rounded-2xl p-7 bg-[#17110B]">
 
               <h3 className="text-xl font-serif mb-3">
-                Flexible Venues
+                Flexible Spaces
               </h3>
 
               <p className="text-[#B8AFA5] text-sm leading-7">
-                Discover venues suitable for intimate
-                gatherings as well as larger wedding
-                celebrations.
+                Choose from venues suited for intimate
+                gatherings as well as larger celebrations.
               </p>
 
             </div>
-
 
             <div className="border border-[#2A2118] rounded-2xl p-7 bg-[#17110B]">
 
@@ -451,8 +417,7 @@ const Weddings = () => {
 
               <p className="text-[#B8AFA5] text-sm leading-7">
                 Let Effortless Events help you shortlist
-                the right wedding venue and plan your
-                celebration.
+                the right venue and plan your wedding.
               </p>
 
             </div>
@@ -463,10 +428,9 @@ const Weddings = () => {
 
       </section>
 
-
-      {/* =========================================
+      {/* =====================================================
           REVIEWS
-      ========================================= */}
+      ===================================================== */}
 
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-20">
 
@@ -493,10 +457,7 @@ const Weddings = () => {
 
       </section>
 
-
-      {/* =========================================
-          FOOTER
-      ========================================= */}
+      {/* FOOTER */}
 
       <Footer />
 
