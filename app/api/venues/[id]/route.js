@@ -1,11 +1,18 @@
 import { NextResponse } from "next/server";
-import { connectToDatabase } from "../../../lib/db";
+import { connectToDatabase } from "../../../../lib/db";
 
 export async function GET(req, { params }) {
   let db;
 
   try {
-    const { id } = await params;
+    /*
+     * ==========================================
+     * GET VENUE ID
+     * ==========================================
+     */
+
+    const resolvedParams = await params;
+    const id = resolvedParams?.id;
 
     if (!id) {
       return NextResponse.json(
@@ -20,13 +27,17 @@ export async function GET(req, { params }) {
     }
 
     /*
-     * CONNECT TO EXISTING MYSQL DATABASE
+     * ==========================================
+     * CONNECT TO MYSQL
+     * ==========================================
      */
 
     db = await connectToDatabase();
 
     /*
-     * FETCH VENUE
+     * ==========================================
+     * FETCH FARMHOUSE
+     * ==========================================
      */
 
     const query = `
@@ -57,7 +68,9 @@ export async function GET(req, { params }) {
     const [rows] = await db.query(query, [id]);
 
     /*
-     * VENUE NOT FOUND
+     * ==========================================
+     * CHECK VENUE
+     * ==========================================
      */
 
     if (!rows || rows.length === 0) {
@@ -75,7 +88,9 @@ export async function GET(req, { params }) {
     const row = rows[0];
 
     /*
+     * ==========================================
      * MAIN IMAGE
+     * ==========================================
      */
 
     const mainImage = row.image
@@ -85,10 +100,12 @@ export async function GET(req, { params }) {
       : null;
 
     /*
+     * ==========================================
      * GALLERY IMAGES
+     * ==========================================
      */
 
-    const images = row.images_list
+    const galleryImages = row.images_list
       ? String(row.images_list)
           .split("|||")
           .map((img) => img.trim())
@@ -102,20 +119,23 @@ export async function GET(req, { params }) {
       : [];
 
     /*
-     * COMBINE MAIN IMAGE + GALLERY IMAGES
+     * ==========================================
+     * COMBINE IMAGES
+     * ==========================================
      */
 
     const allImages = [
       ...(mainImage ? [mainImage] : []),
-      ...images,
+      ...galleryImages,
     ].filter(
       (image, index, array) =>
-        image &&
-        array.indexOf(image) === index
+        image && array.indexOf(image) === index
     );
 
     /*
+     * ==========================================
      * FORMAT VENUE
+     * ==========================================
      */
 
     const venue = {
@@ -129,7 +149,7 @@ export async function GET(req, { params }) {
         row.product_category || "",
 
       category_name:
-        row.category_name || "",
+        row.category_name || "Farm Houses",
 
       rating:
         row.rating || "5.0",
@@ -166,35 +186,64 @@ export async function GET(req, { params }) {
     };
 
     /*
-     * RETURN JSON
+     * ==========================================
+     * SUCCESS RESPONSE
+     * ==========================================
      */
 
     return NextResponse.json({
       success: true,
       venue,
     });
-
   } catch (error) {
-    console.error("=================================");
-    console.error("SINGLE VENUE MYSQL API ERROR");
-    console.error("=================================");
+    console.error(
+      "================================="
+    );
+
+    console.error(
+      "SINGLE VENUE MYSQL API ERROR"
+    );
+
+    console.error(
+      "================================="
+    );
+
     console.error(error);
-    console.error("Message:", error?.message);
-    console.error("Code:", error?.code);
-    console.error("SQL State:", error?.sqlState);
-    console.error("=================================");
+
+    console.error(
+      "Message:",
+      error?.message
+    );
+
+    console.error(
+      "Code:",
+      error?.code
+    );
+
+    console.error(
+      "SQL State:",
+      error?.sqlState
+    );
+
+    console.error(
+      "================================="
+    );
 
     return NextResponse.json(
       {
         success: false,
-        error: "Unable to load farmhouse",
+        error:
+          "Unable to load farmhouse",
       },
       {
         status: 500,
       }
     );
-
   } finally {
+    /*
+     * Close database connection
+     */
+
     if (db) {
       try {
         await db.end();
