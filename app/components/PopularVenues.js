@@ -14,8 +14,8 @@ const PopularVenues = () => {
         setLoading(true);
 
         const response = await fetch(
-          "/api/farmhouses?limit=6&page=1",
-          {
+  "/api/farmhouses?categoryId=1&limit=6&page=1"
+);
             cache: "no-store",
           }
         );
