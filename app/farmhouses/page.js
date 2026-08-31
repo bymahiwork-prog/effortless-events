@@ -44,7 +44,7 @@ const Farms = () => {
       setVenues([]);
 
       setError(
-        "We&apos;re unable to load the farmhouses right now. Please try again."
+       "We're unable to load the farmhouses right now. Please try again."
       );
     } finally {
       setLoading(false);
