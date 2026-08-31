@@ -34,8 +34,6 @@ export async function GET(req) {
     ).trim();
 
     const categoryId = "1";
-      searchParams.get("categoryId") || "1"
-    ).trim();
 
     const offset = (page - 1) * limit;
 
