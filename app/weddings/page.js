@@ -135,13 +135,12 @@ const Weddings = () => {
 
             <div className="mt-8 flex flex-wrap gap-4">
 
-              <a
-                href="#wedding-venues"
-                className="inline-flex items-center justify-center px-7 py-3 bg-[#C9A34A] text-[#0F0803] font-medium rounded-md hover:bg-[#D8B25B] transition"
-              >
-                Explore Wedding Venues
-              </a>
-
+              <Link
+  href={`/weddings/${venue.id}`}
+  className="block w-full text-center border border-[#C9A34A] text-[#C9A34A] py-3 rounded-md font-medium hover:bg-[#C9A34A] hover:text-[#0F0803] transition"
+>
+  View Details
+</Link>
               <Link
                 href="/"
                 className="inline-flex items-center justify-center px-7 py-3 border border-[#3A2E22] text-white rounded-md hover:bg-[#17110B] transition"
