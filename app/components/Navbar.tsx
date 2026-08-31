@@ -44,8 +44,8 @@ const Navbar = ({ variant = "transparent" }) => {
       href: "/apartments",
     },
     {
-      name: "Wedding Venues",
-      href: "/weddings",
+     name: "Wedding Venues",
+    href: "/weddings",
     },
   ];
 
