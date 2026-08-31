@@ -83,7 +83,7 @@ const Weddings = () => {
 
             <p className="text-[#B8AFA5] mt-3">
               Please wait while we load our latest
-              wedding venue listings.
+              wedding listings.
             </p>
 
           </div>
@@ -129,8 +129,8 @@ const Weddings = () => {
             <p className="text-[#D4C7B8] text-base md:text-lg leading-8 mt-6 max-w-3xl">
               Discover beautiful wedding venues for
               intimate ceremonies, grand celebrations,
-              receptions, engagement functions and
-              unforgettable wedding experiences.
+              receptions, engagements and unforgettable
+              wedding experiences.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -385,7 +385,7 @@ const Weddings = () => {
 
 
       {/* =========================================
-          WHY CHOOSE WEDDING VENUES
+          WHY WEDDING VENUES
       ========================================= */}
 
       <section className="border-t border-[#2A2118] bg-[#120B05]">
@@ -405,8 +405,8 @@ const Weddings = () => {
             <p className="text-[#B8AFA5] leading-8 mt-5">
               From intimate ceremonies to grand wedding
               celebrations, our wedding venue collection
-              gives you the flexibility, space and
-              ambience to create your special day your way.
+              gives you the flexibility, space and ambience
+              to create your special day your way.
             </p>
 
           </div>
@@ -482,7 +482,6 @@ const Weddings = () => {
           </h2>
 
         </div>
-
 
         <div className="w-full">
 
