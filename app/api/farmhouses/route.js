@@ -33,7 +33,7 @@ export async function GET(req) {
       searchParams.get("search") || ""
     ).trim();
 
-    const categoryId = (
+    const categoryId = "1";
       searchParams.get("categoryId") || "1"
     ).trim();
 
