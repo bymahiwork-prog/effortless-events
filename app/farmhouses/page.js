@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const Farms = () => {
   const [venues, setVenues] = useState([]);
@@ -91,6 +93,10 @@ const Farms = () => {
   if (loading) {
     return (
       <main className="min-h-screen bg-[#0F0803] text-white">
+
+        {/* NAVBAR */}
+        <Navbar variant="transparent" />
+
         <div className="max-w-7xl mx-auto px-6 py-32">
 
           <div className="text-center">
@@ -109,12 +115,19 @@ const Farms = () => {
           </div>
 
         </div>
+
+        {/* FOOTER */}
+        <Footer />
+
       </main>
     );
   }
 
   return (
     <main className="min-h-screen bg-[#0F0803] text-white">
+
+      {/* NAVBAR */}
+      <Navbar variant="transparent" />
 
       {/* HERO */}
       <section className="relative overflow-hidden">
@@ -331,12 +344,13 @@ const Farms = () => {
                       "Discover this beautiful farmhouse with Effortless Events."}
                   </p>
 
+                  {/* VIEW DETAILS */}
                   <Link
-  href={`/farmhouses/${venue.id}`}
-  className="block w-full text-center border border-[#C9A34A] text-[#C9A34A] py-3 rounded-md font-medium hover:bg-[#C9A34A] hover:text-[#0F0803] transition"
->
-  View Details
-</Link>
+                    href={`/farmhouses/${venue.id}`}
+                    className="block w-full text-center border border-[#C9A34A] text-[#C9A34A] py-3 rounded-md font-medium hover:bg-[#C9A34A] hover:text-[#0F0803] transition"
+                  >
+                    View Details
+                  </Link>
 
                 </div>
 
@@ -447,6 +461,9 @@ const Farms = () => {
         </div>
 
       </section>
+
+      {/* FOOTER */}
+      <Footer />
 
     </main>
   );
