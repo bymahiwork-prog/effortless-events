@@ -14,10 +14,7 @@ const PopularVenues = () => {
         setLoading(true);
 
         const response = await fetch(
-  "/api/farmhouses?categoryId=1&limit=6&page=1"
-);
-            cache: "no-store",
-          }
+          "/api/farmhouses?categoryId=1&limit=6&page=1"
         );
 
         if (!response.ok) {
@@ -26,20 +23,13 @@ const PopularVenues = () => {
 
         const data = await response.json();
 
-        if (
-          data?.success &&
-          Array.isArray(data?.products)
-        ) {
+        if (data?.success && Array.isArray(data.products)) {
           setVenues(data.products);
         } else {
           setVenues([]);
         }
       } catch (error) {
-        console.error(
-          "Popular venues error:",
-          error
-        );
-
+        console.error("Popular venues error:", error);
         setVenues([]);
       } finally {
         setLoading(false);
@@ -51,27 +41,27 @@ const PopularVenues = () => {
 
   const getVenueName = (venue) => {
     return (
-      venue?.product_name ||
-      venue?.name ||
-      venue?.title ||
+      venue.product_name ||
+      venue.name ||
+      venue.title ||
       "Farmhouse"
     );
   };
 
   const getVenueLocation = (venue) => {
     return (
-      venue?.product_location ||
-      venue?.location ||
-      venue?.city ||
+      venue.product_location ||
+      venue.location ||
+      venue.city ||
       "Delhi NCR"
     );
   };
 
   const getVenuePrice = (venue) => {
     const price =
-      venue?.product_price ||
-      venue?.price ||
-      venue?.startingPrice ||
+      venue.product_price ||
+      venue.price ||
+      venue.startingPrice ||
       "";
 
     if (!price) {
@@ -82,10 +72,7 @@ const PopularVenues = () => {
       String(price).replace(/[^0-9.]/g, "")
     );
 
-    if (
-      Number.isFinite(numericPrice) &&
-      numericPrice > 0
-    ) {
+    if (Number.isFinite(numericPrice) && numericPrice > 0) {
       return numericPrice.toLocaleString("en-IN");
     }
 
@@ -94,14 +81,13 @@ const PopularVenues = () => {
 
   const getVenueImage = (venue) => {
     if (
-      Array.isArray(venue?.images) &&
-      venue.images.length > 0 &&
-      venue.images[0]
+      Array.isArray(venue.images) &&
+      venue.images.length > 0
     ) {
       return venue.images[0];
     }
 
-    if (venue?.image) {
+    if (venue.image) {
       return venue.image;
     }
 
@@ -109,17 +95,12 @@ const PopularVenues = () => {
   };
 
   const getVenueRating = (venue) => {
-    return venue?.rating || "5.0";
+    return venue.rating || "5.0";
   };
-
-  /*
-   * LOADING STATE
-   */
 
   if (loading) {
     return (
       <section className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8 mt-16 mb-16">
-
         <div className="mb-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-[#071a33]">
             Popular Venues
@@ -131,7 +112,6 @@ const PopularVenues = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
           {[1, 2, 3, 4, 5, 6].map((item) => (
             <div
               key={item}
@@ -140,34 +120,22 @@ const PopularVenues = () => {
               <div className="h-56 bg-gray-200" />
 
               <div className="p-5">
-
                 <div className="h-5 bg-gray-200 rounded w-3/4 mb-3" />
 
                 <div className="h-4 bg-gray-200 rounded w-1/2 mb-5" />
 
                 <div className="h-4 bg-gray-200 rounded w-2/3" />
-
               </div>
             </div>
           ))}
-
         </div>
-
       </section>
     );
   }
 
-  /*
-   * NO VENUES
-   */
-
   if (!venues.length) {
     return null;
   }
-
-  /*
-   * POPULAR VENUES
-   */
 
   return (
     <section className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8 mt-16 mb-16">
@@ -177,7 +145,6 @@ const PopularVenues = () => {
       <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
 
         <div>
-
           <h2 className="text-3xl sm:text-4xl font-bold text-[#071a33]">
             Popular Venues
           </h2>
@@ -185,7 +152,6 @@ const PopularVenues = () => {
           <p className="text-gray-600 mt-2">
             Explore some of our most popular farmhouse venues.
           </p>
-
         </div>
 
         <Link
@@ -203,20 +169,11 @@ const PopularVenues = () => {
 
         {venues.map((venue) => {
 
-          const venueName =
-            getVenueName(venue);
-
-          const venueLocation =
-            getVenueLocation(venue);
-
-          const venueImage =
-            getVenueImage(venue);
-
-          const venuePrice =
-            getVenuePrice(venue);
-
-          const venueRating =
-            getVenueRating(venue);
+          const venueName = getVenueName(venue);
+          const venueLocation = getVenueLocation(venue);
+          const venueImage = getVenueImage(venue);
+          const venuePrice = getVenuePrice(venue);
+          const venueRating = getVenueRating(venue);
 
           return (
             <Link
@@ -236,10 +193,6 @@ const PopularVenues = () => {
                     alt={venueName}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
-                    onError={(event) => {
-                      event.currentTarget.src =
-                        "/placeholder-farmhouse.jpg";
-                    }}
                   />
 
                   {/* RATING */}
@@ -261,8 +214,6 @@ const PopularVenues = () => {
                 {/* CONTENT */}
 
                 <div className="p-5">
-
-                  {/* NAME */}
 
                   <h3 className="text-lg sm:text-xl font-semibold text-[#071a33] line-clamp-1 group-hover:text-[#d4af37] transition-colors">
                     {venueName}
