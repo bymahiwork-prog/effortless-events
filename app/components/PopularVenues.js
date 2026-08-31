@@ -14,7 +14,10 @@ const PopularVenues = () => {
         setLoading(true);
 
         const response = await fetch(
-          "/api/farmhouses?categoryId=1&limit=6&page=1"
+          "/api/farmhouses?limit=6&page=1",
+          {
+            cache: "no-store",
+          }
         );
 
         if (!response.ok) {
@@ -23,13 +26,20 @@ const PopularVenues = () => {
 
         const data = await response.json();
 
-        if (data?.success && Array.isArray(data.products)) {
+        if (
+          data?.success &&
+          Array.isArray(data.products)
+        ) {
           setVenues(data.products);
         } else {
           setVenues([]);
         }
       } catch (error) {
-        console.error("Popular venues error:", error);
+        console.error(
+          "Popular venues error:",
+          error
+        );
+
         setVenues([]);
       } finally {
         setLoading(false);
@@ -41,27 +51,27 @@ const PopularVenues = () => {
 
   const getVenueName = (venue) => {
     return (
-      venue.product_name ||
-      venue.name ||
-      venue.title ||
+      venue?.product_name ||
+      venue?.name ||
+      venue?.title ||
       "Farmhouse"
     );
   };
 
   const getVenueLocation = (venue) => {
     return (
-      venue.product_location ||
-      venue.location ||
-      venue.city ||
+      venue?.product_location ||
+      venue?.location ||
+      venue?.city ||
       "Delhi NCR"
     );
   };
 
   const getVenuePrice = (venue) => {
     const price =
-      venue.product_price ||
-      venue.price ||
-      venue.startingPrice ||
+      venue?.product_price ||
+      venue?.price ||
+      venue?.startingPrice ||
       "";
 
     if (!price) {
@@ -72,22 +82,25 @@ const PopularVenues = () => {
       String(price).replace(/[^0-9.]/g, "")
     );
 
-    if (Number.isFinite(numericPrice) && numericPrice > 0) {
+    if (
+      Number.isFinite(numericPrice) &&
+      numericPrice > 0
+    ) {
       return numericPrice.toLocaleString("en-IN");
     }
 
-    return price;
+    return String(price).replace(/^₹/, "");
   };
 
   const getVenueImage = (venue) => {
     if (
-      Array.isArray(venue.images) &&
+      Array.isArray(venue?.images) &&
       venue.images.length > 0
     ) {
       return venue.images[0];
     }
 
-    if (venue.image) {
+    if (venue?.image) {
       return venue.image;
     }
 
@@ -95,7 +108,7 @@ const PopularVenues = () => {
   };
 
   const getVenueRating = (venue) => {
-    return venue.rating || "5.0";
+    return venue?.rating || "5.0";
   };
 
   if (loading) {
@@ -107,7 +120,8 @@ const PopularVenues = () => {
           </h2>
 
           <p className="text-gray-600 mt-2">
-            Explore some of our most popular farmhouse venues.
+            Explore some of our most popular farmhouse
+            venues.
           </p>
         </div>
 
@@ -150,7 +164,8 @@ const PopularVenues = () => {
           </h2>
 
           <p className="text-gray-600 mt-2">
-            Explore some of our most popular farmhouse venues.
+            Explore some of our most popular farmhouse
+            venues.
           </p>
         </div>
 
@@ -169,11 +184,20 @@ const PopularVenues = () => {
 
         {venues.map((venue) => {
 
-          const venueName = getVenueName(venue);
-          const venueLocation = getVenueLocation(venue);
-          const venueImage = getVenueImage(venue);
-          const venuePrice = getVenuePrice(venue);
-          const venueRating = getVenueRating(venue);
+          const venueName =
+            getVenueName(venue);
+
+          const venueLocation =
+            getVenueLocation(venue);
+
+          const venueImage =
+            getVenueImage(venue);
+
+          const venuePrice =
+            getVenuePrice(venue);
+
+          const venueRating =
+            getVenueRating(venue);
 
           return (
             <Link
@@ -193,6 +217,10 @@ const PopularVenues = () => {
                     alt={venueName}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
+                    onError={(event) => {
+                      event.currentTarget.src =
+                        "/placeholder-farmhouse.jpg";
+                    }}
                   />
 
                   {/* RATING */}
