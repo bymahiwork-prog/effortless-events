@@ -366,7 +366,7 @@ const Weddings = () => {
                   {/* VIEW DETAILS */}
 
                   <Link
-                    href={`/weddings/${venue.id}`}
+                    href={`/wedding/${venue.id}`}
                     className="block w-full text-center border border-[#C9A34A] text-[#C9A34A] py-3 rounded-md font-medium hover:bg-[#C9A34A] hover:text-[#0F0803] transition"
                   >
                     View Details
