@@ -1,110 +1,35 @@
 import { NextResponse } from "next/server";
-import { connectToDatabase } from "../../../lib/db";
+import { connectToDatabase } from "../../../../lib/db";
 
-export async function GET(req) {
+export async function GET(req, { params }) {
   let db;
 
   try {
-    const { searchParams } = new URL(req.url);
+    const { id } = await params;
 
-    const pageParam = parseInt(
-      searchParams.get("page") || "1",
-      10
-    );
-
-    const limitParam = parseInt(
-      searchParams.get("limit") || "9",
-      10
-    );
-
-    const page =
-      Number.isFinite(pageParam) && pageParam > 0
-        ? pageParam
-        : 1;
-
-    const limit =
-      Number.isFinite(limitParam) &&
-      limitParam > 0 &&
-      limitParam <= 100
-        ? limitParam
-        : 9;
-
-    const search = (
-      searchParams.get("search") || ""
-    ).trim();
-
-    const categoryId = (
-      searchParams.get("categoryId") || ""
-    ).trim();
-
-    const offset = (page - 1) * limit;
-
-    /*
-     * CONNECT TO EXISTING MYSQL DATABASE
-     */
-    db = await connectToDatabase();
-
-    /*
-     * WHERE CONDITIONS
-     */
-    let whereClause = "WHERE p.status = 1";
-
-    const queryParams = [];
-
-    /*
-     * SEARCH
-     */
-    if (search) {
-      whereClause += `
-        AND (
-          p.product_name LIKE ?
-          OR p.product_detail LIKE ?
-          OR p.product_location LIKE ?
-        )
-      `;
-
-      const searchTerm = `%${search}%`;
-
-      queryParams.push(
-        searchTerm,
-        searchTerm,
-        searchTerm
+    if (!id) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Venue ID is required",
+        },
+        {
+          status: 400,
+        }
       );
     }
 
     /*
-     * CATEGORY
+     * CONNECT TO EXISTING MYSQL DATABASE
      */
-    if (categoryId) {
-      whereClause += `
-        AND p.product_category = ?
-      `;
 
-      queryParams.push(categoryId);
-    }
+    db = await connectToDatabase();
 
     /*
-     * COUNT
+     * FETCH VENUE
      */
-    const countQuery = `
-      SELECT COUNT(DISTINCT p.id) AS total
-      FROM tbl_product p
-      ${whereClause}
-    `;
 
-    const [totalResult] = await db.query(
-      countQuery,
-      queryParams
-    );
-
-    const total = Number(
-      totalResult?.[0]?.total || 0
-    );
-
-    /*
-     * FETCH PRODUCTS
-     */
-    const selectQuery = `
+    const query = `
       SELECT
         p.*,
         c.category_name,
@@ -123,106 +48,135 @@ export async function GET(req) {
       LEFT JOIN tbl_category c
         ON p.product_category = c.id
 
-      ${whereClause}
+      WHERE p.id = ?
+        AND p.status = 1
 
-      ORDER BY p.id DESC
-
-      LIMIT ${limit}
-      OFFSET ${offset}
+      LIMIT 1
     `;
 
-    const [rows] = await db.query(
-      selectQuery,
-      queryParams
+    const [rows] = await db.query(query, [id]);
+
+    /*
+     * VENUE NOT FOUND
+     */
+
+    if (!rows || rows.length === 0) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Farmhouse not found",
+        },
+        {
+          status: 404,
+        }
+      );
+    }
+
+    const row = rows[0];
+
+    /*
+     * MAIN IMAGE
+     */
+
+    const mainImage = row.image
+      ? `https://admin.effortlessevents.in/admin/${String(
+          row.image
+        ).replace(/^\/+/, "")}`
+      : null;
+
+    /*
+     * GALLERY IMAGES
+     */
+
+    const images = row.images_list
+      ? String(row.images_list)
+          .split("|||")
+          .map((img) => img.trim())
+          .filter(Boolean)
+          .map(
+            (img) =>
+              `https://admin.effortlessevents.in/admin/${String(
+                img
+              ).replace(/^\/+/, "")}`
+          )
+      : [];
+
+    /*
+     * COMBINE MAIN IMAGE + GALLERY IMAGES
+     */
+
+    const allImages = [
+      ...(mainImage ? [mainImage] : []),
+      ...images,
+    ].filter(
+      (image, index, array) =>
+        image &&
+        array.indexOf(image) === index
     );
 
     /*
-     * FORMAT PRODUCTS
+     * FORMAT VENUE
      */
-    const products = (rows || []).map((row) => {
-      const mainImage = row.image
-        ? `https://admin.effortlessevents.in/admin/${String(
-            row.image
-          ).replace(/^\/+/, "")}`
-        : null;
 
-      const images = row.images_list
-        ? String(row.images_list)
-            .split("|||")
-            .map((img) => img.trim())
-            .filter(Boolean)
-            .map(
-              (img) =>
-                `https://admin.effortlessevents.in/admin/${String(
-                  img
-                ).replace(/^\/+/, "")}`
-            )
-        : [];
+    const venue = {
+      id: row.id,
 
-      const allImages =
-        images.length > 0
-          ? images
-          : mainImage
-          ? [mainImage]
-          : [];
+      image: mainImage,
 
-      return {
-        id: row.id,
+      images: allImages,
 
-        image: mainImage,
+      product_category:
+        row.product_category || "",
 
-        images: allImages,
+      category_name:
+        row.category_name || "",
 
-        product_category:
-          row.product_category,
+      rating:
+        row.rating || "5.0",
 
-        rating:
-          row.rating || "5.0",
+      product_name:
+        row.product_name || "Farmhouse",
 
-        category_name:
-          row.category_name || "",
+      product_location:
+        row.product_location || "",
 
-        product_name:
-          row.product_name || "Venue",
+      product_address:
+        row.product_address || "",
 
-        product_location:
-          row.product_location || "",
+      product_price:
+        row.product_price || "",
 
-        product_address:
-          row.product_address || "",
+      product_number:
+        row.product_number || "",
 
-        product_price:
-          row.product_price || "",
+      product_detail:
+        row.product_detail || "",
 
-        product_number:
-          row.product_number || "",
+      product_map:
+        row.product_map || "",
 
-        product_detail:
-          row.product_detail || "",
+      status:
+        row.status,
 
-        status:
-          row.status,
+      created_date:
+        row.created_date || "",
 
-        created_date:
-          row.created_date || "",
+      last_update:
+        row.last_update || "",
+    };
 
-        last_update:
-          row.last_update || "",
-      };
-    });
+    /*
+     * RETURN JSON
+     */
 
     return NextResponse.json({
       success: true,
-      page,
-      limit,
-      total,
-      totalPages: Math.ceil(total / limit),
-      products,
+      venue,
     });
 
   } catch (error) {
     console.error("=================================");
-    console.error("VENUES MYSQL API ERROR");
+    console.error("SINGLE VENUE MYSQL API ERROR");
     console.error("=================================");
     console.error(error);
     console.error("Message:", error?.message);
@@ -233,13 +187,13 @@ export async function GET(req) {
     return NextResponse.json(
       {
         success: false,
-        error: "Unable to load venues",
-        products: [],
+        error: "Unable to load farmhouse",
       },
       {
         status: 500,
       }
     );
+
   } finally {
     if (db) {
       try {
