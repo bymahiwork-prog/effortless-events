@@ -77,22 +77,22 @@ const EventSpacePage = () => {
     <div className="hidden lg:grid grid-cols-2 gap-4 max-w-xl ml-auto">
       {[
         {
-          src: "/about2.png",
+          src: "/event-gallery-1.jpeg",
           alt: "Luxury Event Setup",
           offset: "mt-0",
         },
         {
-          src: "/about3.png",
+          src: "/event-gallery-2.jpeg",
           alt: "Outdoor Venue",
           offset: "mt-3",
         },
         {
-          src: "/about4.png",
+          src: "/event-gallery-3.jpeg",
           alt: "Wedding Mandap",
           offset: "-mt-1",
         },
         {
-          src: "/about5.png",
+          src: "/event-gallery-4.jpeg",
           alt: "Wedding Decor",
           offset: "mt-2",
         },
