@@ -16,7 +16,7 @@ const Farms = () => {
       setError("");
 
       const response = await fetch(
-        "/api/venues?categoryId=1&limit=100",
+        "/api/farmhouses?categoryId=1&limit=100",
         {
           cache: "no-store",
         }
