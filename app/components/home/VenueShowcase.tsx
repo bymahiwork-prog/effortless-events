@@ -8,7 +8,14 @@ type Venue = {
   product_name?: string;
   product_location?: string;
   product_detail?: string;
-  main_image?: string;
+  product_address?: string;
+  product_price?: string;
+  product_number?: string;
+  product_category?: string | number;
+  category_name?: string;
+  rating?: string;
+  image?: string;
+  images?: string[];
 };
 
 const SkeletonCard = () => {
@@ -37,7 +44,10 @@ const VenueShowcase = () => {
 
   /*
    * ============================================================
-   * FETCH FEATURED VENUES
+   * FETCH WEDDING VENUES
+   *
+   * Category ID:
+   * 3 = Wedding Venues
    * ============================================================
    */
 
@@ -47,37 +57,52 @@ const VenueShowcase = () => {
         setLoading(true);
         setError("");
 
-        const response = await fetch("/api/featured-venues");
+        const response = await fetch(
+          "/api/venues?categoryId=3&page=1&limit=50",
+          {
+            cache: "no-store",
+          }
+        );
 
         if (!response.ok) {
-          throw new Error("Failed to fetch venues");
+          throw new Error(
+            `Failed to fetch wedding venues (${response.status})`
+          );
         }
 
         const data = await response.json();
 
-        const products: Venue[] = data.products || [];
+        if (!data.success) {
+          throw new Error(
+            data.error || "Unable to load wedding venues"
+          );
+        }
+
+        const products: Venue[] = Array.isArray(data.products)
+          ? data.products
+          : [];
 
         /*
-         * Remove duplicate venue names
+         * Remove duplicate venue IDs
          */
 
         const uniqueProducts = products.filter(
           (venue, index, self) =>
             index ===
             self.findIndex(
-              (item) =>
-                item.product_name === venue.product_name
+              (item) => String(item.id) === String(venue.id)
             )
         );
 
         setVenues(uniqueProducts);
+        setCurrentSlide(0);
       } catch (err) {
-        console.error("Venue Showcase Error:", err);
+        console.error("Wedding Venue Showcase Error:", err);
 
         if (err instanceof Error) {
           setError(err.message);
         } else {
-          setError("Unable to load venues");
+          setError("Unable to load wedding venues");
         }
       } finally {
         setLoading(false);
@@ -86,7 +111,6 @@ const VenueShowcase = () => {
 
     fetchVenues();
   }, []);
-
 
   /*
    * ============================================================
@@ -114,7 +138,6 @@ const VenueShowcase = () => {
     };
   }, []);
 
-
   /*
    * ============================================================
    * RESET SLIDE WHEN SCREEN SIZE CHANGES
@@ -130,8 +153,11 @@ const VenueShowcase = () => {
     if (currentSlide > maxIndex) {
       setCurrentSlide(maxIndex);
     }
-  }, [slidesToShow, venues.length, currentSlide]);
-
+  }, [
+    slidesToShow,
+    venues.length,
+    currentSlide,
+  ]);
 
   /*
    * ============================================================
@@ -164,7 +190,6 @@ const VenueShowcase = () => {
     });
   };
 
-
   /*
    * ============================================================
    * VENUE CLICK
@@ -175,17 +200,15 @@ const VenueShowcase = () => {
     router.push(`/venues/${venue.id}`);
   };
 
-
   /*
    * ============================================================
-   * VIEW ALL VENUES
+   * VIEW ALL WEDDING VENUES
    * ============================================================
    */
 
   const handleViewAllVenues = () => {
-    router.push("/search");
+    router.push("/weddings");
   };
-
 
   /*
    * ============================================================
@@ -205,12 +228,30 @@ const VenueShowcase = () => {
     return "w-[calc(33.333%-16px)]";
   };
 
+  /*
+   * ============================================================
+   * GET VENUE IMAGE
+   * ============================================================
+   */
+
+  const getVenueImage = (venue: Venue) => {
+    if (venue.image) {
+      return venue.image;
+    }
+
+    if (
+      Array.isArray(venue.images) &&
+      venue.images.length > 0
+    ) {
+      return venue.images[0];
+    }
+
+    return null;
+  };
 
   return (
     <section className="bg-[#0F0803] py-20 md:py-28">
-
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-
 
         {/* =====================================================
             SECTION HEADER
@@ -221,22 +262,21 @@ const VenueShowcase = () => {
           <div className="max-w-4xl">
 
             <p className="text-sm uppercase tracking-[0.18em] text-[#C9A34A] font-medium mb-4">
-              Venue Showcase
+              Wedding Venue Showcase
             </p>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium text-white leading-tight">
-              50+ Venues Across Delhi NCR
+              Beautiful Wedding Venues Across Delhi NCR
             </h2>
 
           </div>
-
 
           <button
             type="button"
             onClick={handleViewAllVenues}
             className="w-fit inline-flex items-center gap-2 text-[#C9A34A] font-medium hover:text-[#D8B25B] transition-colors"
           >
-            Browse All Venues
+            Browse All Wedding Venues
 
             <span className="text-lg">
               →
@@ -244,7 +284,6 @@ const VenueShowcase = () => {
           </button>
 
         </div>
-
 
         {/* =====================================================
             CAROUSEL
@@ -264,7 +303,6 @@ const VenueShowcase = () => {
               }}
             >
 
-
               {/* =================================================
                   LOADING
               ================================================= */}
@@ -281,7 +319,6 @@ const VenueShowcase = () => {
                   </div>
                 ))}
 
-
               {/* =================================================
                   ERROR
               ================================================= */}
@@ -290,12 +327,11 @@ const VenueShowcase = () => {
                 <div className="w-full py-16 text-center">
 
                   <p className="text-red-400 text-sm md:text-base">
-                    Error loading venues: {error}
+                    Error loading wedding venues: {error}
                   </p>
 
                 </div>
               )}
-
 
               {/* =================================================
                   VENUE CARDS
@@ -303,93 +339,106 @@ const VenueShowcase = () => {
 
               {!loading &&
                 !error &&
-                venues.map((venue) => (
+                venues.map((venue) => {
+                  const venueImage = getVenueImage(venue);
 
-                  <div
-                    key={venue.id}
-                    className={`flex-shrink-0 ${getCardWidth()}`}
-                  >
-
-                    <article
-                      onClick={() =>
-                        handleVenueClick(venue)
-                      }
-                      className="bg-[#17110B] rounded-[28px] overflow-hidden border border-[#2A2118] cursor-pointer group h-full"
+                  return (
+                    <div
+                      key={venue.id}
+                      className={`flex-shrink-0 ${getCardWidth()}`}
                     >
 
+                      <article
+                        onClick={() =>
+                          handleVenueClick(venue)
+                        }
+                        className="bg-[#17110B] rounded-[28px] overflow-hidden border border-[#2A2118] cursor-pointer group h-full"
+                      >
 
-                      {/* =========================================
-                          IMAGE
-                      ========================================= */}
+                        {/* =====================================
+                            IMAGE
+                        ===================================== */}
 
-                      <div className="relative h-64 sm:h-72 overflow-hidden bg-[#21180F]">
+                        <div className="relative h-64 sm:h-72 overflow-hidden bg-[#21180F]">
 
-                        {venue.main_image ? (
+                          {venueImage ? (
 
-                          <img
-                            src={`https://admin.effortlessevents.in/admin/${venue.main_image}`}
-                            alt={
-                              venue.product_name ||
-                              "Effortless Events venue"
-                            }
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                            loading="lazy"
-                          />
+                            <img
+                              src={venueImage}
+                              alt={
+                                venue.product_name ||
+                                "Wedding venue"
+                              }
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                              loading="lazy"
+                            />
 
-                        ) : (
+                          ) : (
 
-                          <div className="w-full h-full flex items-center justify-center text-white/40 text-sm">
-                            Venue image unavailable
+                            <div className="w-full h-full flex items-center justify-center text-white/40 text-sm">
+                              Venue image unavailable
+                            </div>
+
+                          )}
+
+                          {/* Image Gradient */}
+
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#17110B] via-transparent to-transparent pointer-events-none" />
+
+                        </div>
+
+                        {/* =====================================
+                            CONTENT
+                        ===================================== */}
+
+                        <div className="p-6">
+
+                          <div className="flex items-center justify-between gap-3 mb-3">
+
+                            <h3 className="text-2xl sm:text-3xl font-serif text-white">
+                              {venue.product_name ||
+                                "Wedding Venue"}
+                            </h3>
+
+                            {venue.rating && (
+                              <div className="flex-shrink-0 flex items-center gap-1 text-[#C9A34A] text-sm">
+                                <span>★</span>
+                                <span>
+                                  {venue.rating}
+                                </span>
+                              </div>
+                            )}
+
                           </div>
 
-                        )}
+                          {venue.product_location && (
+                            <p className="text-[#C9A34A] text-sm mb-3">
+                              {venue.product_location}
+                            </p>
+                          )}
 
+                          <p className="text-[#D4C7B8] leading-7 line-clamp-4 text-sm sm:text-base">
 
-                        {/* Image Gradient */}
+                            {venue.product_detail
+                              ? venue.product_detail.slice(
+                                  0,
+                                  150
+                                )
+                              : "Discover this beautiful wedding venue with Effortless Events."}
 
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#17110B] via-transparent to-transparent pointer-events-none" />
+                          </p>
 
-                      </div>
+                        </div>
 
+                      </article>
 
-                      {/* =========================================
-                          CONTENT
-                      ========================================= */}
-
-                      <div className="p-6">
-
-                        <h3 className="text-2xl sm:text-3xl font-serif text-white mb-3">
-
-                          {venue.product_location ||
-                            venue.product_name ||
-                            "Effortless Venue"}
-
-                        </h3>
-
-
-                        <p className="text-[#D4C7B8] leading-7 line-clamp-4 text-sm sm:text-base">
-
-                          {venue.product_detail
-                            ? venue.product_detail.slice(
-                                0,
-                                150
-                              )
-                            : "Discover this beautiful venue with Effortless Events."}
-
-                        </p>
-
-                      </div>
-
-                    </article>
-
-                  </div>
-
-                ))}
+                    </div>
+                  );
+                })}
 
             </div>
 
           </div>
-
 
           {/* =====================================================
               NAVIGATION
@@ -401,14 +450,13 @@ const VenueShowcase = () => {
 
               <div className="flex items-center justify-center gap-4 mt-10">
 
-
                 {/* Previous */}
 
                 <button
                   type="button"
                   onClick={previousSlide}
                   className="w-12 h-12 rounded-full border border-[#3A2E22] bg-[#17110B] text-white flex items-center justify-center hover:bg-[#21180F] transition-colors"
-                  aria-label="Previous venue"
+                  aria-label="Previous wedding venue"
                 >
 
                   <svg
@@ -426,14 +474,13 @@ const VenueShowcase = () => {
 
                 </button>
 
-
                 {/* Next */}
 
                 <button
                   type="button"
                   onClick={nextSlide}
                   className="w-12 h-12 rounded-full border border-[#3A2E22] bg-[#17110B] text-white flex items-center justify-center hover:bg-[#21180F] transition-colors"
-                  aria-label="Next venue"
+                  aria-label="Next wedding venue"
                 >
 
                   <svg
@@ -452,9 +499,7 @@ const VenueShowcase = () => {
                 </button>
 
               </div>
-
             )}
-
 
           {/* =====================================================
               EMPTY STATE
@@ -467,17 +512,15 @@ const VenueShowcase = () => {
               <div className="py-16 text-center">
 
                 <p className="text-white/60">
-                  No featured venues available right now.
+                  No wedding venues available right now.
                 </p>
 
               </div>
-
             )}
 
         </div>
 
       </div>
-
     </section>
   );
 };
