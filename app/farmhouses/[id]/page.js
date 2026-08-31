@@ -1,1847 +1,687 @@
 "use client";
 
-import React, {
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
-
-import {
-  useParams,
-  useRouter,
-} from "next/navigation";
-
+import React, { useEffect, useState } from "react";
+import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
-
 import {
   ArrowLeft,
-  ArrowRight,
-  Calendar,
   CheckCircle2,
-  ChevronDown,
-  ChevronLeft,
-  ChevronRight,
-  Clock,
   MapPin,
   Share2,
-  Star,
-  UtensilsCrossed,
-  Wine,
-  Armchair,
-  ShowerHead,
-  Mic,
-  Car,
-  ClipboardList,
+  ChevronDown,
+  ChevronUp,
+  X,
 } from "lucide-react";
 
-import Navbar from "../../../components/Navbar";
-import Footer from "../../../components/Footer";
-
-
-/* =========================================================
-   TIME OPTIONS
-========================================================= */
-
-const TIME_OPTIONS = [
-  "12:00 am",
-  "12:30 am",
-  "1:00 am",
-  "1:30 am",
-  "2:00 am",
-  "2:30 am",
-  "3:00 am",
-  "3:30 am",
-  "4:00 am",
-  "4:30 am",
-  "5:00 am",
-  "5:30 am",
-  "6:00 am",
-  "6:30 am",
-  "7:00 am",
-  "7:30 am",
-  "8:00 am",
-  "8:30 am",
-  "9:00 am",
-  "9:30 am",
-  "10:00 am",
-  "10:30 am",
-  "11:00 am",
-  "11:30 am",
-  "12:00 pm",
-  "12:30 pm",
-  "1:00 pm",
-  "1:30 pm",
-  "2:00 pm",
-  "2:30 pm",
-  "3:00 pm",
-  "3:30 pm",
-  "4:00 pm",
-  "4:30 pm",
-  "5:00 pm",
-  "5:30 pm",
-  "6:00 pm",
-  "6:30 pm",
-  "7:00 pm",
-  "7:30 pm",
-  "8:00 pm",
-  "8:30 pm",
-  "9:00 pm",
-  "9:30 pm",
-  "10:00 pm",
-  "10:30 pm",
-  "11:00 pm",
-  "11:30 pm",
-];
-
-
-/* =========================================================
-   HELPER
-========================================================= */
-
-function getFirstValue(...values) {
-  for (const value of values) {
-    if (
-      value !== undefined &&
-      value !== null &&
-      String(value).trim() !== ""
-    ) {
-      return value;
-    }
-  }
-
-  return "";
-}
-
-
-/* =========================================================
-   IMAGE NORMALIZER
-========================================================= */
-
-function getImages(venue) {
-  if (!venue) {
-    return [];
-  }
-
-  let images = [];
-
-  /*
-   * Standard API response
-   */
-  if (Array.isArray(venue.images)) {
-    images = venue.images;
-  }
-
-  /*
-   * Other possible response formats
-   */
-  else if (Array.isArray(venue.product_images)) {
-    images = venue.product_images;
-  }
-
-  else if (Array.isArray(venue.productImages)) {
-    images = venue.productImages;
-  }
-
-  else if (Array.isArray(venue.gallery)) {
-    images = venue.gallery;
-  }
-
-  else if (Array.isArray(venue.photos)) {
-    images = venue.photos;
-  }
-
-
-  /*
-   * Images may sometimes arrive
-   * as a JSON string.
-   */
-  if (typeof venue.images === "string") {
-    try {
-      const parsed = JSON.parse(venue.images);
-
-      if (Array.isArray(parsed)) {
-        images = parsed;
-      }
-    } catch {
-      images = [venue.images];
-    }
-  }
-
-
-  /*
-   * Product images may also arrive
-   * as a JSON string.
-   */
-  if (
-    typeof venue.product_images === "string"
-  ) {
-    try {
-      const parsed = JSON.parse(
-        venue.product_images
-      );
-
-      if (Array.isArray(parsed)) {
-        images = parsed;
-      }
-    } catch {
-      images = [venue.product_images];
-    }
-  }
-
-
-  /*
-   * If no gallery images exist,
-   * use the main product image.
-   */
-  if (images.length === 0) {
-    const singleImage = getFirstValue(
-      venue.image,
-      venue.image_url,
-      venue.product_image,
-      venue.productImage,
-      venue.thumbnail
-    );
-
-    if (singleImage) {
-      images = [singleImage];
-    }
-  }
-
-
-  /*
-   * Convert image objects into URLs.
-   */
-  return images
-    .map((image) => {
-      if (typeof image === "string") {
-        return image;
-      }
-
-      if (
-        image &&
-        typeof image === "object"
-      ) {
-        return getFirstValue(
-          image.url,
-          image.src,
-          image.image_url,
-          image.image,
-          image.path
-        );
-      }
-
-      return "";
-    })
-    .filter(Boolean);
-}
-
-
-/* =========================================================
-   VENUE NORMALIZER
-========================================================= */
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 function normalizeVenue(rawVenue) {
-  if (!rawVenue) {
-    return null;
-  }
+  if (!rawVenue) return null;
 
   return {
     ...rawVenue,
 
+    id: rawVenue.id,
 
-    /*
-     * ID
-     */
-    id: getFirstValue(
-      rawVenue.id,
-      rawVenue._id,
-      rawVenue.product_id,
-      rawVenue.productId
-    ),
+    name:
+      rawVenue.product_name ||
+      rawVenue.name ||
+      rawVenue.title ||
+      rawVenue.venueName ||
+      "Farmhouse",
 
+    location:
+      rawVenue.product_location ||
+      rawVenue.location ||
+      rawVenue.city ||
+      "Delhi NCR",
 
-    /*
-     * PRODUCT NAME
-     */
-    product_name: getFirstValue(
-      rawVenue.product_name,
-      rawVenue.productName,
-      rawVenue.name,
-      rawVenue.title,
-      "Farmhouse"
-    ),
+    address:
+      rawVenue.product_address ||
+      rawVenue.address ||
+      "",
 
+    description:
+      rawVenue.product_detail ||
+      rawVenue.description ||
+      rawVenue.about ||
+      "A beautiful private farmhouse perfect for celebrations, parties, weddings and weekend gatherings.",
 
-    /*
-     * LOCATION
-     */
-    product_location: getFirstValue(
-      rawVenue.product_location,
-      rawVenue.productLocation,
-      rawVenue.location,
-      rawVenue.city,
-      rawVenue.area,
-      "Delhi NCR"
-    ),
+    price:
+      rawVenue.product_price ||
+      rawVenue.price ||
+      rawVenue.startingPrice ||
+      rawVenue.pricePerDay ||
+      rawVenue.rent ||
+      0,
 
+    image: rawVenue.image || null,
 
-    /*
-     * ADDRESS
-     */
-    product_address: getFirstValue(
-      rawVenue.product_address,
-      rawVenue.productAddress,
-      rawVenue.address,
-      ""
-    ),
+    images:
+      Array.isArray(rawVenue.images)
+        ? rawVenue.images
+        : rawVenue.image
+        ? [rawVenue.image]
+        : [],
 
+    rating:
+      rawVenue.rating || "5.0",
 
-    /*
-     * PRICE
-     */
-    product_price: getFirstValue(
-      rawVenue.product_price,
-      rawVenue.productPrice,
-      rawVenue.price,
-      rawVenue.starting_price,
-      rawVenue.startingPrice,
-      ""
-    ),
+    category:
+      rawVenue.category_name ||
+      rawVenue.category ||
+      "",
 
+    mapUrl:
+      rawVenue.mapUrl ||
+      rawVenue.map_url ||
+      rawVenue.product_map ||
+      rawVenue.location_map ||
+      "",
 
-    /*
-     * DESCRIPTION
-     */
-    product_detail: getFirstValue(
-      rawVenue.product_detail,
-      rawVenue.productDetail,
-      rawVenue.description,
-      rawVenue.details,
-      rawVenue.about,
-      "Discover this beautiful farmhouse with Effortless Events."
-    ),
+    discount:
+      rawVenue.discount || "",
 
-
-    /*
-     * CATEGORY
-     */
-    category_name: getFirstValue(
-      rawVenue.category_name,
-      rawVenue.categoryName,
-      rawVenue.category,
-      "Farm Houses"
-    ),
-
-
-    /*
-     * IMAGES
-     */
-    images: getImages(rawVenue),
-
-
-    /*
-     * RATING
-     */
-    rating: getFirstValue(
-      rawVenue.rating,
-      rawVenue.guest_rating,
-      rawVenue.guestRating,
-      rawVenue.average_rating,
-      rawVenue.averageRating,
-      "4.0"
-    ),
-
-
-    /*
-     * PHONE NUMBER
-     */
-    product_number: getFirstValue(
-      rawVenue.product_number,
-      rawVenue.productNumber,
-      rawVenue.phone,
-      rawVenue.mobile,
-      "917838008069"
-    ),
-
-
-    /*
-     * MAP URL
-     */
-    mapUrl: getFirstValue(
-      rawVenue.mapUrl,
-      rawVenue.map_url,
-      rawVenue.google_map,
-      rawVenue.googleMap,
-      ""
-    ),
+    discountPercent:
+      rawVenue.discountPercent ||
+      rawVenue.discount_percentage ||
+      "10%",
   };
 }
 
-
-/* =========================================================
-   LOADING SKELETON
-========================================================= */
-
-function VenueSkeleton() {
-  return (
-    <div className="min-h-screen bg-white">
-
-      <Navbar />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
-
-        <div className="animate-pulse">
-
-          <div className="h-8 bg-gray-200 rounded w-1/3 mb-3" />
-
-          <div className="h-4 bg-gray-200 rounded w-1/5 mb-8" />
-
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-
-            <div className="lg:col-span-2 h-[420px] bg-gray-200 rounded-xl" />
-
-            <div className="grid grid-cols-2 gap-4">
-
-              <div className="h-[200px] bg-gray-200 rounded-xl" />
-
-              <div className="h-[200px] bg-gray-200 rounded-xl" />
-
-              <div className="h-[200px] bg-gray-200 rounded-xl" />
-
-              <div className="h-[200px] bg-gray-200 rounded
-    /* =========================================================
-   ERROR STATE
-========================================================= */
-
-function VenueError({
-  message,
-  onBack,
-}) {
-  return (
-    <div className="min-h-screen bg-white">
-
-      <Navbar />
-
-      <div className="min-h-[70vh] flex items-center justify-center px-6">
-
-        <div className="text-center max-w-md">
-
-          <h1 className="text-3xl font-semibold text-gray-900 mb-4">
-            Unable to load farmhouse
-          </h1>
-
-          <p className="text-gray-500 mb-7">
-            {message ||
-              "The farmhouse information could not be found."}
-          </p>
-
-          <button
-            type="button"
-            onClick={onBack}
-            className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Go Back
-          </button>
-
-        </div>
-
-      </div>
-
-      <Footer />
-
-    </div>
-  );
-}
-
-
-/* =========================================================
-   COLLAPSIBLE INFORMATION SECTION
-========================================================= */
-
-function InfoSection({
-  title,
-  icon,
-  sectionKey,
-  expandedSections,
-  toggleSection,
-  children,
-}) {
-  const isOpen =
-    Boolean(expandedSections[sectionKey]);
-
-  return (
-    <div className="border border-gray-200 rounded-2xl overflow-hidden bg-white">
-
-      <button
-        type="button"
-        onClick={() =>
-          toggleSection(sectionKey)
-        }
-        className="w-full flex items-center justify-between p-4 sm:p-5 text-left hover:bg-gray-50 transition-colors"
-      >
-
-        <div className="flex items-center gap-3">
-
-          <div className="w-6 h-6 flex items-center justify-center text-black">
-            {icon}
-          </div>
-
-          <span className="font-medium text-gray-800 text-sm sm:text-base">
-            {title}
-          </span>
-
-        </div>
-
-        <ChevronDown
-          className={`w-5 h-5 text-gray-700 transition-transform duration-200 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        />
-
-      </button>
-
-      {isOpen && (
-        <div className="px-4 sm:px-5 pb-5 text-sm text-gray-600 leading-7">
-          {children}
-        </div>
-      )}
-
-    </div>
-  );
-}
-
-
-/* =========================================================
-   MAIN PAGE
-========================================================= */
+const defaultAmenities = [
+  {
+    title: "Food and Beverage",
+    icon: "🍽️",
+    description:
+      "Full catering services are available with a wide range of local and international cuisine options. Catering arrangements can be planned according to the event type, guest count, menu preferences, and specific requirements of the celebration.",
+  },
+  {
+    title: "Alcoholic and Beverage",
+    icon: "🍷",
+    description:
+      "Alcoholic and beverage services can be arranged according to the venue&apos;s policies and event requirements. Beverage options may include wines, beers, spirits, mocktails, soft drinks, and other refreshments.",
+  },
+  {
+    title: "Furniture",
+    icon: "🪑",
+    description:
+      "Furniture arrangements are available for different types of events and celebrations. Tables, chairs, seating arrangements, and other required furniture can be organized according to the event layout and guest count.",
+  },
+  {
+    title: "Restrooms",
+    icon: "🚻",
+    description:
+      "Clean and convenient restroom facilities are available for guests throughout the event. The facilities are designed to support gatherings of different sizes.",
+  },
+  {
+    title: "AV and Music",
+    icon: "🎵",
+    description:
+      "Audio-visual and music facilities can be arranged for different event requirements. Depending on the venue and event, facilities may include professional sound systems, microphones, music equipment and lighting.",
+  },
+  {
+    title: "Parking",
+    icon: "🚗",
+    description:
+      "Ample parking space is available for guests attending events at the venue. Parking arrangements are designed to make arrival and departure more convenient.",
+  },
+  {
+    title: "Events Rules",
+    icon: "✓",
+    description:
+      "Event guidelines and venue policies are followed to ensure a smooth, safe, and enjoyable experience for all guests. Specific arrangements relating to event timings, setup, music, catering, alcohol, decorations, parking and guest capacity can be discussed before booking.",
+  },
+];
 
 export default function VenuePage() {
-
   const params = useParams();
-
   const router = useRouter();
 
-  const venueId = params?.id;
+  const id = params?.id;
 
+  const [venue, setVenue] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-  /* =========================================================
-     VENUE STATE
-  ========================================================= */
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [openAmenity, setOpenAmenity] = useState(null);
 
-  const [venue, setVenue] =
-    useState(null);
-
-  const [loading, setLoading] =
-    useState(true);
-
-  const [error, setError] =
-    useState("");
-
-
-  /* =========================================================
-     IMAGE STATE
-  ========================================================= */
-
-  /*
-   * selectedImage is an INDEX.
-   * The lightbox image will use a separate state later.
-   */
-  const [selectedImage, setSelectedImage] =
-    useState(0);
-
-  const [lightboxImage, setLightboxImage] =
-    useState(null);
-
-
-  /* =========================================================
-     BOOKING STATE
-  ========================================================= */
-
-  const [bookingDate, setBookingDate] =
-    useState("");
-
-  const [checkIn, setCheckIn] =
-    useState("9:30 am");
-
-  const [checkOut, setCheckOut] =
-    useState("9:30 pm");
-
-
-  /* =========================================================
-     DESCRIPTION STATE
-  ========================================================= */
-
-  const [
-    isDescriptionExpanded,
-    setIsDescriptionExpanded,
-  ] = useState(false);
-
-
-  /* =========================================================
-     INFORMATION SECTION STATE
-  ========================================================= */
-
-  const [
-    expandedSections,
-    setExpandedSections,
-  ] = useState({
-    food: true,
-    alcohol: true,
-    furniture: true,
-    restrooms: true,
-    av: true,
-    parking: true,
-    events: true,
-  });
-
-
-  /* =========================================================
-     POPULAR VENUES
-  ========================================================= */
-
-  const [popularVenues, setPopularVenues] =
-    useState([]);
-
-  const [popularLoading, setPopularLoading] =
-    useState(true);
-
-  const [popularSlide, setPopularSlide] =
-    useState(0);
-
-  const [
-    popularSlidesToShow,
-    setPopularSlidesToShow,
-  ] = useState(3);
-
-
-  /* =========================================================
-     FETCH CURRENT FARMHOUSE
-========================================================= */
+  const [bookingDate, setBookingDate] = useState("");
+  const [checkIn, setCheckIn] = useState("9:30 am");
+  const [checkOut, setCheckOut] = useState("9:30 pm");
 
   useEffect(() => {
-
-    if (!venueId) {
-      return;
-    }
-
-    let cancelled = false;
+    if (!id) return;
 
     const fetchVenue = async () => {
-
       try {
-
         setLoading(true);
-
         setError("");
 
-        const response = await fetch(
-          `/api/venues/${encodeURIComponent(
-            venueId
-          )}`,
-          {
-            cache: "no-store",
-          }
-        );
+        const response = await fetch(`/api/venues/${id}`, {
+          method: "GET",
+          cache: "no-store",
+        });
 
-        if (!response.ok) {
+        const data = await response.json();
+
+        if (!response.ok || !data?.success) {
           throw new Error(
-            `Unable to load farmhouse. Status: ${response.status}`
+            data?.error || "Unable to load farmhouse"
           );
         }
 
-        const data =
-          await response.json();
-
         const rawVenue =
-          data?.product ||
           data?.venue ||
+          data?.product ||
           data?.data ||
           data;
 
-        const normalized =
-          normalizeVenue(rawVenue);
+        const normalized = normalizeVenue(rawVenue);
 
         if (!normalized) {
           throw new Error(
-            "Farmhouse information was not found."
+            "The farmhouse information could not be found."
           );
         }
 
-        if (!cancelled) {
-          setVenue(normalized);
-        }
-
+        setVenue(normalized);
       } catch (err) {
-
-        console.error(
-          "Farmhouse fetch error:",
-          err
+        console.error("Farmhouse detail error:", err);
+        setError(
+          err?.message ||
+            "Unable to load farmhouse information."
         );
-
-        if (!cancelled) {
-          setError(
-            err?.message ||
-              "Unable to load farmhouse information."
-          );
-        }
-
       } finally {
-
-        if (!cancelled) {
-          setLoading(false);
-        }
-
+        setLoading(false);
       }
-
     };
 
     fetchVenue();
-
-    return () => {
-      cancelled = true;
-    };
-
-  }, [venueId]);
-
-
-  /* =========================================================
-     FETCH POPULAR VENUES
-  ========================================================= */
-
-  useEffect(() => {
-
-    let cancelled = false;
-
-    const fetchPopularVenues =
-      async () => {
-
-        try {
-
-          setPopularLoading(true);
-
-          const response =
-            await fetch(
-              "/api/venues?limit=10",
-              {
-                cache: "no-store",
-              }
-            );
-
-          if (!response.ok) {
-            throw new Error(
-              "Unable to load popular venues."
-            );
-          }
-
-          const data =
-            await response.json();
-
-          const venues =
-            data?.products ||
-            data?.venues ||
-            data?.data ||
-            [];
-
-          const normalizedVenues =
-            Array.isArray(venues)
-              ? venues
-                  .map((item) =>
-                    normalizeVenue(item)
-                  )
-                  .filter(
-                    (item) =>
-                      String(item?.id) !==
-                      String(venueId)
-                  )
-              : [];
-
-          if (!cancelled) {
-            setPopularVenues(
-              normalizedVenues
-            );
-          }
-
-        } catch (err) {
-
-          console.error(
-            "Popular venues error:",
-            err
-          );
-
-          if (!cancelled) {
-            setPopularVenues([]);
-          }
-
-        } finally {
-
-          if (!cancelled) {
-            setPopularLoading(false);
-          }
-
-        }
-
-      };
-
-    fetchPopularVenues();
-
-    return () => {
-      cancelled = true;
-    };
-
-  }, [venueId]);
-
-
-  /* =========================================================
-     RESPONSIVE POPULAR SLIDES
-  ========================================================= */
-
-  useEffect(() => {
-
-    const updateSlides = () => {
-
-      if (
-        window.innerWidth < 640
-      ) {
-
-        setPopularSlidesToShow(1);
-
-      } else if (
-        window.innerWidth < 1024
-      ) {
-
-        setPopularSlidesToShow(2);
-
-      } else {
-
-        setPopularSlidesToShow(3);
-
-      }
-
-    };
-
-    updateSlides();
-
-    window.addEventListener(
-      "resize",
-      updateSlides
-    );
-
-    return () =>
-      window.removeEventListener(
-        "resize",
-        updateSlides
-      );
-
-  }, []);
-
-
-  /* =========================================================
-     RESET POPULAR SLIDE
-  ========================================================= */
-
-  useEffect(() => {
-
-    setPopularSlide(0);
-
-  }, [
-    popularSlidesToShow,
-    venueId,
-  ]);
-
-
-  /* =========================================================
-     TOGGLE INFORMATION SECTION
-  ========================================================= */
-
-  const toggleSection =
-    (section) => {
-
-      setExpandedSections(
-        (previous) => ({
-          ...previous,
-          [section]:
-            !previous[section],
-        })
-      );
-
-    };
-    /* =========================================================
-     IMAGES
-  ========================================================= */
-
-  const images = useMemo(() => {
-
-    if (
-      !venue?.images ||
-      !Array.isArray(venue.images) ||
-      venue.images.length === 0
-    ) {
-      return [
-        "https://placehold.co/1200x800/e5e7eb/6b7280?text=Farmhouse",
-      ];
-    }
-
-    return venue.images;
-
-  }, [venue]);
-
-
-  /* =========================================================
-     KEEP IMAGE INDEX VALID
-  ========================================================= */
-
-  useEffect(() => {
-
-    if (
-      selectedImage >= images.length
-    ) {
-      setSelectedImage(0);
-    }
-
-  }, [
-    images.length,
-    selectedImage,
-  ]);
-
-
-  /* =========================================================
-     NEXT IMAGE
-  ========================================================= */
-
-  const nextImage = () => {
-
-    if (images.length <= 1) {
+  }, [id]);
+
+  const handleBooking = () => {
+    if (!bookingDate) {
+      alert("Please select a date before starting your booking.");
       return;
     }
 
-    setSelectedImage(
-      (previous) =>
-        previous >= images.length - 1
-          ? 0
-          : previous + 1
+    if (!venue) return;
+
+    const message = encodeURIComponent(
+      `Hello Effortless Events,
+
+I am interested in booking ${venue.name}.
+
+Date: ${bookingDate}
+Check-in: ${checkIn}
+Check-out: ${checkOut}
+Location: ${venue.location}
+
+Please share the availability and booking details.`
     );
 
+    window.open(
+      `https://wa.me/917838008069?text=${message}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
-
-
-  /* =========================================================
-     PREVIOUS IMAGE
-  ========================================================= */
-
-  const previousImage = () => {
-
-    if (images.length <= 1) {
-      return;
-    }
-
-    setSelectedImage(
-      (previous) =>
-        previous <= 0
-          ? images.length - 1
-          : previous - 1
-    );
-
-  };
-
-
-  /* =========================================================
-     PRICE
-  ========================================================= */
-
-  const formattedPrice = useMemo(() => {
-
-    if (
-      venue?.product_price === undefined ||
-      venue?.product_price === null ||
-      String(venue.product_price).trim() === ""
-    ) {
-      return "Price on request";
-    }
-
-    const price = String(
-      venue.product_price
-    ).trim();
-
-    if (price.startsWith("₹")) {
-      return price;
-    }
-
-    /*
-     * If the admin panel stores a plain number,
-     * format it using Indian numbering.
-     */
-    const numericPrice = Number(
-      price.replace(/,/g, "")
-    );
-
-    if (
-      Number.isFinite(numericPrice)
-    ) {
-      return `₹${numericPrice.toLocaleString(
-        "en-IN"
-      )}`;
-    }
-
-    return `₹${price}`;
-
-  }, [venue]);
-
-
-  /* =========================================================
-     RATING
-  ========================================================= */
-
-  const venueRating = useMemo(() => {
-
-    const rating = Number(
-      venue?.rating
-    );
-
-    if (
-      Number.isFinite(rating) &&
-      rating > 0
-    ) {
-      return rating.toFixed(1);
-    }
-
-    return "4.0";
-
-  }, [venue]);
-
-
-  /* =========================================================
-     MAP QUERY
-  ========================================================= */
-
-  const mapSearchQuery = useMemo(() => {
-
-    if (!venue) {
-      return "";
-    }
-
-    return [
-      venue.product_name,
-      venue.product_address,
-      venue.product_location,
-    ]
-      .filter(Boolean)
-      .join(", ");
-
-  }, [venue]);
-
-
-  /* =========================================================
-     MAP EMBED URL
-  ========================================================= */
-
-  const mapEmbedUrl = useMemo(() => {
-
-    /*
-     * Prefer the map URL supplied by the admin/API.
-     */
-    if (
-      venue?.mapUrl &&
-      String(venue.mapUrl).trim() !== ""
-    ) {
-      return venue.mapUrl;
-    }
-
-    /*
-     * Otherwise create a Google Maps embed
-     * using the farmhouse address/location.
-     */
-    if (!mapSearchQuery) {
-      return "";
-    }
-
-    return `https://www.google.com/maps?q=${encodeURIComponent(
-      mapSearchQuery
-    )}&output=embed`;
-
-  }, [
-    venue,
-    mapSearchQuery,
-  ]);
-
-
-  /* =========================================================
-     POPULAR SLIDER LIMIT
-  ========================================================= */
-
-  const popularMaxSlide =
-    Math.max(
-      0,
-      popularVenues.length -
-        popularSlidesToShow
-    );
-
-
-  /* =========================================================
-     NEXT POPULAR
-  ========================================================= */
-
-  const nextPopularSlide = () => {
-
-    if (
-      popularMaxSlide <= 0
-    ) {
-      return;
-    }
-
-    setPopularSlide(
-      (previous) =>
-        previous >= popularMaxSlide
-          ? 0
-          : previous + 1
-    );
-
-  };
-
-
-  /* =========================================================
-     PREVIOUS POPULAR
-  ========================================================= */
-
-  const previousPopularSlide = () => {
-
-    if (
-      popularMaxSlide <= 0
-    ) {
-      return;
-    }
-
-    setPopularSlide(
-      (previous) =>
-        previous <= 0
-          ? popularMaxSlide
-          : previous - 1
-    );
-
-  };
-
-
-  /* =========================================================
-     SHARE
-  ========================================================= */
 
   const handleShare = async () => {
-
-    if (!venue) {
-      return;
-    }
-
-    const currentUrl =
+    const shareUrl =
       typeof window !== "undefined"
         ? window.location.href
         : "";
 
-    const shareData = {
-      title:
-        venue.product_name,
-
-      text:
-        `Check out ${venue.product_name} in ${venue.product_location}.`,
-
-      url: currentUrl,
-    };
-
-
-    try {
-
-      /*
-       * Native mobile/browser sharing.
-       */
-      if (
-        typeof navigator !== "undefined" &&
-        typeof navigator.share === "function"
-      ) {
-
-        await navigator.share(
-          shareData
-        );
-
-        return;
+    if (
+      typeof navigator !== "undefined" &&
+      navigator.share
+    ) {
+      try {
+        await navigator.share({
+          title: venue?.name || "Farmhouse",
+          text: `Check out ${venue?.name || "this farmhouse"}`,
+          url: shareUrl,
+        });
+      } catch (shareError) {
+        console.log("Share cancelled:", shareError);
       }
-
-
-      /*
-       * Clipboard fallback.
-       */
-      if (
-        typeof navigator !== "undefined" &&
-        navigator.clipboard &&
-        currentUrl
-      ) {
-
-        await navigator.clipboard.writeText(
-          currentUrl
-        );
-
-        alert(
-          "Farmhouse link copied!"
-        );
-
-        return;
-      }
-
-
-      /*
-       * Final fallback.
-       */
-      alert(
-        "Unable to share this farmhouse link."
-      );
-
-    } catch (err) {
-
-      /*
-       * AbortError means the user simply
-       * closed the share dialog.
-       */
-      if (
-        err?.name !== "AbortError"
-      ) {
-        console.error(
-          "Share error:",
-          err
-        );
-      }
-
-    }
-
-  };
-
-
-  /* =========================================================
-     BOOKING
-  ========================================================= */
-
-  const handleBooking = () => {
-
-    if (!bookingDate) {
-
-      alert(
-        "Please select a booking date."
-      );
 
       return;
     }
-
-
-    if (!venue) {
-      return;
-    }
-
-
-    /*
-     * Clean the phone number so WhatsApp
-     * receives digits only.
-     */
-    const phoneNumber =
-      String(
-        venue.product_number ||
-          "917838008069"
-      )
-        .replace(
-          /[^0-9]/g,
-          ""
-        );
-
-
-    /*
-     * Make sure India country code exists.
-     */
-    const finalPhoneNumber =
-      phoneNumber.startsWith("91")
-        ? phoneNumber
-        : `91${phoneNumber}`;
-
-
-    const message = `
-Hello Effortless Events,
-
-I would like to enquire about booking the following farmhouse.
-
-Farmhouse: ${venue.product_name}
-Location: ${venue.product_location}
-Date: ${bookingDate}
-Check-in: ${checkIn}
-Check-out: ${checkOut}
-Price: ${formattedPrice}
-
-Please let me know about availability and the next steps.
-
-Thank you.
-    `.trim();
-
-
-    const whatsappUrl =
-      `https://wa.me/${finalPhoneNumber}?text=${encodeURIComponent(
-        message
-      )}`;
-
 
     if (
-      typeof window !== "undefined"
+      typeof navigator !== "undefined" &&
+      navigator.clipboard
     ) {
-
-      window.open(
-        whatsappUrl,
-        "_blank",
-        "noopener,noreferrer"
-      );
-
+      try {
+        await navigator.clipboard.writeText(shareUrl);
+        alert("Link copied!");
+      } catch (clipboardError) {
+        console.error(
+          "Unable to copy link:",
+          clipboardError
+        );
+      }
     }
-
   };
-
-
-  /* =========================================================
-     OPEN LIGHTBOX
-  ========================================================= */
-
-  const openLightbox = (image) => {
-
-    if (!image) {
-      return;
-    }
-
-    setLightboxImage(image);
-
-  };
-
-
-  /* =========================================================
-     CLOSE LIGHTBOX
-  ========================================================= */
-
-  const closeLightbox = () => {
-
-    setLightboxImage(null);
-
-  };
-
-
-  /* =========================================================
-     LOADING STATE
-  ========================================================= */
 
   if (loading) {
-
     return (
-      <VenueSkeleton />
-    );
+      <div className="min-h-screen bg
+        return (
+    <div className="min-h-screen bg-white text-[#0b1b33]">
 
-  }
+      {/* =====================================================
+          NAVBAR
+      ===================================================== */}
 
+      <Navbar />
 
-  /* =========================================================
-     ERROR STATE
-  ========================================================= */
 
-  if (
-    error ||
-    !venue
-  ) {
+      {/* =====================================================
+          MAIN CONTENT
+      ===================================================== */}
 
-    return (
-      <VenueError
-        message={error}
-        onBack={() =>
-          router.back()
-        }
-      />
-    );
+      <main className="pt-24">
 
-  }
-    /* =========================================================
-     IMAGES
-  ========================================================= */
+        {/* ===================================================
+            VENUE HEADER
+        =================================================== */}
 
-  const images = useMemo(() => {
+        <section className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
 
-    if (
-      !venue?.images ||
-      !Array.isArray(venue.images) ||
-      venue.images.length === 0
-    ) {
-      return [
-        "https://placehold.co/1200x800/e5e7eb/6b7280?text=Farmhouse",
-      ];
-    }
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
 
-    return venue.images;
+            <div>
 
-  }, [venue]);
+              <h1 className="text-3xl sm:text-4xl lg:text-[38px] font-bold text-[#071a33]">
+                {venue.name}
+              </h1>
 
+              <div className="flex items-center gap-2 text-gray-600 mt-2 text-base sm:text-lg">
 
-  /* =========================================================
-     KEEP IMAGE INDEX VALID
-  ========================================================= */
+                <MapPin className="w-4 h-4 text-[#d4af37]" />
 
-  useEffect(() => {
+                <span>
+                  {venue.location}
+                </span>
 
-    if (
-      selectedImage >= images.length
-    ) {
-      setSelectedImage(0);
-    }
+              </div>
 
-  }, [
-    images.length,
-    selectedImage,
-  ]);
+              {venue.address && (
+                <p className="text-gray-500 text-sm mt-1">
+                  {venue.address}
+                </p>
+              )}
 
+            </div>
 
-  /* =========================================================
-     NEXT IMAGE
-  ========================================================= */
 
-  const nextImage = () => {
+            {/* SHARE BUTTON */}
 
-    if (images.length <= 1) {
-      return;
-    }
+            <button
+              type="button"
+              onClick={handleShare}
+              className="flex items-center gap-2 text-sm text-gray-700 hover:text-black transition w-fit"
+            >
 
-    setSelectedImage(
-      (previous) =>
-        previous >= images.length - 1
-          ? 0
-          : previous + 1
-    );
+              <Share2 className="w-4 h-4" />
 
-  };
+              Share
 
+            </button>
 
-  /* =========================================================
-     PREVIOUS IMAGE
-  ========================================================= */
+          </div>
 
-  const previousImage = () => {
 
-    if (images.length <= 1) {
-      return;
-    }
+          {/* =================================================
+              IMAGE GALLERY
+          ================================================= */}
 
-    setSelectedImage(
-      (previous) =>
-        previous <= 0
-          ? images.length - 1
-          : previous - 1
-    );
+          <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-3">
 
-  };
+            {/* MAIN IMAGE */}
 
+            <div className="h-[300px] sm:h-[400px] lg:h-[500px] rounded-xl overflow-hidden bg-gray-100">
 
-  /* =========================================================
-     PRICE
-  ========================================================= */
+              <img
+                src={displayImages[0]}
+                alt={venue.name}
+                className="w-full h-full object-cover cursor-pointer hover:scale-[1.01] transition duration-300"
+                onClick={() =>
+                  setSelectedImage(displayImages[0])
+                }
+              />
 
-  const formattedPrice = useMemo(() => {
+            </div>
 
-    if (
-      venue?.product_price === undefined ||
-      venue?.product_price === null ||
-      String(venue.product_price).trim() === ""
-    ) {
-      return "Price on request";
-    }
 
-    const price = String(
-      venue.product_price
-    ).trim();
+            {/* SMALL IMAGES */}
 
-    if (price.startsWith("₹")) {
-      return price;
-    }
+            <div className="grid grid-cols-2 gap-3 h-[300px] sm:h-[400px] lg:h-[500px]">
 
-    /*
-     * If the admin panel stores a plain number,
-     * format it using Indian numbering.
-     */
-    const numericPrice = Number(
-      price.replace(/,/g, "")
-    );
+              {displayImages
+                .slice(1, 5)
+                .map((image, index) => (
 
-    if (
-      Number.isFinite(numericPrice)
-    ) {
-      return `₹${numericPrice.toLocaleString(
-        "en-IN"
-      )}`;
-    }
+                  <div
+                    key={`${image}-${index}`}
+                    className="rounded-xl overflow-hidden relative bg-gray-100"
+                  >
 
-    return `₹${price}`;
+                    <img
+                      src={image}
+                      alt={`${venue.name} ${index + 2}`}
+                      className="w-full h-full object-cover cursor-pointer hover:scale-105 transition duration-300"
+                      onClick={() =>
+                        setSelectedImage(image)
+                      }
+                    />
 
-  }, [venue]);
 
+                    {/* VIEW ALL PHOTOS */}
 
-  /* =========================================================
-     RATING
-  ========================================================= */
+                    {index === 3 &&
+                      displayImages.length > 5 && (
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setSelectedImage(image)
+                          }
+                          className="absolute bottom-4 right-4 bg-white text-black px-4 py-2 rounded-md text-sm font-medium shadow hover:bg-gray-100 transition"
+                        >
+                          View all photos
+                        </button>
+                      )}
 
-  const venueRating = useMemo(() => {
+                  </div>
 
-    const rating = Number(
-      venue?.rating
-    );
+                ))}
 
-    if (
-      Number.isFinite(rating) &&
-      rating > 0
-    ) {
-      return rating.toFixed(1);
-    }
 
-    return "4.0";
+              {/* EMPTY IMAGE PLACEHOLDERS */}
 
-  }, [venue]);
+              {displayImages.length === 1 && (
+                <>
+                  <div className="rounded-xl bg-gray-100" />
+                  <div className="rounded-xl bg-gray-100" />
+                  <div className="rounded-xl bg-gray-100" />
+                  <div className="rounded-xl bg-gray-100" />
+                </>
+              )}
 
+              {displayImages.length === 2 && (
+                <>
+                  <div className="rounded-xl bg-gray-100" />
+                  <div className="rounded-xl bg-gray-100" />
+                  <div className="rounded-xl bg-gray-100" />
+                </>
+              )}
 
-  /* =========================================================
-     MAP QUERY
-  ========================================================= */
+              {displayImages.length === 3 && (
+                <>
+                  <div className="rounded-xl bg-gray-100" />
+                  <div className="rounded-xl bg-gray-100" />
+                </>
+              )}
 
-  const mapSearchQuery = useMemo(() => {
+              {displayImages.length === 4 && (
+                <div className="rounded-xl bg-gray-100" />
+              )}
 
-    if (!venue) {
-      return "";
-    }
+            </div>
 
-    return [
-      venue.product_name,
-      venue.product_address,
-      venue.product_location,
-    ]
-      .filter(Boolean)
-      .join(", ");
+          </div>
 
-  }, [venue]);
+        </section>
 
 
-  /* =========================================================
-     MAP EMBED URL
-  ========================================================= */
+        {/* ===================================================
+            CONTENT + BOOKING
+        =================================================== */}
 
-  const mapEmbedUrl = useMemo(() => {
+        <section className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8 mt-14">
 
-    /*
-     * Prefer the map URL supplied by the admin/API.
-     */
-    if (
-      venue?.mapUrl &&
-      String(venue.mapUrl).trim() !== ""
-    ) {
-      return venue.mapUrl;
-    }
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_390px] gap-8">
 
-    /*
-     * Otherwise create a Google Maps embed
-     * using the farmhouse address/location.
-     */
-    if (!mapSearchQuery) {
-      return "";
-    }
+            {/* =================================================
+                LEFT SIDE
+            ================================================= */}
 
-    return `https://www.google.com/maps?q=${encodeURIComponent(
-      mapSearchQuery
-    )}&output=embed`;
+            <div>
 
-  }, [
-    venue,
-    mapSearchQuery,
-  ]);
+              {/* ABOUT */}
 
+              <div className="mb-10">
 
-  /* =========================================================
-     POPULAR SLIDER LIMIT
-  ========================================================= */
+                <h2 className="text-2xl sm:text-3xl font-bold text-[#071a33] mb-5">
+                  About {venue.name}
+                </h2>
 
-  const popularMaxSlide =
-    Math.max(
-      0,
-      popularVenues.length -
-        popularSlidesToShow
-    );
+                <p className="text-gray-600 leading-7 whitespace-pre-line">
+                  {venue.description}
+                </p>
 
+              </div>
 
-  /* =========================================================
-     NEXT POPULAR
-  ========================================================= */
 
-  const nextPopularSlide = () => {
+              {/* =================================================
+                  AMENITIES
+              ================================================= */}
 
-    if (
-      popularMaxSlide <= 0
-    ) {
-      return;
-    }
+              <div className="space-y-3">
 
-    setPopularSlide(
-      (previous) =>
-        previous >= popularMaxSlide
-          ? 0
-          : previous + 1
-    );
+                {finalAmenities.map((amenity, index) => (
 
-  };
+                  <div
+                    key={`${amenity.title}-${index}`}
+                    className="border border-gray-200 rounded-2xl overflow-hidden"
+                  >
 
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setOpenAmenity(
+                          openAmenity === index
+                            ? null
+                            : index
+                        );
+                      }}
+                      className="w-full flex items-center justify-between px-5 py-5 text-left hover:bg-gray-50 transition"
+                    >
 
-  /* =========================================================
-     PREVIOUS POPULAR
-  ========================================================= */
+                      <div className="flex items-center gap-4">
 
-  const previousPopularSlide = () => {
+                        <span className="text-xl w-7 text-center">
+                          {amenity.icon}
+                        </span>
 
-    if (
-      popularMaxSlide <= 0
-    ) {
-      return;
-    }
+                        <span className="text-base sm:text-lg font-medium text-[#16365f]">
+                          {amenity.title}
+                        </span>
 
-    setPopularSlide(
-      (previous) =>
-        previous <= 0
-          ? popularMaxSlide
-          : previous - 1
-    );
+                      </div>
 
-  };
 
+                      <span className="text-gray-500">
 
-  /* =========================================================
-     SHARE
-  ========================================================= */
+                        {openAmenity === index ? (
+                          <ChevronUp className="w-5 h-5" />
+                               {/* ===================================================
+            LOCATION
+        =================================================== */}
 
-  const handleShare = async () => {
+        <section className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8 mt-16 mb-16">
 
-    if (!venue) {
-      return;
-    }
+          <div className="mb-8">
 
-    const currentUrl =
-      typeof window !== "undefined"
-        ? window.location.href
-        : "";
+            <div className="flex items-center gap-3">
 
-    const shareData = {
-      title:
-        venue.product_name,
+              <MapPin className="w-7 h-7 text-[#d4af37]" />
 
-      text:
-        `Check out ${venue.product_name} in ${venue.product_location}.`,
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#071a33]">
+                Location
+              </h2>
 
-      url: currentUrl,
-    };
+            </div>
 
+            <p className="text-gray-600 mt-2">
+              {venue.location}
+            </p>
 
-    try {
+            {venue.address && (
+              <p className="text-gray-500 text-sm mt-1">
+                {venue.address}
+              </p>
+            )}
 
-      /*
-       * Native mobile/browser sharing.
-       */
-      if (
-        typeof navigator !== "undefined" &&
-        typeof navigator.share === "function"
-      ) {
+          </div>
 
-        await navigator.share(
-          shareData
-        );
 
-        return;
-      }
+          {/* =================================================
+              MAP
+          ================================================= */}
 
+          <div className="w-full h-[400px] sm:h-[500px] rounded-2xl overflow-hidden border border-gray-200 bg-gray-100">
 
-      /*
-       * Clipboard fallback.
-       */
-      if (
-        typeof navigator !== "undefined" &&
-        navigator.clipboard &&
-        currentUrl
-      ) {
+            {venue.mapUrl ? (
 
-        await navigator.clipboard.writeText(
-          currentUrl
-        );
+              <iframe
+                src={venue.mapUrl}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                title={`${venue.name} location`}
+              />
 
-        alert(
-          "Farmhouse link copied!"
-        );
+            ) : (
 
-        return;
-      }
+              <div className="w-full h-full flex items-center justify-center text-center px-6">
 
+                <div>
 
-      /*
-       * Final fallback.
-       */
-      alert(
-        "Unable to share this farmhouse link."
-      );
+                  <MapPin className="w-10 h-10 text-[#d4af37] mx-auto mb-4" />
 
-    } catch (err) {
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                    {venue.location}
+                  </h3>
 
-      /*
-       * AbortError means the user simply
-       * closed the share dialog.
-       */
-      if (
-        err?.name !== "AbortError"
-      ) {
-        console.error(
-          "Share error:",
-          err
-        );
-      }
+                  <p className="text-gray-500 max-w-md">
+                    Location map will appear here when the admin adds
+                    the map information.
+                  </p>
 
-    }
+                </div>
 
-  };
+              </div>
 
+            )}
 
-  /* =========================================================
-     BOOKING
-  ========================================================= */
+          </div>
 
-  const handleBooking = () => {
+        </section>
 
-    if (!bookingDate) {
 
-      alert(
-        "Please select a booking date."
-      );
+        {/* ===================================================
+            BACK TO FARMHOUSES
+        =================================================== */}
 
-      return;
-    }
+        <section className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8 pb-16">
 
+          <Link
+            href="/farmhouses"
+            className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-black transition"
+          >
 
-    if (!venue) {
-      return;
-    }
+            <ArrowLeft className="w-4 h-4" />
 
+            Back to Farmhouses
 
-    /*
-     * Clean the phone number so WhatsApp
-     * receives digits only.
-     */
-    const phoneNumber =
-      String(
-        venue.product_number ||
-          "917838008069"
-      )
-        .replace(
-          /[^0-9]/g,
-          ""
-        );
+          </Link>
 
+        </section>
 
-    /*
-     * Make sure India country code exists.
-     */
-    const finalPhoneNumber =
-      phoneNumber.startsWith("91")
-        ? phoneNumber
-        : `91${phoneNumber}`;
+      </main>
 
 
-    const message = `
-Hello Effortless Events,
+      {/* =====================================================
+          FOOTER
+      ===================================================== */}
 
-I would like to enquire about booking the following farmhouse.
+      <Footer />
 
-Farmhouse: ${venue.product_name}
-Location: ${venue.product_location}
-Date: ${bookingDate}
-Check-in: ${checkIn}
-Check-out: ${checkOut}
-Price: ${formattedPrice}
 
-Please let me know about availability and the next steps.
+      {/* =====================================================
+          IMAGE LIGHTBOX
+      ===================================================== */}
 
-Thank you.
-    `.trim();
+      {selectedImage && (
 
+        <div
+          className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
 
-    const whatsappUrl =
-      `https://wa.me/${finalPhoneNumber}?text=${encodeURIComponent(
-        message
-      )}`;
+          {/* CLOSE BUTTON */}
 
+          <button
+            type="button"
+            onClick={() => setSelectedImage(null)}
+            aria-label="Close image"
+            className="absolute top-5 right-5 text-white w-12 h-12 flex items-center justify-center rounded-full bg-black/40 hover:bg-black/70 transition"
+          >
 
-    if (
-      typeof window !== "undefined"
-    ) {
+            <X className="w-7 h-7" />
 
-      window.open(
-        whatsappUrl,
-        "_blank",
-        "noopener,noreferrer"
-      );
+          </button>
 
-    }
 
-  };
+          {/* IMAGE */}
 
+          <img
+            src={selectedImage}
+            alt={venue.name}
+            className="max-w-full max-h-[90vh] object-contain rounded-lg"
+            onClick={(event) =>
+              event.stopPropagation()
+            }
+          />
 
-  /* =========================================================
-     OPEN LIGHTBOX
-  ========================================================= */
+        </div>
 
-  const openLightbox = (image) => {
+      )}
 
-    if (!image) {
-      return;
-    }
 
-    setLightboxImage(image);
+           {/* =====================================================
+          WHATSAPP FLOATING BUTTON
+      ===================================================== */}
 
-  };
+      <a
+        href="https://wa.me/917838008069"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-5 right-5 z-[9998] w-14 h-14 sm:w-16 sm:h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition"
+        aria-label="Contact us on WhatsApp"
+      >
+        <svg
+          viewBox="0 0 32 32"
+          className="w-8 h-8 sm:w-9 sm:h-9 fill-white"
+        >
+          <path d="M19.11 17.21c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.13-.42-2.15-1.33-.79-.7-1.33-1.56-1.49-1.83-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.47.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.47-.07-.14-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.27s.97 2.63 1.11 2.81c.14.18 1.91 2.92 4.63 4.09.65.28 1.15.45 1.54.58.65.21 1.24.18 1.71.11.52-.08 1.6-.65 1.82-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32z" />
 
+          <path d="M16 3C8.83 3 3 8.83 3 16c0 2.29.6 4.44 1.65 6.3L3 29l6.88-1.61A12.93 12.93 0 0016 29c7.17 0 13-5.83 13-13S23.17 3 16 3zm0 23.6c-2.04 0-4.03-.55-5.78-1.59l-.41-.24-4.08.96.97-3.98-.27-.41A10.58 10.58 0 015.4 16C5.4 10.15 10.15 5.4 16 5.4S26.6 10.15 26.6 16 21.85 26.6 16 26.6z" />
+        </svg>
+      </a>
 
-  /* =========================================================
-     CLOSE LIGHTBOX
-  ========================================================= */
+    </div>
+  );
+};
 
-  const closeLightbox = () => {
-
-    setLightboxImage(null);
-
-  };
-
-
-  /* =========================================================
-     LOADING STATE
-  ========================================================= */
-
-  if (loading) {
-
-    return (
-      <VenueSkeleton />
-    );
-
-  }
-
-
-  /* =========================================================
-     ERROR STATE
-  ========================================================= */
-
-  if (
-    error ||
-    !venue
-  ) {
-
-    return (
-      <VenueError
-        message={error}
-        onBack={() =>
-          router.back()
-        }
-      />
-    );
-
-  }
+export default VenuePage;
