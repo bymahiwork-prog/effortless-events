@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const eventTypes = [
   {
@@ -9,28 +9,24 @@ const eventTypes = [
     description:
       "Make your big day truly magical with our complete planning and execution.",
     image: "/weddings.jpg",
-    href: "/services/wedding-venues",
   },
   {
     title: "Birthdays & Parties",
     description:
       "From intimate gatherings to lavish celebrations, we create unforgettable memories.",
     image: "/birthdays.jpg",
-    href: "/services/party-venues",
   },
   {
     title: "Corporate Events",
     description:
       "Conferences, launches, annual days and corporate parties executed with professionalism.",
     image: "/corporate.jpg",
-    href: "/services/corporate-events",
   },
   {
     title: "Private Celebrations",
     description:
       "Anniversaries, kitty parties and special gatherings tailored to your needs.",
     image: "/private-events.jpg",
-    href: "/services/party-venues",
   },
 ];
 
@@ -40,7 +36,10 @@ export default function EventTypes() {
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
 
-        {/* Section Heading */}
+        {/* =====================================================
+            SECTION HEADING
+        ===================================================== */}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +59,11 @@ export default function EventTypes() {
         </motion.div>
 
 
-        {/* Event Cards */}
+        {/* =====================================================
+            EVENT CARDS
+            These cards are intentionally NOT clickable.
+        ===================================================== */}
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
 
           {eventTypes.map((event, index) => (
@@ -74,27 +77,42 @@ export default function EventTypes() {
                 duration: 0.5,
                 delay: index * 0.08,
               }}
+              className="relative"
             >
 
-              <Link
-                href={event.href}
-                className="group relative block h-[300px] sm:h-[320px] lg:h-[285px] overflow-hidden"
-              >
+              {/* =================================================
+                  CARD
+                  No Link / No href
+              ================================================= */}
 
-                {/* Background Image */}
+              <div className="group relative block h-[300px] sm:h-[320px] lg:h-[285px] overflow-hidden">
+
+                {/* =================================================
+                    BACKGROUND IMAGE
+                ================================================= */}
+
                 <img
                   src={event.image}
                   alt={event.title}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
-                {/* Dark Overlay */}
+                {/* =================================================
+                    DARK OVERLAY
+                ================================================= */}
+
                 <div className="absolute inset-0 bg-black/25 transition-all duration-300 group-hover:bg-black/40" />
 
-                {/* Bottom Gradient */}
+                {/* =================================================
+                    BOTTOM GRADIENT
+                ================================================= */}
+
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
 
-                {/* Content */}
+                {/* =================================================
+                    CONTENT
+                ================================================= */}
+
                 <div className="absolute inset-x-0 bottom-0 p-6 text-center text-white">
 
                   <h3 className="font-serif text-xl sm:text-2xl">
@@ -107,7 +125,7 @@ export default function EventTypes() {
 
                 </div>
 
-              </Link>
+              </div>
 
             </motion.div>
 
@@ -116,12 +134,19 @@ export default function EventTypes() {
         </div>
 
 
-        {/* Explore Button */}
+        {/* =====================================================
+            EXPLORE ALL SERVICES BUTTON
+            This is the ONLY clickable element in this section.
+        ===================================================== */}
+
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+          }}
           className="flex justify-center mt-9"
         >
 
