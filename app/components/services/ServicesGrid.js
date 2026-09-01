@@ -6,42 +6,42 @@ import { ArrowRight } from "lucide-react";
 
 const services = [
   {
-    slug: "decoration-services",
+    slug: "event-planning-management",
     title: "Event Planning & Management",
     description:
       "End-to-end planning, budgeting, vendor coordination and flawless execution for stress-free events.",
     image: "/images/services/event-planning.jpg",
   },
   {
-    slug: "decoration-services",
+    slug: "event-decor-styling",
     title: "Event Décor & Styling",
     description:
       "Creative concepts and stunning décor that transform your vision into an unforgettable experience.",
     image: "/images/services/decoration.jpg",
   },
   {
-    slug: "food-catering",
+    slug: "catering-bar-services",
     title: "Catering & Bar Services",
     description:
       "Delicious menus, professional service and customized bar setups for every occasion.",
     image: "/images/services/catering.jpg",
   },
   {
-    slug: "party-venues",
+    slug: "venue-booking",
     title: "Venue Booking",
     description:
       "50+ premium venues including farmhouses, villas, banquet halls, rooftops and more.",
     image: "/images/services/party-venues.jpg",
   },
   {
-    slug: "corporate-events",
+    slug: "entertainment-experiences",
     title: "Entertainment & Experiences",
     description:
       "DJs, live bands, artists and unique experiences that keep your guests engaged and delighted.",
     image: "/images/services/entertainment.jpg",
   },
   {
-    slug: "corporate-events",
+    slug: "on-ground-event-management",
     title: "On-Ground Event Management",
     description:
       "Our on-site team ensures everything runs smoothly so you can focus on your guests.",
@@ -52,10 +52,12 @@ const services = [
 export default function ServicesGrid() {
   return (
     <section className="w-full bg-white py-20 sm:py-24 lg:py-28">
-      
+
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
 
-        {/* Section Heading */}
+        {/* =====================================================
+            SECTION HEADING
+        ===================================================== */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -80,7 +82,9 @@ export default function ServicesGrid() {
         </motion.div>
 
 
-        {/* Services Grid */}
+        {/* =====================================================
+            SERVICES GRID
+        ===================================================== */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 
           {services.map((service, index) => (
@@ -96,12 +100,17 @@ export default function ServicesGrid() {
               }}
             >
 
+              {/* =====================================================
+                  SERVICE CARD
+              ===================================================== */}
               <Link
                 href={`/services/${service.slug}`}
                 className="group block h-full bg-white border border-neutral-200 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
 
-                {/* Image */}
+                {/* =====================================================
+                    IMAGE
+                ===================================================== */}
                 <div className="relative h-44 sm:h-48 overflow-hidden">
 
                   <img
@@ -115,7 +124,9 @@ export default function ServicesGrid() {
                 </div>
 
 
-                {/* Content */}
+                {/* =====================================================
+                    CONTENT
+                ===================================================== */}
                 <div className="p-5 sm:p-6">
 
                   <h3 className="font-serif text-xl sm:text-[21px] leading-tight text-black">
@@ -126,7 +137,10 @@ export default function ServicesGrid() {
                     {service.description}
                   </p>
 
-                  {/* Learn More */}
+
+                  {/* =====================================================
+                      LEARN MORE
+                  ===================================================== */}
                   <div className="mt-5 flex items-center text-[9px] sm:text-[10px] font-semibold tracking-[0.18em] uppercase text-[#b38b45]">
 
                     <span>
