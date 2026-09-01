@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 
 type Venue = {
   id: number | string;
@@ -39,8 +38,6 @@ const VenueShowcase = () => {
   const [error, setError] = useState("");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slidesToShow, setSlidesToShow] = useState(3);
-
-  const router = useRouter();
 
   /*
    * ============================================================
@@ -192,16 +189,6 @@ const VenueShowcase = () => {
 
   /*
    * ============================================================
-   * VENUE CLICK
-   * ============================================================
-   */
-
-  const handleVenueClick = (venue: Venue) => {
-    router.push(`/venues/${venue.id}`);
-  };
-
-  /*
-   * ============================================================
    * VIEW ALL WEDDING VENUES
    * ============================================================
    */
@@ -348,12 +335,10 @@ const VenueShowcase = () => {
                       className={`flex-shrink-0 ${getCardWidth()}`}
                     >
 
-                      <article
-                        onClick={() =>
-                          handleVenueClick(venue)
-                        }
-                        className="bg-[#17110B] rounded-[28px] overflow-hidden border border-[#2A2118] cursor-pointer group h-full"
-                      >
+                      <Link
+  href={`/venues/${venue.id}`}
+  className="block bg-[#17110B] rounded-[28px] overflow-hidden border border-[#2A2118] cursor-pointer group h-full"
+>
 
                         {/* =====================================
                             IMAGE
