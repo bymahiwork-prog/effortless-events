@@ -1,3 +1,8 @@
+"use client";
+
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
 export default function BlogsPage() {
   const blogs = [
     {
@@ -76,44 +81,53 @@ export default function BlogsPage() {
       description:
         "Discover how to choose the right wedding planner in Delhi, evaluate experience, compare portfolios, understand planning processes, and create a seamless wedding celebration.",
     },
+
     {
-  href: "/blogs/how-much-does-event-management-cost-delhi-ncr",
-  image: "/how-much-does-event-management-cost-delhi-ncr.png",
-  alt: "How Much Does Event Management Cost in Delhi NCR? A Complete Pricing Guide for Businesses",
-  category: "Corporate Events",
-  title:
-    "How Much Does Event Management Cost in Delhi NCR? A Complete Pricing Guide for Businesses",
-  description:
-    "Understand event management costs in Delhi NCR, including venue pricing, catering, décor, production, entertainment, staffing, planning fees, and corporate event budgeting.",
-},
+      href: "/blogs/how-much-does-event-management-cost-delhi-ncr",
+      image: "/how-much-does-event-management-cost-delhi-ncr.png",
+      alt: "How Much Does Event Management Cost in Delhi NCR? A Complete Pricing Guide for Businesses",
+      category: "Corporate Events",
+      title:
+        "How Much Does Event Management Cost in Delhi NCR? A Complete Pricing Guide for Businesses",
+      description:
+        "Understand event management costs in Delhi NCR, including venue pricing, catering, décor, production, entertainment, staffing, planning fees, and corporate event budgeting.",
+    },
+
     {
-  href: "/blogs/corporate-event-ideas-delhi-ncr",
-  image: "/corporate-event-ideas-delhi-ncr-cover.png",
-  alt: "15 Corporate Event Ideas in Delhi NCR That Will Impress Your Guests",
-  category: "Corporate Events",
-  title:
-    "15 Corporate Event Ideas in Delhi NCR That Will Impress Your Guests",
-  description:
-    "Discover 15 creative corporate event ideas in Delhi NCR, from luxury gala dinners and team-building activities to networking evenings, corporate retreats, product launches, and adventure experiences.",
-},
+      href: "/blogs/corporate-event-ideas-delhi-ncr",
+      image: "/corporate-event-ideas-delhi-ncr-cover.png",
+      alt: "15 Corporate Event Ideas in Delhi NCR That Will Impress Your Guests",
+      category: "Corporate Events",
+      title:
+        "15 Corporate Event Ideas in Delhi NCR That Will Impress Your Guests",
+      description:
+        "Discover 15 creative corporate event ideas in Delhi NCR, from luxury gala dinners and team-building activities to networking evenings, corporate retreats, product launches, and adventure experiences.",
+    },
+
     {
-  href: "/blogs/best-farmhouses-near-delhi-weekend-getaways",
-  image: "/best-farmhouses-near-delhi-weekend-getaways-cover.png",
-  alt: "Best Farmhouses Near Delhi for Weekend Getaways: A Complete Guide",
-  category: "Weekend Getaways",
-  title:
-    "Best Farmhouses Near Delhi for Weekend Getaways: A Complete Guide",
-  description:
-    "Discover the best farmhouses near Delhi for weekend getaways, family gatherings, birthday celebrations, pool parties, corporate outings, and relaxing stays.",
-},
+      href: "/blogs/best-farmhouses-near-delhi-weekend-getaways",
+      image: "/best-farmhouses-near-delhi-weekend-getaways-cover.png",
+      alt: "Best Farmhouses Near Delhi for Weekend Getaways: A Complete Guide",
+      category: "Weekend Getaways",
+      title:
+        "Best Farmhouses Near Delhi for Weekend Getaways: A Complete Guide",
+      description:
+        "Discover the best farmhouses near Delhi for weekend getaways, family gatherings, birthday celebrations, pool parties, corporate outings, and relaxing stays.",
+    },
   ];
 
   return (
     <main className="min-h-screen bg-[#FAFAFA]">
 
-      {/* ===================================================== */}
-      {/* HERO SECTION */}
-      {/* ===================================================== */}
+      {/* =====================================================
+          NAVBAR
+      ===================================================== */}
+
+      <Navbar variant="transparent" />
+
+      {/* =====================================================
+          HERO SECTION
+      ===================================================== */}
 
       <section className="relative overflow-hidden bg-black text-white">
 
@@ -210,10 +224,9 @@ export default function BlogsPage() {
 
       </section>
 
-
-      {/* ===================================================== */}
-      {/* BLOG SECTION */}
-      {/* ===================================================== */}
+      {/* =====================================================
+          BLOG SECTION
+      ===================================================== */}
 
       <section
         id="latest-articles"
@@ -242,7 +255,6 @@ export default function BlogsPage() {
           </p>
 
         </div>
-
 
         {/* BLOG GRID */}
 
@@ -273,13 +285,11 @@ export default function BlogsPage() {
 
               </div>
 
-
               {/* CATEGORY */}
 
               <p className="text-xs uppercase tracking-[0.18em] text-[#B57A3C] font-semibold mb-3">
                 {blog.category}
               </p>
-
 
               {/* TITLE */}
 
@@ -287,13 +297,11 @@ export default function BlogsPage() {
                 {blog.title}
               </h2>
 
-
               {/* DESCRIPTION */}
 
               <p className="text-gray-600 leading-7 text-[15px] mb-5">
                 {blog.description}
               </p>
-
 
               {/* READ ARTICLE */}
 
@@ -315,10 +323,9 @@ export default function BlogsPage() {
 
       </section>
 
-
-      {/* ===================================================== */}
-      {/* BOTTOM CTA */}
-      {/* ===================================================== */}
+      {/* =====================================================
+          BOTTOM CTA
+      ===================================================== */}
 
       <section className="max-w-7xl mx-auto px-6 md:px-10 pb-24">
 
@@ -362,6 +369,12 @@ export default function BlogsPage() {
         </div>
 
       </section>
+
+      {/* =====================================================
+          FOOTER
+      ===================================================== */}
+
+      <Footer />
 
     </main>
   );
