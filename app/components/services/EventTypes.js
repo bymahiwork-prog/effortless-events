@@ -8,28 +8,28 @@ const eventTypes = [
     title: "Weddings",
     description:
       "Make your big day truly magical with our complete planning and execution.",
-    image: "/images/services/weddings.jpg",
+    image: "/weddings.jpg",
     href: "/services/wedding-venues",
   },
   {
     title: "Birthdays & Parties",
     description:
       "From intimate gatherings to lavish celebrations, we create unforgettable memories.",
-    image: "/images/services/birthdays.jpg",
+    image: "/birthdays.jpg",
     href: "/services/party-venues",
   },
   {
     title: "Corporate Events",
     description:
       "Conferences, launches, annual days and corporate parties executed with professionalism.",
-    image: "/images/services/corporate.jpg",
+    image: "/corporate.jpg",
     href: "/services/corporate-events",
   },
   {
     title: "Private Celebrations",
     description:
       "Anniversaries, kitty parties and special gatherings tailored to your needs.",
-    image: "/images/services/private-events.jpg",
+    image: "/private-events.jpg",
     href: "/services/party-venues",
   },
 ];
