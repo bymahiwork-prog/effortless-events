@@ -8,34 +8,42 @@ const decorationImages = [
   {
     image: "/decoration-1.jpg",
     title: "Wedding Décor",
+    href: "/services/decoration-services",
   },
   {
     image: "/decoration-2.jpg",
     title: "Floral Styling",
+    href: "/services/decoration-services",
   },
   {
     image: "/decoration-3.jpg",
     title: "Elegant Celebrations",
+    href: "/services/decoration-services",
   },
   {
     image: "/decoration-4.jpg",
     title: "Table Styling",
+    href: "/services/decoration-services",
   },
   {
     image: "/decoration-5.jpg",
     title: "Luxury Event Décor",
+    href: "/services/decoration-services",
   },
   {
     image: "/decoration-6.jpg",
     title: "Private Celebrations",
+    href: "/services/decoration-services",
   },
   {
     image: "/decoration-7.jpg",
     title: "Reception Décor",
+    href: "/services/decoration-services",
   },
   {
     image: "/decoration-8.jpg",
     title: "Custom Event Styling",
+    href: "/services/decoration-services",
   },
 ];
 
@@ -66,7 +74,6 @@ export default function DecorationGallery() {
           </p>
         </motion.div>
 
-
         {/* Gallery */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
 
@@ -83,30 +90,38 @@ export default function DecorationGallery() {
               className="group relative aspect-[4/5] overflow-hidden bg-neutral-200"
             >
 
-              <img
-                src={item.image}
-                alt={item.title}
-                loading={index < 4 ? "eager" : "lazy"}
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+              {/* Clickable Decoration Image */}
+              <Link
+                href={item.href}
+                className="absolute inset-0 block"
+              >
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-90" />
+                {/* Background Image */}
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  loading={index < 4 ? "eager" : "lazy"}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
 
-              {/* Image Title */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-90" />
 
-                <p className="text-[10px] sm:text-xs font-medium tracking-[0.12em] uppercase text-white">
-                  {item.title}
-                </p>
+                {/* Image Title */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
 
-              </div>
+                  <p className="text-[10px] sm:text-xs font-medium tracking-[0.12em] uppercase text-white">
+                    {item.title}
+                  </p>
+
+                </div>
+
+              </Link>
 
             </motion.div>
           ))}
 
         </div>
-
 
         {/* CTA */}
         <motion.div
@@ -123,7 +138,7 @@ export default function DecorationGallery() {
           >
             Explore Decoration Services
 
-            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRight className="w-4 h-4 transition-transform duration-300" />
           </Link>
 
         </motion.div>
