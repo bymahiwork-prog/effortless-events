@@ -71,7 +71,7 @@ export default function ServicesHero() {
 
               {/* Explore Farmhouse Venues */}
               <Link
-                href="/farms"
+                href="/farmhouses"
                 className="inline-flex min-h-[44px] items-center justify-center border border-white/70 px-6 sm:px-7 py-3 text-[10px] sm:text-xs font-semibold tracking-[0.12em] uppercase text-white transition-all duration-300 hover:bg-white hover:text-black"
               >
                 Explore Venues
