@@ -1,437 +1,89 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
-const sliderData = [
-  {
-    imageSrc: "/venue 98.jpg",
-    altText: "Luxury farmhouse venue in Gurugram",
-    subText: "Effortless Farm 45",
-    location: "Gawal Pahari, Gurugram",
-    href: "https://www.effortlessevents.in/venues/98",
-  },
-  {
-    imageSrc: "/venue 125.webp",
-    altText: "Premium farmhouse venue in Delhi NCR",
-    subText: "Effortless Farm 16",
-    location: "Delhi NCR",
-    href: "https://www.effortlessevents.in/venues/125",
-  },
-  {
-    imageSrc: "/venue 120.webp",
-    altText: "Luxury pool farmhouse venue in Delhi NCR",
-    subText: "Effortless Farm 3",
-    location: "Delhi NCR",
-    href: "https://www.effortlessevents.in/venues/120",
-  },
-  {
-    imageSrc: "/venue 39.webp",
-    altText: "Elegant event farmhouse venue in Delhi NCR",
-    subText: "Effortless Farm 13",
-    location: "Delhi NCR",
-    href: "https://www.effortlessevents.in/venues/39",
-  },
-  {
-    imageSrc: "/Effortless Farm 58.webp",
-    altText: "Effortless Farm 58 in New Delhi",
-    subText: "Effortless Farm 58",
-    location: "New Delhi",
-    href: "https://www.effortlessevents.in/venues/132",
-  },
-  {
-    imageSrc: "/Effortless Farm 33.webp",
-    altText: "Effortless Farm 33 in New Delhi",
-    subText: "Effortless Farm 33",
-    location: "New Delhi",
-    href: "https://www.effortlessevents.in/venues/134",
-  },
-  {
-    imageSrc: "/Effortless Farm67.webp",
-    altText: "Effortless Farm 67 in Gurugram",
-    subText: "Effortless Farm 67",
-    location: "Gurugram",
-    href: "https://www.effortlessevents.in/venues/110",
-  },
-  {
-    imageSrc: "/Effortless Farm39.jpg",
-    altText: "Effortless Farm 39 in Faridabad",
-    subText: "Effortless Farm 39",
-    location: "Faridabad",
-    href: "https://www.effortlessevents.in/venues/63",
-  },
-  {
-    imageSrc: "/Effortless Farm18.jpg",
-    altText: "Effortless Farm 18 in New Delhi",
-    subText: "Effortless Farm 18",
-    location: "New Delhi",
-    href: "https://www.effortlessevents.in/venues/44",
-  },
-  {
-    imageSrc: "/Effortless HP28.jpg",
-    altText: "Effortless HP 28 in New Delhi",
-    subText: "Effortless HP 28",
-    location: "New Delhi",
-    href: "https://www.effortlessevents.in/venues/16",
-  },
-  {
-    imageSrc: "/Effortless Hp1.webp",
-    altText: "Effortless HP 1 in New Delhi",
-    subText: "Effortless HP 1",
-    location: "New Delhi",
-    href: "https://www.effortlessevents.in/venues/101",
-  },
-  {
-    imageSrc: "/Effortless Hp11.webp",
-    altText: "Effortless HP 11 in New Delhi",
-    subText: "Effortless HP 11",
-    location: "New Delhi",
-    href: "https://www.effortlessevents.in/venues/103",
-  },
-  {
-    imageSrc: "/Effortless Farm69.webp",
-    altText: "Effortless Farm 69 in Noida",
-    subText: "Effortless Farm 69",
-    location: "Noida",
-    href: "https://www.effortlessevents.in/venues/112",
-  },
-  {
-    imageSrc: "/Effortless HP 13.webp",
-    altText: "Effortless HP 13 in New Delhi",
-    subText: "Effortless HP 13",
-    location: "New Delhi",
-    href: "https://www.effortlessevents.in/venues/122",
-  },
-
-  /*
-   * =====================================================
-   * DECORATION FEATURE SLIDE
-   * =====================================================
-   */
-
-  {
-    imageSrc: "/decoration-1.jpg",
-    altText:
-      "Luxury wedding decor and event styling by Effortless Events",
-    subText: "Luxury Event Décor",
-    location: "Delhi NCR",
-    href: "/services/decoration-services",
-  },
-];
-
-const Hero = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [imageLoaded, setImageLoaded] = useState(false);
-
-  const currentSlide = sliderData[currentIndex];
-
-  /*
-   * =====================================================
-   * PREVIOUS SLIDE
-   * =====================================================
-   */
-
-  const goToPrevious = () => {
-    setImageLoaded(false);
-
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0
-        ? sliderData.length - 1
-        : prevIndex - 1
-    );
-  };
-
-  /*
-   * =====================================================
-   * NEXT SLIDE
-   * =====================================================
-   */
-
-  const goToNext = () => {
-    setImageLoaded(false);
-
-    setCurrentIndex((prevIndex) =>
-      prevIndex === sliderData.length - 1
-        ? 0
-        : prevIndex + 1
-    );
-  };
-
-  /*
-   * =====================================================
-   * AUTO SLIDER
-   * =====================================================
-   */
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setImageLoaded(false);
-
-      setCurrentIndex((prevIndex) =>
-        prevIndex === sliderData.length - 1
-          ? 0
-          : prevIndex + 1
-      );
-    }, 6000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  /*
-   * =====================================================
-   * HERO
-   * =====================================================
-   */
-
+export default function ServicesHero() {
   return (
-    <section className="relative w-full min-h-screen overflow-hidden bg-black">
+    <section className="relative w-full min-h-[520px] sm:min-h-[580px] lg:min-h-[620px] overflow-hidden bg-black">
 
-      {/* =====================================================
-          BACKGROUND IMAGE
-      ===================================================== */}
-
-      <div className="absolute inset-0 z-0">
-
+      {/* Background Image */}
+      <div className="absolute inset-0">
         <img
-          key={`${currentSlide.imageSrc}-${currentIndex}`}
-          src={currentSlide.imageSrc}
-          alt={currentSlide.altText}
-          onLoad={() => setImageLoaded(true)}
-          onError={() => setImageLoaded(false)}
-          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${
-            imageLoaded ? "opacity-100" : "opacity-0"
-          }`}
+          src="/images/services/services-hero.jpg"
+          alt="Elegant event setup by Effortless Events"
+          className="h-full w-full object-cover object-center"
         />
 
-        {/* Backup background while image loads */}
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/55" />
 
-        <div className="absolute inset-0 bg-neutral-900 -z-10" />
-
+        {/* Left Gradient for Text Readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/20" />
       </div>
 
+      {/* Hero Content */}
+      <div className="relative z-10 flex min-h-[520px] sm:min-h-[580px] lg:min-h-[620px] items-center">
 
-      {/* =====================================================
-          DARK OVERLAY
-      ===================================================== */}
+        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
-      <div className="absolute inset-0 z-10 bg-black/50" />
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="max-w-2xl translate-y-8 sm:translate-y-0"
+          >
 
-
-      {/* =====================================================
-          BOTTOM GRADIENT
-      ===================================================== */}
-
-      <div className="absolute inset-x-0 bottom-0 h-72 z-10 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-
-
-      {/* =====================================================
-          HERO CONTENT
-      ===================================================== */}
-
-      <div className="relative z-20 min-h-screen flex items-center">
-
-        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 pt-32 pb-28">
-
-          <div className="max-w-4xl">
-
-            {/* =================================================
-                EYEBROW
-            ================================================= */}
-
-            <p className="mb-5 text-xs sm:text-sm font-medium uppercase tracking-[0.2em] text-white/80">
-              Luxury Event Planning in Delhi NCR
+            {/* Eyebrow */}
+            <p className="mb-5 text-[10px] sm:text-xs font-medium tracking-[0.28em] uppercase text-[#d6b36a]">
+              Services
             </p>
 
-
-            {/* =================================================
-                MAIN HEADING
-            ================================================= */}
-
-            <h1 className="max-w-4xl text-4xl sm:text-5xl md:text-6xl lg:text-[72px] xl:text-[78px] font-semibold leading-[1.04] tracking-[-0.025em] text-white">
-              Delhi NCR&apos;s Premier Event Planning &amp; Venue
-              Company
+            {/* Main Heading */}
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[64px] leading-[0.98] tracking-[-0.02em] text-white">
+              Everything Your
+              <br />
+              Event Needs.
             </h1>
 
+            {/* Highlighted Heading */}
+            <h2 className="mt-1 font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[52px] leading-[1.05] italic text-[#d6b36a]">
+              Handled by One Team.
+            </h2>
 
-            {/* =================================================
-                DESCRIPTION
-            ================================================= */}
-
-            <p className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed text-white/90">
-              From intimate celebrations to grand corporate galas,
-              we design experiences that stay with you long after
-              the last guest leaves.
+            {/* Description */}
+            <p className="mt-5 max-w-xl text-sm sm:text-base leading-6 text-white/80">
+              From venue booking and décor to catering, entertainment
+              and on-day execution — we take care of it all, so you can
+              enjoy every moment.
             </p>
 
+            {/* CTA Buttons */}
+            <div className="mt-7 flex flex-col sm:flex-row gap-3 sm:gap-4">
 
-            {/* =================================================
-                CTA BUTTONS
-            ================================================= */}
-
-            <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
-
-              {/* Browse Venues */}
-
+              {/* Plan My Event */}
               <Link
-                href="/search"
-                className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-white px-7 sm:px-8 text-sm sm:text-base font-semibold text-black transition-all duration-300 hover:bg-[#d6b36a] hover:text-black"
+                href="/contact"
+                className="inline-flex min-h-[44px] items-center justify-center bg-[#d6b36a] px-6 sm:px-7 py-3 text-[10px] sm:text-xs font-semibold tracking-[0.12em] uppercase text-black transition-all duration-300 hover:bg-white"
               >
-                Browse Our Venues
+                Plan My Event
               </Link>
 
-
-              {/* WhatsApp */}
-
-              <a
-                href="https://wa.me/917838008069"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-white/80 bg-black/10 px-7 sm:px-8 text-sm sm:text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-black"
+              {/* Explore Farmhouse Venues */}
+              <Link
+                href="/farms"
+                className="inline-flex min-h-[44px] items-center justify-center border border-white/70 px-6 sm:px-7 py-3 text-[10px] sm:text-xs font-semibold tracking-[0.12em] uppercase text-white transition-all duration-300 hover:bg-white hover:text-black"
               >
-                Talk to Us on WhatsApp
-              </a>
+                Explore Venues
+              </Link>
 
             </div>
 
-          </div>
-
-
-          {/* =====================================================
-              BOTTOM FEATURE INFORMATION
-          ===================================================== */}
-
-          <div className="mt-16 flex flex-col gap-6 sm:mt-20 md:flex-row md:items-end md:justify-between">
-
-            {/* =================================================
-                FEATURED EXPERIENCE
-            ================================================= */}
-
-            <a
-              href={currentSlide.href}
-              target={
-                currentSlide.href.startsWith("http")
-                  ? "_blank"
-                  : undefined
-              }
-              rel={
-                currentSlide.href.startsWith("http")
-                  ? "noopener noreferrer"
-                  : undefined
-              }
-              className="group w-fit"
-            >
-
-              <p className="mb-1 text-[9px] sm:text-[10px] font-medium uppercase tracking-[0.2em] text-white/50">
-                Featured Experience
-              </p>
-
-              <p className="text-lg sm:text-xl md:text-2xl font-semibold text-white transition-colors duration-300 group-hover:text-[#d6b36a]">
-                {currentSlide.subText}
-              </p>
-
-              <p className="mt-1 text-sm sm:text-base text-white/70">
-                {currentSlide.location}
-              </p>
-
-            </a>
-
-
-            {/* =================================================
-                SLIDER CONTROLS
-            ================================================= */}
-
-            <div className="flex items-center gap-3">
-
-              {/* Previous */}
-
-              <button
-                type="button"
-                onClick={goToPrevious}
-                aria-label="Previous slide"
-                className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-white/25 bg-black/20 text-white backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-black"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M15 18l-6-6 6-6" />
-                </svg>
-              </button>
-
-
-              {/* Next */}
-
-              <button
-                type="button"
-                onClick={goToNext}
-                aria-label="Next slide"
-                className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-white/25 bg-black/20 text-white backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-black"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M9 18l6-6-6-6" />
-                </svg>
-              </button>
-
-            </div>
-
-          </div>
+          </motion.div>
 
         </div>
 
       </div>
-
-
-      {/* =====================================================
-          SLIDE INDICATORS
-      ===================================================== */}
-
-      <div className="absolute bottom-7 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2">
-
-        {sliderData.map((slide, index) => (
-
-          <button
-            key={`${slide.imageSrc}-${index}`}
-            type="button"
-            onClick={() => {
-              setImageLoaded(false);
-              setCurrentIndex(index);
-            }}
-            aria-label={`Go to slide ${index + 1}`}
-            aria-current={
-              index === currentIndex
-                ? "true"
-                : undefined
-            }
-            className={`h-1 rounded-full transition-all duration-300 ${
-              index === currentIndex
-                ? "w-8 bg-white"
-                : "w-2 bg-white/40 hover:bg-white/70"
-            }`}
-          />
-
-        ))}
-
-      </div>
-
     </section>
   );
-};
-
-export default Hero;
+}
