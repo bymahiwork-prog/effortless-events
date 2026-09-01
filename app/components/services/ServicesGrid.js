@@ -10,42 +10,42 @@ const services = [
     title: "Event Planning & Management",
     description:
       "End-to-end planning, budgeting, vendor coordination and flawless execution for stress-free events.",
-    image: "/images/services/event-planning.jpg",
+    image: "/event-planning.jpg",
   },
   {
     slug: "event-decor-styling",
     title: "Event Décor & Styling",
     description:
       "Creative concepts and stunning décor that transform your vision into an unforgettable experience.",
-    image: "/images/services/decoration.jpg",
+    image: "/decoration.jpg",
   },
   {
     slug: "catering-bar-services",
     title: "Catering & Bar Services",
     description:
       "Delicious menus, professional service and customized bar setups for every occasion.",
-    image: "/images/services/catering.jpg",
+    image: "/catering.jpg",
   },
   {
     slug: "venue-booking",
     title: "Venue Booking",
     description:
       "50+ premium venues including farmhouses, villas, banquet halls, rooftops and more.",
-    image: "/images/services/party-venues.jpg",
+    image: "/party-venues.jpg",
   },
   {
     slug: "entertainment-experiences",
     title: "Entertainment & Experiences",
     description:
       "DJs, live bands, artists and unique experiences that keep your guests engaged and delighted.",
-    image: "/images/services/entertainment.jpg",
+    image: "/entertainment.jpg",
   },
   {
     slug: "on-ground-event-management",
     title: "On-Ground Event Management",
     description:
       "Our on-site team ensures everything runs smoothly so you can focus on your guests.",
-    image: "/images/services/event-management.jpg",
+    image: "/event-management.jpg",
   },
 ];
 
