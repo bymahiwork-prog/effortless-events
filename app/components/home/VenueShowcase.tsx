@@ -90,8 +90,7 @@ const VenueShowcase = () => {
           (venue, index, self) =>
             index ===
             self.findIndex(
-              (item) =>
-                String(item.id) === String(venue.id)
+              (item) => String(item.id) === String(venue.id)
             )
         );
 
@@ -135,10 +134,16 @@ const VenueShowcase = () => {
 
     updateSlides();
 
-    window.addEventListener("resize", updateSlides);
+    window.addEventListener(
+      "resize",
+      updateSlides
+    );
 
     return () => {
-      window.removeEventListener("resize", updateSlides);
+      window.removeEventListener(
+        "resize",
+        updateSlides
+      );
     };
   }, []);
 
@@ -196,16 +201,18 @@ const VenueShowcase = () => {
 
   /*
    * ============================================================
-   * VENUE CLICK
+   * OPEN INDIVIDUAL WEDDING LISTING
    *
    * IMPORTANT:
-   * Wedding listing pages use:
    *
+   * Wedding listing:
+   * /weddings
+   *
+   * Individual listing:
    * /weddings/[id]
    *
-   * NOT:
-   *
-   * /venues/[id]
+   * Example:
+   * /weddings/70
    * ============================================================
    */
 
@@ -214,7 +221,11 @@ const VenueShowcase = () => {
       return;
     }
 
-    router.push(`/weddings/${venue.id}`);
+    router.push(
+      `/weddings/${encodeURIComponent(
+        String(venue.id)
+      )}`
+    );
   };
 
   /*
@@ -283,7 +294,9 @@ const VenueShowcase = () => {
             </p>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-medium text-white leading-tight">
-              Beautiful Wedding Venues Across Delhi NCR
+              Beautiful Wedding Venues
+              <br />
+              Across Delhi NCR
             </h2>
 
           </div>
@@ -342,11 +355,11 @@ const VenueShowcase = () => {
 
               {!loading && error && (
                 <div className="w-full py-16 text-center">
-
                   <p className="text-red-400 text-sm md:text-base">
-                    Error loading wedding venues: {error}
+                    Error loading wedding venues:
+                    {" "}
+                    {error}
                   </p>
-
                 </div>
               )}
 
@@ -376,16 +389,15 @@ const VenueShowcase = () => {
                             event.key === " "
                           ) {
                             event.preventDefault();
-                            handleVenueClick(venue);
+
+                            handleVenueClick(
+                              venue
+                            );
                           }
                         }}
                         role="link"
                         tabIndex={0}
-                        className="bg-[#17110B] rounded-[28px] overflow-hidden border border-[#2A2118] cursor-pointer group h-full"
-                        aria-label={`View ${
-                          venue.product_name ||
-                          "wedding venue"
-                        }`}
+                        className="bg-[#17110B] rounded-[28px] overflow-hidden border border-[#2A2118] cursor-pointer group h-full hover:border-[#C9A34A]/50 transition-all duration-300"
                       >
 
                         {/* =====================================
@@ -431,7 +443,6 @@ const VenueShowcase = () => {
 
                             {venue.rating && (
                               <div className="flex-shrink-0 flex items-center gap-1 text-[#C9A34A] text-sm">
-
                                 <span>
                                   ★
                                 </span>
@@ -439,7 +450,6 @@ const VenueShowcase = () => {
                                 <span>
                                   {venue.rating}
                                 </span>
-
                               </div>
                             )}
 
@@ -455,10 +465,24 @@ const VenueShowcase = () => {
                             {venue.product_detail
                               ? venue.product_detail.slice(
                                   0,
-                                  150
+                                  180
                                 )
                               : "Discover this beautiful wedding venue with Effortless Events."}
                           </p>
+
+                          {/* VIEW DETAILS */}
+
+                          <div className="mt-5 flex items-center gap-2 text-[#C9A34A] text-sm font-medium group-hover:text-[#D8B25B] transition-colors">
+
+                            <span>
+                              View Details
+                            </span>
+
+                            <span className="transition-transform duration-300 group-hover:translate-x-1">
+                              →
+                            </span>
+
+                          </div>
 
                         </div>
 
@@ -540,11 +564,9 @@ const VenueShowcase = () => {
             !error &&
             venues.length === 0 && (
               <div className="py-16 text-center">
-
                 <p className="text-white/60">
                   No wedding venues available right now.
                 </p>
-
               </div>
             )}
 
