@@ -10,7 +10,7 @@ export default function LocationSection({ venue }) {
 
   /*
    * ==========================================
-   * VENUE LOCATION DATA
+   * LOCATION
    * ==========================================
    */
 
@@ -20,6 +20,12 @@ export default function LocationSection({ venue }) {
     venue.city ||
     "Delhi NCR";
 
+  /*
+   * ==========================================
+   * ADDRESS
+   * ==========================================
+   */
+
   const address =
     venue.product_address ||
     venue.address ||
@@ -27,18 +33,17 @@ export default function LocationSection({ venue }) {
 
   /*
    * ==========================================
-   * BUILD GOOGLE MAPS SEARCH
+   * GOOGLE MAPS LOCATION
    *
-   * We do NOT need a separate Google Maps
-   * embed URL for every venue.
+   * IMPORTANT:
+   * We deliberately DO NOT use product_name.
    *
-   * The search is generated automatically
-   * from the venue's existing database data.
+   * The map is generated only from the actual
+   * address/location information.
    * ==========================================
    */
 
   const searchLocation = [
-    venue.product_name,
     address,
     location,
     "Delhi NCR",
@@ -47,17 +52,24 @@ export default function LocationSection({ venue }) {
     .filter(Boolean)
     .join(", ");
 
-  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    searchLocation
-  )}`;
+  /*
+   * ==========================================
+   * GOOGLE MAPS SEARCH URL
+   * ==========================================
+   */
+
+  const googleMapsUrl =
+    `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+      searchLocation
+    )}`;
 
   /*
    * ==========================================
-   * OPTIONAL EXISTING MAP URL
+   * EXISTING MAP URL
    *
-   * If a valid map URL already exists in the
-   * database, we can still use it for the
-   * "Open in Google Maps" button.
+   * If product_map exists, keep it available
+   * for the Open in Google Maps button.
+   * Otherwise use our automatic location URL.
    * ==========================================
    */
 
@@ -74,13 +86,26 @@ export default function LocationSection({ venue }) {
       ? existingMapUrl
       : googleMapsUrl;
 
+  /*
+   * ==========================================
+   * MAP EMBED URL
+   * ==========================================
+   *
+   * Again, this uses ONLY location/address.
+   */
+
+  const embedUrl =
+    `https://www.google.com/maps?q=${encodeURIComponent(
+      searchLocation
+    )}&output=embed`;
+
   return (
     <section className="w-full bg-white">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
 
         {/* =====================================================
-            HEADING
+            LOCATION HEADING
         ===================================================== */}
 
         <div className="mb-8">
@@ -98,9 +123,13 @@ export default function LocationSection({ venue }) {
 
           </div>
 
+          {/* CITY / LOCATION */}
+
           <p className="text-gray-600 mt-2">
             {location}
           </p>
+
+          {/* ADDRESS */}
 
           {address && (
             <p className="text-gray-500 text-sm mt-1">
@@ -112,57 +141,43 @@ export default function LocationSection({ venue }) {
 
 
         {/* =====================================================
-            MAP / LOCATION CARD
+            GOOGLE MAP
         ===================================================== */}
 
-        <div className="w-full h-[350px] sm:h-[450px] rounded-2xl overflow-hidden border border-gray-200 bg-[#f5f5f5]">
+        <div className="relative w-full h-[350px] sm:h-[450px] rounded-2xl overflow-hidden border border-gray-200 bg-gray-100">
 
-          <div className="relative w-full h-full">
-
-            {/* =================================================
-                GOOGLE MAPS BACKGROUND
-            ================================================= */}
-
-            <iframe
-              src={`https://www.google.com/maps?q=${encodeURIComponent(
-                searchLocation
-              )}&output=embed`}
-              width="100%"
-              height="100%"
-              style={{
-                border: 0,
-              }}
-              loading="lazy"
-              allowFullScreen
-              referrerPolicy="no-referrer-when-downgrade"
-              title={`${venue.product_name || location} location`}
-            />
+          <iframe
+            src={embedUrl}
+            width="100%"
+            height="100%"
+            style={{
+              border: 0,
+            }}
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+            title={`${location} location`}
+          />
 
 
-            {/* =================================================
-                OPEN GOOGLE MAPS BUTTON
-            ================================================= */}
+          {/* =================================================
+              OPEN IN GOOGLE MAPS
+          ================================================= */}
 
-            <a
-              href={finalMapUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="absolute bottom-5 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 bg-white text-[#071a33] px-5 py-3 rounded-full shadow-lg border border-gray-200 font-semibold text-sm hover:bg-[#d4af37] hover:text-white transition-all duration-300"
-            >
+          <a
+            href={finalMapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-5 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 bg-white text-[#071a33] px-5 py-3 rounded-full shadow-lg border border-gray-200 font-semibold text-sm whitespace-nowrap hover:bg-[#d4af37] hover:text-white transition-all duration-300"
+          >
 
-              <MapPin
-                className="w-4 h-4"
-              />
+            <MapPin className="w-4 h-4" />
 
-              Open in Google Maps
+            Open in Google Maps
 
-              <ExternalLink
-                className="w-4 h-4"
-              />
+            <ExternalLink className="w-4 h-4" />
 
-            </a>
-
-          </div>
+          </a>
 
         </div>
 
