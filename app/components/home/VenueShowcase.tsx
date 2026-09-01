@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 type Venue = {
   id: number | string;
@@ -94,7 +95,10 @@ const VenueShowcase = () => {
         setVenues(uniqueProducts);
         setCurrentSlide(0);
       } catch (err) {
-        console.error("Wedding Venue Showcase Error:", err);
+        console.error(
+          "Wedding Venue Showcase Error:",
+          err
+        );
 
         if (err instanceof Error) {
           setError(err.message);
@@ -128,10 +132,16 @@ const VenueShowcase = () => {
 
     updateSlides();
 
-    window.addEventListener("resize", updateSlides);
+    window.addEventListener(
+      "resize",
+      updateSlides
+    );
 
     return () => {
-      window.removeEventListener("resize", updateSlides);
+      window.removeEventListener(
+        "resize",
+        updateSlides
+      );
     };
   }, []);
 
@@ -194,7 +204,7 @@ const VenueShowcase = () => {
    */
 
   const handleViewAllVenues = () => {
-    router.push("/weddings");
+    window.location.href = "/weddings";
   };
 
   /*
@@ -327,7 +337,8 @@ const VenueShowcase = () => {
               {!loading &&
                 !error &&
                 venues.map((venue) => {
-                  const venueImage = getVenueImage(venue);
+                  const venueImage =
+                    getVenueImage(venue);
 
                   return (
                     <div
@@ -335,10 +346,15 @@ const VenueShowcase = () => {
                       className={`flex-shrink-0 ${getCardWidth()}`}
                     >
 
+                      {/* =================================================
+                          IMPORTANT:
+                          ENTIRE CARD LINKS TO /venues/[id]
+                      ================================================= */}
+
                       <Link
-  href={`/venues/${venue.id}`}
-  className="block bg-[#17110B] rounded-[28px] overflow-hidden border border-[#2A2118] cursor-pointer group h-full"
->
+                        href={`/venues/${venue.id}`}
+                        className="block bg-[#17110B] rounded-[28px] overflow-hidden border border-[#2A2118] cursor-pointer group h-full"
+                      >
 
                         {/* =====================================
                             IMAGE
@@ -387,10 +403,15 @@ const VenueShowcase = () => {
 
                             {venue.rating && (
                               <div className="flex-shrink-0 flex items-center gap-1 text-[#C9A34A] text-sm">
-                                <span>★</span>
+
+                                <span>
+                                  ★
+                                </span>
+
                                 <span>
                                   {venue.rating}
                                 </span>
+
                               </div>
                             )}
 
@@ -415,7 +436,7 @@ const VenueShowcase = () => {
 
                         </div>
 
-                      </article>
+                      </Link>
 
                     </div>
                   );
