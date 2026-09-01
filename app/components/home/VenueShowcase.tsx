@@ -354,11 +354,11 @@ const VenueShowcase = () => {
                     >
 
                       {/* =================================================
-                          DIRECT LINK TO EXISTING WEDDING VENUE DETAIL PAGE
+                          DIRECT LINK TO EXISTING WEDDING DETAIL PAGE
                           ================================================= */}
 
                       <Link
-                        href={`/wedding-venues/${venue.id}`}
+                        href={`/weddings/${venue.id}`}
                         className="block h-full"
                       >
 
@@ -444,12 +444,15 @@ const VenueShowcase = () => {
 
                             </p>
 
-                            {/* View Detail */}
+                            {/* =====================================
+                                VIEW DETAILS
+                                ===================================== */}
 
                             <div className="mt-5 text-[#C9A34A] text-xs uppercase tracking-[0.18em] font-medium">
 
                               View Details
-                              <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1 inline-block">
+
+                              <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">
                                 →
                               </span>
 
