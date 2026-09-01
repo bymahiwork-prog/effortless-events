@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 type Venue = {
   id: number | string;
@@ -81,14 +81,17 @@ const VenueShowcase = () => {
           : [];
 
         /*
-         * Remove duplicate venue IDs
+         * ========================================================
+         * REMOVE DUPLICATE VENUE IDS
+         * ========================================================
          */
 
         const uniqueProducts = products.filter(
           (venue, index, self) =>
             index ===
             self.findIndex(
-              (item) => String(item.id) === String(venue.id)
+              (item) =>
+                String(item.id) === String(venue.id)
             )
         );
 
@@ -103,7 +106,9 @@ const VenueShowcase = () => {
         if (err instanceof Error) {
           setError(err.message);
         } else {
-          setError("Unable to load wedding venues");
+          setError(
+            "Unable to load wedding venues"
+          );
         }
       } finally {
         setLoading(false);
@@ -248,6 +253,7 @@ const VenueShowcase = () => {
 
   return (
     <section className="bg-[#0F0803] py-20 md:py-28">
+
       <div className="max-w-7xl mx-auto px-6 md:px-8">
 
         {/* =====================================================
@@ -324,7 +330,8 @@ const VenueShowcase = () => {
                 <div className="w-full py-16 text-center">
 
                   <p className="text-red-400 text-sm md:text-base">
-                    Error loading wedding venues: {error}
+                    Error loading wedding venues:{" "}
+                    {error}
                   </p>
 
                 </div>
@@ -347,94 +354,110 @@ const VenueShowcase = () => {
                     >
 
                       {/* =================================================
-                          IMPORTANT:
-                          ENTIRE CARD LINKS TO /venues/[id]
-                      ================================================= */}
+                          DIRECT LINK TO EXISTING WEDDING VENUE DETAIL PAGE
+                          ================================================= */}
 
                       <Link
-                        href={`/venues/${venue.id}`}
-                        className="block bg-[#17110B] rounded-[28px] overflow-hidden border border-[#2A2118] cursor-pointer group h-full"
+                        href={`/wedding-venues/${venue.id}`}
+                        className="block h-full"
                       >
 
-                        {/* =====================================
-                            IMAGE
-                        ===================================== */}
+                        <article
+                          className="bg-[#17110B] rounded-[28px] overflow-hidden border border-[#2A2118] cursor-pointer group h-full"
+                        >
 
-                        <div className="relative h-64 sm:h-72 overflow-hidden bg-[#21180F]">
+                          {/* =====================================
+                              IMAGE
+                              ===================================== */}
 
-                          {venueImage ? (
+                          <div className="relative h-64 sm:h-72 overflow-hidden bg-[#21180F]">
 
-                            <img
-                              src={venueImage}
-                              alt={
-                                venue.product_name ||
-                                "Wedding venue"
-                              }
-                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                              loading="lazy"
-                            />
+                            {venueImage ? (
 
-                          ) : (
+                              <img
+                                src={venueImage}
+                                alt={
+                                  venue.product_name ||
+                                  "Wedding venue"
+                                }
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                loading="lazy"
+                              />
 
-                            <div className="w-full h-full flex items-center justify-center text-white/40 text-sm">
-                              Venue image unavailable
-                            </div>
+                            ) : (
 
-                          )}
-
-                          {/* Image Gradient */}
-
-                          <div className="absolute inset-0 bg-gradient-to-t from-[#17110B] via-transparent to-transparent pointer-events-none" />
-
-                        </div>
-
-                        {/* =====================================
-                            CONTENT
-                        ===================================== */}
-
-                        <div className="p-6">
-
-                          <div className="flex items-center justify-between gap-3 mb-3">
-
-                            <h3 className="text-2xl sm:text-3xl font-serif text-white">
-                              {venue.product_name ||
-                                "Wedding Venue"}
-                            </h3>
-
-                            {venue.rating && (
-                              <div className="flex-shrink-0 flex items-center gap-1 text-[#C9A34A] text-sm">
-
-                                <span>
-                                  ★
-                                </span>
-
-                                <span>
-                                  {venue.rating}
-                                </span>
-
+                              <div className="w-full h-full flex items-center justify-center text-white/40 text-sm">
+                                Venue image unavailable
                               </div>
+
                             )}
+
+                            {/* Image Gradient */}
+
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#17110B] via-transparent to-transparent pointer-events-none" />
 
                           </div>
 
-                          {venue.product_location && (
-                            <p className="text-[#C9A34A] text-sm mb-3">
-                              {venue.product_location}
+                          {/* =====================================
+                              CONTENT
+                              ===================================== */}
+
+                          <div className="p-6">
+
+                            <div className="flex items-center justify-between gap-3 mb-3">
+
+                              <h3 className="text-2xl sm:text-3xl font-serif text-white">
+                                {venue.product_name ||
+                                  "Wedding Venue"}
+                              </h3>
+
+                              {venue.rating && (
+                                <div className="flex-shrink-0 flex items-center gap-1 text-[#C9A34A] text-sm">
+
+                                  <span>
+                                    ★
+                                  </span>
+
+                                  <span>
+                                    {venue.rating}
+                                  </span>
+
+                                </div>
+                              )}
+
+                            </div>
+
+                            {venue.product_location && (
+                              <p className="text-[#C9A34A] text-sm mb-3">
+                                {venue.product_location}
+                              </p>
+                            )}
+
+                            <p className="text-[#D4C7B8] leading-7 line-clamp-4 text-sm sm:text-base">
+
+                              {venue.product_detail
+                                ? venue.product_detail.slice(
+                                    0,
+                                    150
+                                  )
+                                : "Discover this beautiful wedding venue with Effortless Events."}
+
                             </p>
-                          )}
 
-                          <p className="text-[#D4C7B8] leading-7 line-clamp-4 text-sm sm:text-base">
+                            {/* View Detail */}
 
-                            {venue.product_detail
-                              ? venue.product_detail.slice(
-                                  0,
-                                  150
-                                )
-                              : "Discover this beautiful wedding venue with Effortless Events."}
+                            <div className="mt-5 text-[#C9A34A] text-xs uppercase tracking-[0.18em] font-medium">
 
-                          </p>
+                              View Details
+                              <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1 inline-block">
+                                →
+                              </span>
 
-                        </div>
+                            </div>
+
+                          </div>
+
+                        </article>
 
                       </Link>
 
@@ -499,7 +522,9 @@ const VenueShowcase = () => {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   >
+
                     <path d="M9 18l6-6-6-6" />
+
                   </svg>
 
                 </button>
@@ -527,6 +552,7 @@ const VenueShowcase = () => {
         </div>
 
       </div>
+
     </section>
   );
 };
