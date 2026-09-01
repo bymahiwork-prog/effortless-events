@@ -113,20 +113,40 @@ export default function OnGroundEventManagement() {
     },
   ];
 
+  const benefits = [
+    {
+      title: "One Point Of Coordination",
+      description:
+        "Instead of managing multiple vendors yourself, you have a dedicated team coordinating the moving parts.",
+    },
+    {
+      title: "Real-Time Problem Solving",
+      description:
+        "Events can be unpredictable. Our team is present to identify issues and address them quickly.",
+    },
+    {
+      title: "Vendor Accountability",
+      description:
+        "We coordinate with vendors and keep their deliverables aligned with the event plan.",
+    },
+    {
+      title: "Stress-Free Execution",
+      description:
+        "You get to focus on your guests and enjoy the experience rather than managing logistics.",
+    },
+  ];
+
   return (
     <main className="bg-white text-[#111111]">
-
       {/* =====================================================
           NAVBAR
       ===================================================== */}
       <Navbar />
 
-
       {/* =====================================================
           HERO
       ===================================================== */}
       <section className="relative min-h-[650px] md:min-h-[720px] flex items-center overflow-hidden">
-
         <Image
           src="/event-gallery-6.jpeg"
           alt="On-ground event management"
@@ -135,12 +155,10 @@ export default function OnGroundEventManagement() {
           className="object-cover"
         />
 
-        <div className="absolute inset-0 bg-black/55"></div>
+        <div className="absolute inset-0 bg-black/55" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-28">
-
           <div className="max-w-3xl">
-
             <p className="text-[#E4D078] tracking-[0.35em] uppercase text-xs sm:text-sm font-medium mb-6">
               Our Services
             </p>
@@ -160,7 +178,6 @@ export default function OnGroundEventManagement() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-3 bg-[#E4D078] text-black px-7 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-white transition-all duration-300"
@@ -175,22 +192,16 @@ export default function OnGroundEventManagement() {
               >
                 Explore Services
               </Link>
-
             </div>
-
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           INTRODUCTION
       ===================================================== */}
       <section className="py-20 sm:py-24 md:py-28 px-6">
-
         <div className="max-w-5xl mx-auto text-center">
-
           <p className="text-[#B88A25] tracking-[0.3em] uppercase text-xs sm:text-sm font-medium mb-5">
             Seamless Execution
           </p>
@@ -214,24 +225,19 @@ export default function OnGroundEventManagement() {
             your family, your team and your guests can enjoy the occasion
             without worrying about what is happening behind the scenes.
           </p>
-
         </div>
 
-
         <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-
           {[
             "Dedicated on-ground coordination",
             "Vendor and staff management",
             "Event timeline supervision",
             "Guest assistance and coordination",
           ].map((item, index) => (
-
             <div
               key={index}
               className="border border-gray-200 p-6 text-center"
             >
-
               <CheckCircle2
                 size={21}
                 className="text-[#B88A25] mx-auto mb-4"
@@ -240,15 +246,10 @@ export default function OnGroundEventManagement() {
               <p className="text-gray-700 text-sm leading-6">
                 {item}
               </p>
-
             </div>
-
           ))}
-
         </div>
-
       </section>
-
 
       {/* =====================================================
           SERVICES
@@ -257,11 +258,8 @@ export default function OnGroundEventManagement() {
         id="our-services"
         className="bg-[#F8F7F3] py-20 sm:py-24 md:py-28 px-6"
       >
-
         <div className="max-w-6xl mx-auto">
-
           <div className="text-center max-w-3xl mx-auto mb-14">
-
             <p className="text-[#B88A25] tracking-[0.3em] uppercase text-xs sm:text-sm font-medium mb-5">
               What We Manage
             </p>
@@ -274,14 +272,10 @@ export default function OnGroundEventManagement() {
               Our on-ground team works behind the scenes to make sure every
               element comes together seamlessly.
             </p>
-
           </div>
 
-
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
             {services.map((service, index) => {
-
               const Icon = service.icon;
 
               return (
@@ -289,14 +283,11 @@ export default function OnGroundEventManagement() {
                   key={index}
                   className="bg-white border border-gray-200 p-7 sm:p-8 hover:shadow-lg transition-all duration-300"
                 >
-
                   <div className="w-12 h-12 flex items-center justify-center bg-[#F8F3DD] mb-6">
-
                     <Icon
                       size={22}
                       className="text-[#B88A25]"
                     />
-
                   </div>
 
                   <h3 className="font-serif text-xl sm:text-2xl mb-4">
@@ -306,29 +297,20 @@ export default function OnGroundEventManagement() {
                   <p className="text-gray-600 leading-7 text-sm sm:text-base">
                     {service.description}
                   </p>
-
                 </div>
               );
-
             })}
-
           </div>
-
         </div>
       </section>
 
-
       {/* =====================================================
-          MANAGEMENT DETAILS
+          EVENT DAY SERVICES
       ===================================================== */}
       <section className="py-20 sm:py-24 md:py-28 px-6">
-
         <div className="max-w-6xl mx-auto">
-
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-
             <div>
-
               <p className="text-[#B88A25] tracking-[0.3em] uppercase text-xs sm:text-sm font-medium mb-5">
                 Event-Day Services
               </p>
@@ -345,19 +327,14 @@ export default function OnGroundEventManagement() {
                 people, schedules and operational details that keep your
                 celebration moving.
               </p>
-
             </div>
 
-
             <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5">
-
               {managementServices.map((item, index) => (
-
                 <div
                   key={index}
                   className="flex items-center gap-3 border-b border-gray-200 pb-4"
                 >
-
                   <CheckCircle2
                     size={17}
                     className="text-[#B88A25] flex-shrink-0"
@@ -366,28 +343,19 @@ export default function OnGroundEventManagement() {
                   <span className="text-gray-700 text-sm sm:text-base">
                     {item}
                   </span>
-
                 </div>
-
               ))}
-
             </div>
-
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           EVENTS WE MANAGE
       ===================================================== */}
       <section className="bg-[#111111] text-white py-20 sm:py-24 md:py-28 px-6">
-
         <div className="max-w-6xl mx-auto">
-
           <div className="text-center max-w-3xl mx-auto mb-14">
-
             <p className="text-[#E4D078] tracking-[0.3em] uppercase text-xs sm:text-sm font-medium mb-5">
               Events We Manage
             </p>
@@ -402,19 +370,14 @@ export default function OnGroundEventManagement() {
               Our on-ground management services can be tailored to different
               types of occasions, venues and event formats.
             </p>
-
           </div>
 
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/15">
-
             {eventTypes.map((event, index) => (
-
               <div
                 key={index}
                 className="border-r border-b border-white/15 p-7 sm:p-8 hover:bg-white/5 transition-all duration-300"
               >
-
                 <span className="text-[#E4D078] text-xs tracking-[0.2em]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
@@ -422,26 +385,18 @@ export default function OnGroundEventManagement() {
                 <h3 className="font-serif text-lg sm:text-xl mt-4">
                   {event}
                 </h3>
-
               </div>
-
             ))}
-
           </div>
-
         </div>
       </section>
 
-
       {/* =====================================================
-          WHY EFFORTLESS
+          WHY EFFORTLESS EVENTS
       ===================================================== */}
       <section className="py-20 sm:py-24 md:py-28 px-6">
-
         <div className="max-w-6xl mx-auto">
-
           <div className="text-center max-w-3xl mx-auto mb-14">
-
             <p className="text-[#B88A25] tracking-[0.3em] uppercase text-xs sm:text-sm font-medium mb-5">
               Why Effortless Events
             </p>
@@ -457,40 +412,14 @@ export default function OnGroundEventManagement() {
               simple: you don&apos;t have to be the person solving problems
               at your own event.
             </p>
-
           </div>
 
-
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-            {[
-              {
-                title: "One Point Of Coordination",
-                description:
-                  "Instead of managing multiple vendors yourself, you have a dedicated team coordinating the moving parts.",
-              },
-              {
-                title: "Real-Time Problem Solving",
-                description:
-                  "Events can be unpredictable. Our team is present to identify issues and address them quickly.",
-              },
-              {
-                title: "Vendor Accountability",
-                description:
-                  "We coordinate with vendors and keep their deliverables aligned with the event plan.",
-              },
-              {
-                title: "Stress-Free Execution",
-                description:
-                  "You get to focus on your guests and enjoy the experience rather than managing logistics.",
-              },
-            ].map((item, index) => (
-
+            {benefits.map((item, index) => (
               <div
                 key={index}
                 className="border border-gray-200 p-7"
               >
-
                 <div className="text-[#D7BE65] font-serif text-3xl mb-5">
                   {String(index + 1).padStart(2, "0")}
                 </div>
@@ -502,26 +431,18 @@ export default function OnGroundEventManagement() {
                 <p className="text-gray-600 text-sm leading-7">
                   {item.description}
                 </p>
-
               </div>
-
             ))}
-
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           PROCESS
       ===================================================== */}
       <section className="bg-[#F8F7F3] py-20 sm:py-24 md:py-28 px-6">
-
         <div className="max-w-6xl mx-auto">
-
           <div className="text-center max-w-3xl mx-auto mb-14">
-
             <p className="text-[#B88A25] tracking-[0.3em] uppercase text-xs sm:text-sm font-medium mb-5">
               Our Process
             </p>
@@ -534,19 +455,14 @@ export default function OnGroundEventManagement() {
               A structured approach keeps everyone aligned and makes event
               day significantly easier for you.
             </p>
-
           </div>
 
-
           <div className="grid md:grid-cols-4 gap-8">
-
             {process.map((step, index) => (
-
               <div
                 key={index}
                 className="relative"
               >
-
                 <div className="text-[#D7BE65] font-serif text-4xl mb-5">
                   {step.number}
                 </div>
@@ -560,26 +476,19 @@ export default function OnGroundEventManagement() {
                 </p>
 
                 {index !== process.length - 1 && (
-                  <div className="hidden md:block absolute top-7 left-[70%] w-[55%] border-t border-gray-300"></div>
+                  <div className="hidden md:block absolute top-7 left-[70%] w-[55%] border-t border-gray-300" />
                 )}
-
               </div>
-
             ))}
-
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           EFFORTLESS STANDARD
       ===================================================== */}
       <section className="py-20 sm:py-24 md:py-28 px-6">
-
         <div className="max-w-4xl mx-auto text-center">
-
           <p className="text-[#B88A25] tracking-[0.3em] uppercase text-xs sm:text-sm font-medium mb-6">
             The Effortless Standard
           </p>
@@ -607,19 +516,14 @@ export default function OnGroundEventManagement() {
               We manage everything behind it.
             </span>
           </div>
-
         </div>
-
       </section>
-
 
       {/* =====================================================
           CTA
       ===================================================== */}
       <section className="bg-[#F8F3DD] py-20 sm:py-24 md:py-28 px-6">
-
         <div className="max-w-4xl mx-auto text-center">
-
           <p className="text-[#B88A25] tracking-[0.3em] uppercase text-xs sm:text-sm font-medium mb-6">
             Let&apos;s Make It Effortless
           </p>
@@ -637,7 +541,6 @@ export default function OnGroundEventManagement() {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-
             <Link
               href="/contact"
               className="inline-flex items-center justify-center gap-3 bg-[#111111] text-white px-8 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-[#E4D078] hover:text-black transition-all duration-300"
@@ -652,22 +555,16 @@ export default function OnGroundEventManagement() {
             >
               Explore Services
             </Link>
-
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           OTHER SERVICES
       ===================================================== */}
       <section className="py-16 sm:py-20 px-6 bg-white">
-
         <div className="max-w-6xl mx-auto">
-
           <div className="text-center mb-10">
-
             <p className="text-[#B88A25] tracking-[0.3em] uppercase text-xs sm:text-sm font-medium mb-4">
               Explore More
             </p>
@@ -675,12 +572,9 @@ export default function OnGroundEventManagement() {
             <h2 className="font-serif text-3xl sm:text-4xl">
               Complete Event Solutions
             </h2>
-
           </div>
 
-
           <div className="flex flex-wrap justify-center gap-3">
-
             <Link
               href="/services/event-planning-management"
               className="px-5 py-3 bg-[#F8F7F3] border border-gray-200 text-sm hover:border-[#B88A25] transition-all"
@@ -704,7 +598,7 @@ export default function OnGroundEventManagement() {
 
             <Link
               href="/services/venue-booking"
-              className="px-5 py-3 bg-[#F8F7F3] border border-gray-200 text-sm hover:border-[#B88A25] transition-all
+              className="px-5 py-3 bg-[#F8F7F3] border border-gray-200 text-sm hover:border-[#B88A25] transition-all"
             >
               Venue Booking
             </Link>
@@ -715,12 +609,9 @@ export default function OnGroundEventManagement() {
             >
               Entertainment &amp; Experiences
             </Link>
-
           </div>
-
         </div>
       </section>
-
     </main>
   );
 }
