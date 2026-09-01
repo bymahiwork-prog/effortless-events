@@ -6,35 +6,35 @@ import { ArrowRight } from "lucide-react";
 
 const decorationImages = [
   {
-    image: "/images/services/decoration-1.jpg",
+    image: "/decoration-1.jpg",
     title: "Wedding Décor",
   },
   {
-    image: "/images/services/decoration-2.jpg",
+    image: "/decoration-2.jpg",
     title: "Floral Styling",
   },
   {
-    image: "/images/services/decoration-3.jpg",
+    image: "/decoration-3.jpg",
     title: "Elegant Celebrations",
   },
   {
-    image: "/images/services/decoration-4.jpg",
+    image: "/decoration-4.jpg",
     title: "Table Styling",
   },
   {
-    image: "/images/services/decoration-5.jpg",
+    image: "/decoration-5.jpg",
     title: "Luxury Event Décor",
   },
   {
-    image: "/images/services/decoration-6.jpg",
+    image: "/decoration-6.jpg",
     title: "Private Celebrations",
   },
   {
-    image: "/images/services/decoration-7.jpg",
+    image: "/decoration-7.jpg",
     title: "Reception Décor",
   },
   {
-    image: "/images/services/decoration-8.jpg",
+    image: "/decoration-8.jpg",
     title: "Custom Event Styling",
   },
 ];
