@@ -14,14 +14,20 @@ import {
 } from "lucide-react";
 
 export default function FarmBookingPage({ venue }) {
-  const [selectedDate, setSelectedDate] = useState("");
+  // =========================================
+  // BOOKING STATES
+  // =========================================
 
-  // DEFAULT BOOKING TIMES
-  const [checkInTime, setCheckInTime] = useState("3:00 pm");
-  const [checkOutTime, setCheckOutTime] = useState("10:00 am");
+  const [checkInDate, setCheckInDate] = useState("");
+  const [checkOutDate, setCheckOutDate] = useState("");
+  const [numberOfGuests, setNumberOfGuests] = useState("");
 
   const [isDescriptionExpanded, setIsDescriptionExpanded] =
     useState(false);
+
+  // =========================================
+  // AMENITIES STATES
+  // =========================================
 
   const [expandedSections, setExpandedSections] = useState({
     food: true,
@@ -40,58 +46,93 @@ export default function FarmBookingPage({ venue }) {
     }));
   };
 
-  /*
-   * =========================================
-   * BOOKING -> WHATSAPP
-   * =========================================
-   */
+  // =========================================
+  // GET TODAY'S DATE
+  // =========================================
+
+  const today = new Date().toISOString().split("T")[0];
+
+  // =========================================
+  // BOOKING -> WHATSAPP
+  // =========================================
 
   const handleBooking = () => {
-    if (!selectedDate) {
-      alert("Please select a date first.");
+    // Validate Check-in
+    if (!checkInDate) {
+      alert("Please select a check-in date.");
       return;
     }
 
-    /*
-     * Convert YYYY-MM-DD into DD-MM-YYYY
-     */
-    const formattedDate = selectedDate
+    // Validate Check-out
+    if (!checkOutDate) {
+      alert("Please select a check-out date.");
+      return;
+    }
+
+    // Validate that checkout is after check-in
+    if (checkOutDate < checkInDate) {
+      alert("Check-out date must be after the check-in date.");
+      return;
+    }
+
+    // Validate Guests
+    if (!numberOfGuests) {
+      alert("Please enter the number of guests.");
+      return;
+    }
+
+    // =========================================
+    // FORMAT DATES
+    // YYYY-MM-DD -> DD-MM-YYYY
+    // =========================================
+
+    const formattedCheckInDate = checkInDate
       .split("-")
       .reverse()
       .join("-");
 
-    /*
-     * Get farmhouse name
-     */
+    const formattedCheckOutDate = checkOutDate
+      .split("-")
+      .reverse()
+      .join("-");
+
+    // =========================================
+    // GET FARMHOUSE NAME
+    // =========================================
+
     const farmhouseName =
       venue?.product_name || "Farmhouse";
 
-    /*
-     * WhatsApp message
-     */
+    // =========================================
+    // WHATSAPP MESSAGE
+    // =========================================
+
     const message = `Hello Effortless Events,
 
 I am interested in booking the following farmhouse.
 
 Farmhouse: ${farmhouseName}
-Date: ${formattedDate}
-Check-in: ${checkInTime}
-Check-out: ${checkOutTime}
 
-Please confirm the availability and booking details.
+Check-in Date: ${formattedCheckInDate}
+Check-out Date: ${formattedCheckOutDate}
+Number of Guests: ${numberOfGuests}
+
+Please confirm the availability, pricing, and booking details.
 
 Thank you.`;
 
-    /*
-     * Encode WhatsApp message
-     */
+    // =========================================
+    // WHATSAPP URL
+    // =========================================
+
     const whatsappUrl = `https://wa.me/917838008069?text=${encodeURIComponent(
       message
     )}`;
 
-    /*
-     * Open WhatsApp
-     */
+    // =========================================
+    // OPEN WHATSAPP
+    // =========================================
+
     window.open(
       whatsappUrl,
       "_blank",
@@ -99,11 +140,9 @@ Thank you.`;
     );
   };
 
-  /*
-   * =========================================
-   * IF VENUE DOES NOT EXIST
-   * =========================================
-   */
+  // =========================================
+  // IF VENUE DOES NOT EXIST
+  // =========================================
 
   if (!venue) {
     return null;
@@ -115,15 +154,15 @@ Thank you.`;
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
 
-          {/* ========================================= */}
-          {/* LEFT COLUMN */}
-          {/* ========================================= */}
+          {/* =========================================
+              LEFT COLUMN
+          ========================================= */}
 
           <div className="lg:col-span-2 space-y-6">
 
-            {/* ========================================= */}
-            {/* HEADER */}
-            {/* ========================================= */}
+            {/* =========================================
+                HEADER
+            ========================================= */}
 
             <div>
               <h1 className="text-xl sm:text-2xl font-bold text-black mb-4">
@@ -161,15 +200,15 @@ Thank you.`;
               </div>
             </div>
 
-            {/* ========================================= */}
-            {/* AMENITIES */}
-            {/* ========================================= */}
+            {/* =========================================
+                AMENITIES
+            ========================================= */}
 
             <div className="space-y-3 text-black">
 
-              {/* ========================================= */}
-              {/* FOOD AND BEVERAGE */}
-              {/* ========================================= */}
+              {/* =========================================
+                  FOOD AND BEVERAGE
+              ========================================= */}
 
               <div className="border border-gray-200 rounded-lg">
                 <button
@@ -213,9 +252,9 @@ Thank you.`;
                 )}
               </div>
 
-              {/* ========================================= */}
-              {/* ALCOHOLIC AND BEVERAGE */}
-              {/* ========================================= */}
+              {/* =========================================
+                  ALCOHOLIC AND BEVERAGE
+              ========================================= */}
 
               <div className="border border-gray-200 rounded-lg">
                 <button
@@ -260,9 +299,9 @@ Thank you.`;
                 )}
               </div>
 
-              {/* ========================================= */}
-              {/* FURNITURE */}
-              {/* ========================================= */}
+              {/* =========================================
+                  FURNITURE
+              ========================================= */}
 
               <div className="border border-gray-200 rounded-lg">
                 <button
@@ -306,9 +345,9 @@ Thank you.`;
                 )}
               </div>
 
-              {/* ========================================= */}
-              {/* RESTROOMS */}
-              {/* ========================================= */}
+              {/* =========================================
+                  RESTROOMS
+              ========================================= */}
 
               <div className="border border-gray-200 rounded-lg">
                 <button
@@ -353,9 +392,9 @@ Thank you.`;
                 )}
               </div>
 
-              {/* ========================================= */}
-              {/* AV AND MUSIC */}
-              {/* ========================================= */}
+              {/* =========================================
+                  AV AND MUSIC
+              ========================================= */}
 
               <div className="border border-gray-200 rounded-lg">
                 <button
@@ -398,9 +437,9 @@ Thank you.`;
                 )}
               </div>
 
-              {/* ========================================= */}
-              {/* PARKING */}
-              {/* ========================================= */}
+              {/* =========================================
+                  PARKING
+              ========================================= */}
 
               <div className="border border-gray-200 rounded-lg">
                 <button
@@ -442,9 +481,9 @@ Thank you.`;
                 )}
               </div>
 
-              {/* ========================================= */}
-              {/* EVENTS RULES */}
-              {/* ========================================= */}
+              {/* =========================================
+                  EVENTS RULES
+              ========================================= */}
 
               <div className="border border-gray-200 rounded-lg">
                 <button
@@ -491,22 +530,21 @@ Thank you.`;
             </div>
           </div>
 
-          {/* ========================================= */}
-          {/* RIGHT COLUMN - BOOKING */}
-          {/* ========================================= */}
+          {/* =========================================
+              RIGHT COLUMN - BOOKING
+          ========================================= */}
 
           <div className="lg:col-span-1">
 
             <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-3 sm:p-4 lg:p-6 sticky top-4">
 
-              {/* ========================================= */}
-              {/* PRICE */}
-              {/* ========================================= */}
+              {/* =========================================
+                  PRICE
+              ========================================= */}
 
               <div className="mb-4 sm:mb-6">
 
                 <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">
-
                   {venue?.product_price
                     ? String(
                         venue.product_price
@@ -514,7 +552,6 @@ Thank you.`;
                       ? venue.product_price
                       : `₹${venue.product_price}`
                     : "Price on request"}
-
                 </div>
 
                 <div className="text-xs sm:text-sm text-[#E4D078]">
@@ -523,9 +560,9 @@ Thank you.`;
 
               </div>
 
-              {/* ========================================= */}
-              {/* DISCOUNT */}
-              {/* ========================================= */}
+              {/* =========================================
+                  DISCOUNT
+              ========================================= */}
 
               <div className="border-t border-gray-200 pt-3 sm:pt-4 mb-4 sm:mb-6">
 
@@ -543,20 +580,20 @@ Thank you.`;
 
               </div>
 
-              {/* ========================================= */}
-              {/* DATE + CHECK-IN + CHECK-OUT */}
-              {/* ========================================= */}
+              {/* =========================================
+                  BOOKING DETAILS
+              ========================================= */}
 
               <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
 
-                {/* ========================================= */}
-                {/* DATE */}
-                {/* ========================================= */}
+                {/* =========================================
+                    CHECK-IN DATE
+                ========================================= */}
 
                 <div>
 
                   <label className="block text-xs sm:text-sm text-black mb-2 font-medium">
-                    Date{" "}
+                    Check-in{" "}
                     <span className="text-gray-400 font-normal">
                       (required)
                     </span>
@@ -564,472 +601,100 @@ Thank you.`;
 
                   <input
                     type="date"
-                    value={selectedDate}
-                    onChange={(e) =>
-                      setSelectedDate(e.target.value)
-                    }
-                    min={
-                      new Date()
-                        .toISOString()
-                        .split("T")[0]
-                    }
+                    value={checkInDate}
+                    onChange={(e) => {
+                      setCheckInDate(e.target.value);
+
+                      // If checkout is before new check-in,
+                      // clear checkout date.
+                      if (
+                        checkOutDate &&
+                        e.target.value > checkOutDate
+                      ) {
+                        setCheckOutDate("");
+                      }
+                    }}
+                    min={today}
                     className="w-full text-black px-2 sm:px-3 py-2 sm:py-2.5 lg:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E4D078] focus:border-[#E4D078] text-xs sm:text-sm lg:text-base bg-white cursor-pointer transition-all duration-200 hover:border-gray-400"
                   />
 
                 </div>
 
-                {/* ========================================= */}
-                {/* CHECK-IN / CHECK-OUT */}
-                {/* ========================================= */}
-
-                <div className="grid grid-cols-2 gap-2 sm:gap-3 text-black">
-
-                  {/* ========================================= */}
-                  {/* CHECK-IN */}
-                  {/* ========================================= */}
-
-                  <div>
-
-                    <label className="block text-xs sm:text-sm text-gray-700 mb-2 font-medium">
-                      Check-in
-                    </label>
-
-                    <select
-                      value={checkInTime}
-                      onChange={(e) =>
-                        setCheckInTime(e.target.value)
-                      }
-                      className="w-full px-2 sm:px-3 py-2 sm:py-2.5 lg:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E4D078] focus:border-[#E4D078] text-xs sm:text-sm lg:text-base appearance-none bg-white cursor-pointer transition-all duration-200 hover:border-gray-400"
-                    >
-
-                      <option value="12:00 am">
-                        12:00 am
-                      </option>
-
-                      <option value="12:30 am">
-                        12:30 am
-                      </option>
-
-                      <option value="1:00 am">
-                        1:00 am
-                      </option>
-
-                      <option value="1:30 am">
-                        1:30 am
-                      </option>
-
-                      <option value="2:00 am">
-                        2:00 am
-                      </option>
-
-                      <option value="2:30 am">
-                        2:30 am
-                      </option>
-
-                      <option value="3:00 am">
-                        3:00 am
-                      </option>
-
-                      <option value="3:30 am">
-                        3:30 am
-                      </option>
-
-                      <option value="4:00 am">
-                        4:00 am
-                      </option>
-
-                      <option value="4:30 am">
-                        4:30 am
-                      </option>
-
-                      <option value="5:00 am">
-                        5:00 am
-                      </option>
-
-                      <option value="5:30 am">
-                        5:30 am
-                      </option>
-
-                      <option value="6:00 am">
-                        6:00 am
-                      </option>
-
-                      <option value="6:30 am">
-                        6:30 am
-                      </option>
-
-                      <option value="7:00 am">
-                        7:00 am
-                      </option>
-
-                      <option value="7:30 am">
-                        7:30 am
-                      </option>
-
-                      <option value="8:00 am">
-                        8:00 am
-                      </option>
-
-                      <option value="8:30 am">
-                        8:30 am
-                      </option>
-
-                      <option value="9:00 am">
-                        9:00 am
-                      </option>
-
-                      <option value="9:30 am">
-                        9:30 am
-                      </option>
-
-                      <option value="10:00 am">
-                        10:00 am
-                      </option>
-
-                      <option value="10:30 am">
-                        10:30 am
-                      </option>
-
-                      <option value="11:00 am">
-                        11:00 am
-                      </option>
-
-                      <option value="11:30 am">
-                        11:30 am
-                      </option>
-
-                      <option value="12:00 pm">
-                        12:00 pm
-                      </option>
-
-                      <option value="12:30 pm">
-                        12:30 pm
-                      </option>
-
-                      <option value="1:00 pm">
-                        1:00 pm
-                      </option>
-
-                      <option value="1:30 pm">
-                        1:30 pm
-                      </option>
-
-                      <option value="2:00 pm">
-                        2:00 pm
-                      </option>
-
-                      <option value="2:30 pm">
-                        2:30 pm
-                      </option>
-
-                      <option value="3:00 pm">
-                        3:00 pm
-                      </option>
-
-                      <option value="3:30 pm">
-                        3:30 pm
-                      </option>
-
-                      <option value="4:00 pm">
-                        4:00 pm
-                      </option>
-
-                      <option value="4:30 pm">
-                        4:30 pm
-                      </option>
-
-                      <option value="5:00 pm">
-                        5:00 pm
-                      </option>
-
-                      <option value="5:30 pm">
-                        5:30 pm
-                      </option>
-
-                      <option value="6:00 pm">
-                        6:00 pm
-                      </option>
-
-                      <option value="6:30 pm">
-                        6:30 pm
-                      </option>
-
-                      <option value="7:00 pm">
-                        7:00 pm
-                      </option>
-
-                      <option value="7:30 pm">
-                        7:30 pm
-                      </option>
-
-                      <option value="8:00 pm">
-                        8:00 pm
-                      </option>
-
-                      <option value="8:30 pm">
-                        8:30 pm
-                      </option>
-
-                      <option value="9:00 pm">
-                        9:00 pm
-                      </option>
-
-                      <option value="9:30 pm">
-                        9:30 pm
-                      </option>
-
-                      <option value="10:00 pm">
-                        10:00 pm
-                      </option>
-
-                      <option value="10:30 pm">
-                        10:30 pm
-                      </option>
-
-                      <option value="11:00 pm">
-                        11:00 pm
-                      </option>
-
-                      <option value="11:30 pm">
-                        11:30 pm
-                      </option>
-
-                    </select>
-
-                  </div>
-
-                  {/* ========================================= */}
-                  {/* CHECK-OUT */}
-                  {/* ========================================= */}
-
-                  <div>
-
-                    <label className="block text-xs sm:text-sm text-gray-700 mb-2 font-medium">
-                      Check-out
-                    </label>
-
-                    <select
-                      value={checkOutTime}
-                      onChange={(e) =>
-                        setCheckOutTime(e.target.value)
-                      }
-                      className="w-full px-2 sm:px-3 py-2 sm:py-2.5 lg:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E4D078] focus:border-[#E4D078] text-xs sm:text-sm lg:text-base appearance-none bg-white cursor-pointer transition-all duration-200 hover:border-gray-400"
-                    >
-
-                      <option value="12:00 am">
-                        12:00 am
-                      </option>
-
-                      <option value="12:30 am">
-                        12:30 am
-                      </option>
-
-                      <option value="1:00 am">
-                        1:00 am
-                      </option>
-
-                      <option value="1:30 am">
-                        1:30 am
-                      </option>
-
-                      <option value="2:00 am">
-                        2:00 am
-                      </option>
-
-                      <option value="2:30 am">
-                        2:30 am
-                      </option>
-
-                      <option value="3:00 am">
-                        3:00 am
-                      </option>
-
-                      <option value="3:30 am">
-                        3:30 am
-                      </option>
-
-                      <option value="4:00 am">
-                        4:00 am
-                      </option>
-
-                      <option value="4:30 am">
-                        4:30 am
-                      </option>
-
-                      <option value="5:00 am">
-                        5:00 am
-                      </option>
-
-                      <option value="5:30 am">
-                        5:30 am
-                      </option>
-
-                      <option value="6:00 am">
-                        6:00 am
-                      </option>
-
-                      <option value="6:30 am">
-                        6:30 am
-                      </option>
-
-                      <option value="7:00 am">
-                        7:00 am
-                      </option>
-
-                      <option value="7:30 am">
-                        7:30 am
-                      </option>
-
-                      <option value="8:00 am">
-                        8:00 am
-                      </option>
-
-                      <option value="8:30 am">
-                        8:30 am
-                      </option>
-
-                      <option value="9:00 am">
-                        9:00 am
-                      </option>
-
-                      <option value="9:30 am">
-                        9:30 am
-                      </option>
-
-                      <option value="10:00 am">
-                        10:00 am
-                      </option>
-
-                      <option value="10:30 am">
-                        10:30 am
-                      </option>
-
-                      <option value="11:00 am">
-                        11:00 am
-                      </option>
-
-                      <option value="11:30 am">
-                        11:30 am
-                      </option>
-
-                      <option value="12:00 pm">
-                        12:00 pm
-                      </option>
-
-                      <option value="12:30 pm">
-                        12:30 pm
-                      </option>
-
-                      <option value="1:00 pm">
-                        1:00 pm
-                      </option>
-
-                      <option value="1:30 pm">
-                        1:30 pm
-                      </option>
-
-                      <option value="2:00 pm">
-                        2:00 pm
-                      </option>
-
-                      <option value="2:30 pm">
-                        2:30 pm
-                      </option>
-
-                      <option value="3:00 pm">
-                        3:00 pm
-                      </option>
-
-                      <option value="3:30 pm">
-                        3:30 pm
-                      </option>
-
-                      <option value="4:00 pm">
-                        4:00 pm
-                      </option>
-
-                      <option value="4:30 pm">
-                        4:30 pm
-                      </option>
-
-                      <option value="5:00 pm">
-                        5:00 pm
-                      </option>
-
-                      <option value="5:30 pm">
-                        5:30 pm
-                      </option>
-
-                      <option value="6:00 pm">
-                        6:00 pm
-                      </option>
-
-                      <option value="6:30 pm">
-                        6:30 pm
-                      </option>
-
-                      <option value="7:00 pm">
-                        7:00 pm
-                      </option>
-
-                      <option value="7:30 pm">
-                        7:30 pm
-                      </option>
-
-                      <option value="8:00 pm">
-                        8:00 pm
-                      </option>
-
-                      <option value="8:30 pm">
-                        8:30 pm
-                      </option>
-
-                      <option value="9:00 pm">
-                        9:00 pm
-                      </option>
-
-                      <option value="9:30 pm">
-                        9:30 pm
-                      </option>
-
-                      <option value="10:00 pm">
-                        10:00 pm
-                      </option>
-
-                      <option value="10:30 pm">
-                        10:30 pm
-                      </option>
-
-                      <option value="11:00 pm">
-                        11:00 pm
-                      </option>
-
-                      <option value="11:30 pm">
-                        11:30 pm
-                      </option>
-
-                    </select>
-
-                  </div>
+                {/* =========================================
+                    CHECK-OUT DATE
+                ========================================= */}
+
+                <div>
+
+                  <label className="block text-xs sm:text-sm text-black mb-2 font-medium">
+                    Check-out{" "}
+                    <span className="text-gray-400 font-normal">
+                      (required)
+                    </span>
+                  </label>
+
+                  <input
+                    type="date"
+                    value={checkOutDate}
+                    onChange={(e) =>
+                      setCheckOutDate(e.target.value)
+                    }
+                    min={checkInDate || today}
+                    disabled={!checkInDate}
+                    className="w-full text-black px-2 sm:px-3 py-2 sm:py-2.5 lg:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E4D078] focus:border-[#E4D078] text-xs sm:text-sm lg:text-base bg-white cursor-pointer transition-all duration-200 hover:border-gray-400 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
+                  />
+
+                  {!checkInDate && (
+                    <p className="text-[11px] text-gray-400 mt-1">
+                      Select check-in date first
+                    </p>
+                  )}
 
                 </div>
+
+                {/* =========================================
+                    NUMBER OF GUESTS
+                ========================================= */}
+
+                <div>
+
+                  <label className="block text-xs sm:text-sm text-black mb-2 font-medium">
+                    Number of Guests{" "}
+                    <span className="text-gray-400 font-normal">
+                      (required)
+                    </span>
+                  </label>
+
+                  <input
+                    type="number"
+                    value={numberOfGuests}
+                    onChange={(e) =>
+                      setNumberOfGuests(e.target.value)
+                    }
+                    min="1"
+                    placeholder="Enter number of guests"
+                    className="w-full text-black px-2 sm:px-3 py-2 sm:py-2.5 lg:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E4D078] focus:border-[#E4D078] text-xs sm:text-sm lg:text-base bg-white transition-all duration-200 hover:border-gray-400"
+                  />
+
+                </div>
+
               </div>
 
-              {/* ========================================= */}
-              {/* START BOOKING */}
-              {/* ========================================= */}
+              {/* =========================================
+                  START BOOKING
+              ========================================= */}
 
               <button
                 type="button"
                 onClick={handleBooking}
-                className="w-full bg-[#E4D078] text-white py-2.5 sm:py-3 lg:py-3.5 px-4 rounded-md font-medium hover:bg-purple-700 active:bg-purple-800 transition-colors mb-3 sm:mb-4 text-xs sm:text-sm lg:text-base shadow-sm hover:shadow-md transform active:scale-[0.98] transition-all duration-200"
+                className="w-full bg-[#E4D078] text-white py-2.5 sm:py-3 lg:py-3.5 px-4 rounded-md font-medium hover:bg-[#d5bd61] active:bg-[#c9b155] transition-all duration-200 mb-3 sm:mb-4 text-xs sm:text-sm lg:text-base shadow-sm hover:shadow-md transform active:scale-[0.98]"
               >
                 Start Booking
               </button>
 
-              {/* ========================================= */}
-              {/* AGENT RESPONSE TIME */}
-              {/* ========================================= */}
+              {/* =========================================
+                  AGENT RESPONSE TIME
+              ========================================= */}
 
               <div className="flex items-center justify-center text-xs sm:text-sm text-gray-500">
 
