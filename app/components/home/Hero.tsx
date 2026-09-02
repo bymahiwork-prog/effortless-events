@@ -295,7 +295,7 @@ const Hero = () => {
             <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
 
               <Link
-                href="/search"
+                href="/farmhouses"
                 className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-white px-7 sm:px-8 text-sm sm:text-base font-semibold text-black transition-all duration-300 hover:bg-[#d6b36a] hover:text-black"
               >
                 Browse Our Venues
