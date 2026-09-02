@@ -44,7 +44,7 @@ const Farms = () => {
       setVenues([]);
 
       setError(
-       "We're unable to load the farmhouses right now. Please try again."
+        "We're unable to load the farmhouses right now. Please try again."
       );
     } finally {
       setLoading(false);
@@ -153,20 +153,28 @@ const Farms = () => {
               experiences.
             </p>
 
+            {/* CATEGORY BUTTONS */}
             <div className="mt-8 flex flex-wrap gap-4">
 
-              <a
-                href="#farmhouses"
+              <Link
+                href="/farms"
                 className="inline-flex items-center justify-center px-7 py-3 bg-[#C9A34A] text-[#0F0803] font-medium rounded-md hover:bg-[#D8B25B] transition"
               >
-                Explore Farmhouses
-              </a>
+                Farmhouses
+              </Link>
 
               <Link
-                href="/"
+                href="/weddings"
                 className="inline-flex items-center justify-center px-7 py-3 border border-[#3A2E22] text-white rounded-md hover:bg-[#17110B] transition"
               >
-                Back to Home
+                Wedding Venues
+              </Link>
+
+              <Link
+                href="/apartments"
+                className="inline-flex items-center justify-center px-7 py-3 border border-[#3A2E22] text-white rounded-md hover:bg-[#17110B] transition"
+              >
+                Apartments
               </Link>
 
             </div>
