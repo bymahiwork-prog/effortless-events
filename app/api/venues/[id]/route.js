@@ -7,7 +7,7 @@ export async function GET(req, { params }) {
   try {
     /*
      * ==========================================
-     * GET VENUE ID
+     * GET LISTING ID
      * ==========================================
      */
 
@@ -36,7 +36,17 @@ export async function GET(req, { params }) {
 
     /*
      * ==========================================
-     * FETCH FARMHOUSE
+     * FETCH LISTING
+     *
+     * This endpoint is shared by:
+     *
+     * Category 1 = Farmhouses
+     * Category 2 = Apartments
+     * Category 3 = Wedding Venues
+     *
+     * We intentionally do NOT hard-code a
+     * category here.
+     * The actual category comes from the database.
      * ==========================================
      */
 
@@ -69,7 +79,7 @@ export async function GET(req, { params }) {
 
     /*
      * ==========================================
-     * CHECK VENUE
+     * CHECK LISTING
      * ==========================================
      */
 
@@ -77,7 +87,7 @@ export async function GET(req, { params }) {
       return NextResponse.json(
         {
           success: false,
-          error: "Farmhouse not found",
+          error: "Venue not found",
         },
         {
           status: 404,
@@ -134,7 +144,7 @@ export async function GET(req, { params }) {
 
     /*
      * ==========================================
-     * FORMAT VENUE
+     * FORMAT LISTING
      * ==========================================
      */
 
@@ -145,17 +155,24 @@ export async function GET(req, { params }) {
 
       images: allImages,
 
+      /*
+       * IMPORTANT:
+       * Keep category as the database value.
+       */
+
       product_category:
-        row.product_category || "",
+        row.product_category != null
+          ? String(row.product_category)
+          : "",
 
       category_name:
-        row.category_name || "Farm Houses",
+        row.category_name || "",
 
       rating:
         row.rating || "5.0",
 
       product_name:
-        row.product_name || "Farmhouse",
+        row.product_name || "Venue",
 
       product_location:
         row.product_location || "",
@@ -232,8 +249,7 @@ export async function GET(req, { params }) {
     return NextResponse.json(
       {
         success: false,
-        error:
-          "Unable to load farmhouse",
+        error: "Unable to load venue",
       },
       {
         status: 500,
@@ -241,7 +257,9 @@ export async function GET(req, { params }) {
     );
   } finally {
     /*
-     * Close database connection
+     * ==========================================
+     * CLOSE DATABASE CONNECTION
+     * ==========================================
      */
 
     if (db) {
