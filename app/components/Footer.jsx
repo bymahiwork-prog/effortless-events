@@ -20,10 +20,7 @@ const Footer = () => {
 
           <div className="lg:col-span-1">
 
-            <a
-              href="/"
-              className="inline-block mb-6"
-            >
+            <a href="/" className="inline-block mb-6">
               <img
                 src="/logo.png"
                 alt="Effortless Events"
@@ -51,12 +48,12 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-11 h-11 rounded-full border border-[#3A2E22] flex items-center justify-center overflow-hidden hover:bg-[#C9A34A] hover:border-[#C9A34A] transition-all"
+                className="w-11 h-11 rounded-full border border-[#3A2E22] flex items-center justify-center hover:bg-[#C9A34A] hover:border-[#C9A34A] transition-all duration-300"
               >
                 <img
                   src="/instagram.png"
                   alt="Instagram"
-                  className="w-6 h-6 object-contain"
+                  className="w-5 h-5 object-contain"
                 />
               </a>
 
@@ -68,12 +65,12 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="w-11 h-11 rounded-full border border-[#3A2E22] flex items-center justify-center overflow-hidden hover:bg-[#C9A34A] hover:border-[#C9A34A] transition-all"
+                className="w-11 h-11 rounded-full border border-[#3A2E22] flex items-center justify-center hover:bg-[#C9A34A] hover:border-[#C9A34A] transition-all duration-300"
               >
                 <img
                   src="/facebook.png"
                   alt="Facebook"
-                  className="w-6 h-6 object-contain"
+                  className="w-5 h-5 object-contain"
                 />
               </a>
 
@@ -85,12 +82,12 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
-                className="w-11 h-11 rounded-full border border-[#3A2E22] flex items-center justify-center overflow-hidden hover:bg-[#C9A34A] hover:border-[#C9A34A] transition-all"
+                className="w-11 h-11 rounded-full border border-[#3A2E22] flex items-center justify-center hover:bg-[#C9A34A] hover:border-[#C9A34A] transition-all duration-300"
               >
                 <img
                   src="/whatsapp.png"
                   alt="WhatsApp"
-                  className="w-6 h-6 object-contain"
+                  className="w-5 h-5 object-contain"
                 />
               </a>
 
@@ -278,7 +275,7 @@ const Footer = () => {
                   href="https://wa.me/917838008069"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 bg-[#C9A34A] text-black px-6 py-3 rounded-xl font-semibold hover:bg-white transition-all"
+                  className="inline-flex items-center justify-center gap-3 bg-[#C9A34A] text-black px-6 py-3 rounded-xl font-semibold hover:bg-white transition-all duration-300"
                 >
 
                   <img
@@ -288,7 +285,9 @@ const Footer = () => {
                     className="w-5 h-5 object-contain"
                   />
 
-                  Chat on WhatsApp
+                  <span>
+                    Chat on WhatsApp
+                  </span>
 
                 </a>
 
