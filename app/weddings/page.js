@@ -9,12 +9,15 @@ const Weddings = () => {
   const [venues, setVenues] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
 
   /*
+   * =========================================
    * FETCH WEDDING VENUES
    *
    * Category ID:
    * 3 = Weddings
+   * =========================================
    */
 
   const fetchWeddingVenues = async () => {
@@ -62,7 +65,9 @@ const Weddings = () => {
   };
 
   /*
+   * =========================================
    * INITIAL LOAD
+   * =========================================
    */
 
   useEffect(() => {
@@ -70,7 +75,38 @@ const Weddings = () => {
   }, []);
 
   /*
+   * =========================================
+   * FILTER VENUES
+   * =========================================
+   */
+
+  const filteredVenues = venues.filter((venue) => {
+    const query = searchQuery.toLowerCase().trim();
+
+    if (!query) {
+      return true;
+    }
+
+    const venueName =
+      venue.product_name?.toLowerCase() || "";
+
+    const location =
+      venue.product_location?.toLowerCase() || "";
+
+    const description =
+      venue.product_detail?.toLowerCase() || "";
+
+    return (
+      venueName.includes(query) ||
+      location.includes(query) ||
+      description.includes(query)
+    );
+  });
+
+  /*
+   * =========================================
    * ELFSIGHT GOOGLE REVIEWS
+   * =========================================
    */
 
   useEffect(() => {
@@ -103,7 +139,9 @@ const Weddings = () => {
   }, [venues]);
 
   /*
+   * =========================================
    * LOADING STATE
+   * =========================================
    */
 
   if (loading) {
@@ -137,6 +175,12 @@ const Weddings = () => {
     );
   }
 
+  /*
+   * =========================================
+   * MAIN PAGE
+   * =========================================
+   */
+
   return (
     <main className="min-h-screen bg-[#0F0803] text-white">
 
@@ -144,7 +188,9 @@ const Weddings = () => {
 
       <Navbar variant="transparent" />
 
-      {/* HERO */}
+      {/* =========================================
+          HERO
+      ========================================= */}
 
       <section className="relative overflow-hidden">
 
@@ -169,9 +215,7 @@ const Weddings = () => {
               wedding experiences.
             </p>
 
-            {/* =================================================
-                THREE CATEGORY BUTTONS
-            ================================================= */}
+            {/* CATEGORY BUTTONS */}
 
             <div className="mt-8 flex flex-wrap gap-4">
 
@@ -210,7 +254,9 @@ const Weddings = () => {
 
       </section>
 
-      {/* WEDDING LISTINGS */}
+      {/* =========================================
+          WEDDING LISTINGS
+      ========================================= */}
 
       <section
         id="wedding-venues"
@@ -221,7 +267,7 @@ const Weddings = () => {
 
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10">
 
-          <div>
+          <div className="w-full">
 
             <p className="text-sm uppercase tracking-[0.18em] text-[#C9A34A] mb-3">
               Our Collection
@@ -231,18 +277,79 @@ const Weddings = () => {
               Popular Wedding Venues
             </h2>
 
+            {/* =========================================
+                SEARCH BAR
+            ========================================= */}
+
+            <div className="mt-6 w-full max-w-2xl">
+
+              <div className="relative">
+
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) =>
+                    setSearchQuery(e.target.value)
+                  }
+                  placeholder="Search wedding venues by name or location..."
+                  className="w-full bg-[#17110B] border border-[#3A2E22] text-white placeholder-[#8F857A] rounded-xl px-5 py-4 pr-14 focus:outline-none focus:border-[#C9A34A] focus:ring-1 focus:ring-[#C9A34A] transition"
+                />
+
+                {/* SEARCH ICON */}
+
+                <div className="absolute right-5 top-1/2 -translate-y-1/2 text-[#C9A34A] pointer-events-none">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="21"
+                    height="21"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle
+                      cx="11"
+                      cy="11"
+                      r="8"
+                    />
+                    <path d="m21 21-4.3-4.3" />
+                  </svg>
+                </div>
+
+              </div>
+
+              {/* SEARCH RESULT MESSAGE */}
+
+              {searchQuery.trim() && (
+                <p className="text-[#8F857A] text-sm mt-3">
+                  {filteredVenues.length}{" "}
+                  {filteredVenues.length === 1
+                    ? "venue"
+                    : "venues"}{" "}
+                  found for "{searchQuery}"
+                </p>
+              )}
+
+            </div>
+
           </div>
 
-          <p className="text-[#B8AFA5] text-sm">
-            Showing {venues.length}{" "}
-            {venues.length === 1
+          {/* VENUE COUNT */}
+
+          <p className="text-[#B8AFA5] text-sm whitespace-nowrap">
+            Showing {filteredVenues.length}{" "}
+            {filteredVenues.length === 1
               ? "wedding venue"
               : "wedding venues"}
           </p>
 
         </div>
 
-        {/* ERROR */}
+        {/* =========================================
+            ERROR
+        ========================================= */}
 
         {error && (
           <div className="border border-[#3A2E22] bg-[#17110B] rounded-2xl p-10 text-center">
@@ -265,7 +372,9 @@ const Weddings = () => {
           </div>
         )}
 
-        {/* EMPTY STATE */}
+        {/* =========================================
+            EMPTY STATE
+        ========================================= */}
 
         {!error && venues.length === 0 && (
           <div className="border border-[#3A2E22] bg-[#17110B] rounded-2xl p-12 text-center">
@@ -282,12 +391,66 @@ const Weddings = () => {
           </div>
         )}
 
-        {/* VENUE GRID */}
+        {/* =========================================
+            NO SEARCH RESULTS
+        ========================================= */}
 
-        {!error && venues.length > 0 && (
+        {!error &&
+          venues.length > 0 &&
+          filteredVenues.length === 0 && (
+            <div className="border border-[#3A2E22] bg-[#17110B] rounded-2xl p-12 text-center">
+
+              <div className="text-[#C9A34A] mb-4">
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="mx-auto"
+                >
+                  <circle
+                    cx="11"
+                    cy="11"
+                    r="8"
+                  />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+
+              </div>
+
+              <h2 className="text-2xl font-serif mb-3">
+                No wedding venues found
+              </h2>
+
+              <p className="text-[#B8AFA5] mb-6">
+                We couldn't find a wedding venue
+                matching "{searchQuery}".
+              </p>
+
+              <button
+                onClick={() => setSearchQuery("")}
+                className="px-7 py-3 bg-[#C9A34A] text-[#0F0803] font-medium rounded-md hover:bg-[#D8B25B] transition"
+              >
+                Clear Search
+              </button>
+
+            </div>
+          )}
+
+        {/* =========================================
+            VENUE GRID
+        ========================================= */}
+
+        {!error && filteredVenues.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
 
-            {venues.map((venue) => (
+            {filteredVenues.map((venue) => (
 
               <article
                 key={venue.id}
@@ -412,7 +575,9 @@ const Weddings = () => {
 
       </section>
 
-      {/* WHY WEDDING VENUES */}
+      {/* =========================================
+          WHY WEDDING VENUES
+      ========================================= */}
 
       <section className="border-t border-[#2A2118] bg-[#120B05]">
 
@@ -488,7 +653,9 @@ const Weddings = () => {
 
       </section>
 
-      {/* REVIEWS */}
+      {/* =========================================
+          REVIEWS
+      ========================================= */}
 
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-20">
 
