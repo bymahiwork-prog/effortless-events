@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -9,6 +9,7 @@ const Farms = () => {
   const [venues, setVenues] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const fetchFarmhouses = async () => {
     try {
@@ -56,8 +57,11 @@ const Farms = () => {
   }, []);
 
   /*
+   * =========================================
    * ELFSIGHT GOOGLE REVIEWS
+   * =========================================
    */
+
   useEffect(() => {
     const existingScript = document.querySelector(
       'script[src="https://elfsightcdn.com/platform.js"]'
@@ -88,8 +92,50 @@ const Farms = () => {
   }, [venues]);
 
   /*
-   * LOADING STATE
+   * =========================================
+   * SEARCH FILTER
+   * =========================================
    */
+
+  const filteredVenues = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
+
+    if (!query) {
+      return venues;
+    }
+
+    return venues.filter((venue) => {
+      const name = String(
+        venue.product_name || ""
+      ).toLowerCase();
+
+      const location = String(
+        venue.product_location || ""
+      ).toLowerCase();
+
+      const description = String(
+        venue.product_detail || ""
+      ).toLowerCase();
+
+      const category = String(
+        venue.category_name || ""
+      ).toLowerCase();
+
+      return (
+        name.includes(query) ||
+        location.includes(query) ||
+        description.includes(query) ||
+        category.includes(query)
+      );
+    });
+  }, [venues, searchQuery]);
+
+  /*
+   * =========================================
+   * LOADING STATE
+   * =========================================
+   */
+
   if (loading) {
     return (
       <main className="min-h-screen bg-[#0F0803] text-white">
@@ -192,7 +238,7 @@ const Farms = () => {
       >
 
         {/* SECTION HEADER */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-8">
 
           <div>
 
@@ -207,9 +253,88 @@ const Farms = () => {
           </div>
 
           <p className="text-[#B8AFA5] text-sm">
-            Showing {venues.length} farm{" "}
-            {venues.length === 1 ? "house" : "houses"}
+            Showing {filteredVenues.length}{" "}
+            {filteredVenues.length === 1
+              ? "farm house"
+              : "farm houses"}
           </p>
+
+        </div>
+
+        {/* SEARCH BAR */}
+        <div className="mb-10">
+
+          <div className="relative max-w-3xl">
+
+            {/* SEARCH ICON */}
+            <div className="absolute inset-y-0 left-0 flex items-center pl-5 pointer-events-none">
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5 text-[#C9A34A]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+                />
+              </svg>
+
+            </div>
+
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) =>
+                setSearchQuery(e.target.value)
+              }
+              placeholder="Search farmhouses by name, location or keyword..."
+              className="w-full bg-[#17110B] border border-[#3A2E22] rounded-xl pl-14 pr-14 py-4 text-white placeholder-[#8F857A] outline-none transition focus:border-[#C9A34A] focus:ring-1 focus:ring-[#C9A34A]"
+            />
+
+            {/* CLEAR BUTTON */}
+            {searchQuery && (
+              <button
+                type="button"
+                onClick={() => setSearchQuery("")}
+                className="absolute inset-y-0 right-0 flex items-center pr-5 text-[#8F857A] hover:text-[#C9A34A] transition"
+                aria-label="Clear search"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            )}
+
+          </div>
+
+          {/* SEARCH STATUS */}
+          {searchQuery && (
+            <p className="text-[#8F857A] text-sm mt-3">
+              {filteredVenues.length > 0
+                ? `Found ${filteredVenues.length} ${
+                    filteredVenues.length === 1
+                      ? "farmhouse"
+                      : "farmhouses"
+                  } matching "${searchQuery}"`
+                : `No farmhouses found for "${searchQuery}"`}
+            </p>
+          )}
 
         </div>
 
@@ -251,11 +376,62 @@ const Farms = () => {
           </div>
         )}
 
+        {/* NO SEARCH RESULTS */}
+        {!error &&
+          venues.length > 0 &&
+          filteredVenues.length === 0 && (
+            <div className="border border-[#3A2E22] bg-[#17110B] rounded-2xl p-12 text-center">
+
+              <div className="w-14 h-14 mx-auto mb-5 rounded-full bg-[#21180F] border border-[#3A2E22] flex items-center justify-center">
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-6 h-6 text-[#C9A34A]"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <circle
+                    cx="11"
+                    cy="11"
+                    r="7"
+                  />
+
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m20 20-4-4"
+                  />
+                </svg>
+
+              </div>
+
+              <h2 className="text-2xl font-serif mb-3">
+                No matching farmhouses
+              </h2>
+
+              <p className="text-[#B8AFA5] mb-6">
+                We couldn't find a farmhouse matching
+                your search. Try another name, location
+                or keyword.
+              </p>
+
+              <button
+                onClick={() => setSearchQuery("")}
+                className="px-7 py-3 bg-[#C9A34A] text-[#0F0803] font-medium rounded-md hover:bg-[#D8B25B] transition"
+              >
+                Clear Search
+              </button>
+
+            </div>
+          )}
+
         {/* VENUE GRID */}
-        {!error && venues.length > 0 && (
+        {!error && filteredVenues.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
 
-            {venues.map((venue) => (
+            {filteredVenues.map((venue) => (
 
               <article
                 key={venue.id}
