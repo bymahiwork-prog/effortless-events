@@ -72,6 +72,22 @@ const Footer = () => {
                 />
               </a>
 
+              {/* LinkedIn */}
+
+              <a
+                href="https://www.linkedin.com/company/effortless-events-pvt-ltd/?originalSubdomain=in"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-11 h-11 rounded-full border border-[#3A2E22] flex items-center justify-center hover:bg-[#C9A34A] hover:border-[#C9A34A] transition-all duration-300"
+              >
+                <img
+                  src="/Linkedin.jpg"
+                  alt="LinkedIn"
+                  className="w-5 h-5 object-contain"
+                />
+              </a>
+
             </div>
 
           </div>
