@@ -63,9 +63,9 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: "/effortless-events-og.png",
-    shortcut: "/effortless-events-og.png",
-    apple: "/effortless-events-og.png",
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
 
   openGraph: {
@@ -124,79 +124,6 @@ export const metadata: Metadata = {
 
   category: "Event Planning",
 };
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html
-      lang="en-IN"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        {children}
-
-        <FloatingWhatsAppButton />
-      </body>
-    </html>
-  );
-}    siteName: "Effortless Events",
-
-    title:
-      "Effortless Events | Farmhouses, Wedding & Event Venues in Delhi NCR",
-
-    description:
-      "Discover and book premium farmhouses, villas and event venues in Delhi NCR for weddings, birthdays, private parties, corporate events and celebrations.",
-
-    images: [
-      {
-        url: "/effortless-events-og.png",
-        width: 1200,
-        height: 630,
-        alt:
-          "Effortless Events - Farmhouses, Wedding & Event Venues in Delhi NCR",
-      },
-    ],
-  },
-
-  /*
-  =======================================================
-  TWITTER / X
-  =======================================================
-  */
-
-  twitter: {
-    card: "summary_large_image",
-
-    title:
-      "Effortless Events | Farmhouses, Wedding & Event Venues in Delhi NCR",
-
-    description:
-      "Discover premium farmhouses, villas and event venues in Delhi NCR for weddings, birthdays, private parties and celebrations.",
-
-    images: ["/effortless-events-og.png"],
-  },
-
-  /*
-  =======================================================
-  ICONS
-  =======================================================
-  */
-
-  icons: {
-    icon: "/effortless-events-og.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png",
-  },
-};
-
-/*
-=========================================================
-ROOT LAYOUT
-=========================================================
-*/
 
 export default function RootLayout({
   children,
