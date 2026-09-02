@@ -34,7 +34,6 @@ const Footer = () => {
               birthdays, corporate events and private celebrations.
             </p>
 
-
             {/* =================================================
                 SOCIAL LINKS
             ================================================= */}
@@ -56,7 +55,6 @@ const Footer = () => {
                   className="w-5 h-5 object-contain"
                 />
               </a>
-
 
               {/* Facebook */}
 
@@ -248,6 +246,8 @@ const Footer = () => {
                 </a>
 
               </div>
+
+            </div>
 
           </div>
 
