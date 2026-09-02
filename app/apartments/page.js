@@ -9,6 +9,7 @@ const Apartments = () => {
   const [venues, setVenues] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const fetchApartments = async () => {
     try {
@@ -95,6 +96,43 @@ const Apartments = () => {
 
   /*
    * =========================================
+   * FILTER APARTMENTS
+   * =========================================
+   */
+
+  const filteredVenues = venues.filter((venue) => {
+    const search = searchTerm.toLowerCase().trim();
+
+    if (!search) {
+      return true;
+    }
+
+    const name = String(
+      venue.product_name || ""
+    ).toLowerCase();
+
+    const location = String(
+      venue.product_location || ""
+    ).toLowerCase();
+
+    const detail = String(
+      venue.product_detail || ""
+    ).toLowerCase();
+
+    const category = String(
+      venue.category_name || ""
+    ).toLowerCase();
+
+    return (
+      name.includes(search) ||
+      location.includes(search) ||
+      detail.includes(search) ||
+      category.includes(search)
+    );
+  });
+
+  /*
+   * =========================================
    * LOADING STATE
    * =========================================
    */
@@ -143,7 +181,6 @@ const Apartments = () => {
 
       <Navbar variant="transparent" />
 
-
       {/* =========================================
           HERO
       ========================================= */}
@@ -186,7 +223,6 @@ const Apartments = () => {
                 Farmhouse
               </Link>
 
-
               {/* WEDDING VENUE */}
 
               <Link
@@ -195,7 +231,6 @@ const Apartments = () => {
               >
                 Wedding Venue
               </Link>
-
 
               {/* APARTMENTS */}
 
@@ -214,7 +249,6 @@ const Apartments = () => {
 
       </section>
 
-
       {/* =========================================
           APARTMENT LISTINGS
       ========================================= */}
@@ -226,7 +260,7 @@ const Apartments = () => {
 
         {/* SECTION HEADER */}
 
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-8">
 
           <div>
 
@@ -241,16 +275,43 @@ const Apartments = () => {
           </div>
 
           <p className="text-[#B8AFA5] text-sm">
-            Showing {venues.length}{" "}
-            {venues.length === 1
+            Showing {filteredVenues.length}{" "}
+            {filteredVenues.length === 1
               ? "apartment"
               : "apartments"}
           </p>
 
         </div>
 
+        {/* =========================================
+            SEARCH BAR
+        ========================================= */}
 
-        {/* ERROR */}
+        <div className="mb-10">
+
+          <div className="relative max-w-3xl">
+
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={(e) =>
+                setSearchTerm(e.target.value)
+              }
+              placeholder="Search apartments by name, location or details..."
+              className="w-full bg-[#17110B] border border-[#3A2E22] text-white placeholder-[#8F857A] rounded-xl px-5 py-4 pr-12 outline-none focus:border-[#C9A34A] focus:ring-1 focus:ring-[#C9A34A] transition"
+            />
+
+            <span className="absolute right-5 top-1/2 -translate-y-1/2 text-[#C9A34A] text-xl">
+              ⌕
+            </span>
+
+          </div>
+
+        </div>
+
+        {/* =========================================
+            ERROR
+        ========================================= */}
 
         {error && (
           <div className="border border-[#3A2E22] bg-[#17110B] rounded-2xl p-10 text-center">
@@ -273,8 +334,9 @@ const Apartments = () => {
           </div>
         )}
 
-
-        {/* EMPTY STATE */}
+        {/* =========================================
+            EMPTY STATE
+        ========================================= */}
 
         {!error && venues.length === 0 && (
           <div className="border border-[#3A2E22] bg-[#17110B] rounded-2xl p-12 text-center">
@@ -291,13 +353,42 @@ const Apartments = () => {
           </div>
         )}
 
+        {/* =========================================
+            NO SEARCH RESULTS
+        ========================================= */}
 
-        {/* APARTMENT GRID */}
+        {!error &&
+          venues.length > 0 &&
+          filteredVenues.length === 0 && (
+            <div className="border border-[#3A2E22] bg-[#17110B] rounded-2xl p-12 text-center">
 
-        {!error && venues.length > 0 && (
+              <h2 className="text-2xl font-serif mb-3">
+                No apartments found
+              </h2>
+
+              <p className="text-[#B8AFA5] mb-6">
+                We couldn't find an apartment matching
+                your search.
+              </p>
+
+              <button
+                onClick={() => setSearchTerm("")}
+                className="px-7 py-3 bg-[#C9A34A] text-[#0F0803] font-medium rounded-md hover:bg-[#D8B25B] transition"
+              >
+                Clear Search
+              </button>
+
+            </div>
+          )}
+
+        {/* =========================================
+            APARTMENT GRID
+        ========================================= */}
+
+        {!error && filteredVenues.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
 
-            {venues.map((venue) => (
+            {filteredVenues.map((venue) => (
 
               <article
                 key={venue.id}
@@ -327,7 +418,6 @@ const Apartments = () => {
 
                   <div className="absolute inset-0 bg-gradient-to-t from-[#17110B] via-transparent to-transparent opacity-80" />
 
-
                   {/* CATEGORY */}
 
                   <div className="absolute top-4 left-4">
@@ -341,7 +431,6 @@ const Apartments = () => {
 
                 </div>
 
-
                 {/* CONTENT */}
 
                 <div className="p-6">
@@ -352,7 +441,6 @@ const Apartments = () => {
                     {venue.product_name ||
                       "Apartment"}
                   </h3>
-
 
                   {/* LOCATION */}
 
@@ -368,7 +456,6 @@ const Apartments = () => {
                     </span>
 
                   </div>
-
 
                   {/* RATING */}
 
@@ -388,7 +475,6 @@ const Apartments = () => {
 
                   </div>
 
-
                   {/* PRICE */}
 
                   {venue.product_price && (
@@ -405,14 +491,12 @@ const Apartments = () => {
                     </div>
                   )}
 
-
                   {/* DESCRIPTION */}
 
                   <p className="text-[#B8AFA5] text-sm leading-7 line-clamp-4 mb-6">
                     {venue.product_detail ||
                       "Discover this beautiful apartment with Effortless Events."}
                   </p>
-
 
                   {/* VIEW DETAILS */}
 
@@ -433,7 +517,6 @@ const Apartments = () => {
         )}
 
       </section>
-
 
       {/* =========================================
           WHY APARTMENTS
@@ -463,7 +546,6 @@ const Apartments = () => {
 
           </div>
 
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
             <div className="border border-[#2A2118] rounded-2xl p-7 bg-[#17110B]">
@@ -480,7 +562,6 @@ const Apartments = () => {
 
             </div>
 
-
             <div className="border border-[#2A2118] rounded-2xl p-7 bg-[#17110B]">
 
               <h3 className="text-xl font-serif mb-3">
@@ -493,7 +574,6 @@ const Apartments = () => {
               </p>
 
             </div>
-
 
             <div className="border border-[#2A2118] rounded-2xl p-7 bg-[#17110B]">
 
@@ -515,7 +595,6 @@ const Apartments = () => {
 
       </section>
 
-
       {/* =========================================
           REVIEWS
       ========================================= */}
@@ -534,7 +613,6 @@ const Apartments = () => {
 
         </div>
 
-
         <div className="w-full">
 
           <div
@@ -545,7 +623,6 @@ const Apartments = () => {
         </div>
 
       </section>
-
 
       {/* FOOTER */}
 
