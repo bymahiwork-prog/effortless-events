@@ -1,9 +1,16 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function ServicesCTA() {
+  const whatsappNumber = "917838008069";
+  const whatsappMessage =
+    "Hi Effortless Events, I would like to discuss planning an event.";
+
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    whatsappMessage
+  )}`;
+
   return (
     <section className="relative w-full overflow-hidden bg-black">
 
@@ -26,7 +33,6 @@ export default function ServicesCTA() {
 
       </div>
 
-
       {/* =====================================================
           CONTENT
       ===================================================== */}
@@ -34,7 +40,6 @@ export default function ServicesCTA() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
         <div className="min-h-[280px] sm:min-h-[320px] flex flex-col lg:flex-row items-center justify-between gap-10 py-14 sm:py-16">
-
 
           {/* =================================================
               LEFT CONTENT
@@ -58,7 +63,6 @@ export default function ServicesCTA() {
 
           </motion.div>
 
-
           {/* =================================================
               RIGHT CONTENT
           ================================================= */}
@@ -76,11 +80,18 @@ export default function ServicesCTA() {
               with the best options and a customized plan.
             </p>
 
+            {/* =================================================
+                WHATSAPP CTA
+            ================================================= */}
 
-            <Link
-              href="/contact"
-              className="mt-6 inline-flex items-center justify-center gap-3 bg-[#d6b36a] px-7 py-3 text-[10px] sm:text-xs font-semibold tracking-[0.15em] uppercase text-black transition-all duration-300 hover:bg-white"
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Get in touch with Effortless Events on WhatsApp"
+              className="group mt-6 inline-flex items-center justify-center gap-3 bg-[#d6b36a] px-7 py-3 text-[10px] sm:text-xs font-semibold tracking-[0.15em] uppercase text-black transition-all duration-300 hover:bg-white"
             >
+
               <span>Get In Touch</span>
 
               <span
@@ -90,7 +101,7 @@ export default function ServicesCTA() {
                 →
               </span>
 
-            </Link>
+            </a>
 
           </motion.div>
 
