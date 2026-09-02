@@ -1,16 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
-
-const tabs = ["Event", "Venue", "Place"];
+import React from "react";
 
 // Reusable input styling
 const inputClass =
   "w-full rounded-xl border border-gray-200 px-5 py-4 text-black placeholder:text-gray-500 outline-none focus:ring-2 focus:ring-[#C9A34A] focus:border-[#C9A34A]";
 
 export default function EventPlanningForm() {
-  const [activeTab, setActiveTab] = useState("Event");
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -25,8 +21,6 @@ export default function EventPlanningForm() {
     const message = `Hello Effortless Events! 👋
 
 I would like to start planning an event.
-
-Planning Type: ${activeTab}
 
 Occasion:
 ${occasion}
@@ -61,32 +55,10 @@ I would like to discuss the details further. Thank you!`;
     <section className="relative bg-[#0F0803] px-4 md:px-8 py-12 md:py-16">
       <div className="max-w-6xl mx-auto">
         <div className="bg-white rounded-[28px] shadow-2xl border border-gray-100 p-5 md:p-8">
-          
-          {/* Tabs */}
-          <div className="flex items-center justify-between border-b border-gray-200 pb-4 mb-6">
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                type="button"
-                onClick={() => setActiveTab(tab)}
-                className={`relative text-sm md:text-base font-medium pb-2 transition-colors ${
-                  activeTab === tab
-                    ? "text-gray-900"
-                    : "text-gray-500 hover:text-gray-700"
-                }`}
-              >
-                {tab}
-
-                {activeTab === tab && (
-                  <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#C9A34A]" />
-                )}
-              </button>
-            ))}
-          </div>
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
-            
+
             {/* Occasion */}
             <input
               type="text"
@@ -107,7 +79,7 @@ I would like to discuss the details further. Thank you!`;
 
             {/* Guests / Budget / Date */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              
+
               <input
                 type="number"
                 name="guests"
@@ -141,6 +113,7 @@ I would like to discuss the details further. Thank you!`;
             >
               Start Planning
             </button>
+
           </form>
         </div>
       </div>
