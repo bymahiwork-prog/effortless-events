@@ -28,48 +28,103 @@ const VenueCard = ({ venue }) => {
       ? venue.images[0]
       : "https://placehold.co/1200x800/e8e2d8/6b6257?text=Venue");
 
+  /*
+   * Determine the correct listing URL
+   *
+   * Category IDs:
+   * 1 = Farmhouses
+   * 2 = Apartments
+   * 3 = Wedding Venues
+   */
+
+  const categoryId = String(
+    venue.category_id ||
+      venue.categoryId ||
+      ""
+  );
+
+  const categoryName = String(
+    venue.category_name || ""
+  ).toLowerCase();
+
+  let venueHref = `/venues/${venue.id}`;
+
+  if (
+    categoryId === "1" ||
+    categoryName.includes("farmhouse")
+  ) {
+    venueHref = `/farmhouses/${venue.id}`;
+  } else if (
+    categoryId === "2" ||
+    categoryName.includes("apartment")
+  ) {
+    venueHref = `/apartments/${venue.id}`;
+  } else if (
+    categoryId === "3" ||
+    categoryName.includes("wedding")
+  ) {
+    venueHref = `/venues/${venue.id}`;
+  }
+
   return (
     <article className="group overflow-hidden rounded-[22px] border border-neutral-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+
       {/* Image */}
-      <div className="relative h-[260px] overflow-hidden bg-neutral-100">
-        <img
-          src={image}
-          alt={venue.product_name || "Venue"}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
-          onError={(event) => {
-            event.currentTarget.src =
-              "https://placehold.co/1200x800/e8e2d8/6b6257?text=Image+Not+Available";
-          }}
-        />
+      <a
+        href={venueHref}
+        aria-label={`View ${venue.product_name || "Venue"}`}
+        className="block"
+      >
+        <div className="relative h-[260px] overflow-hidden bg-neutral-100">
 
-        {/* Image overlay */}
-        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/60 to-transparent" />
+          <img
+            src={image}
+            alt={venue.product_name || "Venue"}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+            onError={(event) => {
+              event.currentTarget.src =
+                "https://placehold.co/1200x800/e8e2d8/6b6257?text=Image+Not+Available";
+            }}
+          />
 
-        {/* Category */}
-        {venue.category_name && (
-          <div className="absolute left-4 top-4">
-            <span className="rounded-full bg-white/95 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-neutral-800">
-              {venue.category_name}
-            </span>
-          </div>
-        )}
-      </div>
+          {/* Image overlay */}
+          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/60 to-transparent" />
+
+          {/* Category */}
+          {venue.category_name && (
+            <div className="absolute left-4 top-4">
+              <span className="rounded-full bg-white/95 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-neutral-800">
+                {venue.category_name}
+              </span>
+            </div>
+          )}
+
+        </div>
+      </a>
 
       {/* Content */}
       <div className="p-5 sm:p-6">
-        <div className="mb-3 flex items-start justify-between gap-4">
-          <div>
-            <h3 className="font-serif text-2xl leading-tight text-neutral-900">
-              {venue.product_name || "Venue"}
-            </h3>
 
+        <div className="mb-3 flex items-start justify-between gap-4">
+
+          <div>
+
+            {/* Venue Name */}
+            <a href={venueHref}>
+              <h3 className="font-serif text-2xl leading-tight text-neutral-900 transition-colors group-hover:text-[#B38B45]">
+                {venue.product_name || "Venue"}
+              </h3>
+            </a>
+
+            {/* Location */}
             {venue.product_location && (
               <p className="mt-2 flex items-center gap-2 text-sm text-neutral-500">
                 <span className="text-[#B38B45]">●</span>
                 {venue.product_location}
               </p>
             )}
+
           </div>
 
           {/* Rating */}
@@ -80,6 +135,7 @@ const VenueCard = ({ venue }) => {
               {venue.rating || "5.0"}
             </span>
           </div>
+
         </div>
 
         {/* Description */}
@@ -91,6 +147,7 @@ const VenueCard = ({ venue }) => {
 
         {/* Bottom information */}
         <div className="flex items-center justify-between gap-4 border-t border-neutral-100 pt-4">
+
           <div>
             {venue.product_price ? (
               <p className="text-sm font-semibold text-neutral-900">
@@ -103,13 +160,16 @@ const VenueCard = ({ venue }) => {
             )}
           </div>
 
+          {/* Keep Enquire exactly as it was */}
           <a
             href="#contact"
             className="inline-flex items-center justify-center rounded-full bg-black px-5 py-2.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-white transition-colors duration-300 hover:bg-[#B38B45]"
           >
             Enquire
           </a>
+
         </div>
+
       </div>
     </article>
   );
