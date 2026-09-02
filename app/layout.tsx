@@ -13,48 +13,39 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-/*
-=========================================================
-SITE-WIDE SEO METADATA
-=========================================================
-*/
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://effortlessevents.in"),
 
   title: {
     default:
-      "Effortless Events | Farmhouses, Wedding & Event Venues in Delhi NCR",
+      "Effortless Events | Farmhouses, Venues & Event Planning in Delhi NCR",
     template: "%s | Effortless Events",
   },
 
   description:
-    "Discover and book premium farmhouses, villas and event venues in Delhi NCR for weddings, birthdays, private parties, corporate events and celebrations with Effortless Events.",
+    "Effortless Events is Delhi NCR's premier event planning and venue platform for farmhouses, weddings, birthdays, corporate events, private parties and celebrations.",
 
   keywords: [
     "Effortless Events",
     "farmhouses in Delhi NCR",
-    "farmhouse in Delhi",
     "farmhouses in Gurgaon",
-    "farmhouse for party",
-    "farmhouse for birthday party",
-    "farmhouse for wedding",
-    "wedding venues in Delhi NCR",
-    "wedding venues in Gurgaon",
-    "private party venues Delhi NCR",
+    "farmhouses near Delhi",
+    "party farmhouses Delhi NCR",
+    "birthday party farmhouse",
     "birthday party venues Delhi NCR",
+    "wedding venues Delhi NCR",
+    "wedding farmhouse Delhi",
+    "private party venues Delhi NCR",
     "corporate event venues Delhi NCR",
-    "event venues Delhi NCR",
-    "villa for party Delhi NCR",
-    "farmhouse booking Delhi",
-    "farmhouse booking Gurgaon",
     "event planning Delhi NCR",
+    "farmhouse booking",
+    "party venue Gurgaon",
+    "farmhouse with pool Delhi NCR",
   ],
 
   authors: [
     {
       name: "Effortless Events",
-      url: "https://effortlessevents.in",
     },
   ],
 
@@ -63,23 +54,60 @@ export const metadata: Metadata = {
 
   applicationName: "Effortless Events",
 
-  category: "event planning",
+  referrer: "origin-when-cross-origin",
 
-  /*
-  =======================================================
-  CANONICAL
-  =======================================================
-  */
-
-  alternates: {
-    canonical: "/",
+  formatDetection: {
+    telephone: true,
+    email: true,
+    address: true,
   },
 
-  /*
-  =======================================================
-  ROBOTS
-  =======================================================
-  */
+  icons: {
+    icon: "/effortless-events-og.png",
+    shortcut: "/effortless-events-og.png",
+    apple: "/effortless-events-og.png",
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://effortlessevents.in",
+    siteName: "Effortless Events",
+
+    title:
+      "Effortless Events | Farmhouses, Venues & Event Planning in Delhi NCR",
+
+    description:
+      "Discover premium farmhouses, event venues and professional event planning services across Delhi NCR with Effortless Events.",
+
+    images: [
+      {
+        url: "/effortless-events-og.png",
+        width: 1200,
+        height: 630,
+        alt: "Effortless Events - Farmhouses, Venues & Event Planning in Delhi NCR",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title:
+      "Effortless Events | Farmhouses, Venues & Event Planning in Delhi NCR",
+
+    description:
+      "Discover premium farmhouses, venues and event planning services across Delhi NCR.",
+
+    images: [
+      {
+        url: "/effortless-events-og.png",
+        width: 1200,
+        height: 630,
+        alt: "Effortless Events",
+      },
+    ],
+  },
 
   robots: {
     index: true,
@@ -94,20 +122,27 @@ export const metadata: Metadata = {
     },
   },
 
-  /*
-  =======================================================
-  OPEN GRAPH
-  =======================================================
-  */
+  category: "Event Planning",
+};
 
-  openGraph: {
-    type: "website",
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html
+      lang="en-IN"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col">
+        {children}
 
-    locale: "en_IN",
-
-    url: "https://effortlessevents.in",
-
-    siteName: "Effortless Events",
+        <FloatingWhatsAppButton />
+      </body>
+    </html>
+  );
+}    siteName: "Effortless Events",
 
     title:
       "Effortless Events | Farmhouses, Wedding & Event Venues in Delhi NCR",
@@ -151,7 +186,7 @@ export const metadata: Metadata = {
   */
 
   icons: {
-    icon: "/logo.png",
+    icon: "/effortless-events-og.png",
     shortcut: "/logo.png",
     apple: "/logo.png",
   },
