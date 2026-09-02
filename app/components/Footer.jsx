@@ -66,7 +66,7 @@ const Footer = () => {
                 className="w-11 h-11 rounded-full border border-[#3A2E22] flex items-center justify-center hover:bg-[#C9A34A] hover:border-[#C9A34A] transition-all duration-300"
               >
                 <img
-                  src="/facebook.png"
+                  src="/facebook.jpg"
                   alt="Facebook"
                   className="w-5 h-5 object-contain"
                 />
@@ -100,7 +100,7 @@ const Footer = () => {
 
               <li>
                 <a
-                  href="/search"
+                  href="/farmhouses"
                   className="hover:text-[#C9A34A] transition-colors"
                 >
                   Browse Venues
