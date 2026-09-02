@@ -6,17 +6,24 @@ const Footer = () => {
   return (
     <footer className="bg-[#0F0803] text-white">
 
-      {/* Main Footer */}
+      {/* =====================================================
+          MAIN FOOTER
+      ===================================================== */}
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-20">
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
 
-          {/* Brand */}
+          {/* =================================================
+              BRAND
+          ================================================= */}
 
           <div className="lg:col-span-1">
 
-            <a href="/" className="inline-block mb-6">
+            <a
+              href="/"
+              className="inline-block mb-6"
+            >
               <img
                 src="/logo.png"
                 alt="Effortless Events"
@@ -30,32 +37,61 @@ const Footer = () => {
               birthdays, corporate events and private celebrations.
             </p>
 
-            {/* Social Links */}
+
+            {/* =================================================
+                SOCIAL LINKS
+            ================================================= */}
 
             <div className="flex items-center gap-3 mt-7">
 
+              {/* Instagram */}
+
               <a
-                href="#"
+                href="https://www.instagram.com/effortlesseventspvt.ltd/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-10 h-10 rounded-full border border-[#3A2E22] flex items-center justify-center text-sm hover:bg-[#C9A34A] hover:text-black hover:border-[#C9A34A] transition-all"
+                className="w-11 h-11 rounded-full border border-[#3A2E22] flex items-center justify-center overflow-hidden hover:bg-[#C9A34A] hover:border-[#C9A34A] transition-all"
               >
-                IG
+                <img
+                  src="/instagram.png"
+                  alt="Instagram"
+                  className="w-6 h-6 object-contain"
+                />
               </a>
 
+
+              {/* Facebook */}
+
               <a
-                href="#"
+                href="https://www.facebook.com/Effortlesseventspvt.ltd/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="w-10 h-10 rounded-full border border-[#3A2E22] flex items-center justify-center text-sm hover:bg-[#C9A34A] hover:text-black hover:border-[#C9A34A] transition-all"
+                className="w-11 h-11 rounded-full border border-[#3A2E22] flex items-center justify-center overflow-hidden hover:bg-[#C9A34A] hover:border-[#C9A34A] transition-all"
               >
-                f
+                <img
+                  src="/facebook.png"
+                  alt="Facebook"
+                  className="w-6 h-6 object-contain"
+                />
               </a>
 
+
+              {/* WhatsApp */}
+
               <a
-                href="#"
-                aria-label="YouTube"
-                className="w-10 h-10 rounded-full border border-[#3A2E22] flex items-center justify-center text-sm hover:bg-[#C9A34A] hover:text-black hover:border-[#C9A34A] transition-all"
+                href="https://wa.me/917838008069"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="w-11 h-11 rounded-full border border-[#3A2E22] flex items-center justify-center overflow-hidden hover:bg-[#C9A34A] hover:border-[#C9A34A] transition-all"
               >
-                YT
+                <img
+                  src="/whatsapp.png"
+                  alt="WhatsApp"
+                  className="w-6 h-6 object-contain"
+                />
               </a>
 
             </div>
@@ -63,7 +99,9 @@ const Footer = () => {
           </div>
 
 
-          {/* Explore */}
+          {/* =================================================
+              EXPLORE
+          ================================================= */}
 
           <div>
 
@@ -123,7 +161,9 @@ const Footer = () => {
           </div>
 
 
-          {/* Services */}
+          {/* =================================================
+              SERVICES
+          ================================================= */}
 
           <div>
 
@@ -183,7 +223,9 @@ const Footer = () => {
           </div>
 
 
-          {/* Get In Touch */}
+          {/* =================================================
+              GET IN TOUCH
+          ================================================= */}
 
           <div>
 
@@ -236,9 +278,18 @@ const Footer = () => {
                   href="https://wa.me/917838008069"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-[#C9A34A] text-black px-6 py-3 rounded-xl font-semibold hover:bg-white transition-all"
+                  className="inline-flex items-center justify-center gap-3 bg-[#C9A34A] text-black px-6 py-3 rounded-xl font-semibold hover:bg-white transition-all"
                 >
+
+                  <img
+                    src="/whatsapp.png"
+                    alt=""
+                    aria-hidden="true"
+                    className="w-5 h-5 object-contain"
+                  />
+
                   Chat on WhatsApp
+
                 </a>
 
               </div>
@@ -252,7 +303,9 @@ const Footer = () => {
       </div>
 
 
-      {/* Bottom Bar */}
+      {/* =====================================================
+          BOTTOM BAR
+      ===================================================== */}
 
       <div className="border-t border-[#2A2118]">
 
@@ -261,8 +314,8 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#8F8275]">
 
             <p>
-              © {new Date().getFullYear()} Effortless Events. All rights
-              reserved.
+              © {new Date().getFullYear()} Effortless Events.
+              All rights reserved.
             </p>
 
             <div className="flex items-center gap-5">
