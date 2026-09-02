@@ -15,8 +15,11 @@ import {
 
 export default function FarmBookingPage({ venue }) {
   const [selectedDate, setSelectedDate] = useState("");
-  const [checkIn, setCheckIn] = useState("15:00");
-const [checkOut, setCheckOut] = useState("10:00");
+
+  // DEFAULT BOOKING TIMES
+  const [checkInTime, setCheckInTime] = useState("3:00 pm");
+  const [checkOutTime, setCheckOutTime] = useState("10:00 am");
+
   const [isDescriptionExpanded, setIsDescriptionExpanded] =
     useState(false);
 
@@ -52,7 +55,6 @@ const [checkOut, setCheckOut] = useState("10:00");
     /*
      * Convert YYYY-MM-DD into DD-MM-YYYY
      */
-
     const formattedDate = selectedDate
       .split("-")
       .reverse()
@@ -61,14 +63,12 @@ const [checkOut, setCheckOut] = useState("10:00");
     /*
      * Get farmhouse name
      */
-
     const farmhouseName =
       venue?.product_name || "Farmhouse";
 
     /*
      * WhatsApp message
      */
-
     const message = `Hello Effortless Events,
 
 I am interested in booking the following farmhouse.
@@ -85,7 +85,6 @@ Thank you.`;
     /*
      * Encode WhatsApp message
      */
-
     const whatsappUrl = `https://wa.me/917838008069?text=${encodeURIComponent(
       message
     )}`;
@@ -93,13 +92,18 @@ Thank you.`;
     /*
      * Open WhatsApp
      */
-
     window.open(
       whatsappUrl,
       "_blank",
       "noopener,noreferrer"
     );
   };
+
+  /*
+   * =========================================
+   * IF VENUE DOES NOT EXIST
+   * =========================================
+   */
 
   if (!venue) {
     return null;
@@ -108,6 +112,7 @@ Thank you.`;
   return (
     <div className="w-full bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
 
           {/* ========================================= */}
@@ -116,7 +121,9 @@ Thank you.`;
 
           <div className="lg:col-span-2 space-y-6">
 
-            {/* Header */}
+            {/* ========================================= */}
+            {/* HEADER */}
+            {/* ========================================= */}
 
             <div>
               <h1 className="text-xl sm:text-2xl font-bold text-black mb-4">
@@ -160,7 +167,9 @@ Thank you.`;
 
             <div className="space-y-3 text-black">
 
-              {/* Food and Beverage */}
+              {/* ========================================= */}
+              {/* FOOD AND BEVERAGE */}
+              {/* ========================================= */}
 
               <div className="border border-gray-200 rounded-lg">
                 <button
@@ -204,7 +213,9 @@ Thank you.`;
                 )}
               </div>
 
-              {/* Alcoholic and Beverage */}
+              {/* ========================================= */}
+              {/* ALCOHOLIC AND BEVERAGE */}
+              {/* ========================================= */}
 
               <div className="border border-gray-200 rounded-lg">
                 <button
@@ -249,7 +260,9 @@ Thank you.`;
                 )}
               </div>
 
-              {/* Furniture */}
+              {/* ========================================= */}
+              {/* FURNITURE */}
+              {/* ========================================= */}
 
               <div className="border border-gray-200 rounded-lg">
                 <button
@@ -293,7 +306,9 @@ Thank you.`;
                 )}
               </div>
 
-              {/* Restrooms */}
+              {/* ========================================= */}
+              {/* RESTROOMS */}
+              {/* ========================================= */}
 
               <div className="border border-gray-200 rounded-lg">
                 <button
@@ -338,7 +353,9 @@ Thank you.`;
                 )}
               </div>
 
-              {/* AV and Music */}
+              {/* ========================================= */}
+              {/* AV AND MUSIC */}
+              {/* ========================================= */}
 
               <div className="border border-gray-200 rounded-lg">
                 <button
@@ -381,7 +398,9 @@ Thank you.`;
                 )}
               </div>
 
-              {/* Parking */}
+              {/* ========================================= */}
+              {/* PARKING */}
+              {/* ========================================= */}
 
               <div className="border border-gray-200 rounded-lg">
                 <button
@@ -423,7 +442,9 @@ Thank you.`;
                 )}
               </div>
 
-              {/* Events Rules */}
+              {/* ========================================= */}
+              {/* EVENTS RULES */}
+              {/* ========================================= */}
 
               <div className="border border-gray-200 rounded-lg">
                 <button
@@ -475,12 +496,17 @@ Thank you.`;
           {/* ========================================= */}
 
           <div className="lg:col-span-1">
+
             <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-3 sm:p-4 lg:p-6 sticky top-4">
 
-              {/* Price */}
+              {/* ========================================= */}
+              {/* PRICE */}
+              {/* ========================================= */}
 
               <div className="mb-4 sm:mb-6">
+
                 <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">
+
                   {venue?.product_price
                     ? String(
                         venue.product_price
@@ -488,16 +514,21 @@ Thank you.`;
                       ? venue.product_price
                       : `₹${venue.product_price}`
                     : "Price on request"}
+
                 </div>
 
                 <div className="text-xs sm:text-sm text-[#E4D078]">
                   onwards
                 </div>
+
               </div>
 
-              {/* Discount */}
+              {/* ========================================= */}
+              {/* DISCOUNT */}
+              {/* ========================================= */}
 
               <div className="border-t border-gray-200 pt-3 sm:pt-4 mb-4 sm:mb-6">
+
                 <div className="flex justify-between items-center">
 
                   <span className="text-xs sm:text-sm text-gray-600">
@@ -509,6 +540,7 @@ Thank you.`;
                   </span>
 
                 </div>
+
               </div>
 
               {/* ========================================= */}
@@ -517,9 +549,12 @@ Thank you.`;
 
               <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
 
-                {/* Date */}
+                {/* ========================================= */}
+                {/* DATE */}
+                {/* ========================================= */}
 
                 <div>
+
                   <label className="block text-xs sm:text-sm text-black mb-2 font-medium">
                     Date{" "}
                     <span className="text-gray-400 font-normal">
@@ -540,15 +575,21 @@ Thank you.`;
                     }
                     className="w-full text-black px-2 sm:px-3 py-2 sm:py-2.5 lg:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E4D078] focus:border-[#E4D078] text-xs sm:text-sm lg:text-base bg-white cursor-pointer transition-all duration-200 hover:border-gray-400"
                   />
+
                 </div>
 
-                {/* Check-in / Check-out */}
+                {/* ========================================= */}
+                {/* CHECK-IN / CHECK-OUT */}
+                {/* ========================================= */}
 
                 <div className="grid grid-cols-2 gap-2 sm:gap-3 text-black">
 
-                  {/* Check-in */}
+                  {/* ========================================= */}
+                  {/* CHECK-IN */}
+                  {/* ========================================= */}
 
                   <div>
+
                     <label className="block text-xs sm:text-sm text-gray-700 mb-2 font-medium">
                       Check-in
                     </label>
@@ -560,156 +601,209 @@ Thank you.`;
                       }
                       className="w-full px-2 sm:px-3 py-2 sm:py-2.5 lg:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E4D078] focus:border-[#E4D078] text-xs sm:text-sm lg:text-base appearance-none bg-white cursor-pointer transition-all duration-200 hover:border-gray-400"
                     >
+
                       <option value="12:00 am">
                         12:00 am
                       </option>
+
                       <option value="12:30 am">
                         12:30 am
                       </option>
+
                       <option value="1:00 am">
                         1:00 am
                       </option>
+
                       <option value="1:30 am">
                         1:30 am
                       </option>
+
                       <option value="2:00 am">
                         2:00 am
                       </option>
+
                       <option value="2:30 am">
                         2:30 am
                       </option>
+
                       <option value="3:00 am">
                         3:00 am
                       </option>
+
                       <option value="3:30 am">
                         3:30 am
                       </option>
+
                       <option value="4:00 am">
                         4:00 am
                       </option>
+
                       <option value="4:30 am">
                         4:30 am
                       </option>
+
                       <option value="5:00 am">
                         5:00 am
                       </option>
+
                       <option value="5:30 am">
                         5:30 am
                       </option>
+
                       <option value="6:00 am">
                         6:00 am
                       </option>
+
                       <option value="6:30 am">
                         6:30 am
                       </option>
+
                       <option value="7:00 am">
                         7:00 am
                       </option>
+
                       <option value="7:30 am">
                         7:30 am
                       </option>
+
                       <option value="8:00 am">
                         8:00 am
                       </option>
+
                       <option value="8:30 am">
                         8:30 am
                       </option>
+
                       <option value="9:00 am">
                         9:00 am
                       </option>
+
                       <option value="9:30 am">
                         9:30 am
                       </option>
+
                       <option value="10:00 am">
                         10:00 am
                       </option>
+
                       <option value="10:30 am">
                         10:30 am
                       </option>
+
                       <option value="11:00 am">
                         11:00 am
                       </option>
+
                       <option value="11:30 am">
                         11:30 am
                       </option>
+
                       <option value="12:00 pm">
                         12:00 pm
                       </option>
+
                       <option value="12:30 pm">
                         12:30 pm
                       </option>
+
                       <option value="1:00 pm">
                         1:00 pm
                       </option>
+
                       <option value="1:30 pm">
                         1:30 pm
                       </option>
+
                       <option value="2:00 pm">
                         2:00 pm
                       </option>
+
                       <option value="2:30 pm">
                         2:30 pm
                       </option>
+
                       <option value="3:00 pm">
                         3:00 pm
                       </option>
+
                       <option value="3:30 pm">
                         3:30 pm
                       </option>
+
                       <option value="4:00 pm">
                         4:00 pm
                       </option>
+
                       <option value="4:30 pm">
                         4:30 pm
                       </option>
+
                       <option value="5:00 pm">
                         5:00 pm
                       </option>
+
                       <option value="5:30 pm">
                         5:30 pm
                       </option>
+
                       <option value="6:00 pm">
                         6:00 pm
                       </option>
+
                       <option value="6:30 pm">
                         6:30 pm
                       </option>
+
                       <option value="7:00 pm">
                         7:00 pm
                       </option>
+
                       <option value="7:30 pm">
                         7:30 pm
                       </option>
+
                       <option value="8:00 pm">
                         8:00 pm
                       </option>
+
                       <option value="8:30 pm">
                         8:30 pm
                       </option>
+
                       <option value="9:00 pm">
                         9:00 pm
                       </option>
+
                       <option value="9:30 pm">
                         9:30 pm
                       </option>
+
                       <option value="10:00 pm">
                         10:00 pm
                       </option>
+
                       <option value="10:30 pm">
                         10:30 pm
                       </option>
+
                       <option value="11:00 pm">
                         11:00 pm
                       </option>
+
                       <option value="11:30 pm">
                         11:30 pm
                       </option>
+
                     </select>
+
                   </div>
 
-                  {/* Check-out */}
+                  {/* ========================================= */}
+                  {/* CHECK-OUT */}
+                  {/* ========================================= */}
 
                   <div>
+
                     <label className="block text-xs sm:text-sm text-gray-700 mb-2 font-medium">
                       Check-out
                     </label>
@@ -721,151 +815,201 @@ Thank you.`;
                       }
                       className="w-full px-2 sm:px-3 py-2 sm:py-2.5 lg:py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#E4D078] focus:border-[#E4D078] text-xs sm:text-sm lg:text-base appearance-none bg-white cursor-pointer transition-all duration-200 hover:border-gray-400"
                     >
+
                       <option value="12:00 am">
                         12:00 am
                       </option>
+
                       <option value="12:30 am">
                         12:30 am
                       </option>
+
                       <option value="1:00 am">
                         1:00 am
                       </option>
+
                       <option value="1:30 am">
                         1:30 am
                       </option>
+
                       <option value="2:00 am">
                         2:00 am
                       </option>
+
                       <option value="2:30 am">
                         2:30 am
                       </option>
+
                       <option value="3:00 am">
                         3:00 am
                       </option>
+
                       <option value="3:30 am">
                         3:30 am
                       </option>
+
                       <option value="4:00 am">
                         4:00 am
                       </option>
+
                       <option value="4:30 am">
                         4:30 am
                       </option>
+
                       <option value="5:00 am">
                         5:00 am
                       </option>
+
                       <option value="5:30 am">
                         5:30 am
                       </option>
+
                       <option value="6:00 am">
                         6:00 am
                       </option>
+
                       <option value="6:30 am">
                         6:30 am
                       </option>
+
                       <option value="7:00 am">
                         7:00 am
                       </option>
+
                       <option value="7:30 am">
                         7:30 am
                       </option>
+
                       <option value="8:00 am">
                         8:00 am
                       </option>
+
                       <option value="8:30 am">
                         8:30 am
                       </option>
+
                       <option value="9:00 am">
                         9:00 am
                       </option>
+
                       <option value="9:30 am">
                         9:30 am
                       </option>
+
                       <option value="10:00 am">
                         10:00 am
                       </option>
+
                       <option value="10:30 am">
                         10:30 am
                       </option>
+
                       <option value="11:00 am">
                         11:00 am
                       </option>
+
                       <option value="11:30 am">
                         11:30 am
                       </option>
+
                       <option value="12:00 pm">
                         12:00 pm
                       </option>
+
                       <option value="12:30 pm">
                         12:30 pm
                       </option>
+
                       <option value="1:00 pm">
                         1:00 pm
                       </option>
+
                       <option value="1:30 pm">
                         1:30 pm
                       </option>
+
                       <option value="2:00 pm">
                         2:00 pm
                       </option>
+
                       <option value="2:30 pm">
                         2:30 pm
                       </option>
+
                       <option value="3:00 pm">
                         3:00 pm
                       </option>
+
                       <option value="3:30 pm">
                         3:30 pm
                       </option>
+
                       <option value="4:00 pm">
                         4:00 pm
                       </option>
+
                       <option value="4:30 pm">
                         4:30 pm
                       </option>
+
                       <option value="5:00 pm">
                         5:00 pm
                       </option>
+
                       <option value="5:30 pm">
                         5:30 pm
                       </option>
+
                       <option value="6:00 pm">
                         6:00 pm
                       </option>
+
                       <option value="6:30 pm">
                         6:30 pm
                       </option>
+
                       <option value="7:00 pm">
                         7:00 pm
                       </option>
+
                       <option value="7:30 pm">
                         7:30 pm
                       </option>
+
                       <option value="8:00 pm">
                         8:00 pm
                       </option>
+
                       <option value="8:30 pm">
                         8:30 pm
                       </option>
+
                       <option value="9:00 pm">
                         9:00 pm
                       </option>
+
                       <option value="9:30 pm">
                         9:30 pm
                       </option>
+
                       <option value="10:00 pm">
                         10:00 pm
                       </option>
+
                       <option value="10:30 pm">
                         10:30 pm
                       </option>
+
                       <option value="11:00 pm">
                         11:00 pm
                       </option>
+
                       <option value="11:30 pm">
                         11:30 pm
                       </option>
+
                     </select>
+
                   </div>
 
                 </div>
@@ -883,7 +1027,9 @@ Thank you.`;
                 Start Booking
               </button>
 
-              {/* Agent Response Time */}
+              {/* ========================================= */}
+              {/* AGENT RESPONSE TIME */}
+              {/* ========================================= */}
 
               <div className="flex items-center justify-center text-xs sm:text-sm text-gray-500">
 
