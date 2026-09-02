@@ -169,20 +169,37 @@ const Weddings = () => {
               wedding experiences.
             </p>
 
+            {/* =================================================
+                THREE CATEGORY BUTTONS
+            ================================================= */}
+
             <div className="mt-8 flex flex-wrap gap-4">
+
+              {/* FARMHOUSES */}
+
+              <Link
+                href="/farmhouses"
+                className="inline-flex items-center justify-center px-7 py-3 bg-[#C9A34A] text-[#0F0803] font-medium rounded-md hover:bg-[#D8B25B] transition"
+              >
+                Farmhouses
+              </Link>
+
+              {/* WEDDING VENUES */}
 
               <a
                 href="#wedding-venues"
-                className="inline-flex items-center justify-center px-7 py-3 bg-[#C9A34A] text-[#0F0803] font-medium rounded-md hover:bg-[#D8B25B] transition"
-              >
-                Explore Wedding Venues
-              </a>
-
-              <Link
-                href="/"
                 className="inline-flex items-center justify-center px-7 py-3 border border-[#3A2E22] text-white rounded-md hover:bg-[#17110B] transition"
               >
-                Back to Home
+                Wedding Venues
+              </a>
+
+              {/* APARTMENTS */}
+
+              <Link
+                href="/apartments"
+                className="inline-flex items-center justify-center px-7 py-3 border border-[#3A2E22] text-white rounded-md hover:bg-[#17110B] transition"
+              >
+                Apartments
               </Link>
 
             </div>
