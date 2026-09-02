@@ -15,8 +15,8 @@ import {
 
 export default function FarmBookingPage({ venue }) {
   const [selectedDate, setSelectedDate] = useState("");
-  const [checkInTime, setCheckInTime] = useState("9:30 am");
-  const [checkOutTime, setCheckOutTime] = useState("9:30 pm");
+  const [checkInTime, setCheckInTime] = useState("");
+  const [checkOutTime, setCheckOutTime] = useState("");
   const [isDescriptionExpanded, setIsDescriptionExpanded] =
     useState(false);
 
