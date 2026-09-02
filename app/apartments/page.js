@@ -47,7 +47,7 @@ const Apartments = () => {
       setVenues([]);
 
       setError(
-        "We&apos;re unable to load the apartments right now. Please try again."
+        "We're unable to load the apartments right now. Please try again."
       );
     } finally {
       setLoading(false);
@@ -171,21 +171,40 @@ const Apartments = () => {
               experiences.
             </p>
 
+            {/* =========================================
+                CATEGORY BUTTONS
+            ========================================= */}
+
             <div className="mt-8 flex flex-wrap gap-4">
+
+              {/* FARMHOUSE */}
+
+              <Link
+                href="/farmhouses"
+                className="inline-flex items-center justify-center px-7 py-3 border border-[#3A2E22] text-white rounded-md hover:bg-[#17110B] transition"
+              >
+                Farmhouse
+              </Link>
+
+
+              {/* WEDDING VENUE */}
+
+              <Link
+                href="/weddings"
+                className="inline-flex items-center justify-center px-7 py-3 border border-[#3A2E22] text-white rounded-md hover:bg-[#17110B] transition"
+              >
+                Wedding Venue
+              </Link>
+
+
+              {/* APARTMENTS */}
 
               <a
                 href="#apartments"
                 className="inline-flex items-center justify-center px-7 py-3 bg-[#C9A34A] text-[#0F0803] font-medium rounded-md hover:bg-[#D8B25B] transition"
               >
-                Explore Apartments
+                Apartments
               </a>
-
-              <Link
-                href="/"
-                className="inline-flex items-center justify-center px-7 py-3 border border-[#3A2E22] text-white rounded-md hover:bg-[#17110B] transition"
-              >
-                Back to Home
-              </Link>
 
             </div>
 
@@ -231,9 +250,7 @@ const Apartments = () => {
         </div>
 
 
-        {/* =========================================
-            ERROR
-        ========================================= */}
+        {/* ERROR */}
 
         {error && (
           <div className="border border-[#3A2E22] bg-[#17110B] rounded-2xl p-10 text-center">
@@ -257,9 +274,7 @@ const Apartments = () => {
         )}
 
 
-        {/* =========================================
-            EMPTY STATE
-        ========================================= */}
+        {/* EMPTY STATE */}
 
         {!error && venues.length === 0 && (
           <div className="border border-[#3A2E22] bg-[#17110B] rounded-2xl p-12 text-center">
@@ -277,9 +292,7 @@ const Apartments = () => {
         )}
 
 
-        {/* =========================================
-            APARTMENT GRID
-        ========================================= */}
+        {/* APARTMENT GRID */}
 
         {!error && venues.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
