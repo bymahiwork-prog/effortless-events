@@ -25,7 +25,7 @@ export default function FinalCTA() {
         <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
           {/* Explore Venues */}
           <Link
-            href="/search"
+            href="/farmhouses"
             className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#C9A34A] text-black font-semibold hover:bg-[#D8B25B] transition-colors"
           >
             Explore Venues
