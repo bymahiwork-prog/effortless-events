@@ -3,69 +3,83 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
+/*
+ * =========================================================
+ * FEATURED FARMHOUSES
+ * =========================================================
+ *
+ * These properties are Farmhouses, so their detail pages
+ * must use:
+ *
+ * /farmhouses/[id]
+ *
+ * Wedding venues use /venues/[id]
+ * Apartments use /apartments/[id]
+ */
+
 const sliderData = [
   {
     imageSrc: "/Effortless Farm 58.webp",
     altText: "Effortless Farm 58 in New Delhi",
     subText: "Effortless Farm 58",
     location: "New Delhi",
-    href: "/venues/132",
+    href: "/farmhouses/132",
   },
   {
     imageSrc: "/Effortless Farm 33.webp",
     altText: "Effortless Farm 33 in New Delhi",
     subText: "Effortless Farm 33",
     location: "New Delhi",
-    href: "/venues/134",
+    href: "/farmhouses/134",
   },
   {
     imageSrc: "/Effortless Farm67.webp",
     altText: "Effortless Farm 67 in Gurugram",
     subText: "Effortless Farm 67",
     location: "Gurugram",
-    href: "/venues/110",
+    href: "/farmhouses/110",
   },
   {
     imageSrc: "/Effortless Farm39.jpg",
     altText: "Effortless Farm 39 in Faridabad",
     subText: "Effortless Farm 39",
     location: "Faridabad",
-    href: "/venues/63",
+    href: "/farmhouses/63",
   },
   {
     imageSrc: "/Effortless Farm18.jpg",
     altText: "Effortless Farm 18 in New Delhi",
     subText: "Effortless Farm 18",
     location: "New Delhi",
-    href: "/venues/44",
+    href: "/farmhouses/44",
   },
   {
     imageSrc: "/Effortless Hp1.webp",
     altText: "Effortless HP 1 in New Delhi",
     subText: "Effortless HP 1",
     location: "New Delhi",
-    href: "/venues/101",
+    href: "/farmhouses/101",
   },
   {
     imageSrc: "/Effortless Hp11.webp",
     altText: "Effortless HP 11 in New Delhi",
     subText: "Effortless HP 11",
     location: "New Delhi",
-    href: "/venues/103",
+    href: "/farmhouses/103",
   },
   {
     imageSrc: "/Effortless Farm69.webp",
     altText: "Effortless Farm 69 in Noida",
     subText: "Effortless Farm 69",
     location: "Noida",
-    href: "/venues/112",
+    href: "/farmhouses/112",
   },
   {
     imageSrc: "/Effortless HP 13.webp",
     altText: "Effortless HP 13 in New Delhi",
     subText: "Effortless HP 13",
     location: "New Delhi",
-    href: "/venues/122",
+    href: "/farmhouses/122",
   },
 ];
 
@@ -77,9 +91,9 @@ const Hero = () => {
   const currentSlide = sliderData[currentIndex];
 
   /*
-   * ==========================================
+   * =========================================================
    * PREVIOUS SLIDE
-   * ==========================================
+   * =========================================================
    */
 
   const goToPrevious = () => {
@@ -94,9 +108,9 @@ const Hero = () => {
   };
 
   /*
-   * ==========================================
+   * =========================================================
    * NEXT SLIDE
-   * ==========================================
+   * =========================================================
    */
 
   const goToNext = () => {
@@ -111,9 +125,9 @@ const Hero = () => {
   };
 
   /*
-   * ==========================================
+   * =========================================================
    * AUTO SLIDER
-   * ==========================================
+   * =========================================================
    */
 
   useEffect(() => {
@@ -132,9 +146,9 @@ const Hero = () => {
   }, []);
 
   /*
-   * ==========================================
+   * =========================================================
    * PRELOAD CURRENT + NEXT IMAGE
-   * ==========================================
+   * =========================================================
    */
 
   useEffect(() => {
@@ -178,9 +192,9 @@ const Hero = () => {
   }, [currentIndex, currentSlide.imageSrc]);
 
   /*
-   * ==========================================
+   * =========================================================
    * FALLBACK IMAGE
-   * ==========================================
+   * =========================================================
    */
 
   const fallbackImage = "/Effortless Farm 58.webp";
