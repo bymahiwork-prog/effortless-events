@@ -51,7 +51,7 @@ const Footer = () => {
                 className="w-11 h-11 rounded-full border border-[#3A2E22] flex items-center justify-center hover:bg-[#C9A34A] hover:border-[#C9A34A] transition-all duration-300"
               >
                 <img
-                  src="/instagram.png"
+                  src="/Instagram.png"
                   alt="Instagram"
                   className="w-5 h-5 object-contain"
                 />
@@ -70,23 +70,6 @@ const Footer = () => {
                 <img
                   src="/facebook.png"
                   alt="Facebook"
-                  className="w-5 h-5 object-contain"
-                />
-              </a>
-
-
-              {/* WhatsApp */}
-
-              <a
-                href="https://wa.me/917838008069"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-                className="w-11 h-11 rounded-full border border-[#3A2E22] flex items-center justify-center hover:bg-[#C9A34A] hover:border-[#C9A34A] transition-all duration-300"
-              >
-                <img
-                  src="/whatsapp.png"
-                  alt="WhatsApp"
                   className="w-5 h-5 object-contain"
                 />
               </a>
@@ -265,35 +248,6 @@ const Footer = () => {
                 </a>
 
               </div>
-
-
-              {/* WhatsApp */}
-
-              <div className="pt-2">
-
-                <a
-                  href="https://wa.me/917838008069"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 bg-[#C9A34A] text-black px-6 py-3 rounded-xl font-semibold hover:bg-white transition-all duration-300"
-                >
-
-                  <img
-                    src="/whatsapp.png"
-                    alt=""
-                    aria-hidden="true"
-                    className="w-5 h-5 object-contain"
-                  />
-
-                  <span>
-                    Chat on WhatsApp
-                  </span>
-
-                </a>
-
-              </div>
-
-            </div>
 
           </div>
 
