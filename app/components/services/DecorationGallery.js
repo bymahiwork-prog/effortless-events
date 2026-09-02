@@ -133,7 +133,7 @@ export default function DecorationGallery() {
         >
 
           <Link
-            href="/services/decoration-services"
+            href="/services/event-decor-styling"
             className="inline-flex items-center gap-2 border border-black px-6 py-3 text-[10px] sm:text-xs font-semibold tracking-[0.15em] uppercase text-black transition-all duration-300 hover:bg-black hover:text-white"
           >
             Explore Decoration Services
