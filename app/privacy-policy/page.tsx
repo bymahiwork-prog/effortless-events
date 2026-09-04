@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -515,54 +514,6 @@ export default function PrivacyPolicyPage() {
           </div>
 
         </div>
-      </section>
-
-      {/* =====================================================
-          FOOTER CTA
-      ===================================================== */}
-
-      <section className="border-t border-[#2A2118] py-12">
-
-        <div className="max-w-6xl mx-auto px-6 md:px-8">
-
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-
-            <p className="text-sm text-[#8F8173]">
-              © {new Date().getFullYear()} Effortless Events. All rights
-              reserved.
-            </p>
-
-            <div className="flex flex-wrap gap-6 text-sm">
-
-              <Link
-                href="/privacy-policy"
-                className="text-[#C9A34A]"
-              >
-                Privacy Policy
-              </Link>
-
-              <Link
-                href="/terms-and-conditions"
-                className="text-[#B9AA9A] hover:text-[#C9A34A] transition-colors"
-              >
-                Terms & Conditions
-              </Link>
-
-              <a
-                href="https://wa.me/917838008069?text=Hi%20Effortless%20Events%2C%20I%20would%20like%20to%20get%20in%20touch."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#B9AA9A] hover:text-[#C9A34A] transition-colors"
-              >
-                Contact
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
       </section>
 
     </main>
