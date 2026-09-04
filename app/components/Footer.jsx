@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -289,19 +290,27 @@ const Footer = () => {
 
             <div className="flex items-center gap-5">
 
-              <a
+              {/* =================================================
+                  PRIVACY POLICY
+              ================================================= */}
+
+              <Link
                 href="/privacy-policy"
                 className="hover:text-white transition-colors"
               >
                 Privacy Policy
-              </a>
+              </Link>
 
-              <a
-                href="/terms"
+              {/* =================================================
+                  TERMS & CONDITIONS
+              ================================================= */}
+
+              <Link
+                href="/terms-and-conditions"
                 className="hover:text-white transition-colors"
               >
                 Terms &amp; Conditions
-              </a>
+              </Link>
 
             </div>
 
