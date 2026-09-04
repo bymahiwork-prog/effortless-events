@@ -402,44 +402,6 @@ export default function TermsAndConditionsPage() {
               </p>
             </section>
 
-            {/* =================================================
-                14. CONTACT
-            ================================================= */}
-
-            <section className="pt-8 border-t border-[#2A2118]">
-              <h2 className="text-2xl md:text-3xl font-serif text-white mb-5">
-                14. Contact Us
-              </h2>
-
-              <p className="leading-8 mb-5">
-                If you have any questions regarding these Terms & Conditions,
-                please contact Effortless Events.
-              </p>
-
-              <div className="bg-[#17110B] border border-[#2A2118] rounded-[24px] p-6 md:p-8">
-
-                <p className="text-white font-medium mb-2">
-                  Effortless Events
-                </p>
-
-                <p className="text-[#B9AA9A] leading-7">
-                  For enquiries, bookings, or legal questions, please contact
-                  us through the contact options available on our website.
-                </p>
-
-                <div className="mt-5">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2 text-[#C9A34A] font-medium hover:text-[#D8B25B] transition-colors"
-                  >
-                    Get in Touch
-                    <span>→</span>
-                  </Link>
-                </div>
-
-              </div>
-            </section>
-
           </div>
 
         </div>
@@ -476,7 +438,7 @@ export default function TermsAndConditionsPage() {
               </Link>
 
               <Link
-                href="/contact"
+                href="/https://wa.me/917838008069"
                 className="text-[#B9AA9A] hover:text-[#C9A34A] transition-colors"
               >
                 Contact
