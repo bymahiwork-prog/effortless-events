@@ -550,7 +550,7 @@ export default function PrivacyPolicyPage() {
               </Link>
 
               <Link
-                href="/contact"
+                href="/https://wa.me/917838008069"
                 className="text-[#B9AA9A] hover:text-[#C9A34A] transition-colors"
               >
                 Contact
