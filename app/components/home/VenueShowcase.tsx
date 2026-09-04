@@ -40,6 +40,9 @@ const VenueShowcase = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slidesToShow, setSlidesToShow] = useState(3);
 
+  // NEW: stores the actual width of the visible carousel
+  const [carouselWidth, setCarouselWidth] = useState(0);
+
   const router = useRouter();
 
   /*
@@ -134,18 +137,44 @@ const VenueShowcase = () => {
 
     updateSlides();
 
+    window.addEventListener("resize", updateSlides);
+
+    return () => {
+      window.removeEventListener("resize", updateSlides);
+    };
+  }, []);
+
+  /*
+   * ============================================================
+   * MEASURE CAROUSEL WIDTH
+   * ============================================================
+   */
+
+  useEffect(() => {
+    const updateCarouselWidth = () => {
+      const carousel = document.getElementById(
+        "wedding-venue-carousel"
+      );
+
+      if (carousel) {
+        setCarouselWidth(carousel.offsetWidth);
+      }
+    };
+
+    updateCarouselWidth();
+
     window.addEventListener(
       "resize",
-      updateSlides
+      updateCarouselWidth
     );
 
     return () => {
       window.removeEventListener(
         "resize",
-        updateSlides
+        updateCarouselWidth
       );
     };
-  }, []);
+  }, [slidesToShow]);
 
   /*
    * ============================================================
@@ -201,18 +230,65 @@ const VenueShowcase = () => {
 
   /*
    * ============================================================
-   * OPEN INDIVIDUAL WEDDING LISTING
+   * CALCULATE ACTUAL CARD WIDTH
+   *
+   * Gap = 24px (gap-6)
+   *
+   * Mobile:
+   * 1 card = 100% of carousel
+   *
+   * Tablet:
+   * 2 cards with 24px gap
+   *
+   * Desktop:
+   * 3 cards with two 24px gaps
+   * ============================================================
+   */
+
+  const gap = 24;
+
+  const getCardWidth = () => {
+    if (carouselWidth === 0) {
+      return "100%";
+    }
+
+    if (slidesToShow === 1) {
+      return `${carouselWidth}px`;
+    }
+
+    if (slidesToShow === 2) {
+      return `${(carouselWidth - gap) / 2}px`;
+    }
+
+    return `${(carouselWidth - gap * 2) / 3}px`;
+  };
+
+  /*
+   * ============================================================
+   * CALCULATE CAROUSEL TRANSLATION
    *
    * IMPORTANT:
+   * We move by the REAL card width + the gap.
    *
-   * Wedding listing:
-   * /weddings
-   *
-   * Individual listing:
-   * /weddings/[id]
-   *
-   * Example:
-   * /weddings/70
+   * This prevents partial cards on mobile.
+   * ============================================================
+   */
+
+  const cardWidth =
+    carouselWidth > 0
+      ? slidesToShow === 1
+        ? carouselWidth
+        : (carouselWidth -
+            gap * (slidesToShow - 1)) /
+          slidesToShow
+      : 0;
+
+  const translateDistance =
+    currentSlide * (cardWidth + gap);
+
+  /*
+   * ============================================================
+   * OPEN INDIVIDUAL WEDDING LISTING
    * ============================================================
    */
 
@@ -240,24 +316,6 @@ const VenueShowcase = () => {
 
   /*
    * ============================================================
-   * CARD WIDTH
-   * ============================================================
-   */
-
-  const getCardWidth = () => {
-    if (slidesToShow === 1) {
-      return "w-full";
-    }
-
-    if (slidesToShow === 2) {
-      return "w-[calc(50%-12px)]";
-    }
-
-    return "w-[calc(33.333%-16px)]";
-  };
-
-  /*
-   * ============================================================
    * GET VENUE IMAGE
    * ============================================================
    */
@@ -278,7 +336,7 @@ const VenueShowcase = () => {
   };
 
   return (
-    <section className="bg-[#0F0803] py-20 md:py-28">
+    <section className="bg-[#0F0803] py-20 md:py-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
 
         {/* =====================================================
@@ -321,15 +379,23 @@ const VenueShowcase = () => {
 
         <div className="relative">
 
-          <div className="overflow-hidden">
+          {/* ===================================================
+              VIEWPORT
+          =================================================== */}
+
+          <div
+            id="wedding-venue-carousel"
+            className="overflow-hidden w-full"
+          >
+
+            {/* =================================================
+                TRACK
+            ================================================= */}
 
             <div
-              className="flex gap-6 transition-transform duration-500 ease-in-out"
+              className="flex gap-6 transition-transform duration-500 ease-in-out will-change-transform"
               style={{
-                transform: `translateX(-${
-                  currentSlide *
-                  (100 / slidesToShow)
-                }%)`,
+                transform: `translate3d(-${translateDistance}px, 0, 0)`,
               }}
             >
 
@@ -343,7 +409,10 @@ const VenueShowcase = () => {
                 }).map((_, index) => (
                   <div
                     key={`skeleton-${index}`}
-                    className={`flex-shrink-0 ${getCardWidth()}`}
+                    className="flex-shrink-0"
+                    style={{
+                      width: getCardWidth(),
+                    }}
                   >
                     <SkeletonCard />
                   </div>
@@ -376,7 +445,10 @@ const VenueShowcase = () => {
                   return (
                     <div
                       key={venue.id}
-                      className={`flex-shrink-0 ${getCardWidth()}`}
+                      className="flex-shrink-0"
+                      style={{
+                        width: getCardWidth(),
+                      }}
                     >
 
                       <article
@@ -436,7 +508,7 @@ const VenueShowcase = () => {
 
                           <div className="flex items-center justify-between gap-3 mb-3">
 
-                            <h3 className="text-2xl sm:text-3xl font-serif text-white">
+                            <h3 className="text-2xl sm:text-3xl font-serif text-white min-w-0 break-words">
                               {venue.product_name ||
                                 "Wedding Venue"}
                             </h3>
@@ -461,7 +533,7 @@ const VenueShowcase = () => {
                             </p>
                           )}
 
-                          <p className="text-[#D4C7B8] leading-7 line-clamp-4 text-sm sm:text-base">
+                          <p className="text-[#D4C7B8] leading-7 line-clamp-4 text-sm sm:text-base break-words">
                             {venue.product_detail
                               ? venue.product_detail.slice(
                                   0,
