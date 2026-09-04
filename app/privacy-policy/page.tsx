@@ -264,7 +264,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             {/* =================================================
-                7. THIRD PARTY SERVICES
+                7. THIRD-PARTY SERVICES
             ================================================= */}
 
             <section>
@@ -468,50 +468,49 @@ export default function PrivacyPolicyPage() {
             </section>
 
             {/* =================================================
-    16. CONTACT
-================================================= */}
+                16. CONTACT
+            ================================================= */}
 
-<section className="pt-8 border-t border-[#2A2118]">
+            <section className="pt-8 border-t border-[#2A2118]">
 
-  <h2 className="text-2xl md:text-3xl font-serif text-white mb-5">
-    16. Contact Us
-  </h2>
+              <h2 className="text-2xl md:text-3xl font-serif text-white mb-5">
+                16. Contact Us
+              </h2>
 
-  <p className="leading-8 mb-5">
-    If you have questions about this Privacy Policy or wish to
-    make a privacy-related request, please contact Effortless
-    Events.
-  </p>
+              <p className="leading-8 mb-5">
+                If you have questions about this Privacy Policy or wish to
+                make a privacy-related request, please contact Effortless
+                Events.
+              </p>
 
-  <div className="bg-[#17110B] border border-[#2A2118] rounded-[24px] p-6 md:p-8">
+              <div className="bg-[#17110B] border border-[#2A2118] rounded-[24px] p-6 md:p-8">
 
-    <p className="text-white font-medium mb-2">
-      Effortless Events
-    </p>
+                <p className="text-white font-medium mb-2">
+                  Effortless Events
+                </p>
 
-    <p className="text-[#B9AA9A] leading-7">
-      For privacy enquiries, data-related requests, or general
-      questions, please contact us through the contact options
-      available on our website.
-    </p>
+                <p className="text-[#B9AA9A] leading-7">
+                  For privacy enquiries, data-related requests, or general
+                  questions, please contact us through WhatsApp.
+                </p>
 
-    <div className="mt-5">
+                <div className="mt-5">
 
-      <a
-        href="https://wa.me/917838008069?text=Hi%20Effortless%20Events%2C%20I%20have%20a%20privacy-related%20question."
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 text-[#C9A34A] font-medium hover:text-[#D8B25B] transition-colors"
-      >
-        Get in Touch
-        <span>→</span>
-      </a>
+                  <a
+                    href="https://wa.me/917838008069?text=Hi%20Effortless%20Events%2C%20I%20have%20a%20privacy-related%20question."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-[#C9A34A] font-medium hover:text-[#D8B25B] transition-colors"
+                  >
+                    Get in Touch
+                    <span>→</span>
+                  </a>
 
-    </div>
+                </div>
 
-  </div>
+              </div>
 
-</section>
+            </section>
 
           </div>
 
@@ -549,14 +548,14 @@ export default function PrivacyPolicyPage() {
                 Terms & Conditions
               </Link>
 
-              <<a
-  href="https://wa.me/917838008069?text=Hi%20Effortless%20Events%2C%20I%20would%20like%20to%20get%20in%20touch."
-  target="_blank"
-  rel="noopener noreferrer"
-  className="text-[#B9AA9A] hover:text-[#C9A34A] transition-colors"
->
-  Contact
-</a>
+              <a
+                href="https://wa.me/917838008069?text=Hi%20Effortless%20Events%2C%20I%20would%20like%20to%20get%20in%20touch."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#B9AA9A] hover:text-[#C9A34A] transition-colors"
+              >
+                Contact
+              </a>
 
             </div>
 
@@ -566,6 +565,6 @@ export default function PrivacyPolicyPage() {
 
       </section>
 
-          </main>
+    </main>
   );
 }
