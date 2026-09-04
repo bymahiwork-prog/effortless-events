@@ -549,12 +549,14 @@ export default function PrivacyPolicyPage() {
                 Terms & Conditions
               </Link>
 
-              <Link
-                href="/https://wa.me/917838008069"
-                className="text-[#B9AA9A] hover:text-[#C9A34A] transition-colors"
-              >
-                Contact
-              </Link>
+              <<a
+  href="https://wa.me/917838008069?text=Hi%20Effortless%20Events%2C%20I%20would%20like%20to%20get%20in%20touch."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-[#B9AA9A] hover:text-[#C9A34A] transition-colors"
+>
+  Contact
+</a>
 
             </div>
 
