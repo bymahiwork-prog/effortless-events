@@ -126,6 +126,16 @@ export default function BlogsPage() {
       description:
         "Looking for the perfect birthday farmhouse in Delhi NCR? Discover what to consider when choosing a farmhouse, including location, guest capacity, swimming pools, lawns, privacy, food, decorations, and overnight stays.",
     },
+    {
+  href: "/blogs/farmhouse-vs-resort-delhi-ncr",
+  image: "/farmhouse-vs-resort-delhi-ncr-cover.png",
+  alt: "Farmhouse vs Resort: Which Is Better for Your Next Celebration in Delhi NCR?",
+  category: "Farmhouse & Resort Guide",
+  title:
+    "Farmhouse vs Resort: Which Is Better for Your Next Celebration in Delhi NCR?",
+  description:
+    "Farmhouse vs resort in Delhi NCR: compare privacy, space, flexibility, swimming pools, food, accommodation, activities, cost, and overall celebration experience.",
+},
   ];
 
   return (
