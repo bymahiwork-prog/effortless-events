@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
 
@@ -136,9 +137,38 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+
+        {/* =====================================================
+            GOOGLE ADS GOOGLE TAG
+        ===================================================== */}
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18057906313"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-18057906313');
+          `}
+        </Script>
+
+        {/* =====================================================
+            WEBSITE CONTENT
+        ===================================================== */}
+
         {children}
 
+        {/* =====================================================
+            FLOATING WHATSAPP BUTTON
+        ===================================================== */}
+
         <FloatingWhatsAppButton />
+
       </body>
     </html>
   );
