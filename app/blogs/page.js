@@ -114,6 +114,18 @@ export default function BlogsPage() {
       description:
         "Discover the best farmhouses near Delhi for weekend getaways, family gatherings, birthday celebrations, pool parties, corporate outings, and relaxing stays.",
     },
+    {
+      href: "/blogs/how-to-choose-perfect-farmhouse-birthday-party-delhi-ncr",
+      image:
+        "/how-to-choose-perfect-farmhouse-birthday-party-delhi-ncr-cover.png",
+      alt:
+        "How to Choose the Perfect Farmhouse for a Birthday Party in Delhi NCR",
+      category: "Birthday Parties",
+      title:
+        "How to Choose the Perfect Farmhouse for a Birthday Party in Delhi NCR",
+      description:
+        "Looking for the perfect birthday farmhouse in Delhi NCR? Discover what to consider when choosing a farmhouse, including location, guest capacity, swimming pools, lawns, privacy, food, decorations, and overnight stays.",
+    },
   ];
 
   return (
