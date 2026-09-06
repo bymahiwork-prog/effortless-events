@@ -63,7 +63,7 @@ export default function ServicesHero() {
 
               {/* Plan My Event */}
 <a
-  href="https://wa.me/919810668009?text=Hi%20Effortless%20Events%2C%20I%27d%20like%20to%20plan%20an%20event."
+  href="https://wa.me/917838008069?text=Hi%20Effortless%20Events%2C%20I%27d%20like%20to%20plan%20an%20event."
   target="_blank"
   rel="noopener noreferrer"
   className="inline-flex min-h-[44px] items-center justify-center bg-[#d6b36a] px-6 sm:px-7 py-3 text-[10px] sm:text-xs font-semibold tracking-[0.12em] uppercase text-black transition-all duration-300 hover:bg-white"
