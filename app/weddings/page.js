@@ -217,36 +217,36 @@ const Weddings = () => {
 
             {/* CATEGORY BUTTONS */}
 
-<div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap gap-4">
 
-  {/* FARMHOUSES */}
+              {/* FARMHOUSES */}
 
-  <Link
-    href="/farmhouses"
-    className="inline-flex items-center justify-center px-7 py-3 border border-[#3A2E22] text-white rounded-md hover:bg-[#17110B] transition"
-  >
-    Farmhouses
-  </Link>
+              <Link
+                href="/farmhouses"
+                className="inline-flex items-center justify-center px-7 py-3 border border-[#3A2E22] text-white rounded-md hover:bg-[#17110B] transition"
+              >
+                Farmhouses
+              </Link>
 
-  {/* WEDDING VENUES — ACTIVE */}
+              {/* WEDDING VENUES — ACTIVE */}
 
-  <a
-    href="#wedding-venues"
-    className="inline-flex items-center justify-center px-7 py-3 bg-[#C9A34A] text-[#0F0803] font-medium rounded-md hover:bg-[#D8B25B] transition"
-  >
-    Wedding Venues
-  </a>
+              <a
+                href="#wedding-venues"
+                className="inline-flex items-center justify-center px-7 py-3 bg-[#C9A34A] text-[#0F0803] font-medium rounded-md hover:bg-[#D8B25B] transition"
+              >
+                Wedding Venues
+              </a>
 
-  {/* APARTMENTS */}
+              {/* APARTMENTS */}
 
-  <Link
-    href="/apartments"
-    className="inline-flex items-center justify-center px-7 py-3 border border-[#3A2E22] text-white rounded-md hover:bg-[#17110B] transition"
-  >
-    Apartments
-  </Link>
+              <Link
+                href="/apartments"
+                className="inline-flex items-center justify-center px-7 py-3 border border-[#3A2E22] text-white rounded-md hover:bg-[#17110B] transition"
+              >
+                Apartments
+              </Link>
 
-</div>
+            </div>
 
           </div>
 
@@ -448,13 +448,13 @@ const Weddings = () => {
         ========================================= */}
 
         {!error && filteredVenues.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 items-stretch">
 
             {filteredVenues.map((venue) => (
 
               <article
                 key={venue.id}
-                className="group bg-[#17110B] border border-[#2A2118] rounded-2xl overflow-hidden hover:border-[#5A4525] hover:-translate-y-1 transition-all duration-300"
+                className="group bg-[#17110B] border border-[#2A2118] rounded-2xl overflow-hidden hover:border-[#5A4525] hover:-translate-y-1 transition-all duration-300 flex flex-col h-full"
               >
 
                 {/* IMAGE */}
@@ -494,7 +494,7 @@ const Weddings = () => {
 
                 {/* CONTENT */}
 
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
 
                   {/* NAME */}
 
@@ -559,7 +559,7 @@ const Weddings = () => {
 
                   <Link
                     href={`/weddings/${venue.id}`}
-                    className="block w-full text-center border border-[#C9A34A] text-[#C9A34A] py-3 rounded-md font-medium hover:bg-[#C9A34A] hover:text-[#0F0803] transition"
+                    className="block w-full text-center border border-[#C9A34A] text-[#C9A34A] py-3 rounded-md font-medium hover:bg-[#C9A34A] hover:text-[#0F0803] transition mt-auto"
                   >
                     View Details
                   </Link>
