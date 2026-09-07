@@ -100,9 +100,7 @@ export const metadata: Metadata = {
     description:
       "Discover premium farmhouses, venues and event planning services across Delhi NCR.",
 
-    images: [
-      "/effortless-events-og.png",
-    ],
+    images: ["/effortless-events-og.png"],
   },
 
   robots: {
@@ -161,15 +159,34 @@ export default function RootLayout({
             Pixel ID: Ja9aXfC992WKVZqEKLYDy
         ===================================================== */}
 
-        <Script
-          id="openai-ads-pixel"
-          strategy="afterInteractive"
-        >
+        <Script id="openai-ads-pixel" strategy="afterInteractive">
           {`
-            /* 
-              PASTE THE EXACT OPENAI ADS MANAGER
-              SETUP CODE PROVIDED IN ADS MANAGER HERE.
-            */
+            (function (w, d, s, u) {
+              if (w.oaiq) return;
+
+              var q = function () {
+                q.q.push(arguments);
+              };
+
+              q.q = [];
+              w.oaiq = q;
+
+              var js = d.createElement(s);
+              js.async = true;
+              js.src = u;
+
+              var f = d.getElementsByTagName(s)[0];
+              f.parentNode.insertBefore(js, f);
+            })(
+              window,
+              document,
+              "script",
+              "https://bzrcdn.openai.com/sdk/oaiq.min.js"
+            );
+
+            oaiq("init", {
+              pixelId: "Ja9aXfC992WKVZqEKLYDy",
+            });
           `}
         </Script>
 
