@@ -142,13 +142,15 @@ export default function EntertainmentExperiences() {
 
             <div className="flex flex-col sm:flex-row gap-4">
 
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-3 bg-[#E4D078] text-black px-7 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-white transition-all duration-300"
-              >
-                Plan Entertainment
-                <ArrowRight size={17} />
-              </Link>
+              <a
+  href="https://wa.me/917838008069"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center justify-center gap-3 bg-[#E4D078] text-black px-7 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-white transition-all duration-300"
+>
+  Plan Entertainment
+  <ArrowRight size={17} />
+</a>
 
               <Link
                 href="#our-services"
