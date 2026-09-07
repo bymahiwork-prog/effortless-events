@@ -217,36 +217,36 @@ const Weddings = () => {
 
             {/* CATEGORY BUTTONS */}
 
-            <div className="mt-8 flex flex-wrap gap-4">
+<div className="mt-8 flex flex-wrap gap-4">
 
-              {/* FARMHOUSES */}
+  {/* FARMHOUSES */}
 
-              <Link
-                href="/farmhouses"
-                className="inline-flex items-center justify-center px-7 py-3 bg-[#C9A34A] text-[#0F0803] font-medium rounded-md hover:bg-[#D8B25B] transition"
-              >
-                Farmhouses
-              </Link>
+  <Link
+    href="/farmhouses"
+    className="inline-flex items-center justify-center px-7 py-3 border border-[#3A2E22] text-white rounded-md hover:bg-[#17110B] transition"
+  >
+    Farmhouses
+  </Link>
 
-              {/* WEDDING VENUES */}
+  {/* WEDDING VENUES — ACTIVE */}
 
-              <a
-                href="#wedding-venues"
-                className="inline-flex items-center justify-center px-7 py-3 border border-[#3A2E22] text-white rounded-md hover:bg-[#17110B] transition"
-              >
-                Wedding Venues
-              </a>
+  <a
+    href="#wedding-venues"
+    className="inline-flex items-center justify-center px-7 py-3 bg-[#C9A34A] text-[#0F0803] font-medium rounded-md hover:bg-[#D8B25B] transition"
+  >
+    Wedding Venues
+  </a>
 
-              {/* APARTMENTS */}
+  {/* APARTMENTS */}
 
-              <Link
-                href="/apartments"
-                className="inline-flex items-center justify-center px-7 py-3 border border-[#3A2E22] text-white rounded-md hover:bg-[#17110B] transition"
-              >
-                Apartments
-              </Link>
+  <Link
+    href="/apartments"
+    className="inline-flex items-center justify-center px-7 py-3 border border-[#3A2E22] text-white rounded-md hover:bg-[#17110B] transition"
+  >
+    Apartments
+  </Link>
 
-            </div>
+</div>
 
           </div>
 
