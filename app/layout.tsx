@@ -101,12 +101,7 @@ export const metadata: Metadata = {
       "Discover premium farmhouses, venues and event planning services across Delhi NCR.",
 
     images: [
-      {
-        url: "/effortless-events-og.png",
-        width: 1200,
-        height: 630,
-        alt: "Effortless Events",
-      },
+      "/effortless-events-og.png",
     ],
   },
 
@@ -150,10 +145,31 @@ export default function RootLayout({
         <Script id="google-ads-tag" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+
             gtag('js', new Date());
 
             gtag('config', 'AW-18057906313');
+          `}
+        </Script>
+
+        {/* =====================================================
+            OPENAI ADS MANAGER PIXEL
+            Pixel ID: Ja9aXfC992WKVZqEKLYDy
+        ===================================================== */}
+
+        <Script
+          id="openai-ads-pixel"
+          strategy="afterInteractive"
+        >
+          {`
+            /* 
+              PASTE THE EXACT OPENAI ADS MANAGER
+              SETUP CODE PROVIDED IN ADS MANAGER HERE.
+            */
           `}
         </Script>
 
