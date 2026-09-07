@@ -292,20 +292,20 @@ export default function BlogsPage() {
 
               {/* IMAGE */}
 
-              <div className="relative overflow-hidden rounded-2xl bg-gray-200 aspect-[4/3] mb-6">
+<div className="relative overflow-hidden rounded-2xl bg-gray-200 aspect-[4/3] mb-6">
 
-                <img
-                  src={blog.image}
-                  alt={blog.alt}
-                  loading={index > 2 ? "lazy" : "eager"}
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                />
+  <img
+    src={blog.image}
+    alt={blog.alt}
+    loading={index > 2 ? "lazy" : "eager"}
+    className="w-full h-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+  />
 
-                {/* Image Overlay */}
+  {/* Image Overlay */}
 
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition duration-500" />
+  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition duration-500" />
 
-              </div>
+</div>
 
               {/* CATEGORY */}
 
