@@ -138,7 +138,7 @@ export default function BlogsPage() {
 },
     {
   href: "/blogs/best-farmhouse-activities-for-groups",
-  image: "/best-farmhouse-activities-for-groups-cover.png",
+  image: "/Effortless Farm39.jpg",
   alt: "Best Farmhouse Activities for Groups: From Pool Parties to Outdoor Games",
   category: "Farmhouse Activities",
   title:
