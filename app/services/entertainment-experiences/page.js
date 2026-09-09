@@ -15,6 +15,8 @@ import {
 import Navbar from "../../components/Navbar";
 
 export default function EntertainmentExperiences() {
+  const whatsappUrl = "https://wa.me/917838008069";
+
   const services = [
     {
       title: "DJs & Music",
@@ -103,7 +105,6 @@ export default function EntertainmentExperiences() {
       ===================================================== */}
       <Navbar />
 
-
       {/* =====================================================
           HERO
       ===================================================== */}
@@ -142,15 +143,16 @@ export default function EntertainmentExperiences() {
 
             <div className="flex flex-col sm:flex-row gap-4">
 
+              {/* WhatsApp CTA */}
               <a
-  href="https://wa.me/917838008069"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex items-center justify-center gap-3 bg-[#E4D078] text-black px-7 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-white transition-all duration-300"
->
-  Plan Entertainment
-  <ArrowRight size={17} />
-</a>
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-3 bg-[#E4D078] text-black px-7 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-white transition-all duration-300"
+              >
+                Plan Entertainment
+                <ArrowRight size={17} />
+              </a>
 
               <Link
                 href="#our-services"
@@ -165,7 +167,6 @@ export default function EntertainmentExperiences() {
 
         </div>
       </section>
-
 
       {/* =====================================================
           INTRODUCTION
@@ -196,7 +197,6 @@ export default function EntertainmentExperiences() {
           </p>
 
         </div>
-
 
         <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
 
@@ -229,7 +229,6 @@ export default function EntertainmentExperiences() {
 
       </section>
 
-
       {/* =====================================================
           SERVICES
       ===================================================== */}
@@ -256,7 +255,6 @@ export default function EntertainmentExperiences() {
             </p>
 
           </div>
-
 
           <div className="grid sm:grid-cols-2 gap-6">
 
@@ -297,7 +295,6 @@ export default function EntertainmentExperiences() {
         </div>
       </section>
 
-
       {/* =====================================================
           ENTERTAINMENT OPTIONS
       ===================================================== */}
@@ -328,7 +325,6 @@ export default function EntertainmentExperiences() {
 
             </div>
 
-
             <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5">
 
               {entertainmentOptions.map((item, index) => (
@@ -358,7 +354,6 @@ export default function EntertainmentExperiences() {
         </div>
       </section>
 
-
       {/* =====================================================
           EVENT TYPES
       ===================================================== */}
@@ -382,7 +377,6 @@ export default function EntertainmentExperiences() {
             </p>
 
           </div>
-
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/15">
 
@@ -410,7 +404,6 @@ export default function EntertainmentExperiences() {
         </div>
       </section>
 
-
       {/* =====================================================
           PROCESS
       ===================================================== */}
@@ -434,7 +427,6 @@ export default function EntertainmentExperiences() {
             </p>
 
           </div>
-
 
           <div className="grid md:grid-cols-4 gap-8">
 
@@ -470,7 +462,6 @@ export default function EntertainmentExperiences() {
         </div>
       </section>
 
-
       {/* =====================================================
           CTA
       ===================================================== */}
@@ -493,17 +484,19 @@ export default function EntertainmentExperiences() {
             We&apos;ll help you build the entertainment experience around it.
           </p>
 
-          <Link
-            href="/contact"
+          {/* WhatsApp CTA */}
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-3 bg-[#111111] text-white px-8 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-[#E4D078] hover:text-black transition-all duration-300"
           >
             Get in Touch
             <ArrowRight size={17} />
-          </Link>
+          </a>
 
         </div>
       </section>
-
 
       {/* =====================================================
           OTHER SERVICES
@@ -523,7 +516,6 @@ export default function EntertainmentExperiences() {
             </h2>
 
           </div>
-
 
           <div className="flex flex-wrap justify-center gap-3">
 
@@ -569,4 +561,4 @@ export default function EntertainmentExperiences() {
 
     </main>
   );
-}
+          }
