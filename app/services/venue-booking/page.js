@@ -15,6 +15,8 @@ import {
 import Navbar from "../../components/Navbar";
 
 export default function VenueBooking() {
+  const whatsappUrl = "https://wa.me/917838008069";
+
   const services = [
     {
       title: "Venue Discovery",
@@ -103,7 +105,6 @@ export default function VenueBooking() {
       ===================================================== */}
       <Navbar />
 
-
       {/* =====================================================
           HERO
       ===================================================== */}
@@ -164,7 +165,6 @@ export default function VenueBooking() {
         </div>
       </section>
 
-
       {/* =====================================================
           INTRODUCTION
       ===================================================== */}
@@ -195,7 +195,6 @@ export default function VenueBooking() {
           </p>
 
         </div>
-
 
         <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
 
@@ -228,7 +227,6 @@ export default function VenueBooking() {
 
       </section>
 
-
       {/* =====================================================
           SERVICES
       ===================================================== */}
@@ -255,7 +253,6 @@ export default function VenueBooking() {
             </p>
 
           </div>
-
 
           <div className="grid sm:grid-cols-2 gap-6">
 
@@ -296,7 +293,6 @@ export default function VenueBooking() {
         </div>
       </section>
 
-
       {/* =====================================================
           VENUE TYPES
       ===================================================== */}
@@ -335,7 +331,6 @@ export default function VenueBooking() {
 
             </div>
 
-
             <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5">
 
               {venueTypes.map((item, index) => (
@@ -365,7 +360,6 @@ export default function VenueBooking() {
         </div>
       </section>
 
-
       {/* =====================================================
           EVENT TYPES
       ===================================================== */}
@@ -389,7 +383,6 @@ export default function VenueBooking() {
             </p>
 
           </div>
-
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/15">
 
@@ -417,7 +410,6 @@ export default function VenueBooking() {
         </div>
       </section>
 
-
       {/* =====================================================
           PROCESS
       ===================================================== */}
@@ -441,7 +433,6 @@ export default function VenueBooking() {
             </p>
 
           </div>
-
 
           <div className="grid md:grid-cols-4 gap-8">
 
@@ -477,7 +468,6 @@ export default function VenueBooking() {
         </div>
       </section>
 
-
       {/* =====================================================
           CTA
       ===================================================== */}
@@ -510,18 +500,20 @@ export default function VenueBooking() {
               <ArrowRight size={17} />
             </Link>
 
-            <Link
-              href="/contact"
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 border border-[#111111] text-[#111111] px-8 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-[#111111] hover:text-white transition-all duration-300"
             >
               Get in Touch
-            </Link>
+              <ArrowRight size={17} />
+            </a>
 
           </div>
 
         </div>
       </section>
-
 
       {/* =====================================================
           OTHER SERVICES
@@ -541,7 +533,6 @@ export default function VenueBooking() {
             </h2>
 
           </div>
-
 
           <div className="flex flex-wrap justify-center gap-3">
 
