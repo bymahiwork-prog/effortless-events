@@ -15,7 +15,8 @@ import {
 import Navbar from "../../components/Navbar";
 
 export default function VenueBooking() {
-  const whatsappUrl = "https://wa.me/917838008069";
+  const whatsappUrl =
+    "https://wa.me/917838008069?text=Hi%20Effortless%20Events%2C%20I%27m%20looking%20for%20a%20venue%20for%20my%20event.%20Please%20share%20the%20available%20options.";
 
   const services = [
     {
@@ -578,4 +579,4 @@ export default function VenueBooking() {
 
     </main>
   );
-}
+          }
