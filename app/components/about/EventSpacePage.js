@@ -21,7 +21,7 @@ const EventSpacePage = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-[520px] sm:h-[560px] md:h-[620px] lg:h-[680px] bg-[#050505] text-white overflow-hidden">
+    <section className="relative w-full h-[560px] sm:h-[590px] md:h-[640px] lg:h-[680px] bg-[#050505] text-white overflow-hidden">
 
       {/* =====================================================
           BACKGROUND IMAGE
@@ -51,9 +51,9 @@ const EventSpacePage = () => {
 
       <div
         ref={heroRef}
-        className="relative z-20 h-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12"
+        className="relative z-20 h-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-[120px] sm:pt-[125px] lg:pt-[135px]"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-10 items-center h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-10 items-start">
 
           {/* =================================================
               LEFT CONTENT
@@ -69,13 +69,13 @@ const EventSpacePage = () => {
 
             {/* MAIN HEADING */}
 
-            <h1 className="font-bold leading-[1.05] text-white mb-5">
+            <h1 className="font-bold leading-[1.04] text-white mb-5">
 
-              <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[3.8rem]">
+              <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] xl:text-[3.7rem]">
                 Delhi NCR&apos;s Trusted
               </span>
 
-              <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[3.8rem] text-[#C9A34A]">
+              <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] xl:text-[3.7rem] text-[#C9A34A]">
                 Venue Rental &amp; Event Planning Company
               </span>
 
@@ -107,33 +107,37 @@ const EventSpacePage = () => {
               RIGHT IMAGE GRID
           ================================================= */}
 
-          <div className="hidden lg:grid grid-cols-2 gap-4 max-w-[500px] ml-auto">
+          <div className="hidden lg:grid grid-cols-2 gap-4 max-w-[500px] ml-auto pt-2">
 
             {[
               {
                 src: "/event-gallery-1.jpeg",
                 alt: "Luxury Event Setup",
-                offset: "mt-0",
               },
               {
                 src: "/event-gallery-2.jpeg",
                 alt: "Outdoor Venue",
-                offset: "mt-3",
               },
               {
                 src: "/event-gallery-3.jpeg",
                 alt: "Wedding Mandap",
-                offset: "-mt-1",
               },
               {
                 src: "/event-gallery-4.jpeg",
                 alt: "Wedding Decor",
-                offset: "mt-2",
               },
-            ].map((image) => (
+            ].map((image, index) => (
               <div
                 key={image.src}
-                className={`${image.offset} rounded-2xl overflow-hidden border border-[#C9A34A]/20 shadow-2xl aspect-[4/3]`}
+                className={`${
+                  index === 1
+                    ? "mt-4"
+                    : index === 2
+                    ? "-mt-1"
+                    : index === 3
+                    ? "mt-3"
+                    : "mt-0"
+                } rounded-2xl overflow-hidden border border-[#C9A34A]/20 shadow-2xl aspect-[4/3]`}
               >
                 <img
                   src={image.src}
