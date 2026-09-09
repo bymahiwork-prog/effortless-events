@@ -17,7 +17,8 @@ import {
 import Navbar from "../../components/Navbar";
 
 export default function OnGroundEventManagement() {
-  const whatsappUrl = "https://wa.me/917838008069";
+  const whatsappUrl =
+    "https://wa.me/917838008069?text=Hi%20Effortless%20Events%2C%20I%27m%20interested%20in%20your%20On-Ground%20Event%20Management%20services.";
 
   const services = [
     {
@@ -549,4 +550,21 @@ export default function OnGroundEventManagement() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 bg-[#111111] text-white px-8 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:
+              className="inline-flex items-center justify-center gap-3 bg-[#111111] text-white px-8 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-[#E4D078] hover:text-black transition-all duration-300"
+            >
+              Plan Your Event
+              <ArrowRight size={17} />
+            </a>
+
+            <Link
+              href="#our-services"
+              className="inline-flex items-center justify-center gap-3 border border-[#111111] text-[#111111] px-8 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-[#111111] hover:text-white transition-all duration-300"
+            >
+              View Services
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
