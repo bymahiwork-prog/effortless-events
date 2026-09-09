@@ -17,6 +17,8 @@ import {
 import Navbar from "../../components/Navbar";
 
 export default function OnGroundEventManagement() {
+  const whatsappUrl = "https://wa.me/917838008069";
+
   const services = [
     {
       title: "Vendor Coordination",
@@ -178,13 +180,15 @@ export default function OnGroundEventManagement() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/contact"
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-[#E4D078] text-black px-7 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-white transition-all duration-300"
               >
                 Plan Your Event
                 <ArrowRight size={17} />
-              </Link>
+              </a>
 
               <Link
                 href="#our-services"
@@ -541,77 +545,8 @@ export default function OnGroundEventManagement() {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-3 bg-[#111111] text-white px-8 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-[#E4D078] hover:text-black transition-all duration-300"
-            >
-              Get In Touch
-              <ArrowRight size={17} />
-            </Link>
-
-            <Link
-              href="/services"
-              className="inline-flex items-center justify-center gap-3 border border-[#111111] text-[#111111] px-8 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-[#111111] hover:text-white transition-all duration-300"
-            >
-              Explore Services
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================
-          OTHER SERVICES
-      ===================================================== */}
-      <section className="py-16 sm:py-20 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <p className="text-[#B88A25] tracking-[0.3em] uppercase text-xs sm:text-sm font-medium mb-4">
-              Explore More
-            </p>
-
-            <h2 className="font-serif text-3xl sm:text-4xl">
-              Complete Event Solutions
-            </h2>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-3">
-            <Link
-              href="/services/event-planning-management"
-              className="px-5 py-3 bg-[#F8F7F3] border border-gray-200 text-sm hover:border-[#B88A25] transition-all"
-            >
-              Event Planning &amp; Management
-            </Link>
-
-            <Link
-              href="/services/event-decor-styling"
-              className="px-5 py-3 bg-[#F8F7F3] border border-gray-200 text-sm hover:border-[#B88A25] transition-all"
-            >
-              Event Décor &amp; Styling
-            </Link>
-
-            <Link
-              href="/services/catering-bar-services"
-              className="px-5 py-3 bg-[#F8F7F3] border border-gray-200 text-sm hover:border-[#B88A25] transition-all"
-            >
-              Catering &amp; Bar Services
-            </Link>
-
-            <Link
-              href="/services/venue-booking"
-              className="px-5 py-3 bg-[#F8F7F3] border border-gray-200 text-sm hover:border-[#B88A25] transition-all"
-            >
-              Venue Booking
-            </Link>
-
-            <Link
-              href="/services/entertainment-experiences"
-              className="px-5 py-3 bg-[#F8F7F3] border border-gray-200 text-sm hover:border-[#B88A25] transition-all"
-            >
-              Entertainment &amp; Experiences
-            </Link>
-          </div>
-        </div>
-      </section>
-    </main>
-  );
-}
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 bg-[#111111] text-white px-8 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:
