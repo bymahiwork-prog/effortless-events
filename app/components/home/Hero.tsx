@@ -68,11 +68,12 @@ const sliderData = [
     href: "/farmhouses/103",
   },
   {
-    imageSrc: "/Effortless Farm69.webp",
-    altText: "Effortless Farm 69 in Noida",
-    subText: "Effortless Farm 69",
-    location: "/farmhouses/112",
-  },
+  imageSrc: "/Effortless Farm69.webp",
+  altText: "Effortless Farm 69 in Noida",
+  subText: "Effortless Farm 69",
+  location: "Noida",
+  href: "/farmhouses/112",
+},
   {
     imageSrc: "/Effortless HP 13.webp",
     altText: "Effortless HP 13 in New Delhi",
