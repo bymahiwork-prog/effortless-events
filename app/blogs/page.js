@@ -136,6 +136,16 @@ export default function BlogsPage() {
   description:
     "Farmhouse vs resort in Delhi NCR: compare privacy, space, flexibility, swimming pools, food, accommodation, activities, cost, and overall celebration experience.",
 },
+    {
+  href: "/blogs/best-farmhouse-activities-for-groups",
+  image: "/best-farmhouse-activities-for-groups-cover.png",
+  alt: "Best Farmhouse Activities for Groups: From Pool Parties to Outdoor Games",
+  category: "Farmhouse Activities",
+  title:
+    "Best Farmhouse Activities for Groups: From Pool Parties to Outdoor Games",
+  description:
+    "Discover the best farmhouse activities for groups, from pool parties and cricket to barbecues, bonfires, game nights, themed parties, and group getaways near Delhi NCR.",
+},
   ];
 
   return (
