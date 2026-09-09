@@ -71,8 +71,7 @@ const sliderData = [
     imageSrc: "/Effortless Farm69.webp",
     altText: "Effortless Farm 69 in Noida",
     subText: "Effortless Farm 69",
-    location: "Noida",
-    href: "/farmhouses/112",
+    location: "/farmhouses/112",
   },
   {
     imageSrc: "/Effortless HP 13.webp",
@@ -199,8 +198,16 @@ const Hero = () => {
 
   const fallbackImage = "/Effortless Farm 58.webp";
 
+  /*
+   * =========================================================
+   * WHATSAPP
+   * =========================================================
+   */
+
+  const whatsappUrl = "https://wa.me/917838008069";
+
   return (
-    <section className="relative w-full min-h-screen overflow-hidden bg-black">
+    <section className="relative w-full h-[500px] sm:h-[540px] md:h-[600px] lg:h-[650px] overflow-hidden bg-black">
 
       {/* =====================================================
           BACKGROUND IMAGE
@@ -243,28 +250,25 @@ const Hero = () => {
 
       </div>
 
-
       {/* =====================================================
           DARK OVERLAY
       ===================================================== */}
 
       <div className="absolute inset-0 z-10 bg-black/50" />
 
-
       {/* =====================================================
           BOTTOM GRADIENT
       ===================================================== */}
 
-      <div className="absolute inset-x-0 bottom-0 h-72 z-10 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-
+      <div className="absolute inset-x-0 bottom-0 h-64 z-10 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
 
       {/* =====================================================
           HERO CONTENT
       ===================================================== */}
 
-      <div className="relative z-20 min-h-screen flex items-center">
+      <div className="relative z-20 h-full flex items-center">
 
-        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 pt-32 pb-28">
+        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-20 sm:py-24">
 
           <div className="max-w-4xl">
 
@@ -272,28 +276,26 @@ const Hero = () => {
                 EYEBROW
             ================================================= */}
 
-            <p className="mb-5 text-xs sm:text-sm font-medium uppercase tracking-[0.2em] text-white/80">
+            <p className="mb-4 text-[10px] sm:text-xs md:text-sm font-medium uppercase tracking-[0.2em] text-white/80">
               Luxury Event Planning in Delhi NCR
             </p>
-
 
             {/* =================================================
                 MAIN HEADING
             ================================================= */}
 
-            <h1 className="max-w-4xl text-4xl sm:text-5xl md:text-6xl lg:text-[72px] xl:text-[78px] font-semibold leading-[1.04] tracking-[-0.025em] text-white">
+            <h1 className="max-w-4xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[72px] font-semibold leading-[1.04] tracking-[-0.025em] text-white">
 
               Delhi NCR&apos;s Premier Event Planning &amp;
               Venue Company
 
             </h1>
 
-
             {/* =================================================
                 DESCRIPTION
             ================================================= */}
 
-            <p className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed text-white/90">
+            <p className="mt-5 max-w-2xl text-sm sm:text-base md:text-lg leading-relaxed text-white/90">
 
               From intimate celebrations to grand corporate
               galas, we design experiences that stay with you
@@ -301,26 +303,24 @@ const Hero = () => {
 
             </p>
 
-
             {/* =================================================
                 CTA BUTTONS
             ================================================= */}
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4">
 
               <Link
                 href="/farmhouses"
-                className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-white px-7 sm:px-8 text-sm sm:text-base font-semibold text-black transition-all duration-300 hover:bg-[#d6b36a] hover:text-black"
+                className="inline-flex min-h-[48px] sm:min-h-[52px] items-center justify-center rounded-full bg-white px-6 sm:px-8 text-sm sm:text-base font-semibold text-black transition-all duration-300 hover:bg-[#d6b36a] hover:text-black"
               >
                 Browse Our Venues
               </Link>
 
-
               <a
-                href="https://wa.me/917838008069"
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-white/80 bg-black/10 px-7 sm:px-8 text-sm sm:text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-black"
+                className="inline-flex min-h-[48px] sm:min-h-[52px] items-center justify-center rounded-full border border-white/80 bg-black/10 px-6 sm:px-8 text-sm sm:text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-black"
               >
                 Talk to Us on WhatsApp
               </a>
@@ -329,12 +329,11 @@ const Hero = () => {
 
           </div>
 
-
           {/* =====================================================
               BOTTOM VENUE INFORMATION
           ===================================================== */}
 
-          <div className="mt-16 flex flex-col gap-6 sm:mt-20 md:flex-row md:items-end md:justify-between">
+          <div className="mt-8 sm:mt-10 flex flex-col gap-4 sm:gap-6 md:flex-row md:items-end md:justify-between">
 
             {/* =================================================
                 CURRENT VENUE
@@ -345,20 +344,19 @@ const Hero = () => {
               className="group w-fit"
             >
 
-              <p className="text-lg sm:text-xl md:text-2xl font-semibold text-white transition-colors duration-300 group-hover:text-[#d6b36a]">
+              <p className="text-base sm:text-lg md:text-xl font-semibold text-white transition-colors duration-300 group-hover:text-[#d6b36a]">
 
                 {currentSlide.subText}
 
               </p>
 
-              <p className="mt-1 text-sm sm:text-base text-white/70">
+              <p className="mt-1 text-xs sm:text-sm text-white/70">
 
                 {currentSlide.location}
 
               </p>
 
             </Link>
-
 
             {/* =================================================
                 SLIDER CONTROLS
@@ -372,12 +370,12 @@ const Hero = () => {
                 type="button"
                 onClick={goToPrevious}
                 aria-label="Previous slide"
-                className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-white/25 bg-black/20 text-white backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-black"
+                className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-white/25 bg-black/20 text-white backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-black"
               >
 
                 <svg
-                  width="20"
-                  height="20"
+                  width="19"
+                  height="19"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -391,19 +389,18 @@ const Hero = () => {
 
               </button>
 
-
               {/* Next */}
 
               <button
                 type="button"
                 onClick={goToNext}
                 aria-label="Next slide"
-                className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-white/25 bg-black/20 text-white backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-black"
+                className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full border border-white/25 bg-black/20 text-white backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-black"
               >
 
                 <svg
-                  width="20"
-                  height="20"
+                  width="19"
+                  height="19"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -425,12 +422,11 @@ const Hero = () => {
 
       </div>
 
-
       {/* =====================================================
           SLIDE INDICATORS
       ===================================================== */}
 
-      <div className="absolute bottom-7 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2">
+      <div className="absolute bottom-5 sm:bottom-6 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2">
 
         {sliderData.map((_, index) => (
 
