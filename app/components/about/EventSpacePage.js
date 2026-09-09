@@ -21,7 +21,7 @@ const EventSpacePage = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-[620px] sm:h-[650px] md:h-[680px] lg:h-[720px] bg-[#050505] text-white overflow-hidden">
+    <section className="relative w-full h-[520px] sm:h-[560px] md:h-[620px] lg:h-[680px] bg-[#050505] text-white overflow-hidden">
 
       {/* =====================================================
           BACKGROUND IMAGE
@@ -53,36 +53,44 @@ const EventSpacePage = () => {
         ref={heroRef}
         className="relative z-20 h-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-8 lg:gap-10 items-center h-full">
 
           {/* =================================================
               LEFT CONTENT
           ================================================= */}
 
-          <div className="max-w-xl">
+          <div className="max-w-[620px]">
+
+            {/* EYEBROW */}
 
             <p className="text-[#C9A34A] text-[10px] sm:text-xs tracking-[0.35em] uppercase font-semibold mb-4">
               About Effortless Events
             </p>
 
+            {/* MAIN HEADING */}
+
             <h1 className="font-bold leading-[1.05] text-white mb-5">
 
-              <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-[4rem]">
+              <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[3.8rem]">
                 Delhi NCR&apos;s Trusted
               </span>
 
-              <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] text-[#C9A34A]">
+              <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[3.8rem] text-[#C9A34A]">
                 Venue Rental &amp; Event Planning Company
               </span>
 
             </h1>
 
-            <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-7 md:leading-8 max-w-lg mb-7">
+            {/* DESCRIPTION */}
+
+            <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-7 md:leading-8 max-w-[600px] mb-7">
               Effortless Events Pvt. Ltd. is a Delhi NCR-based event planning
               company specializing in weddings, corporate events, and private
               celebrations with end-to-end services including venue selection,
               décor, catering, and event coordination.
             </p>
+
+            {/* CTA */}
 
             <a
               href="https://wa.me/917838008069"
@@ -99,7 +107,7 @@ const EventSpacePage = () => {
               RIGHT IMAGE GRID
           ================================================= */}
 
-          <div className="hidden lg:grid grid-cols-2 gap-4 max-w-xl ml-auto">
+          <div className="hidden lg:grid grid-cols-2 gap-4 max-w-[500px] ml-auto">
 
             {[
               {
