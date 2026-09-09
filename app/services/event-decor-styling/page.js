@@ -15,6 +15,8 @@ import {
 import Navbar from "../../components/Navbar";
 
 export default function EventDecorStyling() {
+  const whatsappUrl = "https://wa.me/917838008069";
+
   const services = [
     {
       title: "Theme & Concept Development",
@@ -97,18 +99,15 @@ export default function EventDecorStyling() {
 
   return (
     <main className="bg-white text-[#111111]">
-
       {/* =====================================================
           NAVBAR
       ===================================================== */}
       <Navbar />
 
-
       {/* =====================================================
           HERO
       ===================================================== */}
       <section className="relative min-h-[650px] md:min-h-[720px] flex items-center overflow-hidden">
-
         <Image
           src="/event-gallery-2.jpeg"
           alt="Event decor and styling"
@@ -120,9 +119,7 @@ export default function EventDecorStyling() {
         <div className="absolute inset-0 bg-black/55"></div>
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-28">
-
           <div className="max-w-3xl">
-
             <p className="text-[#E4D078] tracking-[0.35em] uppercase text-xs sm:text-sm font-medium mb-6">
               Our Services
             </p>
@@ -142,16 +139,16 @@ export default function EventDecorStyling() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-
+              {/* WhatsApp CTA */}
               <a
-  href="https://wa.me/917838008069"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex items-center justify-center gap-3 bg-[#E4D078] text-black px-7 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-white transition-all duration-300"
->
-  Design My Event
-  <ArrowRight size={17} />
-</a>
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-3 bg-[#E4D078] text-black px-7 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-white transition-all duration-300"
+              >
+                Design My Event
+                <ArrowRight size={17} />
+              </a>
 
               <Link
                 href="#our-services"
@@ -159,22 +156,16 @@ export default function EventDecorStyling() {
               >
                 Explore Services
               </Link>
-
             </div>
-
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           INTRODUCTION
       ===================================================== */}
       <section className="py-20 sm:py-24 md:py-28 px-6">
-
         <div className="max-w-5xl mx-auto text-center">
-
           <p className="text-[#B88A25] tracking-[0.3em] uppercase text-xs sm:text-sm font-medium mb-5">
             Designed With Intention
           </p>
@@ -196,24 +187,19 @@ export default function EventDecorStyling() {
             creativity and attention to detail to create spaces that feel
             intentional, sophisticated and uniquely yours.
           </p>
-
         </div>
 
-
         <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-
           {[
             "Personalized design concepts",
             "Complete venue styling",
             "Professional décor execution",
             "Attention to every detail",
           ].map((item, index) => (
-
             <div
               key={index}
               className="border border-gray-200 p-6 text-center"
             >
-
               <CheckCircle2
                 size={21}
                 className="text-[#B88A25] mx-auto mb-4"
@@ -222,15 +208,10 @@ export default function EventDecorStyling() {
               <p className="text-gray-700 text-sm leading-6">
                 {item}
               </p>
-
             </div>
-
           ))}
-
         </div>
-
       </section>
-
 
       {/* =====================================================
           SERVICES
@@ -239,11 +220,8 @@ export default function EventDecorStyling() {
         id="our-services"
         className="bg-[#F8F7F3] py-20 sm:py-24 md:py-28 px-6"
       >
-
         <div className="max-w-6xl mx-auto">
-
           <div className="text-center max-w-3xl mx-auto mb-14">
-
             <p className="text-[#B88A25] tracking-[0.3em] uppercase text-xs sm:text-sm font-medium mb-5">
               What We Create
             </p>
@@ -256,14 +234,10 @@ export default function EventDecorStyling() {
               From the overall concept to the smallest decorative detail,
               we make sure every element works together beautifully.
             </p>
-
           </div>
 
-
           <div className="grid sm:grid-cols-2 gap-6">
-
             {services.map((service, index) => {
-
               const Icon = service.icon;
 
               return (
@@ -271,14 +245,11 @@ export default function EventDecorStyling() {
                   key={index}
                   className="bg-white border border-gray-200 p-7 sm:p-9 hover:shadow-lg transition-all duration-300"
                 >
-
                   <div className="w-12 h-12 flex items-center justify-center bg-[#F8F3DD] mb-6">
-
                     <Icon
                       size={22}
                       className="text-[#B88A25]"
                     />
-
                   </div>
 
                   <h3 className="font-serif text-xl sm:text-2xl mb-4">
@@ -288,29 +259,20 @@ export default function EventDecorStyling() {
                   <p className="text-gray-600 leading-7 text-sm sm:text-base">
                     {service.description}
                   </p>
-
                 </div>
               );
-
             })}
-
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           DECOR ELEMENTS
       ===================================================== */}
       <section className="py-20 sm:py-24 md:py-28 px-6">
-
         <div className="max-w-6xl mx-auto">
-
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-
             <div>
-
               <p className="text-[#B88A25] tracking-[0.3em] uppercase text-xs sm:text-sm font-medium mb-5">
                 The Details Matter
               </p>
@@ -327,19 +289,14 @@ export default function EventDecorStyling() {
                 and decorative elements to create a cohesive environment
                 designed specifically for your occasion.
               </p>
-
             </div>
 
-
             <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5">
-
               {decorElements.map((item, index) => (
-
                 <div
                   key={index}
                   className="flex items-center gap-3 border-b border-gray-200 pb-4"
                 >
-
                   <CheckCircle2
                     size={17}
                     className="text-[#B88A25] flex-shrink-0"
@@ -348,28 +305,19 @@ export default function EventDecorStyling() {
                   <span className="text-gray-700 text-sm sm:text-base">
                     {item}
                   </span>
-
                 </div>
-
               ))}
-
             </div>
-
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           EVENT TYPES
       ===================================================== */}
       <section className="bg-[#111111] text-white py-20 sm:py-24 md:py-28 px-6">
-
         <div className="max-w-6xl mx-auto">
-
           <div className="text-center max-w-3xl mx-auto mb-14">
-
             <p className="text-[#E4D078] tracking-[0.3em] uppercase text-xs sm:text-sm font-medium mb-5">
               Every Occasion
             </p>
@@ -383,19 +331,14 @@ export default function EventDecorStyling() {
               planning a private gathering, we create styling that fits the
               occasion.
             </p>
-
           </div>
 
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-l border-white/15">
-
             {eventTypes.map((event, index) => (
-
               <div
                 key={index}
                 className="border-r border-b border-white/15 p-7 sm:p-8 hover:bg-white/5 transition-all duration-300"
               >
-
                 <span className="text-[#E4D078] text-xs tracking-[0.2em]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
@@ -403,26 +346,18 @@ export default function EventDecorStyling() {
                 <h3 className="font-serif text-lg sm:text-xl mt-4">
                   {event}
                 </h3>
-
               </div>
-
             ))}
-
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           PROCESS
       ===================================================== */}
       <section className="py-20 sm:py-24 md:py-28 px-6">
-
         <div className="max-w-6xl mx-auto">
-
           <div className="text-center max-w-3xl mx-auto mb-14">
-
             <p className="text-[#B88A25] tracking-[0.3em] uppercase text-xs sm:text-sm font-medium mb-5">
               Our Approach
             </p>
@@ -435,19 +370,14 @@ export default function EventDecorStyling() {
               Our process keeps the creative experience exciting while
               ensuring every practical detail is taken care of.
             </p>
-
           </div>
 
-
           <div className="grid md:grid-cols-4 gap-8">
-
             {process.map((step, index) => (
-
               <div
                 key={index}
                 className="relative"
               >
-
                 <div className="text-[#D7BE65] font-serif text-4xl mb-5">
                   {step.number}
                 </div>
@@ -463,24 +393,17 @@ export default function EventDecorStyling() {
                 {index !== process.length - 1 && (
                   <div className="hidden md:block absolute top-7 left-[70%] w-[55%] border-t border-gray-200"></div>
                 )}
-
               </div>
-
             ))}
-
           </div>
-
         </div>
       </section>
-
 
       {/* =====================================================
           CTA
       ===================================================== */}
       <section className="bg-[#F8F3DD] py-20 sm:py-24 md:py-28 px-6">
-
         <div className="max-w-4xl mx-auto text-center">
-
           <p className="text-[#B88A25] tracking-[0.3em] uppercase text-xs sm:text-sm font-medium mb-6">
             Bring Your Vision To Life
           </p>
@@ -496,27 +419,25 @@ export default function EventDecorStyling() {
             will take care of the rest.
           </p>
 
-          <Link
-            href="/contact"
+          {/* WhatsApp CTA */}
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-3 bg-[#111111] text-white px-8 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-[#E4D078] hover:text-black transition-all duration-300"
           >
             Get in Touch
             <ArrowRight size={17} />
-          </Link>
-
+          </a>
         </div>
       </section>
-
 
       {/* =====================================================
           OTHER SERVICES
       ===================================================== */}
       <section className="py-16 sm:py-20 px-6 bg-white">
-
         <div className="max-w-6xl mx-auto">
-
           <div className="text-center mb-10">
-
             <p className="text-[#B88A25] tracking-[0.3em] uppercase text-xs sm:text-sm font-medium mb-4">
               Explore More
             </p>
@@ -524,12 +445,9 @@ export default function EventDecorStyling() {
             <h2 className="font-serif text-3xl sm:text-4xl">
               Complete Event Solutions
             </h2>
-
           </div>
 
-
           <div className="flex flex-wrap justify-center gap-3">
-
             <Link
               href="/services/event-planning-management"
               className="px-5 py-3 bg-[#F8F7F3] border border-gray-200 text-sm hover:border-[#B88A25] transition-all"
@@ -564,12 +482,9 @@ export default function EventDecorStyling() {
             >
               On-Ground Event Management
             </Link>
-
           </div>
-
         </div>
       </section>
-
     </main>
   );
 }
