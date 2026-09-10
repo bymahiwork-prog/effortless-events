@@ -92,10 +92,6 @@ const Hero = () => {
    * =========================================================
    * SAFE CURRENT SLIDE
    * =========================================================
-   *
-   * The fallback prevents the TypeScript error:
-   *
-   * Type 'string | undefined' is not assignable to type 'Url'
    */
 
   const currentSlide =
@@ -225,8 +221,8 @@ const Hero = () => {
       className="
         relative
         w-full
-        h-[560px]
-        sm:h-[590px]
+        h-[700px]
+        sm:h-[680px]
         md:h-[630px]
         lg:h-[670px]
         overflow-hidden
@@ -335,7 +331,9 @@ const Hero = () => {
           sm:pt-[165px]
           md:pt-[175px]
           lg:pt-[150px]
-          pb-8
+          pb-14
+          sm:pb-12
+          md:pb-8
         "
       >
 
@@ -491,8 +489,8 @@ const Hero = () => {
             className="
               flex
               flex-col
-              gap-4
-              sm:gap-5
+              gap-3
+              sm:gap-4
               md:flex-row
               md:items-end
               md:justify-between
