@@ -81,6 +81,27 @@ const sliderData = [
     location: "New Delhi",
     href: "/farmhouses/122",
   },
+  {
+  imageSrc: "/Effortless Farm70.png",
+  altText: "Effortless Farm 70 in Faridabad",
+  subText: "Effortless Farm 70",
+  location: "Faridabad",
+  href: "/farmhouses/???",
+},
+{
+  imageSrc: "/Effortless Farm59.jpg",
+  altText: "Effortless Farm 59 in Noida",
+  subText: "Effortless Farm 59",
+  location: "Noida",
+  href: "/farmhouses/142",
+},
+{
+  imageSrc: "/Effortless HP3.jpeg",
+  altText: "Effortless HP3 in New Delhi",
+  subText: "Effortless HP3",
+  location: "New Delhi",
+  href: "/farmhouses/???",
+},
 ];
 
 const Hero = () => {
