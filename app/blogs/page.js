@@ -146,6 +146,15 @@ export default function BlogsPage() {
   description:
     "Discover the best farmhouse activities for groups, from pool parties and cricket to barbecues, bonfires, game nights, themed parties, and group getaways near Delhi NCR.",
 },
+    {
+  href: "/blogs/best-farmhouses-noida-private-parties-celebrations",
+  image: "/Effortless Farm69.webp",
+  alt: "Best Farmhouses in Noida for Private Parties, Birthdays and Celebrations",
+  category: "Farmhouses in Noida",
+  title: "Best Farmhouses in Noida for Private Parties, Birthdays & Celebrations",
+  description:
+    "Discover the best farmhouses in Noida for birthdays, private parties, family celebrations and special occasions. Explore venue options, amenities, décor, catering and entertainment.",
+},
   ];
 
   return (
