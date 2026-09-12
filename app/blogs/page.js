@@ -155,6 +155,16 @@ export default function BlogsPage() {
   description:
     "Discover the best farmhouses in Noida for birthdays, private parties, family celebrations and special occasions. Explore venue options, amenities, décor, catering and entertainment.",
 },
+    {
+  href: "/blogs/how-much-does-a-farmhouse-party-cost-in-delhi-ncr-2026",
+  image: "/event-planning.jpg",
+  alt: "How Much Does a Farmhouse Party Cost in Delhi NCR in 2026",
+  category: "Farmhouse Party Guide",
+  title:
+    "How Much Does a Farmhouse Party Cost in Delhi NCR in 2026?",
+  description:
+    "Discover the complete cost of planning a farmhouse party in Delhi NCR in 2026, including venue rental, catering, décor, DJ, pool parties, photography, transportation, and practical party budgets.",
+},
   ];
 
   return (
