@@ -165,6 +165,16 @@ export default function BlogsPage() {
   description:
     "Discover the complete cost of planning a farmhouse party in Delhi NCR in 2026, including venue rental, catering, décor, DJ, pool parties, photography, transportation, and practical party budgets.",
 },
+    {
+  href: "/blogs/best-farmhouses-delhi-ncr-birthday-parties-2026",
+  image: "/birthdays.jpg",
+  alt: "10 Best Farmhouses in Delhi NCR for Birthday Parties in 2026",
+  category: "Birthday Parties",
+  title:
+    "10 Best Farmhouses in Delhi NCR for Birthday Parties in 2026",
+  description:
+    "Discover the best farmhouses in Delhi NCR for birthday parties in 2026, including private pools, luxury villas, spacious lawns, overnight stays, party amenities, pricing and booking tips.",
+},
   ];
 
   return (
