@@ -175,6 +175,16 @@ export default function BlogsPage() {
   description:
     "Discover the best farmhouses in Delhi NCR for birthday parties in 2026, including private pools, luxury villas, spacious lawns, overnight stays, party amenities, pricing and booking tips.",
 },
+    {
+  href: "/blogs/best-farmhouses-delhi-ncr-pool-parties-2026",
+  image: "/Effortless Farm 58.webp",
+  alt: "Best Farmhouses in Delhi NCR for Pool Parties in 2026",
+  category: "Pool Parties",
+  title:
+    "Best Farmhouses in Delhi NCR for Pool Parties in 2026",
+  description:
+    "Discover the best farmhouses in Delhi NCR for pool parties in 2026, including private pools, luxury villas, spacious lawns, overnight stays, party amenities, pricing and booking tips.",
+},
   ];
 
   return (
