@@ -156,36 +156,38 @@ export default function RootLayout({
 
         {/* =====================================================
             OPENAI ADS MANAGER PIXEL
-            Pixel ID: Ja9aXfC992WKVZqEKLYDy
+            Pixel ID: Q3fYF8PM7QAcqUo8E2z6Ao
         ===================================================== */}
 
         <Script id="openai-ads-pixel" strategy="afterInteractive">
           {`
-            (function (w, d, s, u) {
-              if (w.oaiq) return;
+            !function(w,d,s,u){
+              if(w.oaiq)return;
 
-              var q = function () {
-                q.q.push(arguments);
+              var q=function(){
+                q.q.push(arguments)
               };
 
-              q.q = [];
-              w.oaiq = q;
+              q.q=[];
 
-              var js = d.createElement(s);
-              js.async = true;
-              js.src = u;
+              w.oaiq=q;
 
-              var f = d.getElementsByTagName(s)[0];
-              f.parentNode.insertBefore(js, f);
-            })(
+              var j=d.createElement(s);
+              j.async=1;
+              j.src=u;
+
+              var f=d.getElementsByTagName(s)[0];
+              f.parentNode.insertBefore(j,f)
+            }(
               window,
               document,
               "script",
               "https://bzrcdn.openai.com/sdk/oaiq.min.js"
             );
 
-            oaiq("init", {
-              pixelId: "Ja9aXfC992WKVZqEKLYDy",
+            oaiq("init",{
+              pixelId:"Q3fYF8PM7QAcqUo8E2z6Ao",
+              debug:true
             });
           `}
         </Script>
