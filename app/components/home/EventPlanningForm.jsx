@@ -2,7 +2,6 @@
 
 import React from "react";
 
-// Reusable input styling
 const inputClass =
   "w-full rounded-xl border border-gray-200 px-5 py-4 text-black placeholder:text-gray-500 outline-none focus:ring-2 focus:ring-[#C9A34A] focus:border-[#C9A34A]";
 
@@ -10,8 +9,7 @@ export default function EventPlanningForm() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
+    const formData = new FormData(e.currentTarget);
 
     const occasion = formData.get("occasion") || "Not provided";
     const description = formData.get("description") || "Not provided";
@@ -41,9 +39,7 @@ ${date}
 I would like to discuss the details further. Thank you!`;
 
     // =====================================================
-    // OPENAI ADS MANAGER CONVERSION
-    // Conversion: Lead Created
-    // Base Event: lead_created
+    // OPENAI ADS - LEAD CREATED
     // =====================================================
 
     const oaiq = (window as any).oaiq;
@@ -57,42 +53,34 @@ I would like to discuss the details further. Thank you!`;
         }
       );
 
-      console.log("OpenAI Ads conversion sent: lead_created");
+      console.log("OpenAI Ads: lead_created sent");
     } else {
-      console.warn(
-        "OpenAI Ads Pixel is not available yet. lead_created was not sent."
-      );
+      console.warn("OpenAI Ads Pixel is not loaded");
     }
 
     // =====================================================
-    // WHATSAPP
+    // OPEN WHATSAPP
     // =====================================================
 
     const whatsappNumber = "917838008069";
 
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-      message
-    )}`;
+    const whatsappURL =
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
-    // Give the Pixel a moment to queue/send the conversion
-    // before navigating away from the website.
+    // Give the Pixel a moment before leaving the page.
     setTimeout(() => {
       window.location.href = whatsappURL;
-    }, 500);
+    }, 1000);
   };
 
   return (
     <section className="relative bg-[#0F0803] px-4 md:px-8 py-12 md:py-16">
       <div className="max-w-6xl mx-auto">
-        <div className="bg-white rounded-[28px] shadow-2xl border border-gray-100 p-5 md:p-8">
 
-          {/* =====================================================
-              EVENT PLANNING FORM
-          ===================================================== */}
+        <div className="bg-white rounded-[28px] shadow-2xl border border-gray-100 p-5 md:p-8">
 
           <form onSubmit={handleSubmit} className="space-y-4">
 
-            {/* Occasion */}
             <input
               type="text"
               name="occasion"
@@ -101,7 +89,6 @@ I would like to discuss the details further. Thank you!`;
               required
             />
 
-            {/* Description */}
             <textarea
               name="description"
               placeholder="Description"
@@ -110,10 +97,8 @@ I would like to discuss the details further. Thank you!`;
               required
             />
 
-            {/* Guests / Budget / Date */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-              {/* Guests */}
               <input
                 type="number"
                 name="guests"
@@ -123,7 +108,6 @@ I would like to discuss the details further. Thank you!`;
                 required
               />
 
-              {/* Budget */}
               <input
                 type="text"
                 name="budget"
@@ -132,7 +116,6 @@ I would like to discuss the details further. Thank you!`;
                 required
               />
 
-              {/* Date */}
               <input
                 type="date"
                 name="date"
@@ -142,7 +125,6 @@ I would like to discuss the details further. Thank you!`;
 
             </div>
 
-            {/* Submit */}
             <button
               type="submit"
               className="w-full bg-[#C9A34A] hover:bg-[#b8923d] text-black font-semibold py-4 rounded-xl transition-colors"
@@ -151,7 +133,9 @@ I would like to discuss the details further. Thank you!`;
             </button>
 
           </form>
+
         </div>
+
       </div>
     </section>
   );
