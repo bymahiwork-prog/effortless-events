@@ -7,10 +7,11 @@ const inputClass =
   "w-full rounded-xl border border-gray-200 px-5 py-4 text-black placeholder:text-gray-500 outline-none focus:ring-2 focus:ring-[#C9A34A] focus:border-[#C9A34A]";
 
 export default function EventPlanningForm() {
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
 
     const occasion = formData.get("occasion") || "Not provided";
     const description = formData.get("description") || "Not provided";
@@ -39,15 +40,31 @@ ${date}
 
 I would like to discuss the details further. Thank you!`;
 
-    // Effortless Events WhatsApp number
+    // =====================================================
+    // OPENAI ADS CONVERSION EVENT
+    // Conversion: Lead Created
+    // Base event: lead_created
+    // =====================================================
+
+    if (typeof window !== "undefined" && window.oaiq) {
+      window.oaiq(
+        "measure",
+        "lead_created",
+        { type: "customer_action" }
+      );
+    }
+
+    // =====================================================
+    // WHATSAPP
+    // =====================================================
+
     const whatsappNumber = "917838008069";
 
-    // Encode the complete message for WhatsApp
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
       message
     )}`;
 
-    // Redirect to WhatsApp
+    // Send the user to WhatsApp
     window.location.href = whatsappURL;
   };
 
@@ -56,7 +73,10 @@ I would like to discuss the details further. Thank you!`;
       <div className="max-w-6xl mx-auto">
         <div className="bg-white rounded-[28px] shadow-2xl border border-gray-100 p-5 md:p-8">
 
-          {/* Form */}
+          {/* =====================================================
+              EVENT PLANNING FORM
+          ===================================================== */}
+
           <form onSubmit={handleSubmit} className="space-y-4">
 
             {/* Occasion */}
@@ -72,7 +92,7 @@ I would like to discuss the details further. Thank you!`;
             <textarea
               name="description"
               placeholder="Description"
-              rows="4"
+              rows={4}
               className={`${inputClass} resize-none`}
               required
             />
