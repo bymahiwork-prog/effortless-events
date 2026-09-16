@@ -41,16 +41,26 @@ ${date}
 I would like to discuss the details further. Thank you!`;
 
     // =====================================================
-    // OPENAI ADS CONVERSION EVENT
+    // OPENAI ADS MANAGER CONVERSION
     // Conversion: Lead Created
-    // Base event: lead_created
+    // Base Event: lead_created
     // =====================================================
 
-    if (typeof window !== "undefined" && window.oaiq) {
-      window.oaiq(
+    const oaiq = (window as any).oaiq;
+
+    if (typeof oaiq === "function") {
+      oaiq(
         "measure",
         "lead_created",
-        { type: "customer_action" }
+        {
+          type: "customer_action",
+        }
+      );
+
+      console.log("OpenAI Ads conversion sent: lead_created");
+    } else {
+      console.warn(
+        "OpenAI Ads Pixel is not available yet. lead_created was not sent."
       );
     }
 
@@ -64,8 +74,11 @@ I would like to discuss the details further. Thank you!`;
       message
     )}`;
 
-    // Send the user to WhatsApp
-    window.location.href = whatsappURL;
+    // Give the Pixel a moment to queue/send the conversion
+    // before navigating away from the website.
+    setTimeout(() => {
+      window.location.href = whatsappURL;
+    }, 500);
   };
 
   return (
@@ -100,6 +113,7 @@ I would like to discuss the details further. Thank you!`;
             {/* Guests / Budget / Date */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
+              {/* Guests */}
               <input
                 type="number"
                 name="guests"
@@ -109,6 +123,7 @@ I would like to discuss the details further. Thank you!`;
                 required
               />
 
+              {/* Budget */}
               <input
                 type="text"
                 name="budget"
@@ -117,6 +132,7 @@ I would like to discuss the details further. Thank you!`;
                 required
               />
 
+              {/* Date */}
               <input
                 type="date"
                 name="date"
