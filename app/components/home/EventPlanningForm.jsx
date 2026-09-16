@@ -2,11 +2,12 @@
 
 import React from "react";
 
+// Reusable input styling
 const inputClass =
   "w-full rounded-xl border border-gray-200 px-5 py-4 text-black placeholder:text-gray-500 outline-none focus:ring-2 focus:ring-[#C9A34A] focus:border-[#C9A34A]";
 
 export default function EventPlanningForm() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
@@ -39,10 +40,12 @@ ${date}
 I would like to discuss the details further. Thank you!`;
 
     // =====================================================
-    // OPENAI ADS - LEAD CREATED
+    // OPENAI ADS MANAGER CONVERSION
+    // Conversion: Lead Created
+    // Base event: lead_created
     // =====================================================
 
-    const oaiq = (window as any).oaiq;
+    const oaiq = window.oaiq;
 
     if (typeof oaiq === "function") {
       oaiq(
@@ -55,19 +58,23 @@ I would like to discuss the details further. Thank you!`;
 
       console.log("OpenAI Ads: lead_created sent");
     } else {
-      console.warn("OpenAI Ads Pixel is not loaded");
+      console.warn(
+        "OpenAI Ads Pixel is not loaded. lead_created was not sent."
+      );
     }
 
     // =====================================================
-    // OPEN WHATSAPP
+    // WHATSAPP
     // =====================================================
 
     const whatsappNumber = "917838008069";
 
-    const whatsappURL =
-      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+      message
+    )}`;
 
-    // Give the Pixel a moment before leaving the page.
+    // Give the Pixel time to send the conversion
+    // before navigating to WhatsApp.
     setTimeout(() => {
       window.location.href = whatsappURL;
     }, 1000);
@@ -76,11 +83,15 @@ I would like to discuss the details further. Thank you!`;
   return (
     <section className="relative bg-[#0F0803] px-4 md:px-8 py-12 md:py-16">
       <div className="max-w-6xl mx-auto">
-
         <div className="bg-white rounded-[28px] shadow-2xl border border-gray-100 p-5 md:p-8">
+
+          {/* =====================================================
+              EVENT PLANNING FORM
+          ===================================================== */}
 
           <form onSubmit={handleSubmit} className="space-y-4">
 
+            {/* Occasion */}
             <input
               type="text"
               name="occasion"
@@ -89,6 +100,7 @@ I would like to discuss the details further. Thank you!`;
               required
             />
 
+            {/* Description */}
             <textarea
               name="description"
               placeholder="Description"
@@ -97,8 +109,10 @@ I would like to discuss the details further. Thank you!`;
               required
             />
 
+            {/* Guests / Budget / Date */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
+              {/* Guests */}
               <input
                 type="number"
                 name="guests"
@@ -108,6 +122,7 @@ I would like to discuss the details further. Thank you!`;
                 required
               />
 
+              {/* Budget */}
               <input
                 type="text"
                 name="budget"
@@ -116,6 +131,7 @@ I would like to discuss the details further. Thank you!`;
                 required
               />
 
+              {/* Date */}
               <input
                 type="date"
                 name="date"
@@ -125,6 +141,7 @@ I would like to discuss the details further. Thank you!`;
 
             </div>
 
+            {/* Submit */}
             <button
               type="submit"
               className="w-full bg-[#C9A34A] hover:bg-[#b8923d] text-black font-semibold py-4 rounded-xl transition-colors"
@@ -133,9 +150,7 @@ I would like to discuss the details further. Thank you!`;
             </button>
 
           </form>
-
         </div>
-
       </div>
     </section>
   );
