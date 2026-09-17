@@ -132,27 +132,46 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
 
         {/* =====================================================
-            GOOGLE ADS GOOGLE TAG
+            GOOGLE TAG MANAGER
+            Container ID: GTM-KGZKTPHK
         ===================================================== */}
 
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18057906313"
-          strategy="afterInteractive"
-        />
-
-        <Script id="google-ads-tag" strategy="afterInteractive">
+        <Script id="google-tag-manager" strategy="beforeInteractive">
           {`
-            window.dataLayer = window.dataLayer || [];
+            (function(w,d,s,l,i){
+              w[l]=w[l]||[];
+              w[l].push({
+                'gtm.start': new Date().getTime(),
+                event:'gtm.js'
+              });
 
-            function gtag() {
-              dataLayer.push(arguments);
-            }
+              var f=d.getElementsByTagName(s)[0],
+                  j=d.createElement(s),
+                  dl=l!='dataLayer'?'&l='+l:'';
 
-            gtag('js', new Date());
+              j.async=true;
+              j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
 
-            gtag('config', 'AW-18057906313');
+              f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-KGZKTPHK');
           `}
         </Script>
+
+        {/* =====================================================
+            GOOGLE TAG MANAGER NOSCRIPT
+        ===================================================== */}
+
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KGZKTPHK"
+            height="0"
+            width="0"
+            style={{
+              display: "none",
+              visibility: "hidden",
+            }}
+          />
+        </noscript>
 
         {/* =====================================================
             OPENAI ADS MANAGER PIXEL
