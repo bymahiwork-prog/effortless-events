@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -13,7 +14,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL("https://effortlessevents.in"),
 
   title: {
@@ -66,11 +67,6 @@ export const metadata = {
    * =====================================================
    * FAVICON
    * =====================================================
-   *
-   * Make sure this file exists:
-   * /public/favicon.png
-   *
-   * This should contain ONLY the Effortless Events logo.
    */
 
   icons: {
@@ -80,15 +76,8 @@ export const metadata = {
         type: "image/png",
       },
     ],
-
     shortcut: "/favicon.png",
-
-    apple: [
-      {
-        url: "/favicon.png",
-        type: "image/png",
-      },
-    ],
+    apple: "/favicon.png",
   },
 
   /*
@@ -97,21 +86,14 @@ export const metadata = {
    * =====================================================
    *
    * IMPORTANT:
-   * Do NOT use favicon.png here.
-   *
-   * Create:
-   * /public/og-image.jpg
-   *
+   * Create /public/og-image.jpg
    * Recommended size: 1200 × 630
    */
 
   openGraph: {
     type: "website",
-
     locale: "en_IN",
-
     url: "https://effortlessevents.in",
-
     siteName: "Effortless Events",
 
     title:
@@ -170,7 +152,11 @@ export const metadata = {
   category: "Event Planning",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html
       lang="en-IN"
