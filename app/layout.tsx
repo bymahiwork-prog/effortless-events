@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -14,7 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   metadataBase: new URL("https://effortlessevents.in"),
 
   title: {
@@ -63,24 +62,56 @@ export const metadata: Metadata = {
     address: true,
   },
 
-  /* =====================================================
-     FAVICON
-     ===================================================== */
+  /*
+   * =====================================================
+   * FAVICON
+   * =====================================================
+   *
+   * Make sure this file exists:
+   * /public/favicon.png
+   *
+   * This should contain ONLY the Effortless Events logo.
+   */
 
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      {
+        url: "/favicon.png",
+        type: "image/png",
+      },
+    ],
+
     shortcut: "/favicon.png",
-    apple: "/favicon.png",
+
+    apple: [
+      {
+        url: "/favicon.png",
+        type: "image/png",
+      },
+    ],
   },
 
-  /* =====================================================
-     OPEN GRAPH
-     ===================================================== */
+  /*
+   * =====================================================
+   * OPEN GRAPH
+   * =====================================================
+   *
+   * IMPORTANT:
+   * Do NOT use favicon.png here.
+   *
+   * Create:
+   * /public/og-image.jpg
+   *
+   * Recommended size: 1200 × 630
+   */
 
   openGraph: {
     type: "website",
+
     locale: "en_IN",
+
     url: "https://effortlessevents.in",
+
     siteName: "Effortless Events",
 
     title:
@@ -91,7 +122,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/favicon.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Effortless Events - Farmhouses, Venues & Event Planning in Delhi NCR",
@@ -99,9 +130,11 @@ export const metadata: Metadata = {
     ],
   },
 
-  /* =====================================================
-     TWITTER
-     ===================================================== */
+  /*
+   * =====================================================
+   * TWITTER / X
+   * =====================================================
+   */
 
   twitter: {
     card: "summary_large_image",
@@ -112,12 +145,14 @@ export const metadata: Metadata = {
     description:
       "Discover premium farmhouses, venues and event planning services across Delhi NCR.",
 
-    images: ["/favicon.png"],
+    images: ["/og-image.jpg"],
   },
 
-  /* =====================================================
-     ROBOTS
-     ===================================================== */
+  /*
+   * =====================================================
+   * ROBOTS
+   * =====================================================
+   */
 
   robots: {
     index: true,
@@ -135,11 +170,7 @@ export const metadata: Metadata = {
   category: "Event Planning",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }) {
   return (
     <html
       lang="en-IN"
