@@ -69,8 +69,13 @@ export const metadata: Metadata = {
    * =====================================================
    */
 
- icons: {
-  icon: "/logo-dark.png",
+  icons: {
+  icon: [
+    {
+      url: "/logo-dark.png",
+      type: "image/png",
+    },
+  ],
   shortcut: "/logo-dark.png",
   apple: "/logo-dark.png",
 },
