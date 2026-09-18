@@ -99,7 +99,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/logo-dark.png",
         width: 1200,
         height: 630,
         alt: "Effortless Events - Farmhouses, Venues & Event Planning in Delhi NCR",
@@ -122,7 +122,7 @@ export const metadata: Metadata = {
     description:
       "Discover premium farmhouses, venues and event planning services across Delhi NCR.",
 
-    images: ["/og-image.jpg"],
+    images: ["/logo-dark.png"],
   },
 
   /*
