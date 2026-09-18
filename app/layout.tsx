@@ -64,18 +64,11 @@ export const metadata: Metadata = {
   },
 
   /* =====================================================
-     FAVICON / WEBSITE ICON
-     File:
-     /public/favicon.png
+     FAVICON
      ===================================================== */
 
   icons: {
-    icon: [
-      {
-        url: "/favicon.png",
-        type: "image/png",
-      },
-    ],
+    icon: "/favicon.png",
     shortcut: "/favicon.png",
     apple: "/favicon.png",
   },
@@ -98,7 +91,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/effortless-events-og.png",
+        url: "/favicon.png",
         width: 1200,
         height: 630,
         alt: "Effortless Events - Farmhouses, Venues & Event Planning in Delhi NCR",
@@ -119,7 +112,7 @@ export const metadata: Metadata = {
     description:
       "Discover premium farmhouses, venues and event planning services across Delhi NCR.",
 
-    images: ["/effortless-events-og.png"],
+    images: ["/favicon.png"],
   },
 
   /* =====================================================
