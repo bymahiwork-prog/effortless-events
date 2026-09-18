@@ -64,18 +64,20 @@ export const metadata: Metadata = {
   },
 
   /* =====================================================
-     FAVICON
+     FAVICON / WEBSITE ICON
+     File:
+     /public/favicon.png
      ===================================================== */
 
   icons: {
     icon: [
       {
-        url: "/effortless-events-og.png",
+        url: "/favicon.png",
         type: "image/png",
       },
     ],
-    shortcut: "/effortless-events-og.png",
-    apple: "/effortless-events-og.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
 
   /* =====================================================
