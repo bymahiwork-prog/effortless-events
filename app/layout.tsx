@@ -63,11 +63,24 @@ export const metadata: Metadata = {
     address: true,
   },
 
+  /* =====================================================
+     FAVICON
+     ===================================================== */
+
   icons: {
-  icon: "/favicon.png",
-  shortcut: "/favicon.png",
-  apple: "/favicon.png",
-},
+    icon: [
+      {
+        url: "/effortless-events-og.png",
+        type: "image/png",
+      },
+    ],
+    shortcut: "/effortless-events-og.png",
+    apple: "/effortless-events-og.png",
+  },
+
+  /* =====================================================
+     OPEN GRAPH
+     ===================================================== */
 
   openGraph: {
     type: "website",
@@ -91,6 +104,10 @@ export const metadata: Metadata = {
     ],
   },
 
+  /* =====================================================
+     TWITTER
+     ===================================================== */
+
   twitter: {
     card: "summary_large_image",
 
@@ -102,6 +119,10 @@ export const metadata: Metadata = {
 
     images: ["/effortless-events-og.png"],
   },
+
+  /* =====================================================
+     ROBOTS
+     ===================================================== */
 
   robots: {
     index: true,
