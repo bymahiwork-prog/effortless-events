@@ -65,29 +65,12 @@ export const metadata: Metadata = {
 
   /*
    * =====================================================
-   * FAVICON
-   * =====================================================
-   */
-
-  icons: {
-  icon: [
-    {
-      url: "/logo-dark.png",
-      type: "image/png",
-    },
-  ],
-  shortcut: "/logo-dark.png",
-  apple: "/logo-dark.png",
-},
-
-  /*
-   * =====================================================
    * OPEN GRAPH
    * =====================================================
    *
    * IMPORTANT:
-   * Create /public/og-image.jpg
-   * Recommended size: 1200 × 630
+   * /public/logo-dark.png should exist.
+   * Recommended OG image size: 1200 × 630
    */
 
   openGraph: {
