@@ -185,6 +185,38 @@ export default function BlogsPage() {
   description:
     "Discover the best farmhouses in Delhi NCR for pool parties in 2026, including private pools, luxury villas, spacious lawns, overnight stays, party amenities, pricing and booking tips.",
 },
+    {
+  href: "/blogs/best-farmhouses-gurgaon-private-parties-2026",
+  image: "/farmhouse03.jpg",
+  alt: "Best Farmhouses in Gurgaon for Private Parties in 2026",
+  category: "Private Parties",
+  title:
+    "Best Farmhouses in Gurgaon for Private Parties in 2026",
+  description:
+    "Discover the best farmhouses in Gurgaon for private parties in 2026, including luxury farmhouses, private pools, spacious lawns, overnight stays, party amenities, pricing and booking tips.",
+},
+
+{
+  href: "/blogs/how-to-plan-farmhouse-party-delhi-ncr-2026",
+  image: "/farmhouse04.jpg",
+  alt: "How to Plan a Farmhouse Party in Delhi NCR",
+  category: "Farmhouse Party Guide",
+  title:
+    "How to Plan a Farmhouse Party in Delhi NCR: Complete 2026 Guide",
+  description:
+    "Learn how to plan a farmhouse party in Delhi NCR, including choosing the venue, setting a budget, catering, décor, music, entertainment, guest planning and booking tips.",
+},
+
+{
+  href: "/blogs/best-farmhouses-delhi-ncr-family-gatherings-2026",
+  image: "/farmhouse05.png",
+  alt: "Best Farmhouses in Delhi NCR for Family Gatherings in 2026",
+  category: "Family Gatherings",
+  title:
+    "Best Farmhouses in Delhi NCR for Family Gatherings in 2026",
+  description:
+    "Discover the best farmhouses in Delhi NCR for family gatherings, reunions and family celebrations, including spacious lawns, pools, comfortable rooms, catering and event planning tips.",
+},
   ];
 
   return (
