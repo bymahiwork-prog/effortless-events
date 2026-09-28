@@ -63,16 +63,6 @@ export const metadata: Metadata = {
     address: true,
   },
 
-  /*
-   * =====================================================
-   * OPEN GRAPH
-   * =====================================================
-   *
-   * IMPORTANT:
-   * /public/logo-dark.png should exist.
-   * Recommended OG image size: 1200 × 630
-   */
-
   openGraph: {
     type: "website",
     locale: "en_IN",
@@ -95,12 +85,6 @@ export const metadata: Metadata = {
     ],
   },
 
-  /*
-   * =====================================================
-   * TWITTER / X
-   * =====================================================
-   */
-
   twitter: {
     card: "summary_large_image",
 
@@ -112,12 +96,6 @@ export const metadata: Metadata = {
 
     images: ["/logo-dark.png"],
   },
-
-  /*
-   * =====================================================
-   * ROBOTS
-   * =====================================================
-   */
 
   robots: {
     index: true,
@@ -188,6 +166,27 @@ export default function RootLayout({
             }}
           />
         </noscript>
+
+        {/* =====================================================
+            GOOGLE ADS CONVERSION TRACKING
+            Conversion Event:
+            ads_conversion_Sign_up_1
+        ===================================================== */}
+
+        <Script
+          id="google-ads-conversion"
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+              window.dataLayer.push(arguments);
+            }
+
+            gtag('event', 'ads_conversion_Sign_up_1', {});
+          `}
+        </Script>
 
         {/* =====================================================
             OPENAI ADS MANAGER PIXEL
