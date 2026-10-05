@@ -42,7 +42,7 @@ export default function BlogPage() {
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
 
         <img
-          src="/corporate-event-planning-mistakes-cover.png"
+          src="/corporate-event-planning-mistakes-cover.webp"
           alt="10 Event Planning Mistakes That Can Ruin Your Corporate Event"
           className="w-full rounded-xl mb-10"
         />

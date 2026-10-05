@@ -1,7 +1,7 @@
 const SITE_URL = "https://effortlessevents.in";
 
 function absoluteUrl(path) {
-  if (!path) return `${SITE_URL}/effortless-events-og.png`;
+  if (!path) return `${SITE_URL}/og-image.jpg`;
   if (path.startsWith("http")) return path;
   return `${SITE_URL}${encodeURI(path)}`;
 }

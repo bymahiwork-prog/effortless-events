@@ -39,7 +39,7 @@ export const metadata = {
     description:
       "Find a private farmhouse in Delhi NCR for family gatherings, reunions, birthdays, anniversaries and family celebrations with spacious lawns, pools, rooms and event facilities.",
 
-    images: ["/farmhouse05.png"],
+    images: ["/farmhouse05.webp"],
   },
 };
 
@@ -87,7 +87,7 @@ export default function BlogPage() {
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
 
         <img
-          src="/farmhouse05.png"
+          src="/farmhouse05.webp"
           alt="Best farmhouses in Delhi NCR for family gatherings"
           className="w-full rounded-xl mb-10"
         />

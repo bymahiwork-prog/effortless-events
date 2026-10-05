@@ -21,7 +21,7 @@ export default function ServicesCTA() {
       <div className="absolute inset-0">
 
         <img
-          src="/services-cta.jpg"
+          src="/event-gallery-3.jpeg"
           alt=""
           aria-hidden="true"
           className="h-full w-full object-cover object-center"

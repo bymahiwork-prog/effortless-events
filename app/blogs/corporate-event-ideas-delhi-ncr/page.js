@@ -44,7 +44,7 @@ export default function BlogPage() {
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
 
         <img
-          src="/corporate-event-ideas-delhi-ncr-cover.png"
+          src="/corporate-event-ideas-delhi-ncr-cover.webp"
           alt="15 Corporate Event Ideas in Delhi NCR That Will Impress Your Guests"
           className="w-full rounded-xl mb-10"
         />

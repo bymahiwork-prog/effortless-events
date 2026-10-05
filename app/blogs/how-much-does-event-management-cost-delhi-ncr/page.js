@@ -12,7 +12,7 @@ export const metadata = {
     title: "How Much Does Event Management Cost in Delhi NCR?",
     description:
       "A complete pricing guide to event management costs in Delhi NCR for businesses, with cost factors, planner charges and budgeting tips.",
-    images: ["/how-much-does-event-management-cost-delhi-ncr.png"],
+    images: ["/how-much-does-event-management-cost-delhi-ncr.webp"],
   },
 };
 
@@ -38,7 +38,7 @@ export default function EventManagementCostDelhiNCRBlog() {
         <div className="relative h-[420px] sm:h-[500px] lg:h-[580px]">
 
           <Image
-            src="/how-much-does-event-management-cost-delhi-ncr.png"
+            src="/how-much-does-event-management-cost-delhi-ncr.webp"
             alt="How Much Does Event Management Cost in Delhi NCR? A Complete Pricing Guide for Businesses"
             fill
             priority

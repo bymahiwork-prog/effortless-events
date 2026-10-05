@@ -48,7 +48,7 @@ export default function BlogPage() {
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
 
         <img
-          src="/farmhouse-vs-resort-delhi-ncr-cover.png"
+          src="/farmhouse-vs-resort-delhi-ncr-cover.webp"
           alt="Farmhouse vs Resort: Which Is Better for Your Next Celebration in Delhi NCR?"
           className="w-full rounded-xl mb-10"
         />

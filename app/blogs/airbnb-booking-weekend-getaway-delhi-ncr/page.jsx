@@ -33,7 +33,7 @@ export const metadata = {
     description:
       "Discover luxury Airbnb villas and farmhouses for unforgettable weekend getaways across Delhi NCR.",
 
-    images: ["/airbnb-booking-weekend-getaway-delhi-ncr-cover.png"],
+    images: ["/airbnb-booking-weekend-getaway-delhi-ncr-cover.webp"],
   },
 };
 
@@ -71,7 +71,7 @@ export default function BlogPage() {
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
 
         <img
-          src="/airbnb-booking-weekend-getaway-delhi-ncr-cover.png"
+          src="/airbnb-booking-weekend-getaway-delhi-ncr-cover.webp"
           alt="Airbnb Booking for Weekend Getaways in Delhi NCR"
           className="w-full rounded-xl mb-10"
         />

@@ -42,7 +42,7 @@ export default function BlogPage() {
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
 
         <img
-          src="/how-to-choose-event-management-company-cover.png"
+          src="/how-to-choose-event-management-company-cover.webp"
           alt="How to Choose the Right Event Management Company"
           className="w-full rounded-xl mb-10"
         />

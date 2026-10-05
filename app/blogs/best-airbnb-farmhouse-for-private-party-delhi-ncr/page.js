@@ -22,7 +22,7 @@ export const metadata = {
     title: "Best Airbnb Farmhouses for Private Parties in Delhi NCR",
     description:
       "Discover premium Airbnb farmhouses for birthdays, pool parties and private celebrations.",
-    images: ["/airbnb-farmhouse-cover.png"],
+    images: ["/airbnb-farmhouse-cover.webp"],
   },
 };
 
@@ -60,7 +60,7 @@ export default function BlogPage() {
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
 
         <img
-          src="/airbnb-farmhouse-cover.png"
+          src="/airbnb-farmhouse-cover.webp"
           alt="Best Airbnb Farmhouses for Private Parties in Delhi NCR"
           className="w-full rounded-xl mb-10"
         />

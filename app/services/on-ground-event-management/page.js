@@ -151,7 +151,7 @@ export default function OnGroundEventManagement() {
       ===================================================== */}
       <section className="relative min-h-[650px] md:min-h-[720px] flex items-center overflow-hidden">
         <Image
-          src="/event-gallery-6.jpeg"
+          src="/event-gallery-5.jpeg"
           alt="On-ground event management"
           fill
           priority

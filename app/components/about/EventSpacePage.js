@@ -28,8 +28,8 @@ const EventSpacePage = () => {
       ===================================================== */}
 
       <img
-        src="/about1.png"
-        alt="Effortless Events"
+        src="/Effortless Farm59.jpg"
+        alt="Private farmhouse venue in Delhi NCR by Effortless Events"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
 

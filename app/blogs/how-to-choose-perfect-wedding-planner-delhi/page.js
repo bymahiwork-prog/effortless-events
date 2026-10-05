@@ -42,7 +42,7 @@ export default function BlogPage() {
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
 
         <img
-          src="/wedding-planner-delhi-guide-cover.png"
+          src="/wedding-planner-delhi-guide-cover.webp"
           alt="How to Choose the Perfect Wedding Planner in Delhi: A Complete Guide"
           className="w-full rounded-xl mb-10"
         />

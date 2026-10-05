@@ -82,7 +82,7 @@ const sliderData = [
     href: "/farmhouses/122",
   },
   {
-  imageSrc: "/Effortless Farm70.png",
+  imageSrc: "/Effortless Farm70.webp",
   altText: "Effortless Farm 70 in Faridabad",
   subText: "Effortless Farm 70",
   location: "Faridabad",

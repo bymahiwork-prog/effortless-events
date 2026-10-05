@@ -42,7 +42,7 @@ export default function BlogPage() {
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
 
         <img
-          src="/airbnb-for-group-stays-and-corporate-travel-cover.png"
+          src="/airbnb-for-group-stays-and-corporate-travel-cover.webp"
           alt="Why Booking an Airbnb Is the Smart Choice for Group Stays and Corporate Travel"
           className="w-full rounded-xl mb-10"
         />
