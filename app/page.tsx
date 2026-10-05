@@ -15,6 +15,19 @@ import FinalCTA from "./components/home/FinalCTA";
 
 import Footer from "./components/Footer";
 
+export const metadata = {
+  alternates: { canonical: "/" },
+  openGraph: {
+    url: "/",
+    type: "website",
+    siteName: "Effortless Events",
+    title: "Effortless Events | Farmhouses, Venues & Event Planning in Delhi NCR",
+    description:
+      "Book farmhouses, villas and event venues across Delhi NCR and get end-to-end event planning for parties, weddings and corporate events.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
+};
+
 
 export default function Home() {
   return (

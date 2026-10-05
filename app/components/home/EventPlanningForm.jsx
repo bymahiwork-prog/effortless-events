@@ -64,6 +64,19 @@ I would like to discuss the details further. Thank you!`;
     }
 
     // =====================================================
+    // GOOGLE ADS CONVERSION
+    // Conversion event: ads_conversion_Sign_up_1
+    // Fires only when the form is actually submitted
+    // (previously it fired on every page load from the layout).
+    // =====================================================
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    gtag("event", "ads_conversion_Sign_up_1", {});
+
+    // =====================================================
     // WHATSAPP
     // =====================================================
 

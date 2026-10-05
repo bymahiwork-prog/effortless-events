@@ -167,52 +167,59 @@ const Footer = () => {
             </h3>
 
             <ul className="space-y-4 text-sm text-[#C9BEB2]">
-
               <li>
                 <a
-                  href="/services"
+                  href="/services/event-planning-management"
                   className="hover:text-[#C9A34A] transition-colors"
                 >
-                  Wedding Planning
+                  Event Planning &amp; Management
                 </a>
               </li>
 
               <li>
                 <a
-                  href="/services"
-                  className="hover:text-[#C9A34A] transition-colors"
-                >
-                  Corporate Events
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="/services"
-                  className="hover:text-[#C9A34A] transition-colors"
-                >
-                  Birthday Celebrations
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="/services"
-                  className="hover:text-[#C9A34A] transition-colors"
-                >
-                  Private Events
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="/services"
+                  href="/services/venue-booking"
                   className="hover:text-[#C9A34A] transition-colors"
                 >
                   Venue Booking
                 </a>
               </li>
 
+              <li>
+                <a
+                  href="/services/event-decor-styling"
+                  className="hover:text-[#C9A34A] transition-colors"
+                >
+                  Event Décor &amp; Styling
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/services/catering-bar-services"
+                  className="hover:text-[#C9A34A] transition-colors"
+                >
+                  Catering &amp; Bar Services
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/services/entertainment-experiences"
+                  className="hover:text-[#C9A34A] transition-colors"
+                >
+                  Entertainment &amp; Experiences
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/services/on-ground-event-management"
+                  className="hover:text-[#C9A34A] transition-colors"
+                >
+                  On-Ground Event Management
+                </a>
+              </li>
             </ul>
 
           </div>

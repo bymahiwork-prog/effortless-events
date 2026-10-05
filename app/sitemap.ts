@@ -35,6 +35,29 @@ function getBlogEntries(): MetadataRoute.Sitemap {
   }
 }
 
+function getServiceEntries(): MetadataRoute.Sitemap {
+  const servicesDir = path.join(process.cwd(), "app", "services");
+
+  try {
+    return fs
+      .readdirSync(servicesDir, { withFileTypes: true })
+      .filter((entry) => entry.isDirectory())
+      .filter((entry) =>
+        ["page.js", "page.jsx", "page.tsx"].some((file) =>
+          fs.existsSync(path.join(servicesDir, entry.name, file))
+        )
+      )
+      .map((entry) => ({
+        url: `${baseUrl}/services/${entry.name}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.8,
+      }));
+  } catch {
+    return [];
+  }
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
@@ -52,11 +75,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
 
     {
+      url: `${baseUrl}/venues`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+
+    {
+      url: `${baseUrl}/weddings`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+
+    {
+      url: `${baseUrl}/apartments`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+
+    {
       url: `${baseUrl}/services`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
+
+    ...getServiceEntries(),
 
     {
       url: `${baseUrl}/blogs`,

@@ -400,8 +400,7 @@ const Hero = () => {
                 text-white
               "
             >
-              Delhi NCR&apos;s Premier Event Planning &amp; Venue
-              Company
+              Farmhouses, Venues &amp; Event Planning in Delhi NCR
             </h1>
 
             {/* =================================================

@@ -66,7 +66,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://effortlessevents.in",
     siteName: "Effortless Events",
 
     title:
@@ -77,7 +76,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/logo-dark.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Effortless Events - Farmhouses, Venues & Event Planning in Delhi NCR",
@@ -94,7 +93,7 @@ export const metadata: Metadata = {
     description:
       "Discover premium farmhouses, venues and event planning services across Delhi NCR.",
 
-    images: ["/logo-dark.png"],
+    images: ["/og-image.jpg"],
   },
 
   robots: {
@@ -111,6 +110,54 @@ export const metadata: Metadata = {
   },
 
   category: "Event Planning",
+};
+
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://effortlessevents.in/#business",
+      name: "Effortless Events",
+      legalName: "Effortless Events Pvt. Ltd.",
+      description:
+        "Delhi NCR event planning and venue discovery company for farmhouses, villas and venues — private parties, weddings, birthdays and corporate events.",
+      url: "https://effortlessevents.in",
+      logo: "https://effortlessevents.in/logo.png",
+      image: "https://effortlessevents.in/og-image.jpg",
+      telephone: "+91-7838008069",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "L57B, Malviya Nagar",
+        addressLocality: "New Delhi",
+        addressRegion: "Delhi",
+        postalCode: "110017",
+        addressCountry: "IN",
+      },
+      areaServed: [
+        "New Delhi",
+        "Gurugram",
+        "Noida",
+        "Faridabad",
+        "Ghaziabad",
+        "Greater Noida",
+      ].map((name) => ({ "@type": "City", name })),
+      sameAs: [
+        "https://www.instagram.com/effortlesseventspvt.ltd/",
+        "https://www.facebook.com/Effortlesseventspvt.ltd/",
+        "https://www.linkedin.com/company/effortless-events-pvt-ltd/",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://effortlessevents.in/#website",
+      url: "https://effortlessevents.in",
+      name: "Effortless Events",
+      inLanguage: "en-IN",
+      publisher: { "@id": "https://effortlessevents.in/#business" },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -168,27 +215,6 @@ export default function RootLayout({
         </noscript>
 
         {/* =====================================================
-            GOOGLE ADS CONVERSION TRACKING
-            Conversion Event:
-            ads_conversion_Sign_up_1
-        ===================================================== */}
-
-        <Script
-          id="google-ads-conversion"
-          strategy="afterInteractive"
-        >
-          {`
-            window.dataLayer = window.dataLayer || [];
-
-            function gtag() {
-              window.dataLayer.push(arguments);
-            }
-
-            gtag('event', 'ads_conversion_Sign_up_1', {});
-          `}
-        </Script>
-
-        {/* =====================================================
             OPENAI ADS MANAGER PIXEL
             Pixel ID: Q3fYF8PM7QAcqUo8E2z6Ao
         ===================================================== */}
@@ -225,6 +251,15 @@ export default function RootLayout({
             });
           `}
         </Script>
+
+        {/* =====================================================
+            BUSINESS SCHEMA (LocalBusiness + WebSite)
+        ===================================================== */}
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
 
         {/* =====================================================
             WEBSITE CONTENT

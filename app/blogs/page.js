@@ -11,7 +11,7 @@ export const metadata = {
     title: "Effortless Events Blog — Delhi NCR Event & Farmhouse Guides",
     description:
       "Guides on farmhouse parties, venue costs, corporate events, weddings and Airbnb stays across Delhi NCR.",
-    images: ["/effortless-events-og.png"],
+    images: ["/og-image.jpg"],
   },
 };
 
