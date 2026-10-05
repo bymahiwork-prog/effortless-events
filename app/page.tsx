@@ -9,6 +9,7 @@ import EventGallery from "./components/home/EventGallery";
 import WhyChooseUs from "./components/home/WhyChooseUs";
 import Testimonials from "./components/home/Testimonials";
 import ServiceAreas from "./components/home/ServiceAreas";
+import LatestBlogs from "./components/home/LatestBlogs";
 import FAQSection from "./components/home/FAQSection";
 import FinalCTA from "./components/home/FinalCTA";
 
@@ -87,6 +88,13 @@ export default function Home() {
       ===================================================== */}
 
       <ServiceAreas />
+
+
+      {/* =====================================================
+          LATEST BLOGS
+      ===================================================== */}
+
+      <LatestBlogs />
 
 
       {/* =====================================================

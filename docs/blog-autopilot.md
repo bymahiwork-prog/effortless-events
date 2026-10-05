@@ -46,7 +46,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
      article sections with H2/H3, FAQ section rendering `faqs`, and a final CTA linking to `/farmhouses`, `/venues` or `/services` as relevant.
    - Server component only — never add `"use client"` to a post.
 3. **Cover image:** reuse an existing image from `/public` that fits the topic (check the file exists). Do not reference images that are not in `/public`.
-4. **Blog listing:** add a card object to the TOP of the `blogs` array in `app/blogs/page.js` (`href`, `image`, `alt`, `category`, `title`, `description`).
+4. **Blog listing:** add a card object to the TOP of the `blogs` array in `lib/blogs.js` (it feeds both /blogs and the homepage "From the Blog" section) (`href`, `image`, `alt`, `category`, `title`, `description`).
 5. **Sitemap:** automatic — `app/sitemap.ts` lists every folder in `app/blogs`.
 6. **Internal links:** link to 2–3 related existing posts with `<Link href="/blogs/...">`.
 
@@ -88,7 +88,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 
 - `npm install` then build. If Google Fonts can't be fetched in the sandbox, temporarily replace the `next/font/google` import in `app/layout.tsx` with a stub for the build only, then restore it — never commit that change.
 - Build must pass and the new route must appear in the build output.
-- Only commit the new post folder, `app/blogs/page.js`, this file, and the 1–2 older posts you added an internal link to (link change only).
+- Only commit the new post folder, `lib/blogs.js`, this file, and the 1–2 older posts you added an internal link to (link change only).
 
 ## Topic backlog (ideas — still must pass Step 1 research)
 
