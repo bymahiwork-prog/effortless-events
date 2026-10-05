@@ -104,7 +104,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [ ] Farmhouse rules to check before booking: music, alcohol, guests, timings
 - [ ] Kids' birthday party at a farmhouse: planning guide for parents
 - [ ] New Year's Eve party at a private farmhouse in Delhi NCR
-- [ ] Diwali party ideas at a farmhouse for family and friends
+- [x] Diwali party ideas at a farmhouse for family and friends
 - [ ] Holi party at a farmhouse in Delhi NCR: planning and safety tips
 - [ ] Christmas party venues for offices in Delhi NCR
 - [ ] Corporate offsite venues near Delhi for team outings
@@ -142,3 +142,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   competition: <what page 1 looks like and why we can win>
   linked from: <older posts edited to link in>
 -->
+2026-10-05 20:30 IST — Diwali Party at a Farmhouse in Delhi NCR: 2026 Guide — /blogs/diwali-party-farmhouse-delhi-ncr
+  primary: diwali party at farmhouse delhi ncr | secondary: farmhouse for diwali card party delhi, diwali card party ideas, diwali party ideas for family and friends, diwali party venue gurgaon, diwali party venue noida
+  why now: Diwali (Lakshmi Puja) is Sun 8 Nov 2026 — card parties peak on the weekends of 24 Oct, 31 Oct and 7 Nov, 3–5 weeks out; overlaps with wedding-season vendor demand
+  competition: page 1 is listing/aggregator pages (SloShout, PartyVillas, VenueLook) and generic US Diwali-idea blogs; none give a Delhi NCR planning guide with dates, cracker/P-10/music rules and a checklist, so the long-tail planning query is beatable
+  linked from: /blogs/how-to-plan-farmhouse-party-delhi-ncr-2026, /blogs/best-farmhouses-delhi-ncr-family-gatherings-2026

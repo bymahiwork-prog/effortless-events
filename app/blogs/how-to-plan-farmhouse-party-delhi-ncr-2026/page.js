@@ -761,6 +761,15 @@ export default function BlogPage() {
 
           <li>
             <Link
+              href="/blogs/diwali-party-farmhouse-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              Diwali Party at a Farmhouse in Delhi NCR
+            </Link>
+          </li>
+
+          <li>
+            <Link
               href="/blogs/best-farmhouses-delhi-ncr-birthday-parties-2026"
               className="text-black underline font-semibold"
             >

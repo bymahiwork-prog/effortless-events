@@ -213,6 +213,17 @@ export default function BlogPage() {
           require a pool, lawn and multiple activity spaces.
         </p>
 
+        <p className="mb-8">
+          Planning a festive get-together this season? Our guide to hosting a{" "}
+          <Link
+            href="/blogs/diwali-party-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            Diwali party at a farmhouse in Delhi NCR
+          </Link>{" "}
+          covers dates, décor, food and venue rules.
+        </p>
+
 
         {/* =====================================================
             AREAS

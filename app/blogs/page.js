@@ -17,6 +17,16 @@ export const metadata = {
 export default function BlogsPage() {
   const blogs = [
     {
+      href: "/blogs/diwali-party-farmhouse-delhi-ncr",
+      image: "/event-gallery-1.jpeg",
+      alt: "Diwali party at a farmhouse in Delhi NCR",
+      category: "Festive Parties",
+      title: "Diwali Party at a Farmhouse in Delhi NCR: 2026 Guide",
+      description:
+        "When to book, card party and family ideas, décor, food, cracker and music rules, and a checklist for a Diwali farmhouse party.",
+    },
+
+    {
       href: "/blogs/best-farmhouses-villas-private-parties-delhi-ncr",
       image: "/farmhouse-guide-cover.png",
       alt: "Best Farmhouses and Villas for Private Parties in Delhi NCR",
