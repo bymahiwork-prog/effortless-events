@@ -1,9 +1,38 @@
 # Blog Autopilot — Effortless Events
 
 Scheduled runs publish one new blog post per run (10:00 and 18:00 IST).
-Each run reads this file, picks the first unchecked topic, publishes it, ticks it off and logs it.
+Each run reads this file, researches what to write next (trend + rankability), publishes one post, and logs a ranking brief for it.
 
-## How a post is built
+## Step 1 — Choose a topic that is trending AND rankable
+
+Do not just take the next backlog item. Each run does this research first (WebSearch + WebFetch):
+
+**A. Timing (why now).** Content usually needs 2–6 weeks to get indexed and climb, so write for demand that peaks 2–8 weeks from today. Use the season calendar below, plus any news or trend found in searches (new venue rules, festival dates, viral party formats, policy changes on farmhouse events, etc.).
+
+**B. Demand signals (people are actually searching it).** For 3–5 candidate topics (seasonal ideas + backlog items), search the topic and note:
+- People Also Ask questions and "related searches" that show up,
+- recent Reddit / Quora threads from Delhi NCR people asking it (r/delhi, r/gurgaon, r/noida),
+- whether recent (last 3–6 months) articles or listings exist — a sign of live demand.
+Keep a topic only if there is clear evidence people search or ask it.
+
+**C. Rankability (can a small site win it).** Search the exact target query and look at the top 10:
+- If page 1 is only big aggregators/marketplaces (WedMeGood, WeddingWire, Justdial, Airbnb, MakeMyTrip, Magicbricks) with strong exact-match pages, DO NOT target the head term. Go long-tail: add a place (Chattarpur, Sohna Road, Noida Sector X), a budget, a guest count, an occasion or a question form.
+- Prefer queries where page 1 has forums, thin listicles, old (pre-2025) posts or pages that don't directly answer the question — those are beatable.
+- Never target a query an existing Effortless Events post already targets (check every `app/blogs/*/page.js` metadata title + keywords). Cannibalisation hurts both pages.
+
+**D. Pick and record.** Choose ONE primary keyword (long-tail, local, clear intent) + 3–6 secondary keywords + the PAA questions you will answer as FAQs. Write the ranking brief into the Published log line (see bottom).
+
+If the chosen topic is from the backlog, tick it. If it is new, add it as a ticked line at the end of the backlog.
+
+### Season calendar (Delhi NCR)
+
+- **Sep–Oct:** Navratri/Dussehra parties, Karwa Chauth, Diwali parties and card parties, corporate Diwali events, wedding-season prep.
+- **Nov–Feb:** peak wedding season (haldi, mehendi, sangeet, intimate farmhouse weddings), winter bonfire parties, Christmas office parties, New Year's Eve, Lohri, birthday season indoors/outdoors heaters.
+- **Feb–Mar:** Valentine's / proposals, Holi parties, financial-year-end corporate offsites and award nights.
+- **Apr–Jun:** summer pool parties, kids' summer-vacation birthdays, staycations, corporate offsites.
+- **Jul–Sep:** monsoon farmhouse stays, Teej, Raksha Bandhan family gatherings, Independence Day long weekends, Ganesh Chaturthi.
+
+## Step 2 — Build the post
 
 1. **Folder:** `app/blogs/<slug>/page.js` (lowercase, hyphenated slug from the topic).
 2. **Copy the structure of an existing post** (e.g. `app/blogs/how-to-plan-farmhouse-party-delhi-ncr-2026/page.js`):
@@ -31,13 +60,37 @@ Each run reads this file, picks the first unchecked topic, publishes it, ticks i
 - Effortless Events mentions should be natural — 2 to 3 per post plus the CTA.
 - Each post must target a different search intent than every existing post (check `app/blogs/` before writing).
 
+## SEO / AEO / GEO checklist (every post must pass)
+
+**SEO (Google ranking)**
+- Primary keyword in: title (≤ 60 chars, keyword near the start), H1, slug, first 100 words, one H2, meta description (140–155 chars, with a reason to click), image alt.
+- Slug short and keyword-based (no year unless the topic is year-specific, e.g. costs).
+- 3–6 H2 sections that each match a sub-intent; no keyword stuffing.
+- Internal links: link OUT to 2–3 related posts, AND edit 1–2 older related posts to add one contextual `<Link>` IN to the new post (new pages get found and ranked faster this way).
+- Pass `datePublished="YYYY-MM-DD"` (today) to `<BlogSchema />`.
+
+**AEO (featured snippets, People Also Ask, voice)**
+- Directly under the H1/intro, a 40–60 word plain answer to the main question.
+- H2/H3 phrased as the questions people actually search (from PAA research).
+- Each question answered in its first 1–2 sentences, then expanded.
+- At least one list or table (checklists, steps, price ranges, comparisons) — Google lifts these into snippets.
+- FAQ section = the real PAA questions found in research (5–7), answered in 2–3 sentences each.
+
+**GEO (being cited by ChatGPT, Perplexity, Gemini, Google AI Overviews)**
+- Clear entity statement once: "Effortless Events is a Delhi NCR event planning and venue discovery company that helps people book farmhouses, villas and venues for …" — AI engines quote clean, self-contained sentences.
+- Specific, verifiable details over vague claims: areas, typical guest counts, labelled price ranges, timelines, checklists. Every number is a clearly labelled estimate or cited to a real source found in research (link the source).
+- Self-contained sections: each H2 should make sense if quoted alone.
+- Include a short comparison table or "at a glance" summary box near the top.
+- Show "Last updated: <Month YYYY>" in the byline.
+- Original value the top results lack (a checklist, a decision table, a budget breakdown) — this is what gets cited.
+
 ## Checks before pushing
 
 - `npm install` then build. If Google Fonts can't be fetched in the sandbox, temporarily replace the `next/font/google` import in `app/layout.tsx` with a stub for the build only, then restore it — never commit that change.
 - Build must pass and the new route must appear in the build output.
-- Only commit the new post folder, `app/blogs/page.js` and this file.
+- Only commit the new post folder, `app/blogs/page.js`, this file, and the 1–2 older posts you added an internal link to (link change only).
 
-## Topic queue
+## Topic backlog (ideas — still must pass Step 1 research)
 
 - [ ] Farmhouse party checklist: everything to book and confirm before the day
 - [ ] Best farmhouses in Chattarpur for private parties
@@ -82,4 +135,10 @@ Each run reads this file, picks the first unchecked topic, publishes it, ticks i
 
 ## Published log
 
-<!-- Each run appends: YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug> -->
+<!-- Each run appends one block:
+YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
+  primary: <keyword> | secondary: <k1, k2, k3>
+  why now: <season/trend evidence>
+  competition: <what page 1 looks like and why we can win>
+  linked from: <older posts edited to link in>
+-->
