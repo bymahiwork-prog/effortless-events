@@ -1,8 +1,9 @@
+import BlogSchema from "../../components/BlogSchema";
 import Link from "next/link";
 
 export const metadata = {
   title:
-    "Best Farmhouses in Delhi NCR for Pool Parties in 2026 | Effortless Events",
+    "Best Farmhouses in Delhi NCR for Pool Parties in 2026",
 
   description:
     "Discover the best farmhouses in Delhi NCR for pool parties in 2026. Explore private pools, luxury villas, lawns, overnight stays, party amenities, pricing and booking tips.",
@@ -35,7 +36,7 @@ export const metadata = {
 
   openGraph: {
     title:
-      "Best Farmhouses in Delhi NCR for Pool Parties in 2026 | Effortless Events",
+      "Best Farmhouses in Delhi NCR for Pool Parties in 2026",
 
     description:
       "Find the best private farmhouses and villas with swimming pools for pool parties across Delhi NCR, including Gurgaon, Chattarpur, Noida, Greater Noida and Faridabad.",
@@ -78,6 +79,8 @@ const faqs = [
 export default function BlogPage() {
   return (
     <main className="bg-white min-h-screen">
+      <BlogSchema slug="best-farmhouses-delhi-ncr-pool-parties-2026" metadata={metadata} faqs={faqs} />
+
 
       {/* =====================================================
           HERO

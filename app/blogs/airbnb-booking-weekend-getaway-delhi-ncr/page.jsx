@@ -1,3 +1,4 @@
+import BlogSchema from "../../components/BlogSchema";
 import Link from "next/link";
 
 export const metadata = {
@@ -62,6 +63,8 @@ const faqs = [
 export default function BlogPage() {
   return (
     <main className="bg-white min-h-screen">
+      <BlogSchema slug="airbnb-booking-weekend-getaway-delhi-ncr" metadata={metadata} faqs={faqs} />
+
 
       {/* Hero */}
 

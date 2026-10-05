@@ -1,8 +1,9 @@
+import BlogSchema from "../../components/BlogSchema";
 import Link from "next/link";
 
 export const metadata = {
   title:
-    "15 Corporate Event Ideas in Delhi NCR That Will Impress Your Guests | Effortless Events",
+    "15 Corporate Event Ideas in Delhi NCR That Will Impress Your Guests",
   description:
     "Discover 15 corporate event ideas in Delhi NCR that can impress your guests, strengthen relationships, engage employees, and create memorable business experiences.",
 };
@@ -33,6 +34,8 @@ const faqs = [
 export default function BlogPage() {
   return (
     <main className="bg-white min-h-screen">
+      <BlogSchema slug="corporate-event-ideas-delhi-ncr" metadata={metadata} faqs={faqs} />
+
 
       {/* ===================================================== */}
       {/* HERO */}

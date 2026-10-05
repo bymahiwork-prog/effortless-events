@@ -1,11 +1,34 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
+import BlogSchema from "../../components/BlogSchema";
+
+export const metadata = {
+  title:
+    "How Much Does Event Management Cost in Delhi NCR? A Complete Pricing Guide for Businesses",
+  description:
+    "Understand event management costs in Delhi NCR — what corporate events, conferences and private events typically cost, what planner charges include, and how businesses can plan budgets and reduce costs.",
+  alternates: { canonical: "/blogs/how-much-does-event-management-cost-delhi-ncr" },
+  openGraph: {
+    title: "How Much Does Event Management Cost in Delhi NCR?",
+    description:
+      "A complete pricing guide to event management costs in Delhi NCR for businesses, with cost factors, planner charges and budgeting tips.",
+    images: ["/how-much-does-event-management-cost-delhi-ncr.png"],
+  },
+};
+
+const faqs = [
+  { q: "What is the average event management company cost in Delhi NCR?", a: "The cost can range from around ₹50,000 for smaller events to ₹20 lakh or more for large corporate events. The final price depends on the scale and services required." },
+  { q: "How much does corporate event management cost?", a: "Corporate event management cost depends on factors such as venue, guest count, catering, décor, AV production, entertainment, staffing, and logistics. Medium-sized events commonly require budgets of several lakhs." },
+  { q: "What do event planner charges in Delhi NCR include?", a: "Charges may cover planning, vendor coordination, event execution, logistics, staffing, production management, and on-site coordination. Always check the quotation for specific inclusions." },
+  { q: "How can businesses reduce event planning costs?", a: "Businesses can control costs by booking early, selecting the right venue, comparing vendors, prioritizing essential services, negotiating packages, and maintaining a contingency budget." },
+  { q: "How do I choose an event management company in Delhi NCR?", a: "Compare agencies based on corporate experience, portfolio, pricing transparency, creativity, vendor network, communication, client reviews, and ability to deliver the event within your budget." },
+];
 
 export default function EventManagementCostDelhiNCRBlog() {
   return (
     <main className="min-h-screen bg-white text-gray-900">
+      <BlogSchema slug="how-much-does-event-management-cost-delhi-ncr" metadata={metadata} faqs={faqs} />
+
 
       {/* ========================================
           BLOG HERO
@@ -15,7 +38,7 @@ export default function EventManagementCostDelhiNCRBlog() {
         <div className="relative h-[420px] sm:h-[500px] lg:h-[580px]">
 
           <Image
-            src="/how-much-does-event-management-cost-delhi-ncr.jpg"
+            src="/how-much-does-event-management-cost-delhi-ncr.png"
             alt="How Much Does Event Management Cost in Delhi NCR? A Complete Pricing Guide for Businesses"
             fill
             priority

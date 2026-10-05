@@ -1,7 +1,8 @@
+import BlogSchema from "../../components/BlogSchema";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Best Airbnb Farmhouses for Private Parties in Delhi NCR | Effortless Events",
+  title: "Best Airbnb Farmhouses for Private Parties in Delhi NCR",
 
   description:
     "Discover luxury Airbnb farmhouses with private pools, spacious lawns and premium venues for birthdays, bachelor parties and private celebrations across Delhi NCR.",
@@ -51,6 +52,8 @@ const faqs = [
 export default function BlogPage() {
   return (
     <main className="bg-white min-h-screen">
+      <BlogSchema slug="best-airbnb-farmhouse-for-private-party-delhi-ncr" metadata={metadata} faqs={faqs} />
+
 
       {/* Hero */}
 

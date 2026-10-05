@@ -1,3 +1,4 @@
+import BlogSchema from "../../components/BlogSchema";
 import Link from "next/link";
 
 export const metadata = {
@@ -37,6 +38,8 @@ const faqs = [
 export default function BlogPage() {
   return (
     <main className="bg-white min-h-screen">
+      <BlogSchema slug="best-farmhouse-activities-for-groups" metadata={metadata} faqs={faqs} />
+
 
       {/* ===================================================== */}
       {/* HERO */}
@@ -45,7 +48,7 @@ export default function BlogPage() {
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
 
         <img
-          src="/best-farmhouse-activities-for-groups-cover.png"
+          src="/Effortless Farm39.jpg"
           alt="Best Farmhouse Activities for Groups: From Pool Parties to Outdoor Games"
           className="w-full rounded-xl mb-10"
         />

@@ -1,8 +1,9 @@
+import BlogSchema from "../../components/BlogSchema";
 import Link from "next/link";
 
 export const metadata = {
   title:
-    "Why Booking an Airbnb Is the Smart Choice for Group Stays & Corporate Travel | Effortless Events",
+    "Why Booking an Airbnb Is the Smart Choice for Group Stays & Corporate Travel",
   description:
     "Discover why Airbnb is the preferred accommodation choice for group stays, corporate travel, business trips, family vacations, and weekend getaways. Learn how professionally managed Airbnb properties provide more comfort, flexibility, and value.",
 };
@@ -33,6 +34,8 @@ const faqs = [
 export default function BlogPage() {
   return (
     <main className="bg-white min-h-screen">
+      <BlogSchema slug="why-booking-an-airbnb-is-the-smart-choice" metadata={metadata} faqs={faqs} />
+
 
       {/* Hero Section */}
 

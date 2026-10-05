@@ -1,8 +1,9 @@
+import BlogSchema from "../../components/BlogSchema";
 import Link from "next/link";
 
 export const metadata = {
   title:
-    "Best Farmhouses in Gurgaon for Private Parties in 2026 | Effortless Events",
+    "Best Farmhouses in Gurgaon for Private Parties in 2026",
 
   description:
     "Discover the best farmhouses in Gurgaon for private parties in 2026. Explore luxury farmhouses, private pools, lawns, overnight stays, party amenities, pricing and booking tips.",
@@ -33,7 +34,7 @@ export const metadata = {
 
   openGraph: {
     title:
-      "Best Farmhouses in Gurgaon for Private Parties in 2026 | Effortless Events",
+      "Best Farmhouses in Gurgaon for Private Parties in 2026",
 
     description:
       "Explore private farmhouses and luxury villas in Gurgaon for birthdays, pool parties, family gatherings, friends' get-togethers and private celebrations.",
@@ -76,6 +77,8 @@ const faqs = [
 export default function BlogPage() {
   return (
     <main className="bg-white min-h-screen">
+      <BlogSchema slug="best-farmhouses-gurgaon-private-parties-2026" metadata={metadata} faqs={faqs} />
+
 
       {/* =====================================================
           HERO

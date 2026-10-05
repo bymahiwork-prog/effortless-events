@@ -1,8 +1,9 @@
+import BlogSchema from "../../components/BlogSchema";
 import Link from "next/link";
 
 export const metadata = {
   title:
-    "How Much Does a Farmhouse Party Cost in Delhi NCR in 2026? | Effortless Events",
+    "How Much Does a Farmhouse Party Cost in Delhi NCR in 2026?",
 
   description:
     "Wondering how much a farmhouse party costs in Delhi NCR in 2026? Explore farmhouse rental prices, catering, décor, DJ, pool party costs and complete party budgets.",
@@ -30,7 +31,7 @@ export const metadata = {
 
   openGraph: {
     title:
-      "How Much Does a Farmhouse Party Cost in Delhi NCR in 2026? | Effortless Events",
+      "How Much Does a Farmhouse Party Cost in Delhi NCR in 2026?",
 
     description:
       "A complete 2026 guide to farmhouse party costs in Delhi NCR, including venue rent, catering, décor, DJ, pool parties and other event expenses.",
@@ -77,6 +78,8 @@ const faqs = [
 export default function BlogPage() {
   return (
     <main className="bg-white min-h-screen">
+      <BlogSchema slug="how-much-does-a-farmhouse-party-cost-in-delhi-ncr-2026" metadata={metadata} faqs={faqs} />
+
 
       {/* =====================================================
           HERO

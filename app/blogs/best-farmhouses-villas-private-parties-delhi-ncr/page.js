@@ -1,8 +1,9 @@
+import BlogSchema from "../../components/BlogSchema";
 import Link from "next/link";
 
 export const metadata = {
   title:
-    "Best Farmhouses & Villas for Private Parties in Delhi NCR | Effortless Events",
+    "Best Farmhouses & Villas for Private Parties in Delhi NCR",
   description:
     "Planning a private party in Delhi NCR? Discover top farmhouses and villas across Delhi NCR.",
 };
@@ -33,6 +34,8 @@ const faqs = [
 export default function BlogPage() {
   return (
     <main className="bg-white min-h-screen">
+      <BlogSchema slug="best-farmhouses-villas-private-parties-delhi-ncr" metadata={metadata} faqs={faqs} />
+
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img

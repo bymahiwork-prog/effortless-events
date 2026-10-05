@@ -1,8 +1,9 @@
+import BlogSchema from "../../components/BlogSchema";
 import Link from "next/link";
 
 export const metadata = {
   title:
-    "Best Farmhouses in Noida for Private Parties, Birthdays & Celebrations | Effortless Events",
+    "Best Farmhouses in Noida for Private Parties, Birthdays & Celebrations",
 
   description:
     "Discover the best farmhouses in Noida for birthdays, private parties, family celebrations and special occasions. Find spacious venues, private pools, lawns and event-friendly farmhouses with Effortless Events.",
@@ -30,7 +31,7 @@ export const metadata = {
 
   openGraph: {
     title:
-      "Best Farmhouses in Noida for Private Parties, Birthdays & Celebrations | Effortless Events",
+      "Best Farmhouses in Noida for Private Parties, Birthdays & Celebrations",
 
     description:
       "Explore the best farmhouses in Noida for birthdays, private parties, weddings, family gatherings and special celebrations.",
@@ -65,6 +66,8 @@ const faqs = [
 export default function BlogPage() {
   return (
     <main className="bg-white min-h-screen">
+      <BlogSchema slug="best-farmhouses-noida-private-parties-celebrations" metadata={metadata} faqs={faqs} />
+
 
       {/* =====================================================
           HERO

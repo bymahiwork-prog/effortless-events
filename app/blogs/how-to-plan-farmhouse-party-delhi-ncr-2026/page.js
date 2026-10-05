@@ -1,8 +1,9 @@
+import BlogSchema from "../../components/BlogSchema";
 import Link from "next/link";
 
 export const metadata = {
   title:
-    "How to Plan a Farmhouse Party in Delhi NCR: Complete 2026 Guide | Effortless Events",
+    "How to Plan a Farmhouse Party in Delhi NCR: Complete 2026 Guide",
 
   description:
     "Learn how to plan a farmhouse party in Delhi NCR in 2026, including choosing the venue, setting a budget, catering, décor, music, guest planning, activities and booking checklist.",
@@ -75,6 +76,8 @@ const faqs = [
 export default function BlogPage() {
   return (
     <main className="bg-white min-h-screen">
+      <BlogSchema slug="how-to-plan-farmhouse-party-delhi-ncr-2026" metadata={metadata} faqs={faqs} />
+
 
       {/* =====================================================
           HERO

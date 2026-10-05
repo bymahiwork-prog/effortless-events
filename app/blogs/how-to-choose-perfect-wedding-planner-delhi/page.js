@@ -1,8 +1,9 @@
+import BlogSchema from "../../components/BlogSchema";
 import Link from "next/link";
 
 export const metadata = {
   title:
-    "How to Choose the Perfect Wedding Planner in Delhi: A Complete Guide | Effortless Events",
+    "How to Choose the Perfect Wedding Planner in Delhi: A Complete Guide",
   description:
     "Discover how to choose the perfect wedding planner in Delhi. Learn about experience, portfolios, vendor networks, wedding décor, budget transparency, destination weddings, and essential wedding planning tips.",
 };
@@ -33,6 +34,8 @@ const faqs = [
 export default function BlogPage() {
   return (
     <main className="bg-white min-h-screen">
+      <BlogSchema slug="how-to-choose-perfect-wedding-planner-delhi" metadata={metadata} faqs={faqs} />
+
 
       {/* Hero */}
 

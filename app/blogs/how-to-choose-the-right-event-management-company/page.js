@@ -1,8 +1,9 @@
+import BlogSchema from "../../components/BlogSchema";
 import Link from "next/link";
 
 export const metadata = {
   title:
-    "How to Choose the Right Event Management Company for Your Business | Effortless Events",
+    "How to Choose the Right Event Management Company for Your Business",
   description:
     "Learn how to choose the right event management company for your business. Discover expert tips on evaluating experience, planning, creativity, vendor networks, and more with Effortless Events.",
 };
@@ -33,6 +34,8 @@ const faqs = [
 export default function BlogPage() {
   return (
     <main className="bg-white min-h-screen">
+      <BlogSchema slug="how-to-choose-the-right-event-management-company" metadata={metadata} faqs={faqs} />
+
 
       {/* Hero */}
 

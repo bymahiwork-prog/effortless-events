@@ -1,7 +1,18 @@
-"use client";
-
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
+export const metadata = {
+  title: "Event Planning & Farmhouse Party Blog for Delhi NCR",
+  description:
+    "Guides on farmhouse parties, venue costs, corporate events, weddings and Airbnb stays across Delhi NCR — from the Effortless Events team.",
+  alternates: { canonical: "/blogs" },
+  openGraph: {
+    title: "Effortless Events Blog — Delhi NCR Event & Farmhouse Guides",
+    description:
+      "Guides on farmhouse parties, venue costs, corporate events, weddings and Airbnb stays across Delhi NCR.",
+    images: ["/effortless-events-og.png"],
+  },
+};
 
 export default function BlogsPage() {
   const blogs = [

@@ -1,8 +1,9 @@
+import BlogSchema from "../../components/BlogSchema";
 import Link from "next/link";
 
 export const metadata = {
   title:
-    "Best Farmhouses in Delhi NCR for Family Gatherings in 2026 | Effortless Events",
+    "Best Farmhouses in Delhi NCR for Family Gatherings in 2026",
 
   description:
     "Discover the best farmhouses in Delhi NCR for family gatherings in 2026. Explore spacious lawns, private pools, comfortable rooms, catering, family-friendly activities and booking tips.",
@@ -33,7 +34,7 @@ export const metadata = {
 
   openGraph: {
     title:
-      "Best Farmhouses in Delhi NCR for Family Gatherings in 2026 | Effortless Events",
+      "Best Farmhouses in Delhi NCR for Family Gatherings in 2026",
 
     description:
       "Find a private farmhouse in Delhi NCR for family gatherings, reunions, birthdays, anniversaries and family celebrations with spacious lawns, pools, rooms and event facilities.",
@@ -76,6 +77,8 @@ const faqs = [
 export default function BlogPage() {
   return (
     <main className="bg-white min-h-screen">
+      <BlogSchema slug="best-farmhouses-delhi-ncr-family-gatherings-2026" metadata={metadata} faqs={faqs} />
+
 
       {/* =====================================================
           HERO

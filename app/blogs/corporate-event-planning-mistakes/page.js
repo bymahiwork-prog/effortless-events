@@ -1,8 +1,9 @@
+import BlogSchema from "../../components/BlogSchema";
 import Link from "next/link";
 
 export const metadata = {
   title:
-    "10 Event Planning Mistakes That Can Ruin Your Corporate Event | Effortless Events",
+    "10 Event Planning Mistakes That Can Ruin Your Corporate Event",
   description:
     "Avoid the biggest corporate event planning mistakes with expert tips from Effortless Events. Learn how to plan successful conferences, product launches, networking events, award ceremonies, and business events across Delhi NCR.",
 };
@@ -33,6 +34,8 @@ const faqs = [
 export default function BlogPage() {
   return (
     <main className="bg-white min-h-screen">
+      <BlogSchema slug="corporate-event-planning-mistakes" metadata={metadata} faqs={faqs} />
+
 
       {/* Hero Section */}
 
