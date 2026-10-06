@@ -79,7 +79,15 @@ export default function BlogPage() {
           Whether you are organizing a birthday party, family gathering,
           friends&apos; reunion, anniversary, pre-wedding celebration,
           corporate outing, or weekend party, choosing the right venue can
-          have a major impact on the overall experience.
+          have a major impact on the overall experience. Planning a small
+          wedding? See our{" "}
+          <Link
+            href="/blogs/intimate-farmhouse-wedding-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            intimate farmhouse wedding guide
+          </Link>
+          .
         </p>
 
         <p className="mb-8">

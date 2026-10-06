@@ -98,7 +98,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [ ] Bachelor and bachelorette party farmhouses in Delhi NCR
 - [ ] Anniversary party ideas at a private farmhouse in Delhi NCR
 - [ ] Haldi and mehendi venues: why farmhouses work for pre-wedding functions
-- [ ] Small intimate wedding at a farmhouse in Delhi NCR: complete guide
+- [x] Small intimate wedding at a farmhouse in Delhi NCR: complete guide
 - [ ] Farmhouse wedding cost in Delhi NCR in 2026
 - [ ] Day-use farmhouse vs overnight farmhouse stay: which to book
 - [ ] Farmhouse rules to check before booking: music, alcohol, guests, timings
@@ -153,3 +153,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: Diwali is Sun 8 Nov 2026; office parties cluster on Fri 23 Oct–Fri 6 Nov, so HR teams book venues in the first half of October (3–5 weeks out); separate intent from the family/card-party Diwali post published 5 Oct
   competition: page 1 is generic HR-software idea listicles (PocketHRMS, Akrivia, FocusU, Nunify's 2025 guide) and VenueLook listing pages; none give Delhi NCR dates, venue-format comparison, per-head budget estimates, GRAP/music/P-10 rules and a countdown checklist, so the long-tail planning query is beatable
   linked from: /blogs/corporate-event-ideas-delhi-ncr, /blogs/diwali-party-farmhouse-delhi-ncr
+2026-10-06 18:00 IST — Intimate Farmhouse Wedding in Delhi NCR: 2026 Planning Guide — /blogs/intimate-farmhouse-wedding-delhi-ncr
+  primary: intimate farmhouse wedding delhi ncr | secondary: small wedding at farmhouse delhi, farmhouse wedding for 50 to 100 guests, intimate wedding cost delhi ncr, small wedding venue gurgaon farmhouse, court marriage and farmhouse reception delhi, wedding dates november december 2026
+  why now: 2026 wedding season reopens after Dev Uthani Ekadashi on 20 Nov; muhurats cluster 21–26 Nov and 1–4, 11–13 Dec (6–10 weeks out), so couples shortlist farmhouses in October; Jan–Feb 2027 muhurats extend demand
+  competition: page 1 is aggregator listing pages (WedMeGood, VenueLook, Spalba, WeddingBazaar) and a WeddingSutra venue roundup; none give a Delhi NCR small-wedding planning guide with 2026 muhurats, guest-count tiers, cost breakdown, loudspeaker/P-10/SMA notice rules and a countdown checklist, so the long-tail guide query is beatable
+  linked from: /blogs/how-to-choose-perfect-wedding-planner-delhi, /blogs/farmhouse-vs-resort-delhi-ncr

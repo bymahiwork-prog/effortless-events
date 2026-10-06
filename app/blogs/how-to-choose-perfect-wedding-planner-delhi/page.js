@@ -137,7 +137,15 @@ export default function BlogPage() {
 
         <p className="mb-8">
           Whether your event is intimate or extravagant, a professional
-          planner ensures every detail is handled with precision.
+          planner ensures every detail is handled with precision. Planning a
+          smaller celebration? Read our guide to an{" "}
+          <Link
+            href="/blogs/intimate-farmhouse-wedding-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            intimate farmhouse wedding in Delhi NCR
+          </Link>
+          .
         </p>
 
         <h2 className="text-black text-3xl font-bold mt-12 mb-6">
