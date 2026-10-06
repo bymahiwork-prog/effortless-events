@@ -211,6 +211,14 @@ export default function BlogPage() {
           <li>
             <strong>Saturday, 24 October:</strong> a good choice for office
             friend groups and card parties that want to beat the rush.
+            Planning for a whole team? See our{" "}
+            <Link
+              href="/blogs/corporate-diwali-party-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              corporate Diwali party guide
+            </Link>
+            .
           </li>
           <li>
             <strong>Sundays and weekday evenings:</strong> often easier to get

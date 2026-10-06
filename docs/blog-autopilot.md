@@ -132,6 +132,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [ ] How to book a farmhouse safely: avoiding scams and hidden charges
 - [ ] Questions to ask a farmhouse owner before booking
 - [ ] Event planner vs DIY: when it is worth hiring help for a private party
+- [x] Corporate Diwali party in Delhi NCR: venue, budget and planning guide
 
 ## Published log
 
@@ -147,3 +148,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: Diwali (Lakshmi Puja) is Sun 8 Nov 2026 — card parties peak on the weekends of 24 Oct, 31 Oct and 7 Nov, 3–5 weeks out; overlaps with wedding-season vendor demand
   competition: page 1 is listing/aggregator pages (SloShout, PartyVillas, VenueLook) and generic US Diwali-idea blogs; none give a Delhi NCR planning guide with dates, cracker/P-10/music rules and a checklist, so the long-tail planning query is beatable
   linked from: /blogs/how-to-plan-farmhouse-party-delhi-ncr-2026, /blogs/best-farmhouses-delhi-ncr-family-gatherings-2026
+2026-10-06 10:00 IST — Corporate Diwali Party in Delhi NCR: Venue & Planning Guide — /blogs/corporate-diwali-party-delhi-ncr
+  primary: corporate diwali party delhi ncr | secondary: office diwali party venue gurgaon, diwali party for employees, corporate diwali party ideas, office diwali party budget per head, corporate diwali party at farmhouse
+  why now: Diwali is Sun 8 Nov 2026; office parties cluster on Fri 23 Oct–Fri 6 Nov, so HR teams book venues in the first half of October (3–5 weeks out); separate intent from the family/card-party Diwali post published 5 Oct
+  competition: page 1 is generic HR-software idea listicles (PocketHRMS, Akrivia, FocusU, Nunify's 2025 guide) and VenueLook listing pages; none give Delhi NCR dates, venue-format comparison, per-head budget estimates, GRAP/music/P-10 rules and a countdown checklist, so the long-tail planning query is beatable
+  linked from: /blogs/corporate-event-ideas-delhi-ncr, /blogs/diwali-party-farmhouse-delhi-ncr

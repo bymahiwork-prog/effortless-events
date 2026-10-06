@@ -198,7 +198,15 @@ export default function BlogPage() {
         <p className="mb-8">
           A themed party can instantly make a corporate celebration more
           exciting. Consider concepts such as Bollywood, retro,
-          black-and-white, carnival, masquerade, or a futuristic theme.
+          black-and-white, carnival, masquerade, or a futuristic theme —
+          or a festive one, like a{" "}
+          <Link
+            href="/blogs/corporate-diwali-party-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            corporate Diwali party
+          </Link>
+          .
         </p>
 
         <p className="mb-8">
