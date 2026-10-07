@@ -97,7 +97,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [ ] Best farmhouses on Sohna Road for weekend parties
 - [ ] Bachelor and bachelorette party farmhouses in Delhi NCR
 - [ ] Anniversary party ideas at a private farmhouse in Delhi NCR
-- [ ] Haldi and mehendi venues: why farmhouses work for pre-wedding functions
+- [x] Haldi and mehendi venues: why farmhouses work for pre-wedding functions
 - [x] Small intimate wedding at a farmhouse in Delhi NCR: complete guide
 - [ ] Farmhouse wedding cost in Delhi NCR in 2026
 - [ ] Day-use farmhouse vs overnight farmhouse stay: which to book
@@ -158,3 +158,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: 2026 wedding season reopens after Dev Uthani Ekadashi on 20 Nov; muhurats cluster 21–26 Nov and 1–4, 11–13 Dec (6–10 weeks out), so couples shortlist farmhouses in October; Jan–Feb 2027 muhurats extend demand
   competition: page 1 is aggregator listing pages (WedMeGood, VenueLook, Spalba, WeddingBazaar) and a WeddingSutra venue roundup; none give a Delhi NCR small-wedding planning guide with 2026 muhurats, guest-count tiers, cost breakdown, loudspeaker/P-10/SMA notice rules and a countdown checklist, so the long-tail guide query is beatable
   linked from: /blogs/how-to-choose-perfect-wedding-planner-delhi, /blogs/farmhouse-vs-resort-delhi-ncr
+2026-10-07 10:00 IST — Haldi & Mehendi at a Farmhouse in Delhi NCR: 2026 Guide — /blogs/haldi-mehendi-farmhouse-delhi-ncr
+  primary: haldi and mehendi venue farmhouse delhi ncr | secondary: haldi ceremony at farmhouse delhi, mehendi function farmhouse gurgaon, haldi and mehendi on same day, haldi ceremony venue cost delhi ncr, pre-wedding function venue delhi ncr
+  why now: 2026 wedding season reopens 20 Nov; muhurats 21, 24–26 Nov and 1–4, 11–13 Dec put haldi/mehendi dates 6–10 weeks out, so families book function farmhouses in October; Jan–Feb 2027 muhurats extend demand
+  competition: page 1 for haldi/mehendi venue queries is all listing pages (VenueLook locality lists, Spalba, WedMeGood venue profiles) with no planning guide; none cover same-day schedules, 2026 function dates, guest-count fit, cost breakdown or lawn/cleaning rules, so the long-tail guide query is beatable
+  linked from: /blogs/intimate-farmhouse-wedding-delhi-ncr

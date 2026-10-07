@@ -209,9 +209,15 @@ export default function BlogPage() {
             entry and parking, no shared corridors.
           </li>
           <li>
-            <strong>Several functions, one venue:</strong> haldi in the
-            morning, pheras at the muhurat and dinner on the lawn without
-            moving guests.
+            <strong>Several functions, one venue:</strong>{" "}
+            <Link
+              href="/blogs/haldi-mehendi-farmhouse-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              haldi and mehendi at the farmhouse
+            </Link>{" "}
+            in the morning, pheras at the muhurat and dinner on the lawn
+            without moving guests.
           </li>
           <li>
             <strong>Control:</strong> many farmhouses let you choose your own
