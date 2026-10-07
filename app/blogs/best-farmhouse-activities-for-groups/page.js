@@ -91,7 +91,15 @@ export default function BlogPage() {
         <p className="mb-8">
           From swimming and outdoor games to barbecues, music, bonfires, and
           relaxed evenings under the open sky, there are countless ways to
-          make your farmhouse stay memorable.
+          make your farmhouse stay memorable. Planning one for a bride-to-be?
+          See our guide to a{" "}
+          <Link
+            href="/blogs/bachelorette-party-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            bachelorette party at a farmhouse in Delhi NCR
+          </Link>
+          .
         </p>
 
         <p className="mb-8">

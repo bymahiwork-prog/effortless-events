@@ -95,7 +95,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [ ] Farmhouse party checklist: everything to book and confirm before the day
 - [ ] Best farmhouses in Chattarpur for private parties
 - [ ] Best farmhouses on Sohna Road for weekend parties
-- [ ] Bachelor and bachelorette party farmhouses in Delhi NCR
+- [x] Bachelor and bachelorette party farmhouses in Delhi NCR
 - [ ] Anniversary party ideas at a private farmhouse in Delhi NCR
 - [x] Haldi and mehendi venues: why farmhouses work for pre-wedding functions
 - [x] Small intimate wedding at a farmhouse in Delhi NCR: complete guide
@@ -163,3 +163,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: 2026 wedding season reopens 20 Nov; muhurats 21, 24–26 Nov and 1–4, 11–13 Dec put haldi/mehendi dates 6–10 weeks out, so families book function farmhouses in October; Jan–Feb 2027 muhurats extend demand
   competition: page 1 for haldi/mehendi venue queries is all listing pages (VenueLook locality lists, Spalba, WedMeGood venue profiles) with no planning guide; none cover same-day schedules, 2026 function dates, guest-count fit, cost breakdown or lawn/cleaning rules, so the long-tail guide query is beatable
   linked from: /blogs/intimate-farmhouse-wedding-delhi-ncr
+2026-10-07 18:00 IST — Bachelorette Party at a Farmhouse in Delhi NCR: 2026 Guide — /blogs/bachelorette-party-farmhouse-delhi-ncr
+  primary: bachelorette party at farmhouse delhi ncr | secondary: bachelorette party venue delhi ncr, bachelor party farmhouse gurgaon, bachelorette party ideas delhi, bachelorette party cost delhi ncr, overnight farmhouse for bachelorette party
+  why now: 2026 wedding season reopens 20 Nov with muhurats 21–26 Nov and 1–13 Dec; bachelorettes run 2–6 weeks before, so parties land on 17 Oct–21 Nov weekends (2–6 weeks out) and friend groups book farmhouses now; Jan–Feb 2027 weddings extend demand into Dec–Jan
+  competition: page 1 is VenueLook locality listing pages ("bachelor party destination venues"), Expedia/Airbnb property listings, an old so.city roundup and national destination listicles (Elle, WeddingSutra); none give a Delhi NCR farmhouse planning guide with dates, group-size fit, per-head budget, P-10/loudspeaker rules and a checklist, so the long-tail query is beatable
+  linked from: /blogs/haldi-mehendi-farmhouse-delhi-ncr, /blogs/best-farmhouse-activities-for-groups

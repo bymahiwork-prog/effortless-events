@@ -765,6 +765,15 @@ export default function BlogPage() {
           <li>☐ Décorator, caterer, dhol or DJ and photographer confirmed</li>
           <li>☐ Colour theme and dress code shared with family</li>
           <li>☐ Haldi paste, petals and ceremony items listed</li>
+          <li>
+            ☐ Friends&apos; party fixed away from function dates — see our{" "}
+            <Link
+              href="/blogs/bachelorette-party-farmhouse-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              farmhouse bachelorette party guide
+            </Link>
+          </li>
         </ul>
 
         <h3 className="text-black text-2xl font-semibold mt-8 mb-4">
