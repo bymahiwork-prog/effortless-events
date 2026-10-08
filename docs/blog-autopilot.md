@@ -124,7 +124,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [ ] Airbnb villas near Delhi for a family staycation
 - [ ] Workation stays near Delhi: Airbnb villas for remote work
 - [ ] Group stay vs hotel rooms for out-of-town wedding guests in Delhi NCR
-- [ ] Engagement ceremony venues in Delhi NCR: farmhouse vs banquet hall
+- [x] Engagement ceremony venues in Delhi NCR: farmhouse vs banquet hall
 - [ ] Baby shower venue ideas in Delhi NCR
 - [ ] Retirement party and milestone birthday ideas for parents
 - [ ] Farewell party venues for colleagues and college batches in Delhi NCR
@@ -173,3 +173,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: winter party season runs mid-Nov to mid-Feb; Dec 2026 Saturdays (5, 12, 19), Christmas Fri 25 Dec, NYE Thu 31 Dec and Lohri ~13 Jan 2027 sit 4–14 weeks out, so groups shortlist farmhouses in Oct–Nov; GRAP Stage I usually kicks in mid-October (2024: 15 Oct, 2025: 14 Oct), and Dec 2025 brought a ₹5,000 open-burning fine and DPCC tandoor ban, so hosts need fire-rule answers
   competition: page 1 for bonfire/winter farmhouse party queries is Airbnb/Expedia property listings (hosts advertise "bonfire" as an amenity — demand signal), a StayVista villa listicle and unrelated pages; no Delhi NCR planning guide covering GRAP/open-burning rules, heater options, per-event budget, safety and a checklist, so the long-tail guide query is beatable
   linked from: /blogs/best-farmhouse-activities-for-groups, /blogs/how-to-plan-farmhouse-party-delhi-ncr-2026
+2026-10-08 18:00 IST — Engagement Ceremony at a Farmhouse in Delhi NCR: 2026 Guide — /blogs/engagement-ceremony-farmhouse-delhi-ncr
+  primary: engagement ceremony at farmhouse delhi ncr | secondary: engagement venue farmhouse vs banquet hall, ring ceremony at farmhouse gurgaon, roka ceremony venue delhi, engagement ceremony cost delhi ncr, engagement muhurat november december 2026
+  why now: ring ceremony muhurats (GaneshaSpeaks 2026 calendar) run through Oct–Dec with weekend clusters 14–15, 21–22, 28–29 Nov and 5–6, 12, 19–20 Dec (5–10 weeks out); engagements precede the 20 Nov wedding-season reopening and compete with weddings for farmhouses from then, so families book in October
+  competition: page 1 for engagement/roka/ring-ceremony venue queries is all listing pages (WedMeGood venue profiles, VenueLook locality lists, Spalba, ChooseYourVenue) plus a hotel's wedding-venue blog; no Delhi NCR guide with muhurat weekends, farmhouse-vs-banquet comparison, cost breakdown, run-of-show and checklist, so the long-tail guide query is beatable
+  linked from: /blogs/bachelorette-party-farmhouse-delhi-ncr

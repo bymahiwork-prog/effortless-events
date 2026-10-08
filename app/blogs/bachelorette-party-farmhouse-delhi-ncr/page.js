@@ -253,7 +253,14 @@ export default function BlogPage() {
 
         <p className="mb-8">
           Plan the bachelorette two to six weeks before the wedding. Closer
-          than two weeks and it collides with roka, shopping trips, haldi and
+          than two weeks and it collides with{" "}
+          <Link
+            href="/blogs/engagement-ceremony-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            roka
+          </Link>
+          , shopping trips, haldi and
           mehendi; much earlier and it loses the &quot;last weekend as a
           single woman&quot; feel. Published 2026 calendars such as{" "}
           <a
