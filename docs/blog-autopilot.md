@@ -117,7 +117,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [ ] Catering options for farmhouse parties: buffet, live counters, BBQ
 - [ ] DJ, live band or both: choosing music for a farmhouse party
 - [ ] Rainy-season farmhouse parties: how to plan for monsoon in Delhi NCR
-- [ ] Winter farmhouse party ideas: bonfires, heaters and cosy setups
+- [x] Winter farmhouse party ideas: bonfires, heaters and cosy setups
 - [ ] Summer pool party at a farmhouse: safety and planning tips
 - [ ] Best farmhouses in Greater Noida for celebrations
 - [ ] Best farmhouses in Faridabad for private events
@@ -168,3 +168,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: 2026 wedding season reopens 20 Nov with muhurats 21–26 Nov and 1–13 Dec; bachelorettes run 2–6 weeks before, so parties land on 17 Oct–21 Nov weekends (2–6 weeks out) and friend groups book farmhouses now; Jan–Feb 2027 weddings extend demand into Dec–Jan
   competition: page 1 is VenueLook locality listing pages ("bachelor party destination venues"), Expedia/Airbnb property listings, an old so.city roundup and national destination listicles (Elle, WeddingSutra); none give a Delhi NCR farmhouse planning guide with dates, group-size fit, per-head budget, P-10/loudspeaker rules and a checklist, so the long-tail query is beatable
   linked from: /blogs/haldi-mehendi-farmhouse-delhi-ncr, /blogs/best-farmhouse-activities-for-groups
+2026-10-08 10:00 IST — Winter Bonfire Party at a Farmhouse in Delhi NCR: 2026 Guide — /blogs/winter-bonfire-party-farmhouse-delhi-ncr
+  primary: winter bonfire party at farmhouse delhi ncr | secondary: farmhouse with bonfire near delhi, winter farmhouse party ideas, bonfire night farmhouse gurgaon, is bonfire allowed in delhi grap, patio heater for outdoor party delhi, lohri party at farmhouse
+  why now: winter party season runs mid-Nov to mid-Feb; Dec 2026 Saturdays (5, 12, 19), Christmas Fri 25 Dec, NYE Thu 31 Dec and Lohri ~13 Jan 2027 sit 4–14 weeks out, so groups shortlist farmhouses in Oct–Nov; GRAP Stage I usually kicks in mid-October (2024: 15 Oct, 2025: 14 Oct), and Dec 2025 brought a ₹5,000 open-burning fine and DPCC tandoor ban, so hosts need fire-rule answers
+  competition: page 1 for bonfire/winter farmhouse party queries is Airbnb/Expedia property listings (hosts advertise "bonfire" as an amenity — demand signal), a StayVista villa listicle and unrelated pages; no Delhi NCR planning guide covering GRAP/open-burning rules, heater options, per-event budget, safety and a checklist, so the long-tail guide query is beatable
+  linked from: /blogs/best-farmhouse-activities-for-groups, /blogs/how-to-plan-farmhouse-party-delhi-ncr-2026

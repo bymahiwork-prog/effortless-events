@@ -359,7 +359,14 @@ export default function BlogPage() {
 
         <p className="mb-8">
           Before arranging a bonfire, always check whether the farmhouse
-          permits it and whether a designated fire area is available.
+          permits it and whether a designated fire area is available. Our{" "}
+          <Link
+            href="/blogs/winter-bonfire-party-farmhouse-delhi-ncr"
+            className="underline"
+          >
+            winter bonfire party guide
+          </Link>{" "}
+          covers fire rules, heater options and safety.
         </p>
 
         {/* ===================================================== */}

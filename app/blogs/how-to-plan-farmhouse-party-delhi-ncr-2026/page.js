@@ -675,7 +675,15 @@ export default function BlogPage() {
 
         <p className="mb-8">
           This becomes especially important for celebrations planned around
-          outdoor lawns and pools.
+          outdoor lawns and pools. Planning a party between November and
+          February? See our{" "}
+          <Link
+            href="/blogs/winter-bonfire-party-farmhouse-delhi-ncr"
+            className="underline"
+          >
+            winter bonfire party at a farmhouse guide
+          </Link>{" "}
+          for heaters, fire rules and cold-night backup plans.
         </p>
 
 
