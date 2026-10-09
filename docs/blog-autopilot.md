@@ -103,7 +103,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [ ] Day-use farmhouse vs overnight farmhouse stay: which to book
 - [ ] Farmhouse rules to check before booking: music, alcohol, guests, timings
 - [ ] Kids' birthday party at a farmhouse: planning guide for parents
-- [ ] New Year's Eve party at a private farmhouse in Delhi NCR
+- [x] New Year's Eve party at a private farmhouse in Delhi NCR
 - [x] Diwali party ideas at a farmhouse for family and friends
 - [ ] Holi party at a farmhouse in Delhi NCR: planning and safety tips
 - [ ] Christmas party venues for offices in Delhi NCR
@@ -178,3 +178,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: ring ceremony muhurats (GaneshaSpeaks 2026 calendar) run through Oct–Dec with weekend clusters 14–15, 21–22, 28–29 Nov and 5–6, 12, 19–20 Dec (5–10 weeks out); engagements precede the 20 Nov wedding-season reopening and compete with weddings for farmhouses from then, so families book in October
   competition: page 1 for engagement/roka/ring-ceremony venue queries is all listing pages (WedMeGood venue profiles, VenueLook locality lists, Spalba, ChooseYourVenue) plus a hotel's wedding-venue blog; no Delhi NCR guide with muhurat weekends, farmhouse-vs-banquet comparison, cost breakdown, run-of-show and checklist, so the long-tail guide query is beatable
   linked from: /blogs/bachelorette-party-farmhouse-delhi-ncr
+2026-10-09 10:00 IST — New Year's Eve Party at a Farmhouse in Delhi NCR: 2026 Guide — /blogs/new-year-eve-party-farmhouse-delhi-ncr
+  primary: new year's eve party at farmhouse delhi ncr | secondary: private new year party farmhouse gurgaon, farmhouse for new year party near delhi, new year party ideas at farmhouse for friends, new year farmhouse booking cost delhi ncr, can you play music after 10 pm on new year's eve delhi, overnight farmhouse stay for new year
+  why now: NYE is Thu 31 Dec 2026 (1 Jan is a Friday → long-weekend stays); groups shortlist and book farmhouses Oct–mid-Nov and search peaks Nov–Dec, so publishing now gives 3–7 weeks to index before peak; Tribune reported ~1,500 farmhouse NYE parties in Gurugram alone for 2024–25 (demand signal)
+  competition: page 1 is ticketed-event listicles (TravelTriangle, Outlook), Expedia/Airbnb farmhouse listings and a CurlyTales villa roundup; none give a private-farmhouse NYE planning guide with 2026 dates, 10 PM loudspeaker/P-10/firecracker rules, cost breakdown, farmhouse-vs-ticketed table, run-of-show and checklist, so the long-tail guide query is beatable
+  linked from: /blogs/winter-bonfire-party-farmhouse-delhi-ncr, /blogs/best-airbnb-farmhouse-for-private-party-delhi-ncr

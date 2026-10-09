@@ -468,7 +468,14 @@ export default function BlogPage() {
           </li>
           <li>
             <strong>New Year&apos;s Eve countdown:</strong> a DJ indoors after
-            10 PM, a midnight toast and an overnight stay.
+            10 PM, a midnight toast and an overnight stay (see our{" "}
+            <Link
+              href="/blogs/new-year-eve-party-farmhouse-delhi-ncr"
+              className="underline"
+            >
+              New Year&apos;s Eve farmhouse party guide
+            </Link>
+            ).
           </li>
           <li>
             <strong>Lohri night:</strong> popcorn, rewri, gajak and peanuts,

@@ -147,7 +147,14 @@ export default function BlogPage() {
           <li>Corporate Team Outings</li>
           <li>Engagement Celebrations</li>
           <li>Graduation Parties</li>
-          <li>New Year&apos;s Eve Parties</li>
+          <li>
+            <Link
+              href="/blogs/new-year-eve-party-farmhouse-delhi-ncr"
+              className="underline"
+            >
+              New Year&apos;s Eve Parties
+            </Link>
+          </li>
           <li>Festive Gatherings</li>
           <li>Weekend Staycations</li>
         </ul>
