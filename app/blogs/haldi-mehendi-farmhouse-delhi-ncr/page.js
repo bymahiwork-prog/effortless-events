@@ -318,7 +318,14 @@ export default function BlogPage() {
         <p className="mb-8 text-base text-gray-600">
           This is an illustrative schedule, not a rule. Bridal mehendi often
           takes four to six hours, so many brides start it the day before or
-          early in the morning.
+          early in the morning. If the evening becomes a full sangeet, see our{" "}
+          <Link
+            href="/blogs/sangeet-night-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            sangeet night at a farmhouse guide
+          </Link>{" "}
+          for stage, sound and music cut-off planning.
         </p>
 
         <h3 className="text-black text-2xl font-semibold mt-8 mb-4">

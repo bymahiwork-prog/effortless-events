@@ -217,7 +217,14 @@ export default function BlogPage() {
               haldi and mehendi at the farmhouse
             </Link>{" "}
             in the morning, pheras at the muhurat and dinner on the lawn
-            without moving guests.
+            without moving guests — or a{" "}
+            <Link
+              href="/blogs/sangeet-night-farmhouse-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              sangeet night at the farmhouse
+            </Link>{" "}
+            the evening before.
           </li>
           <li>
             <strong>Control:</strong> many farmhouses let you choose your own

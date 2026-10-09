@@ -133,6 +133,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [ ] Questions to ask a farmhouse owner before booking
 - [ ] Event planner vs DIY: when it is worth hiring help for a private party
 - [x] Corporate Diwali party in Delhi NCR: venue, budget and planning guide
+- [x] Sangeet night at a farmhouse in Delhi NCR: dates, music rules, setup and budget
 
 ## Published log
 
@@ -183,3 +184,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: NYE is Thu 31 Dec 2026 (1 Jan is a Friday → long-weekend stays); groups shortlist and book farmhouses Oct–mid-Nov and search peaks Nov–Dec, so publishing now gives 3–7 weeks to index before peak; Tribune reported ~1,500 farmhouse NYE parties in Gurugram alone for 2024–25 (demand signal)
   competition: page 1 is ticketed-event listicles (TravelTriangle, Outlook), Expedia/Airbnb farmhouse listings and a CurlyTales villa roundup; none give a private-farmhouse NYE planning guide with 2026 dates, 10 PM loudspeaker/P-10/firecracker rules, cost breakdown, farmhouse-vs-ticketed table, run-of-show and checklist, so the long-tail guide query is beatable
   linked from: /blogs/winter-bonfire-party-farmhouse-delhi-ncr, /blogs/best-airbnb-farmhouse-for-private-party-delhi-ncr
+2026-10-09 18:00 IST — Sangeet Night at a Farmhouse in Delhi NCR: 2026 Guide — /blogs/sangeet-night-farmhouse-delhi-ncr
+  primary: sangeet at farmhouse delhi ncr | secondary: sangeet night venue farmhouse gurgaon, sangeet and cocktail night at farmhouse, sangeet ceremony cost delhi ncr, can you play dj after 10 pm at a farmhouse in delhi, sangeet stage and dance floor setup
+  why now: 2026 wedding season reopens 20 Nov; muhurats 21, 24–26 Nov and 1–4, 11–13 Dec put sangeet nights on 19 Nov–12 Dec (6–9 weeks out), so families book evening farmhouse slots in October; Jan–Feb 2027 muhurats extend demand; Delhi Police's Apr 2025 prior-permission loudspeaker order makes the 10 PM cut-off a live planning question
+  competition: page 1 for sangeet venue queries is all listing pages (Spalba, VenueLook locality lists, WedMeGood profiles) plus generic/US sangeet-programme blogs (The Knot, Folksee); none give a Delhi NCR farmhouse guide with 2026 dates, music cut-off rules, stage/sound spec, cost breakdown, run-of-show, sangeet+cocktail comparison and checklist, so the long-tail guide query is beatable
+  linked from: /blogs/haldi-mehendi-farmhouse-delhi-ncr, /blogs/intimate-farmhouse-wedding-delhi-ncr
