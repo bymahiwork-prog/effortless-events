@@ -205,6 +205,13 @@ export default function BlogPage() {
             className="text-black underline font-semibold"
           >
             corporate Diwali party
+          </Link>{" "}
+          or an{" "}
+          <Link
+            href="/blogs/christmas-office-party-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            office Christmas party
           </Link>
           .
         </p>

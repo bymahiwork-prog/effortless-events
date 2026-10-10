@@ -106,7 +106,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [x] New Year's Eve party at a private farmhouse in Delhi NCR
 - [x] Diwali party ideas at a farmhouse for family and friends
 - [ ] Holi party at a farmhouse in Delhi NCR: planning and safety tips
-- [ ] Christmas party venues for offices in Delhi NCR
+- [x] Christmas party venues for offices in Delhi NCR
 - [ ] Corporate offsite venues near Delhi for team outings
 - [ ] Team-building activities for corporate outings in Delhi NCR
 - [ ] Product launch event planning in Delhi NCR
@@ -189,3 +189,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: 2026 wedding season reopens 20 Nov; muhurats 21, 24–26 Nov and 1–4, 11–13 Dec put sangeet nights on 19 Nov–12 Dec (6–9 weeks out), so families book evening farmhouse slots in October; Jan–Feb 2027 muhurats extend demand; Delhi Police's Apr 2025 prior-permission loudspeaker order makes the 10 PM cut-off a live planning question
   competition: page 1 for sangeet venue queries is all listing pages (Spalba, VenueLook locality lists, WedMeGood profiles) plus generic/US sangeet-programme blogs (The Knot, Folksee); none give a Delhi NCR farmhouse guide with 2026 dates, music cut-off rules, stage/sound spec, cost breakdown, run-of-show, sangeet+cocktail comparison and checklist, so the long-tail guide query is beatable
   linked from: /blogs/haldi-mehendi-farmhouse-delhi-ncr, /blogs/intimate-farmhouse-wedding-delhi-ncr
+2026-10-10 10:00 IST — Office Christmas Party in Delhi NCR: Venue & Planning Guide — /blogs/christmas-office-party-delhi-ncr
+  primary: office christmas party delhi ncr | secondary: christmas party venue for office gurgaon, corporate christmas party at farmhouse, office christmas party ideas india, christmas party budget per head delhi, year-end office party delhi ncr, secret santa budget for office
+  why now: Christmas is Fri 25 Dec 2026; office parties cluster on Fri 11 Dec–Thu 24 Dec (9–11 weeks out) and HR books venues mid-Oct to early Nov (1–4 weeks out), competing with wedding-season dates; search builds through Nov and peaks early Dec; VenueLook runs dedicated "Christmas party venues" categories for Gurgaon and Noida and Keka/PocketHRMS publish 2026 office-Christmas idea lists (live demand)
+  competition: page 1 is listing pages (VenueLook locality lists, ChooseYourVenue hotel pages), a magicpin pub roundup and generic UK/HR-software idea listicles (Tagvenue, Keka, PocketHRMS); none give a Delhi NCR planning guide with 2026 dates, venue-format and per-head cost tables, IMD cold/fog and GRAP context, music/P-10 rules, run-of-show and checklist, so the long-tail query is beatable
+  linked from: /blogs/corporate-event-ideas-delhi-ncr, /blogs/corporate-diwali-party-delhi-ncr

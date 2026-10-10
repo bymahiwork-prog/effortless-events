@@ -720,6 +720,14 @@ export default function BlogPage() {
           signed off, and a venue that is easy to reach after work. Make
           those this week, get the venue rules in writing, and the rest —
           lights, food, music and a few friendly contests — falls into place.
+          Planning the year-end celebration too? See our{" "}
+          <Link
+            href="/blogs/christmas-office-party-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            office Christmas party guide for Delhi NCR
+          </Link>
+          .
         </p>
       </article>
 
