@@ -1070,7 +1070,15 @@ export default function BlogPage() {
           <li>
             <strong>6. Is outside alcohol allowed?</strong>
             <br />
-            Confirm the venue's policy before planning your drinks.
+            Confirm the venue's policy before planning your drinks, and
+            check which liquor licence applies — our guide to{" "}
+            <Link
+              href="/blogs/farmhouse-rules-before-booking-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              farmhouse rules to check before booking
+            </Link>{" "}
+            explains it.
           </li>
 
           <li>

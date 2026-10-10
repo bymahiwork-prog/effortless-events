@@ -101,7 +101,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [x] Small intimate wedding at a farmhouse in Delhi NCR: complete guide
 - [ ] Farmhouse wedding cost in Delhi NCR in 2026
 - [ ] Day-use farmhouse vs overnight farmhouse stay: which to book
-- [ ] Farmhouse rules to check before booking: music, alcohol, guests, timings
+- [x] Farmhouse rules to check before booking: music, alcohol, guests, timings
 - [ ] Kids' birthday party at a farmhouse: planning guide for parents
 - [x] New Year's Eve party at a private farmhouse in Delhi NCR
 - [x] Diwali party ideas at a farmhouse for family and friends
@@ -130,7 +130,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [ ] Farewell party venues for colleagues and college batches in Delhi NCR
 - [ ] Reunion party planning at a farmhouse
 - [ ] How to book a farmhouse safely: avoiding scams and hidden charges
-- [ ] Questions to ask a farmhouse owner before booking
+- [x] Questions to ask a farmhouse owner before booking (covered as a section of the farmhouse-rules post)
 - [ ] Event planner vs DIY: when it is worth hiring help for a private party
 - [x] Corporate Diwali party in Delhi NCR: venue, budget and planning guide
 - [x] Sangeet night at a farmhouse in Delhi NCR: dates, music rules, setup and budget
@@ -194,3 +194,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: Christmas is Fri 25 Dec 2026; office parties cluster on Fri 11 Dec–Thu 24 Dec (9–11 weeks out) and HR books venues mid-Oct to early Nov (1–4 weeks out), competing with wedding-season dates; search builds through Nov and peaks early Dec; VenueLook runs dedicated "Christmas party venues" categories for Gurgaon and Noida and Keka/PocketHRMS publish 2026 office-Christmas idea lists (live demand)
   competition: page 1 is listing pages (VenueLook locality lists, ChooseYourVenue hotel pages), a magicpin pub roundup and generic UK/HR-software idea listicles (Tagvenue, Keka, PocketHRMS); none give a Delhi NCR planning guide with 2026 dates, venue-format and per-head cost tables, IMD cold/fog and GRAP context, music/P-10 rules, run-of-show and checklist, so the long-tail query is beatable
   linked from: /blogs/corporate-event-ideas-delhi-ncr, /blogs/corporate-diwali-party-delhi-ncr
+2026-10-10 18:00 IST — Farmhouse Rules to Check Before Booking in Delhi NCR — /blogs/farmhouse-rules-before-booking-delhi-ncr
+  primary: farmhouse rules before booking delhi ncr | secondary: questions to ask farmhouse owner before booking, p-10 licence for farmhouse party delhi, farmhouse party music timing delhi, farmhouse security deposit rules, farmhouse guest limit and overnight stay rules, farmhouse booking checklist
+  why now: Oct–Nov is peak farmhouse booking window (Diwali card parties 24 Oct–7 Nov, wedding season from 20 Nov, office Christmas parties and NYE booked now); Delhi Excise reported 8,237 P-10 licences Oct 2022–Feb 2023 (festive/wedding months), Delhi Police's Apr 2025 loudspeaker order and 2025 festive midnight relaxation keep music/liquor rules a live question; supports every seasonal post published this month
+  competition: page 1 for rules/questions-before-booking queries is VenueLook locality listings, property T&C pages, Airbnb/Spalba listings and foreign farm-venue PDFs; no Delhi NCR guide covering music cut-off, P-10/state liquor permits, guest/overnight caps, vendor and deposit terms with a question list and checklist, so the long-tail query is beatable
+  linked from: /blogs/how-to-plan-farmhouse-party-delhi-ncr-2026, /blogs/how-much-does-a-farmhouse-party-cost-in-delhi-ncr-2026

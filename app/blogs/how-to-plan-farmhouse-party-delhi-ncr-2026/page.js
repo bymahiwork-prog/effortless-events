@@ -727,7 +727,16 @@ export default function BlogPage() {
         </h2>
 
         <p className="mb-8">
-          Before making your final booking, go through this checklist:
+          Before making your final booking, go through this checklist. For
+          the legal side — music cut-offs, liquor licences and guest limits —
+          see our guide to{" "}
+          <Link
+            href="/blogs/farmhouse-rules-before-booking-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            farmhouse rules to check before booking
+          </Link>
+          .
         </p>
 
         <ul className="space-y-3 mb-12">
