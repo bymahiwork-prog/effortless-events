@@ -123,7 +123,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [ ] Best farmhouses in Faridabad for private events
 - [ ] Airbnb villas near Delhi for a family staycation
 - [ ] Workation stays near Delhi: Airbnb villas for remote work
-- [ ] Group stay vs hotel rooms for out-of-town wedding guests in Delhi NCR
+- [x] Group stay vs hotel rooms for out-of-town wedding guests in Delhi NCR
 - [x] Engagement ceremony venues in Delhi NCR: farmhouse vs banquet hall
 - [ ] Baby shower venue ideas in Delhi NCR
 - [ ] Retirement party and milestone birthday ideas for parents
@@ -204,3 +204,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: 2026 wedding season reopens 20 Nov with muhurats 21, 24–26 Nov and 1–4, 11–13 Dec (6–9 weeks out); families compare venue quotes and fix budgets in Oct before paying advances; Jan–Feb 2027 muhurats extend demand; listing sites (SloShout, The Wedding Company) actively publish per-plate prices for Chattarpur wedding farmhouses (live demand)
   competition: page 1 for farmhouse wedding cost/price queries is all aggregator listing pages (WedMeGood locality lists, SloShout, PartyVillas, VenuePool, WeddingBanquets, The Wedding Company) with conflicting per-plate figures and no budget guide; none explain per-plate vs flat-rental pricing, give guest-count budgets, a line-item breakdown, hidden charges or a checklist, so the long-tail cost-guide query is beatable; distinct from intimate-wedding post (30–150 guests) and farmhouse-party-cost post
   linked from: /blogs/intimate-farmhouse-wedding-delhi-ncr, /blogs/how-much-does-a-farmhouse-party-cost-in-delhi-ncr-2026
+2026-10-11 18:00 IST — Wedding Guest Accommodation in Delhi NCR: 2026 Guide — /blogs/wedding-guest-accommodation-delhi-ncr
+  primary: wedding guest accommodation delhi ncr | secondary: hotel room block for wedding guests delhi, villa for wedding guests gurgaon, farmhouse with rooms for wedding delhi, how many rooms to book for wedding guests, outstation wedding guests stay delhi
+  why now: 2026 wedding season reopens 20 Nov with muhurats 21, 24–26 Nov and 1–4, 11–13 Dec (6–9 weeks out); families book guest rooms once venues are fixed in Oct; Dec 2025 coverage (NewsKarnataka) reported Delhi's ~17–18k branded rooms at 76–80% occupancy with last-available rooms 10–25% dearer as families booked whole properties for weddings
+  competition: page 1 for wedding guest accommodation/room-block queries is US/UK etiquette and room-block content (The Knot, Wedding-Spot, Engine, WeddingWire.ca, Mumsnet) plus Delhi venue listing pages (WedMeGood, Spalba, magicpin); no Delhi NCR guide comparing hotel blocks vs villas vs farmhouse rooms with Indian room maths, area-wise stay map, cost estimates and a 2026 timeline, so the long-tail query is beatable; distinct from the generic Airbnb group-stay post
+  linked from: /blogs/farmhouse-wedding-cost-delhi-ncr, /blogs/intimate-farmhouse-wedding-delhi-ncr

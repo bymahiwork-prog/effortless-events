@@ -162,8 +162,14 @@ export default function BlogPage() {
         <p className="mb-8 text-base text-gray-600">
           Estimates assume a mid-range menu of about ₹1,500–₹3,000 per plate
           and one evening wedding function. They exclude alcohol, outfits,
-          jewellery, pre-wedding functions and guest accommodation. Treat
-          them as a planning range, not a quote.
+          jewellery, pre-wedding functions and{" "}
+          <Link
+            href="/blogs/wedding-guest-accommodation-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            wedding guest accommodation
+          </Link>
+          . Treat them as a planning range, not a quote.
         </p>
 
         <p className="mb-8">

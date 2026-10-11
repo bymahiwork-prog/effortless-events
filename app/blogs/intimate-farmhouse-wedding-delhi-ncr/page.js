@@ -237,7 +237,14 @@ export default function BlogPage() {
           <li>
             <strong>Stay options:</strong> some properties have rooms for the
             couple and close family, so getting ready and the after-party
-            happen on site.
+            happen on site. For relatives flying in, see our guide to{" "}
+            <Link
+              href="/blogs/wedding-guest-accommodation-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              wedding guest accommodation in Delhi NCR
+            </Link>
+            .
           </li>
         </ul>
 
