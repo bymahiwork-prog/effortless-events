@@ -434,7 +434,15 @@ export default function BlogPage() {
           As a rough estimate, an intimate farmhouse wedding in Delhi NCR for
           about 75 guests often costs around ₹4 lakh to ₹13 lakh for the main
           wedding day. Venue rent on a muhurat date, the catering menu and
-          décor make up most of the bill. Here is an illustrative breakdown.
+          décor make up most of the bill. Here is an illustrative breakdown;
+          for 150–500 guests, see our{" "}
+          <Link
+            href="/blogs/farmhouse-wedding-cost-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            farmhouse wedding cost guide
+          </Link>
+          .
         </p>
 
         <div className="overflow-x-auto mb-8">

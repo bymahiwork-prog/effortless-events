@@ -116,7 +116,14 @@ export default function BlogPage() {
           and other arrangements. The good news is that a farmhouse party can
           be planned for almost any budget — whether you're organizing a small
           birthday celebration with close friends or a large private event
-          with 100+ guests.
+          with 100+ guests. (Budgeting for a wedding instead? See our{" "}
+          <Link
+            href="/blogs/farmhouse-wedding-cost-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            farmhouse wedding cost in Delhi NCR
+          </Link>{" "}
+          guide.)
         </p>
 
         <p className="mb-8">

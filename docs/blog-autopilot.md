@@ -99,7 +99,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [ ] Anniversary party ideas at a private farmhouse in Delhi NCR
 - [x] Haldi and mehendi venues: why farmhouses work for pre-wedding functions
 - [x] Small intimate wedding at a farmhouse in Delhi NCR: complete guide
-- [ ] Farmhouse wedding cost in Delhi NCR in 2026
+- [x] Farmhouse wedding cost in Delhi NCR in 2026
 - [ ] Day-use farmhouse vs overnight farmhouse stay: which to book
 - [x] Farmhouse rules to check before booking: music, alcohol, guests, timings
 - [ ] Kids' birthday party at a farmhouse: planning guide for parents
@@ -199,3 +199,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: Oct–Nov is peak farmhouse booking window (Diwali card parties 24 Oct–7 Nov, wedding season from 20 Nov, office Christmas parties and NYE booked now); Delhi Excise reported 8,237 P-10 licences Oct 2022–Feb 2023 (festive/wedding months), Delhi Police's Apr 2025 loudspeaker order and 2025 festive midnight relaxation keep music/liquor rules a live question; supports every seasonal post published this month
   competition: page 1 for rules/questions-before-booking queries is VenueLook locality listings, property T&C pages, Airbnb/Spalba listings and foreign farm-venue PDFs; no Delhi NCR guide covering music cut-off, P-10/state liquor permits, guest/overnight caps, vendor and deposit terms with a question list and checklist, so the long-tail query is beatable
   linked from: /blogs/how-to-plan-farmhouse-party-delhi-ncr-2026, /blogs/how-much-does-a-farmhouse-party-cost-in-delhi-ncr-2026
+2026-10-11 10:00 IST — Farmhouse Wedding Cost in Delhi NCR: 2026 Budget Guide — /blogs/farmhouse-wedding-cost-delhi-ncr
+  primary: farmhouse wedding cost delhi ncr | secondary: wedding farmhouse per plate price delhi, farmhouse wedding budget for 300 guests, farmhouse vs banquet hall wedding cost, chattarpur farmhouse wedding price, hidden charges wedding farmhouse
+  why now: 2026 wedding season reopens 20 Nov with muhurats 21, 24–26 Nov and 1–4, 11–13 Dec (6–9 weeks out); families compare venue quotes and fix budgets in Oct before paying advances; Jan–Feb 2027 muhurats extend demand; listing sites (SloShout, The Wedding Company) actively publish per-plate prices for Chattarpur wedding farmhouses (live demand)
+  competition: page 1 for farmhouse wedding cost/price queries is all aggregator listing pages (WedMeGood locality lists, SloShout, PartyVillas, VenuePool, WeddingBanquets, The Wedding Company) with conflicting per-plate figures and no budget guide; none explain per-plate vs flat-rental pricing, give guest-count budgets, a line-item breakdown, hidden charges or a checklist, so the long-tail cost-guide query is beatable; distinct from intimate-wedding post (30–150 guests) and farmhouse-party-cost post
+  linked from: /blogs/intimate-farmhouse-wedding-delhi-ncr, /blogs/how-much-does-a-farmhouse-party-cost-in-delhi-ncr-2026
