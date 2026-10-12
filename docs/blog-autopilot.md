@@ -107,7 +107,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [x] Diwali party ideas at a farmhouse for family and friends
 - [ ] Holi party at a farmhouse in Delhi NCR: planning and safety tips
 - [x] Christmas party venues for offices in Delhi NCR
-- [ ] Corporate offsite venues near Delhi for team outings
+- [x] Corporate offsite venues near Delhi for team outings (covered as corporate team outing at a farmhouse)
 - [ ] Team-building activities for corporate outings in Delhi NCR
 - [ ] Product launch event planning in Delhi NCR
 - [ ] Annual day and award night planning for companies in Delhi NCR
@@ -214,3 +214,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: Oct–Dec is peak farmhouse booking (Diwali card parties to 8 Nov, wedding season from 20 Nov, office Christmas parties, NYE Thu 31 Dec) and rushed bookings are what fake listings exploit; I4C/MHA Apr 2025 alert on fake booking sites, social pages, WhatsApp and paid search ads, Delhi Police Jul 2025 arrest over a cloned hotel site (₹33,000 UPI), and Instagram villa-scam cases (Pune 2023) show live risk; supports every seasonal post this month
   competition: page 1 for farmhouse/villa booking scam and verify-before-advance queries is news reports (Goa villa rackets, The Week), a foreign opinion piece (Oman Observer), a hotel-tech blog on fake hotel sites (AxisRooms) and UK/Gulf property-portal help pages; no India/Delhi NCR farmhouse guide with red flags, a verification sequence, payment-safety table, booking-route comparison and 1930/cybercrime.gov.in steps, so the long-tail query is beatable; distinct from the farmhouse-rules post (rules/terms, not fraud)
   linked from: /blogs/farmhouse-rules-before-booking-delhi-ncr, /blogs/best-airbnb-farmhouse-for-private-party-delhi-ncr
+2026-10-12 17:55 IST — Corporate Team Outing at a Farmhouse Near Delhi: 2026 Guide — /blogs/corporate-team-outing-farmhouse-delhi-ncr
+  primary: corporate team outing at farmhouse near delhi | secondary: one day team outing near delhi, corporate offsite near gurgaon, team outing budget per person delhi, team building activities at farmhouse, corporate day outing package delhi ncr
+  why now: Delhi NCR's outdoor outing season runs late Oct–early Mar (mild, dry days); HR teams plan Nov–Feb outings 4–8 weeks ahead, and Nov–Feb Fridays/Saturdays compete with the 20 Nov wedding-season reopening, Christmas and NYE bookings; listing sites (VenueLook "corporate offsite venues in Gurgaon", Spalba day-outing farm listings) and 2026 outing roundups (Trivenicabs) show live demand
+  competition: page 1 for team outing/offsite near Delhi is Thrillophilia's "best team outing places" list, resort and hotel blogs (Jaypee, Heritage Village), old BusinessWorld/YourStory listicles and Spalba/Airbnb farm listings; Bangalore has day-outing budget guides but no Delhi NCR farmhouse guide gives season-by-month, per-head budget breakdown, area-by-office-base table, run-of-day and checklist, so the long-tail farmhouse query is beatable; distinct from corporate-event-ideas (format ideas) and activities-for-groups (activity list)
+  linked from: /blogs/corporate-event-ideas-delhi-ncr, /blogs/best-farmhouse-activities-for-groups

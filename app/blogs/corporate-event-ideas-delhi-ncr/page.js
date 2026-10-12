@@ -136,7 +136,15 @@ export default function BlogPage() {
           <strong>corporate team building events Delhi</strong> companies
           organize can help employees interact outside their usual work
           environment. Dividing employees into teams and creating friendly
-          competitions can make the event energetic and engaging.
+          competitions can make the event energetic and engaging. For dates,
+          budgets and a day plan, see our guide to a{" "}
+          <Link
+            href="/blogs/corporate-team-outing-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            corporate team outing at a farmhouse near Delhi
+          </Link>
+          .
         </p>
 
         {/* ===================================================== */}

@@ -594,7 +594,14 @@ export default function BlogPage() {
           A{" "}
           <strong>farmhouse near Delhi for corporate outings</strong> can
           therefore be an alternative to a traditional hotel conference
-          venue.
+          venue. Our{" "}
+          <Link
+            href="/blogs/corporate-team-outing-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            corporate team outing planning guide
+          </Link>{" "}
+          covers budgets, timings and a booking checklist.
         </p>
 
         {/* ===================================================== */}
