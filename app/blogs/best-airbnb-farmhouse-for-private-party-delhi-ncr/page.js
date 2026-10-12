@@ -290,7 +290,14 @@ export default function BlogPage() {
           <li>
             <strong>Is there a security deposit?</strong><br />
             Many Airbnb properties ask for a refundable security deposit.
-            Understand the terms before making payment.
+            Understand the terms before making payment, and{" "}
+            <Link
+              href="/blogs/how-to-book-farmhouse-safely-delhi-ncr"
+              className="underline"
+            >
+              verify the listing before paying any advance
+            </Link>
+            .
           </li>
 
           <li>

@@ -576,6 +576,17 @@ export default function Page() {
         </ul>
 
         <p className="mb-8">
+          Booking from an Instagram page or an unknown number? Read{" "}
+          <Link
+            href="/blogs/how-to-book-farmhouse-safely-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            how to book a farmhouse safely and avoid scams
+          </Link>{" "}
+          before you send the advance.
+        </p>
+
+        <p className="mb-8">
           Once the rules are clear, the rest of the planning — theme, food,
           décor and the guest list — gets much easier. Our{" "}
           <Link

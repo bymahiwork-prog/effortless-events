@@ -129,7 +129,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [ ] Retirement party and milestone birthday ideas for parents
 - [ ] Farewell party venues for colleagues and college batches in Delhi NCR
 - [ ] Reunion party planning at a farmhouse
-- [ ] How to book a farmhouse safely: avoiding scams and hidden charges
+- [x] How to book a farmhouse safely: avoiding scams and hidden charges
 - [x] Questions to ask a farmhouse owner before booking (covered as a section of the farmhouse-rules post)
 - [ ] Event planner vs DIY: when it is worth hiring help for a private party
 - [x] Corporate Diwali party in Delhi NCR: venue, budget and planning guide
@@ -209,3 +209,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: 2026 wedding season reopens 20 Nov with muhurats 21, 24–26 Nov and 1–4, 11–13 Dec (6–9 weeks out); families book guest rooms once venues are fixed in Oct; Dec 2025 coverage (NewsKarnataka) reported Delhi's ~17–18k branded rooms at 76–80% occupancy with last-available rooms 10–25% dearer as families booked whole properties for weddings
   competition: page 1 for wedding guest accommodation/room-block queries is US/UK etiquette and room-block content (The Knot, Wedding-Spot, Engine, WeddingWire.ca, Mumsnet) plus Delhi venue listing pages (WedMeGood, Spalba, magicpin); no Delhi NCR guide comparing hotel blocks vs villas vs farmhouse rooms with Indian room maths, area-wise stay map, cost estimates and a 2026 timeline, so the long-tail query is beatable; distinct from the generic Airbnb group-stay post
   linked from: /blogs/farmhouse-wedding-cost-delhi-ncr, /blogs/intimate-farmhouse-wedding-delhi-ncr
+2026-10-12 10:00 IST — How to Book a Farmhouse Safely in Delhi NCR (Avoid Scams) — /blogs/how-to-book-farmhouse-safely-delhi-ncr
+  primary: how to book a farmhouse safely delhi ncr | secondary: farmhouse booking scam delhi, fake farmhouse listing instagram, is it safe to pay advance for farmhouse booking, how to verify farmhouse owner before booking, online booking fraud complaint 1930
+  why now: Oct–Dec is peak farmhouse booking (Diwali card parties to 8 Nov, wedding season from 20 Nov, office Christmas parties, NYE Thu 31 Dec) and rushed bookings are what fake listings exploit; I4C/MHA Apr 2025 alert on fake booking sites, social pages, WhatsApp and paid search ads, Delhi Police Jul 2025 arrest over a cloned hotel site (₹33,000 UPI), and Instagram villa-scam cases (Pune 2023) show live risk; supports every seasonal post this month
+  competition: page 1 for farmhouse/villa booking scam and verify-before-advance queries is news reports (Goa villa rackets, The Week), a foreign opinion piece (Oman Observer), a hotel-tech blog on fake hotel sites (AxisRooms) and UK/Gulf property-portal help pages; no India/Delhi NCR farmhouse guide with red flags, a verification sequence, payment-safety table, booking-route comparison and 1930/cybercrime.gov.in steps, so the long-tail query is beatable; distinct from the farmhouse-rules post (rules/terms, not fraud)
+  linked from: /blogs/farmhouse-rules-before-booking-delhi-ncr, /blogs/best-airbnb-farmhouse-for-private-party-delhi-ncr
