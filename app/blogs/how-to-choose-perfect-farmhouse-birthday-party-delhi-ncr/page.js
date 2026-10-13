@@ -448,6 +448,17 @@ export default function BlogPage() {
         </ul>
 
         <p className="mb-8">
+          Planning for younger guests? Our guide to a{" "}
+          <Link
+            href="/blogs/kids-birthday-party-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            kids&apos; birthday party at a farmhouse
+          </Link>{" "}
+          covers age-wise games, pool safety and timings.
+        </p>
+
+        <p className="mb-8">
           Before bringing decorations, confirm what is permitted at the
           property.
         </p>

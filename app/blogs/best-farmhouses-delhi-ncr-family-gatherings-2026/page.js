@@ -469,7 +469,15 @@ export default function BlogPage() {
 
         <p className="mb-8">
           If children or older family members will use the pool, discuss the
-          property's safety arrangements before booking.
+          property's safety arrangements before booking. For a child-focused
+          celebration, see our{" "}
+          <Link
+            href="/blogs/kids-birthday-party-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            kids&apos; birthday party farmhouse guide
+          </Link>
+          .
         </p>
 
 

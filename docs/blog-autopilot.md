@@ -102,7 +102,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [x] Farmhouse wedding cost in Delhi NCR in 2026
 - [ ] Day-use farmhouse vs overnight farmhouse stay: which to book
 - [x] Farmhouse rules to check before booking: music, alcohol, guests, timings
-- [ ] Kids' birthday party at a farmhouse: planning guide for parents
+- [x] Kids' birthday party at a farmhouse: planning guide for parents
 - [x] New Year's Eve party at a private farmhouse in Delhi NCR
 - [x] Diwali party ideas at a farmhouse for family and friends
 - [ ] Holi party at a farmhouse in Delhi NCR: planning and safety tips
@@ -219,3 +219,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: Delhi NCR's outdoor outing season runs late Oct–early Mar (mild, dry days); HR teams plan Nov–Feb outings 4–8 weeks ahead, and Nov–Feb Fridays/Saturdays compete with the 20 Nov wedding-season reopening, Christmas and NYE bookings; listing sites (VenueLook "corporate offsite venues in Gurgaon", Spalba day-outing farm listings) and 2026 outing roundups (Trivenicabs) show live demand
   competition: page 1 for team outing/offsite near Delhi is Thrillophilia's "best team outing places" list, resort and hotel blogs (Jaypee, Heritage Village), old BusinessWorld/YourStory listicles and Spalba/Airbnb farm listings; Bangalore has day-outing budget guides but no Delhi NCR farmhouse guide gives season-by-month, per-head budget breakdown, area-by-office-base table, run-of-day and checklist, so the long-tail farmhouse query is beatable; distinct from corporate-event-ideas (format ideas) and activities-for-groups (activity list)
   linked from: /blogs/corporate-event-ideas-delhi-ncr, /blogs/best-farmhouse-activities-for-groups
+2026-10-13 10:00 IST — Kids' Birthday Party at a Farmhouse in Delhi NCR: 2026 Guide — /blogs/kids-birthday-party-farmhouse-delhi-ncr
+  primary: kids birthday party at farmhouse delhi ncr | secondary: kids birthday party venue gurgaon outdoor, first birthday party at farmhouse delhi, kids birthday party cost delhi ncr, outdoor birthday party games for kids, is a farmhouse safe for a kids party
+  why now: Delhi NCR's outdoor kids'-party season runs mid-Nov to Feb (mild sunny afternoons); Children's Day (Sat 14 Nov), Christmas (Fri 25 Dec) and winter school breaks fall 4–12 weeks out, and Nov–Feb weekends compete with the 20 Nov wedding-season reopening, so parents shortlist farmhouses now; VenueLook runs dedicated "kids birthday party venues" locality pages and Expedia/Travelocity list Noida "farm house for birthday party" properties (live demand)
+  competition: page 1 for kids' birthday farmhouse/venue queries is VenueLook locality listings, Expedia/Travelocity property pages, parasite/spam pages and an LBB kids'-organiser list; no Delhi NCR guide gives season-by-month timing, age-wise activity table, pool/gate safety walk-through, per-child cost breakdown, area table, 3-hour run-of-show and checklist, so the long-tail query is beatable; distinct from the two adult/general birthday posts (venue roundup and how-to-choose)
+  linked from: /blogs/how-to-choose-perfect-farmhouse-birthday-party-delhi-ncr, /blogs/best-farmhouses-delhi-ncr-family-gatherings-2026
