@@ -219,8 +219,14 @@ export default function BlogPage() {
         <ul className="list-disc pl-8 space-y-3 mb-10">
           <li>
             <strong>Mid-November to early December:</strong> pleasant early
-            winter evenings, good for birthdays, reunions and pre-wedding
-            family dinners.
+            winter evenings, good for birthdays,{" "}
+            <Link
+              href="/blogs/reunion-party-farmhouse-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              school and college reunions
+            </Link>{" "}
+            and pre-wedding family dinners.
           </li>
           <li>
             <strong>Saturdays 5, 12 and 19 December 2026:</strong> office

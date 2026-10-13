@@ -76,8 +76,14 @@ export default function BlogPage() {
         </p>
 
         <p className="mb-8">
-          Whether you are organizing a birthday party, family gathering,
-          friends&apos; reunion, anniversary, pre-wedding celebration,
+          Whether you are organizing a birthday party, family gathering,{" "}
+          <Link
+            href="/blogs/reunion-party-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            friends&apos; reunion
+          </Link>
+          , anniversary, pre-wedding celebration,
           corporate outing, or weekend party, choosing the right venue can
           have a major impact on the overall experience. Planning a small
           wedding? See our{" "}

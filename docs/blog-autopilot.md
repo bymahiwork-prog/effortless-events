@@ -128,7 +128,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [ ] Baby shower venue ideas in Delhi NCR
 - [ ] Retirement party and milestone birthday ideas for parents
 - [ ] Farewell party venues for colleagues and college batches in Delhi NCR
-- [ ] Reunion party planning at a farmhouse
+- [x] Reunion party planning at a farmhouse
 - [x] How to book a farmhouse safely: avoiding scams and hidden charges
 - [x] Questions to ask a farmhouse owner before booking (covered as a section of the farmhouse-rules post)
 - [ ] Event planner vs DIY: when it is worth hiring help for a private party
@@ -224,3 +224,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: Delhi NCR's outdoor kids'-party season runs mid-Nov to Feb (mild sunny afternoons); Children's Day (Sat 14 Nov), Christmas (Fri 25 Dec) and winter school breaks fall 4–12 weeks out, and Nov–Feb weekends compete with the 20 Nov wedding-season reopening, so parents shortlist farmhouses now; VenueLook runs dedicated "kids birthday party venues" locality pages and Expedia/Travelocity list Noida "farm house for birthday party" properties (live demand)
   competition: page 1 for kids' birthday farmhouse/venue queries is VenueLook locality listings, Expedia/Travelocity property pages, parasite/spam pages and an LBB kids'-organiser list; no Delhi NCR guide gives season-by-month timing, age-wise activity table, pool/gate safety walk-through, per-child cost breakdown, area table, 3-hour run-of-show and checklist, so the long-tail query is beatable; distinct from the two adult/general birthday posts (venue roundup and how-to-choose)
   linked from: /blogs/how-to-choose-perfect-farmhouse-birthday-party-delhi-ncr, /blogs/best-farmhouses-delhi-ncr-family-gatherings-2026
+2026-10-13 18:00 IST — Reunion Party at a Farmhouse in Delhi NCR: 2026 Guide — /blogs/reunion-party-farmhouse-delhi-ncr
+  primary: reunion party at farmhouse delhi ncr | secondary: school reunion venue delhi ncr, college batch reunion farmhouse gurgaon, alumni meet venue delhi, reunion party cost per person delhi, how to organise a school reunion, reunion party ideas for friends
+  why now: batch reunions cluster in the winter holiday window when classmates living abroad or in other cities are home — Diwali (Sun 8 Nov), Christmas long weekend (Fri 25–Sun 27 Dec), New Year long weekend (Fri 1–Sun 3 Jan 2027) and Republic Day (Tue 26 Jan) sit 4–15 weeks out, so organisers start group chats, date polls and venue shortlists in October; VenueLook runs dozens of dedicated "class reunion venues" locality pages for Delhi, Gurgaon and Greater Noida and refreshed its alumni-meet guide in Apr 2026 (live demand)
+  competition: page 1 for reunion venue/planning queries is VenueLook locality listing pages, Spalba property pages, spam/parasite pages, generic US checklist.com reunion checklists and a generic VenueLook alumni-meet tips post with no budgets or Delhi specifics; no Delhi NCR guide gives 2026–27 reunion dates, a per-person budget table, contribution-collection rules, area-by-where-the-batch-lives table, day-vs-overnight comparison, run-of-day and organiser checklist, so the long-tail query is beatable; distinct from the family-gatherings post (family events, not school/college batches)
+  linked from: /blogs/winter-bonfire-party-farmhouse-delhi-ncr, /blogs/farmhouse-vs-resort-delhi-ncr
