@@ -338,7 +338,14 @@ export default function Page() {
                   Passed starters + plated or family-style dinner
                 </td>
                 <td className="border border-gray-300 p-4">
-                  Small premium dinners, anniversaries, intimate weddings
+                  Small premium dinners,{" "}
+                  <Link
+                    href="/blogs/anniversary-party-farmhouse-delhi-ncr"
+                    className="text-black underline font-semibold"
+                  >
+                    anniversary parties
+                  </Link>
+                  , intimate weddings
                 </td>
                 <td className="border border-gray-300 p-4">
                   Needs more staff (often 1 server per 10–15 guests)

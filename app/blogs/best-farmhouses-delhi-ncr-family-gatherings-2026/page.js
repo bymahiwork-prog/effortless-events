@@ -555,7 +555,15 @@ export default function BlogPage() {
 
         <p className="mb-8">
           If you're celebrating a milestone birthday or anniversary, you can
-          make the décor more personalized around the guest of honour.
+          make the décor more personalized around the guest of honour. For
+          ideas, budgets and a surprise plan, see our guide to an{" "}
+          <Link
+            href="/blogs/anniversary-party-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            anniversary party at a farmhouse in Delhi NCR
+          </Link>
+          .
         </p>
 
 

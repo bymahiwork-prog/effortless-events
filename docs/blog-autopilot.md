@@ -96,7 +96,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [ ] Best farmhouses in Chattarpur for private parties
 - [ ] Best farmhouses on Sohna Road for weekend parties
 - [x] Bachelor and bachelorette party farmhouses in Delhi NCR
-- [ ] Anniversary party ideas at a private farmhouse in Delhi NCR
+- [x] Anniversary party ideas at a private farmhouse in Delhi NCR
 - [x] Haldi and mehendi venues: why farmhouses work for pre-wedding functions
 - [x] Small intimate wedding at a farmhouse in Delhi NCR: complete guide
 - [x] Farmhouse wedding cost in Delhi NCR in 2026
@@ -234,3 +234,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: late Oct–Jan is peak catering season — Diwali card parties (Diwali Sun 8 Nov), wedding season from 20 Nov, office Christmas parties (11–24 Dec) and NYE (Thu 31 Dec) — and hosts book caterers 3–8 weeks ahead; DPCC's Dec 2025 coal/firewood tandoor ban and the 2026 revised GRAP schedule (DG-set rules moved to Stage I) make winter live-counter fuel a live question; parasite/spam pages ranking for "how much catering for 100 guests in India" and Aug 2026 chef "food quantity calculator" pages show active demand
   competition: page 1 for party catering cost/quantity queries is spam/parasite forum pages (mooc.ifro, granicusideas, yoursocial), IndiaMART directories, magicpin "best caterers" lists, WedMeGood vendor profiles and generic chef calculators; none give a Delhi NCR farmhouse guide with catering-policy models, format comparison, per-guest quantity table, per-plate tiers, staffing table, winter fuel rules and a checklist, so the long-tail query is beatable; distinct from how-to-plan (one short catering step, now links here with anchor "farmhouse party catering in Delhi NCR") and party-cost post (overall budget)
   linked from: /blogs/how-to-plan-farmhouse-party-delhi-ncr-2026, /blogs/diwali-party-farmhouse-delhi-ncr
+2026-10-14 18:00 IST — Anniversary Party at a Farmhouse in Delhi NCR: 2026 Guide — /blogs/anniversary-party-farmhouse-delhi-ncr
+  primary: anniversary party at farmhouse delhi ncr | secondary: 25th anniversary party venue delhi, surprise anniversary party for parents, anniversary party ideas at farmhouse, anniversary party cost delhi ncr, 50th golden anniversary party ideas, anniversary dinner at farmhouse gurgaon
+  why now: outdoor anniversary dinners suit mid-Nov to Feb evenings, and winter is North India's main wedding season so many anniversaries fall then; milestone (25th/50th) parties are often moved to the late-Dec holidays when children abroad are home (4–10 weeks out), and Nov–Dec Saturdays compete with wedding bookings from 20 Nov, so families shortlist farmhouses now; Spalba and ChooseYourVenue run dedicated "anniversary party venues" Delhi/Delhi NCR categories and 25th-anniversary idea posts/so.city questions show live demand
+  competition: page 1 for anniversary party farmhouse/venue queries is Spalba and ChooseYourVenue listing pages, Expedia/Travelocity property pages, spam/parasite blog pages and generic US idea lists (Shutterfly, VidDay) and gift sites; no Delhi NCR guide gives formats by guest count, season timing, a cost table, surprise-party steps, an evening run-of-show, older-guest access checks and a checklist, so the long-tail query is beatable; distinct from family-gatherings (venue roundup) and birthday posts
+  linked from: /blogs/best-farmhouses-delhi-ncr-family-gatherings-2026, /blogs/farmhouse-party-catering-menu-delhi-ncr
