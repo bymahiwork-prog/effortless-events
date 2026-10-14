@@ -342,7 +342,14 @@ export default function BlogPage() {
         <p className="mb-8">
           Confirm early whether the farmhouse allows outside caterers or works
           only with its own kitchen or listed vendors. That single answer
-          shapes your menu and your budget. For typical cost ranges, read our
+          shapes your menu and your budget; our{" "}
+          <Link
+            href="/blogs/farmhouse-party-catering-menu-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            farmhouse party catering guide
+          </Link>{" "}
+          covers quantities per guest and live counters. For typical cost ranges, read our
           breakdown of{" "}
           <Link
             href="/blogs/how-much-does-a-farmhouse-party-cost-in-delhi-ncr-2026"

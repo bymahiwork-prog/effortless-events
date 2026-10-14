@@ -373,7 +373,15 @@ export default function BlogPage() {
 
         <p className="mb-8">
           Before hiring a caterer, confirm whether the farmhouse allows
-          outside catering.
+          outside catering. For menu formats, food quantities per guest and
+          per-plate estimates, see our guide to{" "}
+          <Link
+            href="/blogs/farmhouse-party-catering-menu-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            farmhouse party catering in Delhi NCR
+          </Link>
+          .
         </p>
 
         <p className="mb-8">

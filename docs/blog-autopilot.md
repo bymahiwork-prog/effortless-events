@@ -114,7 +114,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [ ] How to plan a corporate event budget in Delhi NCR
 - [ ] Conference venue checklist for businesses in Delhi NCR
 - [ ] Farmhouse party décor ideas on a budget
-- [ ] Catering options for farmhouse parties: buffet, live counters, BBQ
+- [x] Catering options for farmhouse parties: buffet, live counters, BBQ
 - [ ] DJ, live band or both: choosing music for a farmhouse party
 - [ ] Rainy-season farmhouse parties: how to plan for monsoon in Delhi NCR
 - [x] Winter farmhouse party ideas: bonfires, heaters and cosy setups
@@ -229,3 +229,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: batch reunions cluster in the winter holiday window when classmates living abroad or in other cities are home — Diwali (Sun 8 Nov), Christmas long weekend (Fri 25–Sun 27 Dec), New Year long weekend (Fri 1–Sun 3 Jan 2027) and Republic Day (Tue 26 Jan) sit 4–15 weeks out, so organisers start group chats, date polls and venue shortlists in October; VenueLook runs dozens of dedicated "class reunion venues" locality pages for Delhi, Gurgaon and Greater Noida and refreshed its alumni-meet guide in Apr 2026 (live demand)
   competition: page 1 for reunion venue/planning queries is VenueLook locality listing pages, Spalba property pages, spam/parasite pages, generic US checklist.com reunion checklists and a generic VenueLook alumni-meet tips post with no budgets or Delhi specifics; no Delhi NCR guide gives 2026–27 reunion dates, a per-person budget table, contribution-collection rules, area-by-where-the-batch-lives table, day-vs-overnight comparison, run-of-day and organiser checklist, so the long-tail query is beatable; distinct from the family-gatherings post (family events, not school/college batches)
   linked from: /blogs/winter-bonfire-party-farmhouse-delhi-ncr, /blogs/farmhouse-vs-resort-delhi-ncr
+2026-10-14 10:00 IST — Farmhouse Party Catering in Delhi NCR: Menu, Quantity & Cost — /blogs/farmhouse-party-catering-menu-delhi-ncr
+  primary: farmhouse party catering menu delhi ncr | secondary: party catering cost per plate delhi, how much food per person for a party, live counter ideas for party, buffet vs live counters vs bbq, can i bring an outside caterer to a farmhouse, winter party menu ideas delhi
+  why now: late Oct–Jan is peak catering season — Diwali card parties (Diwali Sun 8 Nov), wedding season from 20 Nov, office Christmas parties (11–24 Dec) and NYE (Thu 31 Dec) — and hosts book caterers 3–8 weeks ahead; DPCC's Dec 2025 coal/firewood tandoor ban and the 2026 revised GRAP schedule (DG-set rules moved to Stage I) make winter live-counter fuel a live question; parasite/spam pages ranking for "how much catering for 100 guests in India" and Aug 2026 chef "food quantity calculator" pages show active demand
+  competition: page 1 for party catering cost/quantity queries is spam/parasite forum pages (mooc.ifro, granicusideas, yoursocial), IndiaMART directories, magicpin "best caterers" lists, WedMeGood vendor profiles and generic chef calculators; none give a Delhi NCR farmhouse guide with catering-policy models, format comparison, per-guest quantity table, per-plate tiers, staffing table, winter fuel rules and a checklist, so the long-tail query is beatable; distinct from how-to-plan (one short catering step, now links here with anchor "farmhouse party catering in Delhi NCR") and party-cost post (overall budget)
+  linked from: /blogs/how-to-plan-farmhouse-party-delhi-ncr-2026, /blogs/diwali-party-farmhouse-delhi-ncr
