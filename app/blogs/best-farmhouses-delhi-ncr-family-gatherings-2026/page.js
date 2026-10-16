@@ -198,6 +198,16 @@ export default function BlogPage() {
           <li>Family reunions</li>
           <li>Birthday celebrations</li>
           <li>Anniversary celebrations</li>
+          <li>
+            Baby showers and godh bharai (see our guide to a{" "}
+            <Link
+              href="/blogs/baby-shower-farmhouse-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              baby shower at a farmhouse in Delhi NCR
+            </Link>
+            )
+          </li>
           <li>Retirement parties</li>
           <li>Family lunches</li>
           <li>Family dinners</li>

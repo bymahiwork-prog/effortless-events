@@ -125,7 +125,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [ ] Workation stays near Delhi: Airbnb villas for remote work
 - [x] Group stay vs hotel rooms for out-of-town wedding guests in Delhi NCR
 - [x] Engagement ceremony venues in Delhi NCR: farmhouse vs banquet hall
-- [ ] Baby shower venue ideas in Delhi NCR
+- [x] Baby shower venue ideas in Delhi NCR (covered as baby shower / godh bharai at a farmhouse)
 - [ ] Retirement party and milestone birthday ideas for parents
 - [ ] Farewell party venues for colleagues and college batches in Delhi NCR
 - [x] Reunion party planning at a farmhouse
@@ -239,3 +239,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: outdoor anniversary dinners suit mid-Nov to Feb evenings, and winter is North India's main wedding season so many anniversaries fall then; milestone (25th/50th) parties are often moved to the late-Dec holidays when children abroad are home (4–10 weeks out), and Nov–Dec Saturdays compete with wedding bookings from 20 Nov, so families shortlist farmhouses now; Spalba and ChooseYourVenue run dedicated "anniversary party venues" Delhi/Delhi NCR categories and 25th-anniversary idea posts/so.city questions show live demand
   competition: page 1 for anniversary party farmhouse/venue queries is Spalba and ChooseYourVenue listing pages, Expedia/Travelocity property pages, spam/parasite blog pages and generic US idea lists (Shutterfly, VidDay) and gift sites; no Delhi NCR guide gives formats by guest count, season timing, a cost table, surprise-party steps, an evening run-of-show, older-guest access checks and a checklist, so the long-tail query is beatable; distinct from family-gatherings (venue roundup) and birthday posts
   linked from: /blogs/best-farmhouses-delhi-ncr-family-gatherings-2026, /blogs/farmhouse-party-catering-menu-delhi-ncr
+2026-10-16 17:55 IST — Baby Shower at a Farmhouse in Delhi NCR: 2026 Guide — /blogs/baby-shower-farmhouse-delhi-ncr
+  primary: baby shower at farmhouse delhi ncr | secondary: godh bharai venue delhi, baby shower venue gurgaon, baby shower cost delhi ncr, indian baby shower ideas, godh bharai muhurat 2026, which month is godh bharai done
+  why now: outdoor daytime showers suit mid-Nov to Feb; GaneshaSpeaks lists godh bharai muhurats on 1 Nov, 26 Nov and 3 Dec 2026 (2–7 weeks out), and Kharmas (16 Dec 2026–14 Jan 2027, per Hindupad) pushes families who avoid it into Nov–early Dec, overlapping wedding-season weekend demand from 20 Nov; VenueLook runs dedicated "baby shower venues" locality pages for Gurgaon/Ghaziabad and Drikpanchang/GaneshaSpeaks/hindu-blog publish monthly godh bharai date pages (live demand)
+  competition: page 1 for baby shower/godh bharai venue queries is VenueLook locality listing pages, Spalba and ChooseYourVenue property pages, a generic Johnson's Baby how-to and spam/parasite pages; no Delhi NCR farmhouse guide gives 2026 muhurat dates, Kharmas timing, formats by guest count, a cost table, mother-to-be comfort/safety checks, a run-of-day and checklist, so the long-tail query is beatable; distinct from family-gatherings (venue roundup), kids-birthday and anniversary posts
+  linked from: /blogs/best-farmhouses-delhi-ncr-family-gatherings-2026
