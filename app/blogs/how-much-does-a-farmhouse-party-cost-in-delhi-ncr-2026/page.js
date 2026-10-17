@@ -543,6 +543,14 @@ export default function BlogPage() {
           <strong> ₹5,000–₹15,000</strong>, depending on the equipment and
           duration. Professional DJs, larger sound systems, lighting and
           entertainment can push the cost to <strong>₹20,000–₹50,000+</strong>.
+          Deciding between the two? See our guide on whether to book a{" "}
+          <Link
+            href="/blogs/dj-or-live-band-farmhouse-party-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            DJ or live band for a farmhouse party in Delhi NCR
+          </Link>
+          .
         </p>
 
         <p className="mb-8">

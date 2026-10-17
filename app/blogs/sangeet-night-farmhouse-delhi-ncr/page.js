@@ -484,7 +484,15 @@ export default function BlogPage() {
           Do one technical rehearsal on the evening of the event, before
           guests arrive, with every performer&apos;s track in a single,
           clearly numbered playlist. Most sangeet hiccups are a wrong song or
-          a dead mic, not the dance itself.
+          a dead mic, not the dance itself. Still choosing the entertainment?
+          Compare costs and space needs in our guide to{" "}
+          <Link
+            href="/blogs/dj-or-live-band-farmhouse-party-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            choosing a DJ or live band for a farmhouse party
+          </Link>
+          .
         </p>
 
         {/* =====================================================

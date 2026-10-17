@@ -115,7 +115,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [ ] Conference venue checklist for businesses in Delhi NCR
 - [ ] Farmhouse party décor ideas on a budget
 - [x] Catering options for farmhouse parties: buffet, live counters, BBQ
-- [ ] DJ, live band or both: choosing music for a farmhouse party
+- [x] DJ, live band or both: choosing music for a farmhouse party
 - [ ] Rainy-season farmhouse parties: how to plan for monsoon in Delhi NCR
 - [x] Winter farmhouse party ideas: bonfires, heaters and cosy setups
 - [ ] Summer pool party at a farmhouse: safety and planning tips
@@ -244,3 +244,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: outdoor daytime showers suit mid-Nov to Feb; GaneshaSpeaks lists godh bharai muhurats on 1 Nov, 26 Nov and 3 Dec 2026 (2–7 weeks out), and Kharmas (16 Dec 2026–14 Jan 2027, per Hindupad) pushes families who avoid it into Nov–early Dec, overlapping wedding-season weekend demand from 20 Nov; VenueLook runs dedicated "baby shower venues" locality pages for Gurgaon/Ghaziabad and Drikpanchang/GaneshaSpeaks/hindu-blog publish monthly godh bharai date pages (live demand)
   competition: page 1 for baby shower/godh bharai venue queries is VenueLook locality listing pages, Spalba and ChooseYourVenue property pages, a generic Johnson's Baby how-to and spam/parasite pages; no Delhi NCR farmhouse guide gives 2026 muhurat dates, Kharmas timing, formats by guest count, a cost table, mother-to-be comfort/safety checks, a run-of-day and checklist, so the long-tail query is beatable; distinct from family-gatherings (venue roundup), kids-birthday and anniversary posts
   linked from: /blogs/best-farmhouses-delhi-ncr-family-gatherings-2026
+2026-10-17 10:30 IST — DJ or Live Band for a Farmhouse Party in Delhi NCR? — /blogs/dj-or-live-band-farmhouse-party-delhi-ncr
+  primary: dj or live band for farmhouse party delhi ncr | secondary: dj cost for party in delhi, live band for party delhi price, dj vs live band for wedding, dj with dhol for wedding delhi, can you play dj after 10 pm in delhi, music licence for private party india
+  why now: Nov–Dec is peak entertainment booking — wedding functions from 20 Nov (sangeet/cocktail/mehendi), office Christmas parties 11–24 Dec and NYE Thu 31 Dec — and DJs/bands are booked 3–10 weeks ahead, so hosts compare options now; WedMeGood/WeddingWire run large Delhi NCR DJ vendor categories with packages from ₹25,000 to ₹1 lakh (live market); DPIIT's Jul 2023 no-royalty-at-weddings notice and Delhi Police's Apr 2025 loudspeaker order keep licence/cut-off questions live
+  competition: page 1 for DJ vs live band queries is US/UK pages (Paperlust, Wedding-Spot, Gigroster, cueup/TheBash "Delhi, CA/LA/ON" results) and individual WedMeGood/WeddingWire DJ profiles; no India/Delhi NCR guide compares DJ vs band vs both with INR cost tiers, occasion-by-guest-count table, stage/power needs, 10 PM rule, wedding music-licence answer and a combined run-of-show, so the long-tail query is beatable; distinct from party-cost post (one DJ line) and sangeet post (sangeet stage/run-of-show)
+  linked from: /blogs/how-much-does-a-farmhouse-party-cost-in-delhi-ncr-2026, /blogs/sangeet-night-farmhouse-delhi-ncr
