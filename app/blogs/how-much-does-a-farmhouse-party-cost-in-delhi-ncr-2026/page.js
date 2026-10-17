@@ -1100,7 +1100,14 @@ export default function BlogPage() {
             <strong>7. Is overnight stay available?</strong>
             <br />
             Bedrooms can be particularly useful when guests are travelling
-            from different parts of Delhi NCR.
+            from different parts of Delhi NCR. See{" "}
+            <Link
+              href="/blogs/day-use-vs-overnight-farmhouse-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              day-use vs overnight farmhouse in Delhi NCR
+            </Link>{" "}
+            to compare the two.
           </li>
 
           <li>

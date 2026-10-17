@@ -379,7 +379,14 @@ export default function Page() {
           >
             farmhouse party cost guide for Delhi NCR
           </Link>{" "}
-          breaks down what changes the price.
+          breaks down what changes the price, and our guide to{" "}
+          <Link
+            href="/blogs/day-use-vs-overnight-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            day-use vs overnight farmhouse bookings
+          </Link>{" "}
+          helps you pick the right slot.
         </p>
 
         {/* =====================================================

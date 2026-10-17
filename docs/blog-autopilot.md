@@ -100,7 +100,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [x] Haldi and mehendi venues: why farmhouses work for pre-wedding functions
 - [x] Small intimate wedding at a farmhouse in Delhi NCR: complete guide
 - [x] Farmhouse wedding cost in Delhi NCR in 2026
-- [ ] Day-use farmhouse vs overnight farmhouse stay: which to book
+- [x] Day-use farmhouse vs overnight farmhouse stay: which to book
 - [x] Farmhouse rules to check before booking: music, alcohol, guests, timings
 - [x] Kids' birthday party at a farmhouse: planning guide for parents
 - [x] New Year's Eve party at a private farmhouse in Delhi NCR
@@ -249,3 +249,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: Nov–Dec is peak entertainment booking — wedding functions from 20 Nov (sangeet/cocktail/mehendi), office Christmas parties 11–24 Dec and NYE Thu 31 Dec — and DJs/bands are booked 3–10 weeks ahead, so hosts compare options now; WedMeGood/WeddingWire run large Delhi NCR DJ vendor categories with packages from ₹25,000 to ₹1 lakh (live market); DPIIT's Jul 2023 no-royalty-at-weddings notice and Delhi Police's Apr 2025 loudspeaker order keep licence/cut-off questions live
   competition: page 1 for DJ vs live band queries is US/UK pages (Paperlust, Wedding-Spot, Gigroster, cueup/TheBash "Delhi, CA/LA/ON" results) and individual WedMeGood/WeddingWire DJ profiles; no India/Delhi NCR guide compares DJ vs band vs both with INR cost tiers, occasion-by-guest-count table, stage/power needs, 10 PM rule, wedding music-licence answer and a combined run-of-show, so the long-tail query is beatable; distinct from party-cost post (one DJ line) and sangeet post (sangeet stage/run-of-show)
   linked from: /blogs/how-much-does-a-farmhouse-party-cost-in-delhi-ncr-2026, /blogs/sangeet-night-farmhouse-delhi-ncr
+2026-10-17 18:00 IST — Day-Use vs Overnight Farmhouse in Delhi NCR: Which to Book? — /blogs/day-use-vs-overnight-farmhouse-delhi-ncr
+  primary: day use vs overnight farmhouse delhi ncr | secondary: day use farmhouse near delhi, farmhouse for one day party gurgaon, overnight farmhouse stay near delhi, farmhouse check-in and check-out time, 24 hour farmhouse booking price, day picnic farmhouse near delhi
+  why now: Nov–Feb is peak farmhouse booking (wedding functions from 20 Nov, office Christmas parties, NYE Thu 31 Dec, winter birthdays/reunions) and every booking starts with the day-slot vs stay choice; Dec has ~10 h daylight, sunset ~5:25–5:35 PM and ~8°C nights (Weather2Travel), so late winter parties push hosts toward overnight; District.in lists Oct 2026 Gurugram farm day-outing tickets (₹599–₹3,304) and Expedia/Airbnb carry "DAY USE" farm listings (live demand)
+  competition: page 1 for day-use/overnight farmhouse queries is only VenueLook locality listings, Expedia/Travelocity/Airbnb property pages and spam/parasite blogs; no guide compares day use vs overnight vs 24 hours with typical slots, rent multipliers, party-vs-overnight capacity, occasion table, winter factors, owner questions and a checklist, so the long-tail query is beatable; distinct from rules post (terms) and party-cost post (budget)
+  linked from: /blogs/farmhouse-rules-before-booking-delhi-ncr, /blogs/how-much-does-a-farmhouse-party-cost-in-delhi-ncr-2026
