@@ -422,7 +422,15 @@ export default function BlogPage() {
 
         <p className="mb-8">
           Use the farmhouse's existing architecture instead of trying to cover
-          every part of the property with decoration.
+          every part of the property with decoration. For cost tiers and
+          low-cost setups, see our{" "}
+          <Link
+            href="/blogs/farmhouse-party-decoration-ideas-budget-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            farmhouse party decoration ideas on a budget
+          </Link>
+          .
         </p>
 
 

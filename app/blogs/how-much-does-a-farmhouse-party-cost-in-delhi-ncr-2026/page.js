@@ -522,7 +522,14 @@ export default function BlogPage() {
           One of the easiest ways to control your budget is to select a
           farmhouse that already has an attractive setting. A beautiful lawn,
           poolside area or landscaped outdoor space can reduce the amount of
-          décor you need.
+          décor you need. Our guide to{" "}
+          <Link
+            href="/blogs/farmhouse-party-decoration-ideas-budget-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            budget farmhouse party decoration ideas
+          </Link>{" "}
+          shows where to spend and what to DIY.
         </p>
 
 

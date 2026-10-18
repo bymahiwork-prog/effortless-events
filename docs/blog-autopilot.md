@@ -113,7 +113,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [ ] Annual day and award night planning for companies in Delhi NCR
 - [ ] How to plan a corporate event budget in Delhi NCR
 - [ ] Conference venue checklist for businesses in Delhi NCR
-- [ ] Farmhouse party décor ideas on a budget
+- [x] Farmhouse party décor ideas on a budget
 - [x] Catering options for farmhouse parties: buffet, live counters, BBQ
 - [x] DJ, live band or both: choosing music for a farmhouse party
 - [ ] Rainy-season farmhouse parties: how to plan for monsoon in Delhi NCR
@@ -254,3 +254,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: Nov–Feb is peak farmhouse booking (wedding functions from 20 Nov, office Christmas parties, NYE Thu 31 Dec, winter birthdays/reunions) and every booking starts with the day-slot vs stay choice; Dec has ~10 h daylight, sunset ~5:25–5:35 PM and ~8°C nights (Weather2Travel), so late winter parties push hosts toward overnight; District.in lists Oct 2026 Gurugram farm day-outing tickets (₹599–₹3,304) and Expedia/Airbnb carry "DAY USE" farm listings (live demand)
   competition: page 1 for day-use/overnight farmhouse queries is only VenueLook locality listings, Expedia/Travelocity/Airbnb property pages and spam/parasite blogs; no guide compares day use vs overnight vs 24 hours with typical slots, rent multipliers, party-vs-overnight capacity, occasion table, winter factors, owner questions and a checklist, so the long-tail query is beatable; distinct from rules post (terms) and party-cost post (budget)
   linked from: /blogs/farmhouse-rules-before-booking-delhi-ncr, /blogs/how-much-does-a-farmhouse-party-cost-in-delhi-ncr-2026
+2026-10-18 10:00 IST — Farmhouse Party Decoration Ideas on a Budget in Delhi NCR — /blogs/farmhouse-party-decoration-ideas-budget-delhi-ncr
+  primary: farmhouse party decoration ideas on a budget delhi ncr | secondary: farmhouse decoration for birthday party price, balloon decoration cost delhi, fairy light decoration for outdoor party, diy party decoration ideas for farmhouse, winter outdoor party decor ideas, can i bring my own decorator to a farmhouse
+  why now: Nov–Dec is peak private-party season (winter birthdays/anniversaries, baby showers, office Christmas parties 11–24 Dec, NYE Thu 31 Dec) and decorators get booked out by wedding functions from 20 Nov, so hosts plan décor 3–6 weeks ahead; WeddingWire/IndiaMART/VenueLook run large Delhi NCR decorator and balloon-decoration categories with Oct 2026 listings (Gurgaon floral from ₹14,000 for 100 pax; North Delhi 300-pax outdoor floral ₹75,000–₹99,999) showing a live market
+  competition: page 1 for farmhouse party decoration/budget queries is US "farmhouse-style home décor" blogs (wrong intent), spam/parasite pages, IndiaMART/WeddingWire/VenueLook decorator directories and Expedia/VenueLook farmhouse listings; no Delhi NCR guide gives décor budget tiers, a spend-split by zone, occasion table, DIY-vs-decorator comparison, farmhouse décor rules, single-use-plastic (balloon sticks/thermocol) guidance, winter lighting and a checklist, so the long-tail query is beatable; distinct from how-to-plan (one short décor step, now links here) and party-cost post (one décor line, now links here)
+  linked from: /blogs/how-to-plan-farmhouse-party-delhi-ncr-2026, /blogs/how-much-does-a-farmhouse-party-cost-in-delhi-ncr-2026
