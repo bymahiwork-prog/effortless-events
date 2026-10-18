@@ -134,6 +134,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [ ] Event planner vs DIY: when it is worth hiring help for a private party
 - [x] Corporate Diwali party in Delhi NCR: venue, budget and planning guide
 - [x] Sangeet night at a farmhouse in Delhi NCR: dates, music rules, setup and budget
+- [x] Pre-wedding shoot at a farmhouse in Delhi NCR: costs, permits, light and shoot-day plan
 
 ## Published log
 
@@ -259,3 +260,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: Nov–Dec is peak private-party season (winter birthdays/anniversaries, baby showers, office Christmas parties 11–24 Dec, NYE Thu 31 Dec) and decorators get booked out by wedding functions from 20 Nov, so hosts plan décor 3–6 weeks ahead; WeddingWire/IndiaMART/VenueLook run large Delhi NCR decorator and balloon-decoration categories with Oct 2026 listings (Gurgaon floral from ₹14,000 for 100 pax; North Delhi 300-pax outdoor floral ₹75,000–₹99,999) showing a live market
   competition: page 1 for farmhouse party decoration/budget queries is US "farmhouse-style home décor" blogs (wrong intent), spam/parasite pages, IndiaMART/WeddingWire/VenueLook decorator directories and Expedia/VenueLook farmhouse listings; no Delhi NCR guide gives décor budget tiers, a spend-split by zone, occasion table, DIY-vs-decorator comparison, farmhouse décor rules, single-use-plastic (balloon sticks/thermocol) guidance, winter lighting and a checklist, so the long-tail query is beatable; distinct from how-to-plan (one short décor step, now links here) and party-cost post (one décor line, now links here)
   linked from: /blogs/how-to-plan-farmhouse-party-delhi-ncr-2026, /blogs/how-much-does-a-farmhouse-party-cost-in-delhi-ncr-2026
+2026-10-18 18:00 IST — Pre-Wedding Shoot at a Farmhouse in Delhi NCR: 2026 Guide — /blogs/pre-wedding-shoot-farmhouse-delhi-ncr
+  primary: pre wedding shoot at farmhouse delhi ncr | secondary: farmhouse for pre wedding shoot in delhi, pre wedding shoot location rent delhi, pre wedding shoot cost delhi ncr, pre wedding shoot permission delhi monuments, best time for pre wedding shoot in delhi, pre wedding shoot ideas at farmhouse
+  why now: 2026 wedding season reopens 20 Nov with muhurats 21–26 Nov and 1–13 Dec, and Jan–Feb 2027 dates follow; couples shoot 1–3 months before the wedding, so shoots cluster late Oct–Dec (1–8 weeks out) in the Oct–Feb best-light window; The Grand New Delhi (May 2026) and TravelTriangle (2026) refreshed Delhi pre-wedding location guides and WedMeGood/WeddingBazaar run large pre-wedding photographer categories (live demand)
+  competition: page 1 for pre-wedding shoot location queries is location listicles (TravelTriangle, WeddingSutra, WeddingBazaar 2015 posts, EaseMyTrip, VenueLook blog), a hotel's self-promoting estate post, photographer profiles and VenueLook farmhouse listing pages; none give a farmhouse-specific guide with cost breakdown, farmhouse-vs-monument table, Sunder Nursery/ASI permit facts, drone-zone rules, winter light timings, shoot-day plan and booking checklist, so the long-tail farmhouse query is beatable; distinct from best-farmhouse-activities (one generic photoshoot section, now links here) and intimate-wedding post
+  linked from: /blogs/best-farmhouse-activities-for-groups, /blogs/intimate-farmhouse-wedding-delhi-ncr

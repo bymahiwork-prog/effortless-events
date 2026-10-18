@@ -420,7 +420,15 @@ export default function BlogPage() {
 
         <p className="mb-8">
           A large lawn, pool, garden, terrace, or outdoor seating area can
-          become a natural photoshoot location.
+          become a natural photoshoot location. Couples use the same spaces
+          for a{" "}
+          <Link
+            href="/blogs/pre-wedding-shoot-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            pre-wedding shoot at a farmhouse
+          </Link>
+          .
         </p>
 
         <p className="mb-5">

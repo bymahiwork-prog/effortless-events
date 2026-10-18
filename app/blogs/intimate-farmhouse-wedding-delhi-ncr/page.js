@@ -228,7 +228,15 @@ export default function BlogPage() {
           </li>
           <li>
             <strong>Control:</strong> many farmhouses let you choose your own
-            caterer, décorator and photographer instead of fixed packages.
+            caterer, décorator and photographer instead of fixed packages,
+            and some rent short daytime slots for a{" "}
+            <Link
+              href="/blogs/pre-wedding-shoot-farmhouse-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              pre-wedding shoot at a farmhouse
+            </Link>
+            .
           </li>
           <li>
             <strong>Winter weather:</strong> late November to February is
