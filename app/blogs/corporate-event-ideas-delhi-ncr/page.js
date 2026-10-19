@@ -250,7 +250,14 @@ export default function BlogPage() {
           Create categories that recognize performance, innovation, teamwork,
           leadership, customer service, and creativity. Professional stage
           design, award trophies, audiovisual presentations, entertainment,
-          and a dinner can elevate the entire event.
+          and a dinner can elevate the entire event. Our{" "}
+          <Link
+            href="/blogs/corporate-annual-day-award-night-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            corporate annual day and award night planning guide
+          </Link>{" "}
+          covers venues, award categories, budgets and a run-of-show.
         </p>
 
         <p className="mb-8">

@@ -681,7 +681,14 @@ export default function EventManagementCostDelhiNCRBlog() {
 
             <p className="mb-5 text-base leading-8 text-gray-600 sm:text-lg">
               For corporate award nights and annual celebrations,
-              entertainment can become a major budget component.
+              entertainment can become a major budget component. See our{" "}
+              <Link
+                href="/blogs/corporate-annual-day-award-night-delhi-ncr"
+                className="font-semibold text-black underline"
+              >
+                corporate annual day and award night guide
+              </Link>{" "}
+              for a line-item budget.
             </p>
 
             <p className="text-base leading-8 text-gray-600 sm:text-lg">
