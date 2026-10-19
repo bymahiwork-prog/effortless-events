@@ -126,7 +126,7 @@ If the chosen topic is from the backlog, tick it. If it is new, add it as a tick
 - [x] Group stay vs hotel rooms for out-of-town wedding guests in Delhi NCR
 - [x] Engagement ceremony venues in Delhi NCR: farmhouse vs banquet hall
 - [x] Baby shower venue ideas in Delhi NCR (covered as baby shower / godh bharai at a farmhouse)
-- [ ] Retirement party and milestone birthday ideas for parents
+- [x] Retirement party and milestone birthday ideas for parents (covered as 60th birthday party for parents)
 - [ ] Farewell party venues for colleagues and college batches in Delhi NCR
 - [x] Reunion party planning at a farmhouse
 - [x] How to book a farmhouse safely: avoiding scams and hidden charges
@@ -265,3 +265,8 @@ YYYY-MM-DD HH:MM IST — <title> — /blogs/<slug>
   why now: 2026 wedding season reopens 20 Nov with muhurats 21–26 Nov and 1–13 Dec, and Jan–Feb 2027 dates follow; couples shoot 1–3 months before the wedding, so shoots cluster late Oct–Dec (1–8 weeks out) in the Oct–Feb best-light window; The Grand New Delhi (May 2026) and TravelTriangle (2026) refreshed Delhi pre-wedding location guides and WedMeGood/WeddingBazaar run large pre-wedding photographer categories (live demand)
   competition: page 1 for pre-wedding shoot location queries is location listicles (TravelTriangle, WeddingSutra, WeddingBazaar 2015 posts, EaseMyTrip, VenueLook blog), a hotel's self-promoting estate post, photographer profiles and VenueLook farmhouse listing pages; none give a farmhouse-specific guide with cost breakdown, farmhouse-vs-monument table, Sunder Nursery/ASI permit facts, drone-zone rules, winter light timings, shoot-day plan and booking checklist, so the long-tail farmhouse query is beatable; distinct from best-farmhouse-activities (one generic photoshoot section, now links here) and intimate-wedding post
   linked from: /blogs/best-farmhouse-activities-for-groups, /blogs/intimate-farmhouse-wedding-delhi-ncr
+2026-10-19 10:00 IST — 60th Birthday Party for Parents in Delhi NCR: 2026 Guide — /blogs/60th-birthday-party-parents-delhi-ncr
+  primary: 60th birthday party for parents delhi ncr | secondary: 60th birthday party ideas for dad, 60th birthday celebration ideas for mom india, surprise 60th birthday party for parents, 60th birthday party cost delhi ncr, retirement party venue delhi ncr, 70th and 75th birthday party at farmhouse
+  why now: outdoor family parties suit mid-Nov to Feb; milestone birthdays are often moved to the Christmas–New Year window (Fri 25 Dec 2026–Sun 3 Jan 2027, 10–11 weeks out) when children abroad are home, and Nov–mid-Dec Saturdays compete with wedding season from 20 Nov, so families shortlist farmhouses now (4–8 weeks' lead); a Blind thread from a Delhi user planning a mom's 60th for ~100 guests (farmhouse vs hall, ₹2–3 lakh budget, Chattarpur suggested) and gift/cake brands' 60th-for-parents pages show live demand
+  competition: page 1 for 60th birthday / retirement party for parents queries is US idea lists (Tagvenue, Punchbowl, Giggster, Paperless Post, Greenvelope), gift and cake brand pages (Bakingo, Hubble), spam/parasite pages and a Blind forum thread; no India/Delhi NCR guide gives formats by guest count, Shashthipurti basics, winter timing, a cost table, surprise and retirement-combo plans, senior-access checks, run-of-show and checklist, so the long-tail query is beatable; distinct from birthday-venue posts (adult general / kids) and anniversary post
+  linked from: /blogs/best-farmhouses-delhi-ncr-family-gatherings-2026, /blogs/anniversary-party-farmhouse-delhi-ncr

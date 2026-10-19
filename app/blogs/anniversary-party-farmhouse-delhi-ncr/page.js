@@ -621,6 +621,18 @@ export default function Page() {
           </li>
         </ol>
 
+        <p className="mb-8">
+          The same plan works for a parent&apos;s milestone birthday; see our
+          guide to a{" "}
+          <Link
+            href="/blogs/60th-birthday-party-parents-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            60th birthday party for parents in Delhi NCR
+          </Link>
+          .
+        </p>
+
         {/* =====================================================
             RUN OF SHOW
         ===================================================== */}

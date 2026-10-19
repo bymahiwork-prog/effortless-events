@@ -208,7 +208,16 @@ export default function BlogPage() {
             </Link>
             )
           </li>
-          <li>Retirement parties</li>
+          <li>
+            Retirement parties and milestone birthdays (see our guide to a{" "}
+            <Link
+              href="/blogs/60th-birthday-party-parents-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              60th birthday party for parents in Delhi NCR
+            </Link>
+            )
+          </li>
           <li>Family lunches</li>
           <li>Family dinners</li>
           <li>Festive gatherings</li>
