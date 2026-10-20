@@ -425,7 +425,14 @@ export default function Page() {
           <li>
             <strong>Winter day use:</strong> start early. A noon-to-6 PM
             lunch party gets the warm, sunny hours on the lawn and ends before
-            the cold sets in.
+            the cold sets in. It is also the usual slot for a{" "}
+            <Link
+              href="/blogs/kitty-party-farmhouse-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              kitty party at a farmhouse
+            </Link>
+            .
           </li>
           <li>
             <strong>Winter overnight:</strong> plan heaters, a bonfire where

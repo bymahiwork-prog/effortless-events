@@ -402,7 +402,15 @@ export default function BlogPage() {
 
         <p className="mb-8">
           Game nights are especially useful when travelling with mixed age
-          groups because everyone can participate at their own pace.
+          groups because everyone can participate at their own pace. Tambola
+          and one-minute games are also the backbone of a{" "}
+          <Link
+            href="/blogs/kitty-party-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            kitty party at a farmhouse
+          </Link>
+          .
         </p>
 
         {/* ===================================================== */}
