@@ -470,7 +470,14 @@ export default function BlogPage() {
           </li>
           <li>
             <strong>Christmas brunch or dinner:</strong> a decorated tree,
-            secret Santa and a long family table.
+            secret Santa and a long family table (see our{" "}
+            <Link
+              href="/blogs/family-christmas-party-farmhouse-delhi-ncr"
+              className="underline"
+            >
+              family Christmas party at a farmhouse guide
+            </Link>
+            ).
           </li>
           <li>
             <strong>New Year&apos;s Eve countdown:</strong> a DJ indoors after

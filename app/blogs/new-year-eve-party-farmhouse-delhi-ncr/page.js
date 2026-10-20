@@ -228,7 +228,14 @@ export default function BlogPage() {
           <li>
             <strong>Christmas, Friday 25 December 2026:</strong> one week
             earlier and also busy; if 31 December is sold out or over budget,
-            a Christmas weekend party is a strong alternative.
+            a Christmas weekend party is a strong alternative (see our{" "}
+            <Link
+              href="/blogs/family-christmas-party-farmhouse-delhi-ncr"
+              className="underline"
+            >
+              family Christmas party at a farmhouse guide
+            </Link>
+            ).
           </li>
           <li>
             <strong>Weather:</strong> late December nights in Delhi are cold
