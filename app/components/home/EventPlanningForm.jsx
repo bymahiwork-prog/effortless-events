@@ -64,17 +64,20 @@ I would like to discuss the details further. Thank you!`;
     }
 
     // =====================================================
-    // GOOGLE ADS CONVERSION
-    // Conversion event: ads_conversion_Sign_up_1
-    // Fires only when the form is actually submitted
-    // (previously it fired on every page load from the layout).
+    // GOOGLE TAG MANAGER LEAD EVENT
+    // Pushes a "generate_lead" event that GTM (GTM-KGZKTPHK)
+    // listens for. GTM then sends the lead to GA4 and to the
+    // Google Ads "Enquiry Form – Website" conversion.
+    // Fires only when the form is actually submitted.
     // =====================================================
 
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      window.dataLayer.push(arguments);
-    }
-    gtag("event", "ads_conversion_Sign_up_1", {});
+    window.dataLayer.push({
+      event: "generate_lead",
+      form_name: "event_planning_form",
+      event_occasion: occasion,
+      event_guests: guests,
+    });
 
     // =====================================================
     // WHATSAPP
