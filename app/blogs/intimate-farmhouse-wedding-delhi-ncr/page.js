@@ -669,6 +669,15 @@ export default function BlogPage() {
           happens after the ceremony. If you are going the Special Marriage
           Act route, file the notice at least five to six weeks before your
           farmhouse date. This is general information, not legal advice.
+          For timing, costs and a run-of-show for the party itself, see our
+          guide to a{" "}
+          <Link
+            href="/blogs/wedding-reception-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            wedding reception at a farmhouse in Delhi NCR
+          </Link>
+          .
         </p>
 
         {/* =====================================================

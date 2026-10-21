@@ -691,7 +691,15 @@ export default function BlogPage() {
             setup, power and staff.
           </li>
           <li>
-            Reuse mandap and stage florals for the reception backdrop.
+            Reuse mandap and stage florals for the reception backdrop (see
+            our{" "}
+            <Link
+              href="/blogs/wedding-reception-farmhouse-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              farmhouse wedding reception guide
+            </Link>{" "}
+            for same-night and next-day formats).
           </li>
           <li>
             Trim live counters to three or four strong ones instead of eight
