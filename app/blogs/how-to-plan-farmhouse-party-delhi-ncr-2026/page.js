@@ -837,6 +837,15 @@ export default function BlogPage() {
             </Link>
           </li>
 
+          <li>
+            <Link
+              href="/blogs/event-planner-vs-diy-party-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              Event Planner vs DIY Party: Which Should You Choose?
+            </Link>
+          </li>
+
         </ul>
 
 

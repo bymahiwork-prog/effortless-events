@@ -840,7 +840,15 @@ export default function EventManagementCostDelhiNCRBlog() {
               <p className="text-base leading-8 text-gray-600 sm:text-lg">
                 For smaller corporate events, agencies may offer predefined
                 packages covering selected services such as décor, sound,
-                lighting, hosting, and coordination.
+                lighting, hosting, and coordination. Planning a private party
+                instead? See{" "}
+                <Link
+                  href="/blogs/event-planner-vs-diy-party-delhi-ncr"
+                  className="text-black underline font-semibold"
+                >
+                  event planner vs DIY for a party in Delhi NCR
+                </Link>
+                .
               </p>
 
             </div>
