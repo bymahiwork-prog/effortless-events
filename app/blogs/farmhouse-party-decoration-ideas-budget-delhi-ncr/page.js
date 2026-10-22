@@ -329,6 +329,18 @@ export default function Page() {
           </table>
         </div>
 
+        <p className="mb-8">
+          Decorating for a marriage proposal rather than a party? Our guide to
+          a{" "}
+          <Link
+            href="/blogs/proposal-at-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            proposal at a farmhouse in Delhi NCR
+          </Link>{" "}
+          covers candle paths, marquee letters and fairy-light canopies.
+        </p>
+
         <h2 className="text-black text-3xl font-bold mt-12 mb-6">
           Should You DIY or Hire a Decorator?
         </h2>

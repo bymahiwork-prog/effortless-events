@@ -100,7 +100,15 @@ export default function BlogPage() {
           one function on the property and time for the ring exchange to feel
           like the main event. This guide covers the 2026 engagement dates,
           how a farmhouse compares with a banquet hall, how many guests fit,
-          what it realistically costs and a week-by-week checklist.
+          what it realistically costs and a week-by-week checklist. If the
+          question has not been asked yet, start with our guide to a{" "}
+          <Link
+            href="/blogs/proposal-at-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            proposal at a farmhouse in Delhi NCR
+          </Link>
+          .
         </p>
 
         <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-8 mb-10">
