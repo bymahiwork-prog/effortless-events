@@ -316,7 +316,15 @@ export default function BlogPage() {
           <li>
             <strong>Check the GRAP stage the week of your party.</strong>{" "}
             Restrictions tighten at higher stages, and CAQM announces stage
-            changes in the news.
+            changes in the news. Our guide to{" "}
+            <Link
+              href="/blogs/grap-rules-weddings-parties-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              GRAP rules for weddings and parties
+            </Link>{" "}
+            explains what each stage means for generators, tandoors and guest
+            cars.
           </li>
           <li>
             <strong>Get the venue&apos;s answer in writing.</strong> Ask

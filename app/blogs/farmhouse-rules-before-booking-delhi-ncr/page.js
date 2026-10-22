@@ -439,7 +439,15 @@ export default function Page() {
           both the organiser and the premises owner pay ₹20,000 each for a
           first violation, rising with repeat offences. The same order lists
           fines from ₹10,000 for diesel generators run without proper noise
-          controls — so ask how the farmhouse provides power backup.
+          controls — so ask how the farmhouse provides power backup. In
+          winter, also check the generator against the{" "}
+          <Link
+            href="/blogs/grap-rules-weddings-parties-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            GRAP rules for weddings and parties in Delhi NCR
+          </Link>
+          .
         </p>
 
         {/* =====================================================
