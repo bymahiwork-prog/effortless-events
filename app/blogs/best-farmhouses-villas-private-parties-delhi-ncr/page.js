@@ -158,7 +158,11 @@ export default function BlogPage() {
 </h3>
 
 <p className="mb-4">
-  Often overlooked, the Surajkund belt in Faridabad has some stunning resort-style properties that function beautifully for private events. Quieter, scenic, and ideal for daytime celebrations or weekend getaways combined with a party.
+  Often overlooked, the Surajkund belt in Faridabad has some stunning resort-style properties that function beautifully for private events. Quieter, scenic, and ideal for daytime celebrations or weekend getaways combined with a party. Before booking here, check the land status of the property — see our guide to choosing a{" "}
+  <Link href="/blogs/farmhouse-in-faridabad-for-party" className="text-black underline font-semibold">
+    farmhouse in Faridabad for a party
+  </Link>
+  .
 </p>
 
 <p className="mb-8">

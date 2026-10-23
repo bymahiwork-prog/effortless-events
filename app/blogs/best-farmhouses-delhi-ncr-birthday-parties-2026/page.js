@@ -411,7 +411,14 @@ export default function BlogPage() {
         <p className="mb-8">
           If you're working with a limited budget but still want a spacious
           property, Faridabad is worth comparing with other Delhi NCR
-          locations.
+          locations. Our guide to booking a{" "}
+          <Link
+            href="/blogs/farmhouse-in-faridabad-for-party"
+            className="text-black underline font-semibold"
+          >
+            farmhouse in Faridabad for a party
+          </Link>{" "}
+          covers areas, costs and the checks to do first.
         </p>
 
 
