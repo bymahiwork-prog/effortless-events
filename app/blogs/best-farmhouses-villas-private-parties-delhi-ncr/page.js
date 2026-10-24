@@ -126,7 +126,11 @@ export default function BlogPage() {
 </p>
 
 <p className="mb-8">
-  <strong>Best for:</strong> Birthday parties, cocktail evenings, family celebrations.
+  <strong>Best for:</strong> Birthday parties, cocktail evenings, family celebrations. See our{" "}
+  <Link href="/blogs/farmhouse-in-chattarpur-for-party" className="text-black underline font-semibold">
+    Chattarpur farmhouse party guide
+  </Link>{" "}
+  for pockets, costs and rules.
 </p>
 
 <h3 className="text-2xl font-semibold mt-10 mb-3">

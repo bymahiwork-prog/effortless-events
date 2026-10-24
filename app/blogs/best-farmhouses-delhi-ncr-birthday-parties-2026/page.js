@@ -234,7 +234,14 @@ export default function BlogPage() {
         <p className="mb-8">
           If your guest list includes people from South Delhi, Vasant Kunj,
           Saket, Gurgaon, or nearby areas, Chattarpur can be a practical
-          choice.
+          choice. Our guide to booking a{" "}
+          <Link
+            href="/blogs/farmhouse-in-chattarpur-for-party"
+            className="text-black underline font-semibold"
+          >
+            farmhouse in Chattarpur for a party
+          </Link>{" "}
+          compares its pockets, costs and rules.
         </p>
 
 
