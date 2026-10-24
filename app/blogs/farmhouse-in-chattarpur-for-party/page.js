@@ -651,6 +651,13 @@ export default function Page() {
             className="text-black underline font-semibold"
           >
             farmhouse in Faridabad for a party
+          </Link>{" "}
+          or a{" "}
+          <Link
+            href="/blogs/farmhouse-in-greater-noida-for-party"
+            className="text-black underline font-semibold"
+          >
+            farmhouse in Greater Noida for a party
           </Link>
           .
         </p>

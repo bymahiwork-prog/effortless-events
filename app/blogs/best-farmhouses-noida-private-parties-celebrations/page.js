@@ -274,7 +274,15 @@ export default function BlogPage() {
         <p className="mb-8">
           Consider where your guests are travelling from. A venue that is easy
           to reach from Noida, Greater Noida, Delhi or Ghaziabad can make the
-          event more convenient for everyone.
+          event more convenient for everyone. If most guests live further
+          east, see our guide to a{" "}
+          <Link
+            href="/blogs/farmhouse-in-greater-noida-for-party"
+            className="text-black underline font-semibold"
+          >
+            farmhouse in Greater Noida for a party
+          </Link>
+          .
         </p>
 
         <h3 className="text-2xl font-semibold mt-10 mb-3">
