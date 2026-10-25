@@ -57,6 +57,7 @@ const areas = [
   { label: "Farmhouse for Party in Noida", href: "/blogs/best-farmhouses-noida-private-parties-celebrations" },
   { label: "Farmhouse for Party in Greater Noida", href: "/blogs/farmhouse-in-greater-noida-for-party" },
   { label: "Farmhouse for Party in Faridabad", href: "/blogs/farmhouse-in-faridabad-for-party" },
+  { label: "Farmhouse for Party on Sohna Road", href: "/blogs/farmhouse-on-sohna-road-for-party" },
 ];
 
 const steps = [
