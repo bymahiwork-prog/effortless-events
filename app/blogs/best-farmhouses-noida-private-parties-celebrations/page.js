@@ -289,6 +289,13 @@ export default function BlogPage() {
           >
             farmhouse in Greater Noida for a party
           </Link>
+          , or for guests in Ghaziabad and East Delhi, a{" "}
+          <Link
+            href="/blogs/farmhouse-in-ghaziabad-for-party"
+            className="text-black underline font-semibold"
+          >
+            farmhouse in Ghaziabad for a party
+          </Link>
           .
         </p>
 

@@ -317,6 +317,13 @@ export default function Page() {
           >
             best farmhouses in Noida for private parties
           </Link>
+          ; if they are mostly in Ghaziabad or East Delhi, see our guide to a{" "}
+          <Link
+            href="/blogs/farmhouse-in-ghaziabad-for-party"
+            className="text-black underline font-semibold"
+          >
+            farmhouse in Ghaziabad for a party
+          </Link>
           .
         </p>
 
