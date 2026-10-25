@@ -211,7 +211,14 @@ export default function BlogPage() {
         <p className="mb-8">
           Properties in and around this area can offer larger lawns, private
           pools and multiple bedrooms, making them suitable for full-day and
-          overnight celebrations.
+          overnight celebrations. Our guide to booking a{" "}
+          <Link
+            href="/blogs/farmhouse-on-sohna-road-for-party"
+            className="underline font-semibold"
+          >
+            farmhouse on Sohna Road for a party
+          </Link>{" "}
+          compares its stretches, costs and rules.
         </p>
 
 

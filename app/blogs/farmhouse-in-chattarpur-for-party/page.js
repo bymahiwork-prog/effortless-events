@@ -435,8 +435,15 @@ export default function Page() {
 
         <p className="mb-6">
           Chattarpur is in Delhi, so Delhi&apos;s excise rules apply, unlike
-          farmhouses on Sohna Road or in Faridabad, which follow
-          Haryana&apos;s. Plan around four rules.
+          farmhouses{" "}
+          <Link
+            href="/blogs/farmhouse-on-sohna-road-for-party"
+            className="text-black underline font-semibold"
+          >
+            on Sohna Road
+          </Link>{" "}
+          or in Faridabad, which follow Haryana&apos;s. Plan around four
+          rules.
         </p>
 
         <h3 className="text-black text-2xl font-semibold mt-8 mb-4">
