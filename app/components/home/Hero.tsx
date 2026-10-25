@@ -20,84 +20,84 @@ import Link from "next/link";
 const sliderData = [
   {
     imageSrc: "/farm-58.webp",
-    altText: "Effortless Farm 58 in New Delhi",
+    altText: "Party farmhouse in New Delhi – Effortless Farm 58",
     subText: "Effortless Farm 58",
     location: "New Delhi",
     href: "/farmhouses/132",
   },
   {
     imageSrc: "/farm-33.webp",
-    altText: "Effortless Farm 33 in New Delhi",
+    altText: "Party farmhouse in New Delhi – Effortless Farm 33",
     subText: "Effortless Farm 33",
     location: "New Delhi",
     href: "/farmhouses/134",
   },
   {
     imageSrc: "/farm-67.webp",
-    altText: "Effortless Farm 67 in Gurugram",
+    altText: "Party farmhouse in Gurugram – Effortless Farm 67",
     subText: "Effortless Farm 67",
     location: "Gurugram",
     href: "/farmhouses/110",
   },
   {
     imageSrc: "/farm-39.webp",
-    altText: "Effortless Farm 39 in Faridabad",
+    altText: "Party farmhouse in Faridabad – Effortless Farm 39",
     subText: "Effortless Farm 39",
     location: "Faridabad",
     href: "/farmhouses/63",
   },
   {
     imageSrc: "/farm-18.webp",
-    altText: "Effortless Farm 18 in New Delhi",
+    altText: "Party farmhouse in New Delhi – Effortless Farm 18",
     subText: "Effortless Farm 18",
     location: "New Delhi",
     href: "/farmhouses/44",
   },
   {
     imageSrc: "/hp-1.webp",
-    altText: "Effortless HP 1 in New Delhi",
+    altText: "Party farmhouse in New Delhi – Effortless HP 1",
     subText: "Effortless HP 1",
     location: "New Delhi",
     href: "/farmhouses/101",
   },
   {
     imageSrc: "/hp-11.webp",
-    altText: "Effortless HP 11 in New Delhi",
+    altText: "Party farmhouse in New Delhi – Effortless HP 11",
     subText: "Effortless HP 11",
     location: "New Delhi",
     href: "/farmhouses/103",
   },
   {
     imageSrc: "/farm-69.webp",
-    altText: "Effortless Farm 69 in Noida",
+    altText: "Party farmhouse in Noida – Effortless Farm 69",
     subText: "Effortless Farm 69",
     location: "Noida",
     href: "/farmhouses/112",
   },
   {
     imageSrc: "/hp-13.webp",
-    altText: "Effortless HP 13 in New Delhi",
+    altText: "Party farmhouse in New Delhi – Effortless HP 13",
     subText: "Effortless HP 13",
     location: "New Delhi",
     href: "/farmhouses/122",
   },
   {
   imageSrc: "/farm-70.webp",
-  altText: "Effortless Farm 70 in Faridabad",
+  altText: "Party farmhouse in Faridabad – Effortless Farm 70",
   subText: "Effortless Farm 70",
   location: "Faridabad",
   href: "/farmhouses/???",
 },
 {
   imageSrc: "/farm-59.webp",
-  altText: "Effortless Farm 59 in Noida",
+  altText: "Party farmhouse in Noida – Effortless Farm 59",
   subText: "Effortless Farm 59",
   location: "Noida",
   href: "/farmhouses/142",
 },
 {
   imageSrc: "/hp-3.webp",
-  altText: "Effortless HP3 in New Delhi",
+  altText: "Party farmhouse in New Delhi – Effortless HP 3",
   subText: "Effortless HP3",
   location: "New Delhi",
   href: "/farmhouses/???",
@@ -383,7 +383,7 @@ const Hero = () => {
                 text-white/80
               "
             >
-              Luxury Event Planning in Delhi NCR
+              Farmhouse Booking for Parties in Delhi NCR
             </p>
 
             {/* =================================================
@@ -419,9 +419,9 @@ const Hero = () => {
                 text-white/90
               "
             >
-              From intimate celebrations to grand corporate
-              galas, we design experiences that stay with you
-              long after the last guest leaves.
+              Book a farmhouse for your birthday, private party
+              or corporate get-together, and let us handle the
+              décor, food and planning around it.
             </p>
 
             {/* =================================================

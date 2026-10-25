@@ -4,6 +4,7 @@ import Hero from "./components/home/Hero";
 import EventPlanningForm from "./components/home/EventPlanningForm";
 import TrustBar from "./components/home/TrustBar";
 import WhoWeAre from "./components/home/WhoWeAre";
+import PartyFarmhouseBooking from "./components/home/PartyFarmhouseBooking";
 import VenueShowcase from "./components/home/VenueShowcase";
 import EventGallery from "./components/home/EventGallery";
 import WhyChooseUs from "./components/home/WhyChooseUs";
@@ -16,14 +17,19 @@ import FinalCTA from "./components/home/FinalCTA";
 import Footer from "./components/Footer";
 
 export const metadata = {
+  title: {
+    absolute: "Farmhouse Booking for Party in Delhi NCR | Effortless Events",
+  },
+  description:
+    "Book a farmhouse for your party in Delhi NCR: birthday, private, corporate and pool party farmhouses in Chattarpur, Gurgaon, Noida & Faridabad.",
   alternates: { canonical: "/" },
   openGraph: {
     url: "/",
     type: "website",
     siteName: "Effortless Events",
-    title: "Effortless Events | Farmhouses, Venues & Event Planning in Delhi NCR",
+    title: "Farmhouse Booking for Party in Delhi NCR | Effortless Events",
     description:
-      "Book farmhouses, villas and event venues across Delhi NCR and get end-to-end event planning for parties, weddings and corporate events.",
+      "Book a farmhouse for your party in Delhi NCR: birthday, private, corporate and pool party farmhouses in Chattarpur, Gurgaon, Noida & Faridabad.",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
   },
 };
@@ -66,6 +72,13 @@ export default function Home() {
       ===================================================== */}
 
       <WhoWeAre />
+
+
+      {/* =====================================================
+          PARTY FARMHOUSE BOOKING (SEO: farmhouse booking for party)
+      ===================================================== */}
+
+      <PartyFarmhouseBooking />
 
 
       {/* =====================================================

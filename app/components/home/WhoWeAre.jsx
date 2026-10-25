@@ -11,7 +11,7 @@ export default function WhoWeAre() {
 
         {/* SEO-Optimized Heading */}
         <h2 className="text-4xl md:text-6xl font-semibold text-[#1F1F1F] leading-tight max-w-5xl">
-          Luxury Event Planning & Venue Booking in Delhi NCR
+          Party Farmhouse Booking &amp; Event Planning in Delhi NCR
         </h2>
 
         {/* Content */}
@@ -19,8 +19,9 @@ export default function WhoWeAre() {
           <p className="text-lg md:text-xl leading-8 text-[#5C5C5C]">
             At Effortless Events, we believe every occasion deserves to be
             extraordinary. Based in New Delhi and serving clients across Delhi
-            NCR, we are a full-service event planning and venue company built
-            for people who refuse to compromise on quality.
+            NCR, we help you book the right farmhouse or venue for your party
+            and plan everything around it, for people who refuse to compromise
+            on quality.
           </p>
 
           <p className="text-lg md:text-xl leading-8 text-[#5C5C5C]">

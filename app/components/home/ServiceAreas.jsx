@@ -3,6 +3,7 @@ export default function ServiceAreas() {
     "New Delhi",
     "Gurugram",
     "Noida",
+    "Greater Noida",
     "Faridabad",
     "Ghaziabad",
   ];
@@ -17,14 +18,14 @@ export default function ServiceAreas() {
 
         {/* Heading */}
         <h2 className="text-4xl md:text-6xl font-serif font-medium text-white leading-tight max-w-5xl mx-auto">
-          Planning Celebrations Across Delhi NCR
+          Farmhouse Booking &amp; Party Planning Across Delhi NCR
         </h2>
 
         {/* Intro */}
         <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl leading-8 text-[#E5D9CA]">
-          From intimate gatherings to grand weddings and corporate events, we
-          bring exceptional event planning and venue booking services to every
-          corner of Delhi NCR.
+          From birthday and private parties to weddings and corporate events,
+          we help you book party farmhouses and venues and plan the event in
+          every corner of Delhi NCR.
         </p>
 
         {/* City Pills */}

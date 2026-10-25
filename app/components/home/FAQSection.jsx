@@ -5,14 +5,29 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
+    question: "How do I book a farmhouse for a party in Delhi NCR?",
+    answer:
+      "Send us your date, guest count, preferred area and budget through the planning form, a call on +91 78380 08069 or WhatsApp. We shortlist party farmhouses that fit, with photos, rates, timings and inclusions. You visit or take a video tour, get the booking terms in writing, and pay a part advance to confirm the date.",
+  },
+  {
+    question: "How much does it cost to book a farmhouse for a party in Delhi NCR?",
+    answer:
+      "Farmhouse rent for a party typically ranges from about ₹15,000 to ₹1,00,000 or more per event, depending on the area, date, guest count and amenities such as a pool. With food, décor and music added, a party can cost from around ₹30,000 for a small gathering to ₹2,00,000 or more for a premium celebration. Weekends, wedding season and 31 December cost the most.",
+  },
+  {
+    question: "Can I book a farmhouse for a day party, or only overnight?",
+    answer:
+      "Both. Day-use bookings give you the farmhouse for a fixed daytime or evening slot, while overnight bookings include rooms for a stay. Timings and overtime rates vary by property, so we confirm them in writing before you book.",
+  },
+  {
     question: "What types of events does Effortless Events manage?",
     answer:
-      "We manage weddings, receptions, pre-wedding functions, corporate conferences, product launches, award ceremonies, birthday parties, anniversaries, and private social gatherings across Delhi NCR.",
+      "We book party farmhouses and venues and manage birthday parties, private parties, pool parties, weddings, receptions, pre-wedding functions, corporate events, award ceremonies and anniversaries across Delhi NCR.",
   },
   {
     question: "Which areas do you cover?",
     answer:
-      "We provide event planning and venue services across Delhi, Gurugram, Noida, Faridabad, and Ghaziabad.",
+      "We provide farmhouse booking, venue booking and event planning across Delhi, Gurugram, Noida, Greater Noida, Faridabad and Ghaziabad.",
   },
   {
     question:

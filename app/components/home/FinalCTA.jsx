@@ -11,14 +11,14 @@ export default function FinalCTA() {
 
         {/* Heading */}
         <h2 className="text-4xl md:text-6xl font-serif font-medium text-white leading-tight">
-          Have Something in Mind?
+          Ready to Book a Farmhouse for Your Party?
         </h2>
 
         {/* Supporting Text */}
         <p className="mt-6 text-lg md:text-xl leading-8 text-[#E5D9CA] max-w-3xl mx-auto">
-          Whether you're planning a wedding, corporate event, birthday
-          celebration, or private gathering, our team is ready to help you
-          create an unforgettable experience.
+          Share your date, guest count and budget, and we will send you party
+          farmhouse options across Delhi NCR. Planning a wedding or corporate
+          event instead? We handle those too.
         </p>
 
         {/* CTA Buttons */}
@@ -28,7 +28,7 @@ export default function FinalCTA() {
             href="/farmhouses"
             className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#C9A34A] text-black font-semibold hover:bg-[#D8B25B] transition-colors"
           >
-            Explore Venues
+            Browse Farmhouses
           </Link>
 
           {/* Browse Services */}

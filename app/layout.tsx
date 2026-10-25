@@ -28,6 +28,10 @@ export const metadata: Metadata = {
 
   keywords: [
     "Effortless Events",
+    "farmhouse booking for party Delhi NCR",
+    "farmhouse for party in Delhi NCR",
+    "party farmhouse booking",
+    "book farmhouse for party",
     "farmhouses in Delhi NCR",
     "farmhouses in Gurgaon",
     "farmhouses near Delhi",
@@ -130,6 +134,14 @@ const organizationSchema = {
         postalCode: "110017",
         addressCountry: "IN",
       },
+      makesOffer: [
+        "Farmhouse booking for parties",
+        "Venue booking",
+        "Event planning and management",
+      ].map((name) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name, areaServed: "Delhi NCR" },
+      })),
       areaServed: [
         "New Delhi",
         "Gurugram",
