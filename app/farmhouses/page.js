@@ -203,7 +203,7 @@ const Farms = () => {
             <div className="mt-8 flex flex-wrap gap-4">
 
               <Link
-                href="/farms"
+                href="/farmhouses"
                 className="inline-flex items-center justify-center px-7 py-3 bg-[#C9A34A] text-[#0F0803] font-medium rounded-md hover:bg-[#D8B25B] transition"
               >
                 Farmhouses
