@@ -30,13 +30,16 @@ export const metadata = {
   ],
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title:
       "Best Farmhouses in Noida for Private Parties, Birthdays & Celebrations",
 
     description:
       "Explore the best farmhouses in Noida for birthdays, private parties, weddings, family gatherings and special celebrations.",
 
-    images: ["/Effortless Farm69.webp"],
+    images: ["/farm-69.webp"],
   },
 };
 
@@ -75,7 +78,11 @@ export default function BlogPage() {
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
 
         <img
-          src="/Effortless Farm69.webp"
+          src="/farm-69.webp"
+          width={750}
+          height={500}
+          fetchPriority="high"
+          decoding="async"
           alt="Effortless Farm 69 in Noida - farmhouse venue for private parties and celebrations"
           className="w-full rounded-xl mb-10"
         />

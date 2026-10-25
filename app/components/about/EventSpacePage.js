@@ -28,7 +28,7 @@ const EventSpacePage = () => {
       ===================================================== */}
 
       <img
-        src="/Effortless Farm59.jpg"
+        src="/farm-59.webp"
         alt="Private farmhouse venue in Delhi NCR by Effortless Events"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
@@ -73,7 +73,7 @@ const EventSpacePage = () => {
 
               <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] xl:text-[3.7rem]">
                 Delhi NCR&apos;s Trusted
-              </span>
+              </span>{" "}
 
               <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] xl:text-[3.7rem] text-[#C9A34A]">
                 Venue Rental &amp; Event Planning Company
@@ -111,19 +111,19 @@ const EventSpacePage = () => {
 
             {[
               {
-                src: "/event-gallery-1.jpeg",
+                src: "/event-gallery-1.webp",
                 alt: "Luxury Event Setup",
               },
               {
-                src: "/event-gallery-2.jpeg",
+                src: "/event-gallery-2.webp",
                 alt: "Outdoor Venue",
               },
               {
-                src: "/event-gallery-3.jpeg",
+                src: "/event-gallery-3.webp",
                 alt: "Wedding Mandap",
               },
               {
-                src: "/event-gallery-4.jpeg",
+                src: "/event-gallery-4.webp",
                 alt: "Wedding Decor",
               },
             ].map((image, index) => (

@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/farmhouse-party-catering-menu-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Farmhouse Party Catering in Delhi NCR: Menu, Quantity & Cost",
 
     description:
       "Per-plate cost estimates, food quantities per guest, buffet vs live counters vs BBQ, staff counts, winter menu ideas and a caterer checklist for Delhi NCR farmhouse parties.",
 
-    images: ["/catering.jpg"],
+    images: ["/catering.webp"],
   },
 };
 
@@ -76,7 +79,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/catering.jpg"
+          src="/catering.webp"
+          width={1200}
+          height={1799}
+          fetchPriority="high"
+          decoding="async"
           alt="Farmhouse party catering in Delhi NCR: a buffet and live food counters set up for guests"
           className="w-full rounded-xl mb-10"
         />

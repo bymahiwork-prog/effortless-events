@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/day-use-vs-overnight-farmhouse-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Day-Use vs Overnight Farmhouse in Delhi NCR: Which to Book?",
 
     description:
       "How to choose between a day-use slot, an overnight stay or a 24-hour farmhouse booking in Delhi NCR: timings, costs, guest limits and a checklist.",
 
-    images: ["/Effortless Farm67.webp"],
+    images: ["/farm-67.webp"],
   },
 };
 
@@ -79,7 +82,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/Effortless Farm67.webp"
+          src="/farm-67.webp"
+          width={384}
+          height={256}
+          fetchPriority="high"
+          decoding="async"
           alt="Day-use vs overnight farmhouse in Delhi NCR: a private farmhouse pool and lit pavilion at dusk"
           className="w-full rounded-xl mb-10"
         />
@@ -450,7 +457,7 @@ export default function Page() {
             a Thursday, with New Year&apos;s Day on a Friday, overnight stays sell first. See
             our{" "}
             <Link
-              href="/blogs/new-year-eve-party-farmhouse-delhi-ncr"
+              href="/blogs/new-years-eve-party-farmhouse-delhi-ncr"
               className="text-black underline font-semibold"
             >
               New Year&apos;s Eve farmhouse party guide

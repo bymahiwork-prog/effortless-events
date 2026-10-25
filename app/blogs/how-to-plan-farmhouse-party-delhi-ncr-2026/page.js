@@ -32,13 +32,16 @@ export const metadata = {
   ],
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title:
       "How to Plan a Farmhouse Party in Delhi NCR: Complete 2026 Guide",
 
     description:
       "A complete guide to planning a farmhouse party in Delhi NCR, from choosing the right venue and setting your budget to food, décor, music, entertainment and guest management.",
 
-    images: ["/farmhouse04.jpg"],
+    images: ["/farmhouse04.webp"],
   },
 };
 
@@ -86,7 +89,11 @@ export default function BlogPage() {
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
 
         <img
-          src="/farmhouse04.jpg"
+          src="/farmhouse04.webp"
+          width={1600}
+          height={1066}
+          fetchPriority="high"
+          decoding="async"
           alt="Farmhouse party venue in Delhi NCR"
           className="w-full rounded-xl mb-10"
         />

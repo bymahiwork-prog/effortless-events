@@ -19,12 +19,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/bachelorette-party-farmhouse-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Bachelorette Party at a Farmhouse in Delhi NCR: 2026 Guide",
 
     description:
       "When to hold it, how many friends a farmhouse suits, per-head budget estimates, party ideas, house rules and a 4-week checklist for bachelorette and bachelor parties.",
 
-    images: ["/decoration-5.jpg"],
+    images: ["/decoration-5.webp"],
   },
 };
 
@@ -75,7 +78,11 @@ export default function BlogPage() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/decoration-5.jpg"
+          src="/decoration-5.webp"
+          width={736}
+          height={1313}
+          fetchPriority="high"
+          decoding="async"
           alt="Bachelorette party at a farmhouse in Delhi NCR with a fairy-light and floral photo backdrop"
           className="w-full rounded-xl mb-10"
         />

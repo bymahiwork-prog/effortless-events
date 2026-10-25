@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/family-christmas-party-farmhouse-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Family Christmas Party at a Farmhouse in Delhi NCR",
 
     description:
       "Christmas 2026 dates, lunch vs dinner vs overnight formats, cost estimates by guest count, a festive menu, games for kids and adults, Delhi rules and a checklist.",
 
-    images: ["/Effortless HP3.jpeg"],
+    images: ["/hp-3.webp"],
   },
 };
 
@@ -76,7 +79,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/Effortless HP3.jpeg"
+          src="/hp-3.webp"
+          width={1024}
+          height={682}
+          fetchPriority="high"
+          decoding="async"
           alt="Family Christmas party at a farmhouse in Delhi NCR: a terrace lounge lit by glowing paper lanterns at dusk"
           className="w-full rounded-xl mb-10"
         />
@@ -677,7 +684,7 @@ export default function Page() {
         <p className="mb-8">
           Keeping the group together for New Year too? Our{" "}
           <Link
-            href="/blogs/new-year-eve-party-farmhouse-delhi-ncr"
+            href="/blogs/new-years-eve-party-farmhouse-delhi-ncr"
             className="text-black underline font-semibold"
           >
             New Year&apos;s Eve farmhouse party guide

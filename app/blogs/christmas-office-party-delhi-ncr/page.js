@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/christmas-office-party-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Office Christmas Party in Delhi NCR: Venue & Planning Guide",
 
     description:
       "Best December 2026 dates, venue formats, per-head budget estimates, winter and music rules, party ideas and a 6-week checklist for an office Christmas party in Delhi NCR.",
 
-    images: ["/private-events.jpg"],
+    images: ["/private-events.webp"],
   },
 };
 
@@ -76,7 +79,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/private-events.jpg"
+          src="/private-events.webp"
+          width={800}
+          height={800}
+          fetchPriority="high"
+          decoding="async"
           alt="Office Christmas party in Delhi NCR with employees at an evening buffet under chandeliers"
           className="w-full rounded-xl mb-10"
         />

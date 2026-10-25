@@ -35,13 +35,16 @@ export const metadata = {
   ],
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title:
       "Best Farmhouses in Delhi NCR for Pool Parties in 2026",
 
     description:
       "Find the best private farmhouses and villas with swimming pools for pool parties across Delhi NCR, including Gurgaon, Chattarpur, Noida, Greater Noida and Faridabad.",
 
-    images: ["/Effortless Farm 58.webp"],
+    images: ["/farm-58.webp"],
   },
 };
 
@@ -89,7 +92,11 @@ export default function BlogPage() {
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
 
         <img
-          src="/Effortless Farm 58.webp"
+          src="/farm-58.webp"
+          width={750}
+          height={500}
+          fetchPriority="high"
+          decoding="async"
           alt="Pool party farmhouse in Delhi NCR"
           className="w-full rounded-xl mb-10"
         />

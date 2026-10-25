@@ -19,12 +19,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/haldi-mehendi-farmhouse-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Haldi & Mehendi at a Farmhouse in Delhi NCR: 2026 Guide",
 
     description:
       "Same-day schedules, guest-count fit, budget estimates, décor ideas and a booking checklist for haldi and mehendi functions at Delhi NCR farmhouses.",
 
-    images: ["/decoration-2.jpg"],
+    images: ["/decoration-2.webp"],
   },
 };
 
@@ -75,7 +78,11 @@ export default function BlogPage() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/decoration-2.jpg"
+          src="/decoration-2.webp"
+          width={800}
+          height={1000}
+          fetchPriority="high"
+          decoding="async"
           alt="Haldi and mehendi farmhouse venue in Delhi NCR with a floral arch and petal-covered seating"
           className="w-full rounded-xl mb-10"
         />

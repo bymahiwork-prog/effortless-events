@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/reunion-party-farmhouse-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Reunion Party at a Farmhouse in Delhi NCR: 2026 Guide",
 
     description:
       "Winter reunion dates, per-person budget estimates, where to book, activity ideas, a 10-week timeline and an organiser checklist for school and college batches.",
 
-    images: ["/event-gallery-4.jpeg"],
+    images: ["/event-gallery-4.webp"],
   },
 };
 
@@ -76,7 +79,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/event-gallery-4.jpeg"
+          src="/event-gallery-4.webp"
+          width={800}
+          height={449}
+          fetchPriority="high"
+          decoding="async"
           alt="Reunion party at a farmhouse in Delhi NCR: friends sharing a long-table lunch on a private farmhouse lawn"
           className="w-full rounded-xl mb-10"
         />

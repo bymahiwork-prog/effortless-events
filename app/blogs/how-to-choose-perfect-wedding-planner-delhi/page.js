@@ -43,6 +43,10 @@ export default function BlogPage() {
 
         <img
           src="/wedding-planner-delhi-guide-cover.webp"
+          width={1600}
+          height={900}
+          fetchPriority="high"
+          decoding="async"
           alt="How to Choose the Perfect Wedding Planner in Delhi: A Complete Guide"
           className="w-full rounded-xl mb-10"
         />

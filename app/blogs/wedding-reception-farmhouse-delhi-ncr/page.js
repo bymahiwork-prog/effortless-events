@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/wedding-reception-farmhouse-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Wedding Reception at a Farmhouse in Delhi NCR: 2026 Guide",
 
     description:
       "When to hold the reception, 2026 dates, cost estimates for 150–500 guests, farmhouse vs banquet vs hotel, a 5-hour run-of-show, 10 PM music rules and a checklist.",
 
-    images: ["/decoration.jpg"],
+    images: ["/decoration.webp"],
   },
 };
 
@@ -76,7 +79,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/decoration.jpg"
+          src="/decoration.webp"
+          width={700}
+          height={700}
+          fetchPriority="high"
+          decoding="async"
           alt="Wedding reception at a farmhouse in Delhi NCR: a white and gold reception stage with a couple's sofa, chandeliers and flower-lined walkway on a lawn"
           className="w-full rounded-xl mb-10"
         />

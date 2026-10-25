@@ -3,13 +3,13 @@ export default function OurTeamSection() {
     {
       name: "Harsimran Singh",
       title: "Managing Director",
-      image: "/managing director (Harsimar singh).jpeg",
+      image: "/harsimran-singh.webp",
       bio: "Founder of Effortless Events Pvt. Ltd., leading venue partnerships and end-to-end event execution across Delhi NCR.",
     },
     {
       name: "Karan Malhotra",
       title: "Managing Director",
-      image: "/managing director (Karan malhotra).jpeg",
+      image: "/karan-malhotra.webp",
       bio: "Co-founder of Effortless Events Pvt. Ltd., overseeing client experience, event strategy, and on-ground coordination.",
     },
   ];
@@ -40,6 +40,8 @@ export default function OurTeamSection() {
           {directors.map((director) => (
             <article key={director.name} className="text-left">
               <img
+                  loading="lazy"
+                  decoding="async"
                 src={director.image}
                 alt={`${director.name}, ${director.title} at Effortless Events Pvt. Ltd.`}
                 className="w-full aspect-[4/5] object-cover rounded-2xl shadow-xl"

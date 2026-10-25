@@ -7,6 +7,9 @@ export const metadata = {
     "DJs, live music, performers, games and guest experiences for farmhouse parties, weddings and corporate events in Delhi NCR, planned around your event's energy.",
   alternates: { canonical: "/services/entertainment-experiences" },
   openGraph: {
+    type: "website",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     images: ["/og-image.jpg"],
     title: "Event Entertainment & Experiences in Delhi NCR | Effortless Events",
     description:

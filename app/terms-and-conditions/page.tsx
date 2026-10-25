@@ -2,10 +2,13 @@
 
 import React from "react";
 import Link from "next/link";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function TermsAndConditionsPage() {
   return (
     <main className="min-h-screen bg-[#0F0803] text-[#D4C7B8]">
+      <Navbar variant="black" />
       {/* =====================================================
           HEADER
       ===================================================== */}
@@ -25,7 +28,7 @@ export default function TermsAndConditionsPage() {
           </p>
 
           <p className="mt-4 text-xs md:text-sm text-[#7F756B]">
-            Last Updated: September 2026
+            Last Updated: October 2026
           </p>
         </div>
       </section>
@@ -53,6 +56,12 @@ export default function TermsAndConditionsPage() {
             <p className="mt-4 text-[#B7AA9C] leading-8 text-sm md:text-base">
               If you do not agree with any part of these Terms & Conditions,
               please discontinue use of the website and our services.
+            </p>
+
+            <p className="mt-4 text-[#B7AA9C] leading-8 text-sm md:text-base">
+              In these Terms &amp; Conditions, &ldquo;Effortless Events&rdquo;,
+              &ldquo;we&rdquo;, &ldquo;us&rdquo; and &ldquo;our&rdquo; mean
+              Effortless Events Pvt. Ltd.
             </p>
           </section>
 
@@ -372,6 +381,7 @@ export default function TermsAndConditionsPage() {
 
         </div>
       </section>
+      <Footer />
     </main>
   );
 }

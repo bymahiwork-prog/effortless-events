@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/anniversary-party-farmhouse-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Anniversary Party at a Farmhouse in Delhi NCR: 2026 Guide",
 
     description:
       "Formats by guest count, silver and golden jubilee ideas, a surprise-party plan, budget estimates, an evening run-of-show and a booking checklist.",
 
-    images: ["/decoration-1.jpg"],
+    images: ["/decoration-1.webp"],
   },
 };
 
@@ -76,7 +79,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/decoration-1.jpg"
+          src="/decoration-1.webp"
+          width={800}
+          height={989}
+          fetchPriority="high"
+          decoding="async"
           alt="Anniversary party at a farmhouse in Delhi NCR: a lawn with fairy lights, white florals and a stage seat for the couple"
           className="w-full rounded-xl mb-10"
         />

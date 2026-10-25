@@ -109,7 +109,7 @@ export default function EventDecorStyling() {
       ===================================================== */}
       <section className="relative min-h-[650px] md:min-h-[720px] flex items-center overflow-hidden">
         <Image
-          src="/event-gallery-2.jpeg"
+          src="/event-gallery-2.webp"
           alt="Event decor and styling"
           fill
           priority

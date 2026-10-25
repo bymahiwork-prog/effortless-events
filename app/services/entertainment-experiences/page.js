@@ -111,7 +111,7 @@ export default function EntertainmentExperiences() {
       <section className="relative min-h-[650px] md:min-h-[720px] flex items-center overflow-hidden">
 
         <Image
-          src="/event-gallery-5.jpeg"
+          src="/event-gallery-5.webp"
           alt="Entertainment and event experiences"
           fill
           priority

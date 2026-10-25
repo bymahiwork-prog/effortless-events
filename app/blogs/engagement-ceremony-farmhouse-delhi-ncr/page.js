@@ -19,12 +19,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/engagement-ceremony-farmhouse-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Engagement Ceremony at a Farmhouse in Delhi NCR: 2026 Guide",
 
     description:
       "2026 engagement muhurat dates, farmhouse vs banquet hall, guest-count fit, budget estimates and a 6-week checklist for a ring ceremony in Delhi NCR.",
 
-    images: ["/event-gallery-3.jpeg"],
+    images: ["/event-gallery-3.webp"],
   },
 };
 
@@ -75,7 +78,11 @@ export default function BlogPage() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/event-gallery-3.jpeg"
+          src="/event-gallery-3.webp"
+          width={800}
+          height={450}
+          fetchPriority="high"
+          decoding="async"
           alt="Engagement ceremony at a farmhouse in Delhi NCR with a decorated stage on the lawn"
           className="w-full rounded-xl mb-10"
         />

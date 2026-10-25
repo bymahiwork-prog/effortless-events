@@ -109,7 +109,7 @@ export default function EventPlanningManagement() {
       ===================================================== */}
       <section className="relative min-h-[650px] md:min-h-[720px] flex items-center overflow-hidden">
         <Image
-          src="/event-gallery-1.jpeg"
+          src="/event-gallery-1.webp"
           alt="Event planning and management"
           fill
           priority

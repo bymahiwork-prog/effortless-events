@@ -90,7 +90,7 @@ const Navbar = ({ variant = "transparent" }) => {
           </a>
 
 
-          {/* Browse Spaces */}
+          {/* Browse Venues */}
           <div className="relative">
 
             <button
@@ -98,7 +98,7 @@ const Navbar = ({ variant = "transparent" }) => {
               onClick={toggleBrowseDropdown}
               className="group flex items-center gap-1.5 text-sm text-white transition-colors duration-300 hover:text-[#d6b36a]"
             >
-              <span>Browse Spaces</span>
+              <span>Browse Venues</span>
 
               <svg
                 className={`w-3.5 h-3.5 transition-transform duration-300 ${
@@ -308,7 +308,7 @@ const Navbar = ({ variant = "transparent" }) => {
               </a>
 
 
-              {/* Browse Spaces */}
+              {/* Browse Venues */}
               <div>
 
                 <button
@@ -316,7 +316,7 @@ const Navbar = ({ variant = "transparent" }) => {
                   onClick={toggleBrowseDropdown}
                   className="flex items-center justify-between w-full text-left text-lg font-medium text-neutral-900 hover:text-[#b38b45] transition-colors"
                 >
-                  <span>Browse Spaces</span>
+                  <span>Browse Venues</span>
 
                   <svg
                     className={`w-5 h-5 transition-transform duration-300 ${

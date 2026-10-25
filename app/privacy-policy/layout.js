@@ -7,6 +7,9 @@ export const metadata = {
     "How Effortless Events collects, uses, stores and protects your information when you use our website and event planning services.",
   alternates: { canonical: "/privacy-policy" },
   openGraph: {
+    type: "website",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     images: ["/og-image.jpg"],
     title: "Privacy Policy | Effortless Events",
     description:

@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/baby-shower-farmhouse-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Baby Shower at a Farmhouse in Delhi NCR: 2026 Guide",
 
     description:
       "Godh bharai dates for late 2026, formats by guest count, cost estimates, comfort and safety tips for the mom-to-be, games, a day plan and a checklist.",
 
-    images: ["/decoration-6.jpg"],
+    images: ["/decoration-6.webp"],
   },
 };
 
@@ -76,7 +79,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/decoration-6.jpg"
+          src="/decoration-6.webp"
+          width={736}
+          height={1012}
+          fetchPriority="high"
+          decoding="async"
           alt="Baby shower at a farmhouse in Delhi NCR: pastel balloons, white flowers and a small cake on a decorated table"
           className="w-full rounded-xl mb-10"
         />

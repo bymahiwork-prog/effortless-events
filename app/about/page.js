@@ -12,6 +12,9 @@ export const metadata = {
     "Meet Effortless Events, a Delhi NCR event planning and venue discovery company helping people book farmhouses, villas and venues and plan parties, weddings and corporate events.",
   alternates: { canonical: "/about" },
   openGraph: {
+    type: "website",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     url: "/about",
     title: "About Effortless Events | Delhi NCR Event Planning & Venues",
     description:

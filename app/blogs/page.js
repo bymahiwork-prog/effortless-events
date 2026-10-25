@@ -8,6 +8,9 @@ export const metadata = {
     "Guides on farmhouse parties, venue costs, corporate events, weddings and Airbnb stays across Delhi NCR — from the Effortless Events team.",
   alternates: { canonical: "/blogs" },
   openGraph: {
+    type: "website",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Effortless Events Blog — Delhi NCR Event & Farmhouse Guides",
     description:
       "Guides on farmhouse parties, venue costs, corporate events, weddings and Airbnb stays across Delhi NCR.",

@@ -19,12 +19,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/kids-birthday-party-farmhouse-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Kids' Birthday Party at a Farmhouse in Delhi NCR: 2026 Guide",
 
     description:
       "Best winter dates and timings, age-wise activities, pool and lawn safety, cost estimates, a sample party plan and a checklist for parents in Delhi NCR.",
 
-    images: ["/birthdays.jpg"],
+    images: ["/birthdays.webp"],
   },
 };
 
@@ -75,7 +78,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/birthdays.jpg"
+          src="/birthdays.webp"
+          width={735}
+          height={980}
+          fetchPriority="high"
+          decoding="async"
           alt="Kids' birthday party at a farmhouse in Delhi NCR: balloon arch and Happy Birthday neon sign backdrop"
           className="w-full rounded-xl mb-10"
         />

@@ -19,12 +19,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/wedding-guest-accommodation-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Wedding Guest Accommodation in Delhi NCR: 2026 Guide",
 
     description:
       "Hotel rooms vs villas vs a farmhouse with rooms for out-of-town wedding guests in Delhi NCR — room maths, cost estimates, timeline and checklist.",
 
-    images: ["/Effortless Farm 33.webp"],
+    images: ["/farm-33.webp"],
   },
 };
 
@@ -75,7 +78,11 @@ export default function BlogPage() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/Effortless Farm 33.webp"
+          src="/farm-33.webp"
+          width={750}
+          height={938}
+          fetchPriority="high"
+          decoding="async"
           alt="Farmhouse with rooms and a large lawn in Delhi NCR, an option for wedding guest accommodation"
           className="w-full rounded-xl mb-10"
         />

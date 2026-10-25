@@ -19,12 +19,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/sangeet-night-farmhouse-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Sangeet Night at a Farmhouse in Delhi NCR: 2026 Guide",
 
     description:
       "2026 sangeet dates, music cut-off rules, stage, sound and lighting setup, budget estimates, a run-of-show and a booking checklist for Delhi NCR farmhouses.",
 
-    images: ["/decoration-8.jpg"],
+    images: ["/decoration-8.webp"],
   },
 };
 
@@ -75,7 +78,11 @@ export default function BlogPage() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/decoration-8.jpg"
+          src="/decoration-8.webp"
+          width={683}
+          height={1024}
+          fetchPriority="high"
+          decoding="async"
           alt="Sangeet night at a farmhouse in Delhi NCR with a floral bar and draped evening lighting"
           className="w-full max-h-[640px] object-cover rounded-xl mb-10"
         />

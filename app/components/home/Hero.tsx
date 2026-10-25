@@ -19,84 +19,84 @@ import Link from "next/link";
 
 const sliderData = [
   {
-    imageSrc: "/Effortless Farm 58.webp",
+    imageSrc: "/farm-58.webp",
     altText: "Effortless Farm 58 in New Delhi",
     subText: "Effortless Farm 58",
     location: "New Delhi",
     href: "/farmhouses/132",
   },
   {
-    imageSrc: "/Effortless Farm 33.webp",
+    imageSrc: "/farm-33.webp",
     altText: "Effortless Farm 33 in New Delhi",
     subText: "Effortless Farm 33",
     location: "New Delhi",
     href: "/farmhouses/134",
   },
   {
-    imageSrc: "/Effortless Farm67.webp",
+    imageSrc: "/farm-67.webp",
     altText: "Effortless Farm 67 in Gurugram",
     subText: "Effortless Farm 67",
     location: "Gurugram",
     href: "/farmhouses/110",
   },
   {
-    imageSrc: "/Effortless Farm39.jpg",
+    imageSrc: "/farm-39.webp",
     altText: "Effortless Farm 39 in Faridabad",
     subText: "Effortless Farm 39",
     location: "Faridabad",
     href: "/farmhouses/63",
   },
   {
-    imageSrc: "/Effortless Farm18.jpg",
+    imageSrc: "/farm-18.webp",
     altText: "Effortless Farm 18 in New Delhi",
     subText: "Effortless Farm 18",
     location: "New Delhi",
     href: "/farmhouses/44",
   },
   {
-    imageSrc: "/Effortless Hp1.webp",
+    imageSrc: "/hp-1.webp",
     altText: "Effortless HP 1 in New Delhi",
     subText: "Effortless HP 1",
     location: "New Delhi",
     href: "/farmhouses/101",
   },
   {
-    imageSrc: "/Effortless Hp11.webp",
+    imageSrc: "/hp-11.webp",
     altText: "Effortless HP 11 in New Delhi",
     subText: "Effortless HP 11",
     location: "New Delhi",
     href: "/farmhouses/103",
   },
   {
-    imageSrc: "/Effortless Farm69.webp",
+    imageSrc: "/farm-69.webp",
     altText: "Effortless Farm 69 in Noida",
     subText: "Effortless Farm 69",
     location: "Noida",
     href: "/farmhouses/112",
   },
   {
-    imageSrc: "/Effortless HP 13.webp",
+    imageSrc: "/hp-13.webp",
     altText: "Effortless HP 13 in New Delhi",
     subText: "Effortless HP 13",
     location: "New Delhi",
     href: "/farmhouses/122",
   },
   {
-  imageSrc: "/Effortless Farm70.webp",
+  imageSrc: "/farm-70.webp",
   altText: "Effortless Farm 70 in Faridabad",
   subText: "Effortless Farm 70",
   location: "Faridabad",
   href: "/farmhouses/???",
 },
 {
-  imageSrc: "/Effortless Farm59.jpg",
+  imageSrc: "/farm-59.webp",
   altText: "Effortless Farm 59 in Noida",
   subText: "Effortless Farm 59",
   location: "Noida",
   href: "/farmhouses/142",
 },
 {
-  imageSrc: "/Effortless HP3.jpeg",
+  imageSrc: "/hp-3.webp",
   altText: "Effortless HP3 in New Delhi",
   subText: "Effortless HP3",
   location: "New Delhi",
@@ -235,7 +235,7 @@ const Hero = () => {
    * =========================================================
    */
 
-  const fallbackImage = "/Effortless Farm 58.webp";
+  const fallbackImage = "/farm-58.webp";
 
   return (
     <section

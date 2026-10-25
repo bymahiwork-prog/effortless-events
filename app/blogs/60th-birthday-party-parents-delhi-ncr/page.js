@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/60th-birthday-party-parents-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "60th Birthday Party for Parents in Delhi NCR: 2026 Guide",
 
     description:
       "Formats by guest count, ideas for a mom's or dad's 60th, a surprise plan, a combined retirement party, budget estimates and a booking checklist.",
 
-    images: ["/decoration-4.jpg"],
+    images: ["/decoration-4.webp"],
   },
 };
 
@@ -76,7 +79,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/decoration-4.jpg"
+          src="/decoration-4.webp"
+          width={800}
+          height={1200}
+          fetchPriority="high"
+          decoding="async"
           alt="60th birthday party for parents in Delhi NCR: a gold and ivory dinner table with candles and white napkins"
           className="w-full rounded-xl mb-10"
         />

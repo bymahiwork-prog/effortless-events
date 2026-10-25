@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/proposal-at-farmhouse-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Proposal at a Farmhouse in Delhi NCR: Setup, Cost & Ideas",
 
     description:
       "A practical guide to a private farmhouse proposal in Delhi NCR: setup styles, cost estimates, winter timing, keeping it a surprise and a booking checklist.",
 
-    images: ["/decoration-1.jpg"],
+    images: ["/decoration-1.webp"],
   },
 };
 
@@ -105,7 +108,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/decoration-1.jpg"
+          src="/decoration-1.webp"
+          width={800}
+          height={989}
+          fetchPriority="high"
+          decoding="async"
           alt="Proposal at a farmhouse in Delhi NCR: a lawn with fairy lights, white florals and a decorated seat for the couple"
           className="w-full rounded-xl mb-10"
         />
@@ -373,7 +380,7 @@ export default function Page() {
             farmhouses are in heavy demand for parties, so a proposal earlier
             in the day or on 30 December is easier to book. See our{" "}
             <Link
-              href="/blogs/new-year-eve-party-farmhouse-delhi-ncr"
+              href="/blogs/new-years-eve-party-farmhouse-delhi-ncr"
               className="text-black underline font-semibold"
             >
               New Year&apos;s Eve farmhouse party guide

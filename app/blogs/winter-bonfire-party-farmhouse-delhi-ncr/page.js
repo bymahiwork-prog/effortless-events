@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/winter-bonfire-party-farmhouse-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Winter Bonfire Party at a Farmhouse in Delhi NCR: 2026 Guide",
 
     description:
       "Best winter dates, what GRAP and fire rules mean for a bonfire, heater options, budget estimates, party ideas and a 4-week checklist for a farmhouse winter party.",
 
-    images: ["/decoration-7.jpg"],
+    images: ["/decoration-7.webp"],
   },
 };
 
@@ -76,7 +79,11 @@ export default function BlogPage() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/decoration-7.jpg"
+          src="/decoration-7.webp"
+          width={800}
+          height={1200}
+          fetchPriority="high"
+          decoding="async"
           alt="Winter bonfire party at a farmhouse in Delhi NCR with lawn seating and string lights"
           className="w-full rounded-xl mb-10"
         />
@@ -491,7 +498,7 @@ export default function BlogPage() {
             <strong>New Year&apos;s Eve countdown:</strong> a DJ indoors after
             10 PM, a midnight toast and an overnight stay (see our{" "}
             <Link
-              href="/blogs/new-year-eve-party-farmhouse-delhi-ncr"
+              href="/blogs/new-years-eve-party-farmhouse-delhi-ncr"
               className="underline"
             >
               New Year&apos;s Eve farmhouse party guide

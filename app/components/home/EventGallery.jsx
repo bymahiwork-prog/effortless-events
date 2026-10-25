@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 
 const images = [
-  "/event-gallery-1.jpeg",
-  "/event-gallery-2.jpeg",
-  "/event-gallery-3.jpeg",
-  "/event-gallery-4.jpeg",
-  "/event-gallery-5.jpeg",
+  "/event-gallery-1.webp",
+  "/event-gallery-2.webp",
+  "/event-gallery-3.webp",
+  "/event-gallery-4.webp",
+  "/event-gallery-5.webp",
 ];
 
 export default function EventGallery() {
@@ -61,6 +61,8 @@ export default function EventGallery() {
 
             {images.map((image, index) => (
               <img
+                  loading="lazy"
+                  decoding="async"
                 key={image}
                 src={image}
                 alt={`Event gallery image ${index + 1}`}

@@ -112,7 +112,7 @@ export default function VenueBooking() {
       <section className="relative min-h-[650px] md:min-h-[720px] flex items-center overflow-hidden">
 
         <Image
-          src="/event-gallery-4.jpeg"
+          src="/event-gallery-4.webp"
           alt="Premium event venue"
           fill
           priority
@@ -145,7 +145,7 @@ export default function VenueBooking() {
             <div className="flex flex-col sm:flex-row gap-4">
 
               <Link
-                href="/farms"
+                href="/farmhouses"
                 className="inline-flex items-center justify-center gap-3 bg-[#E4D078] text-black px-7 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-white transition-all duration-300"
               >
                 Browse Venues
@@ -323,7 +323,7 @@ export default function VenueBooking() {
               </p>
 
               <Link
-                href="/farms"
+                href="/farmhouses"
                 className="inline-flex items-center gap-2 mt-8 text-[#B88A25] text-sm tracking-[0.15em] uppercase font-medium hover:gap-4 transition-all duration-300"
               >
                 Explore Venues
@@ -494,7 +494,7 @@ export default function VenueBooking() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
 
             <Link
-              href="/farms"
+              href="/farmhouses"
               className="inline-flex items-center justify-center gap-3 bg-[#111111] text-white px-8 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-[#E4D078] hover:text-black transition-all duration-300"
             >
               Browse Venues

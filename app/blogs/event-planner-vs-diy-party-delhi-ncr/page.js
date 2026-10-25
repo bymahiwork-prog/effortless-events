@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/event-planner-vs-diy-party-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Event Planner vs DIY Party in Delhi NCR: Which to Choose?",
 
     description:
       "A decision guide for Delhi NCR hosts: DIY vs day-of coordinator vs full planner, fee estimates, occasion-by-occasion advice and questions to ask before hiring.",
 
-    images: ["/event-management.jpg"],
+    images: ["/event-management.webp"],
   },
 };
 
@@ -102,7 +105,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/event-management.jpg"
+          src="/event-management.webp"
+          width={1100}
+          height={1359}
+          fetchPriority="high"
+          decoding="async"
           alt="Event planner vs DIY party in Delhi NCR: a decoration crew on ladders lifting a pink canopy into a floral ceiling during event setup"
           className="w-full rounded-xl mb-10"
         />

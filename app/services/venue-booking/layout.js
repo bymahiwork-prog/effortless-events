@@ -7,6 +7,9 @@ export const metadata = {
     "Book farmhouses, villas, banquet spaces and event venues across Delhi NCR — Gurgaon, Noida, Chattarpur and more — for weddings, parties and corporate events.",
   alternates: { canonical: "/services/venue-booking" },
   openGraph: {
+    type: "website",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     images: ["/og-image.jpg"],
     title: "Venue Booking in Delhi NCR: Farmhouses, Villas & Event Spaces | Effortless Events",
     description:

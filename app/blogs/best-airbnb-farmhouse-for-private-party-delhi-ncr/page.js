@@ -19,6 +19,9 @@ export const metadata = {
   ],
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Best Airbnb Farmhouses for Private Parties in Delhi NCR",
     description:
       "Discover premium Airbnb farmhouses for birthdays, pool parties and private celebrations.",
@@ -61,6 +64,10 @@ export default function BlogPage() {
 
         <img
           src="/airbnb-farmhouse-cover.webp"
+          width={1536}
+          height={1024}
+          fetchPriority="high"
+          decoding="async"
           alt="Best Airbnb Farmhouses for Private Parties in Delhi NCR"
           className="w-full rounded-xl mb-10"
         />
@@ -149,7 +156,7 @@ export default function BlogPage() {
           <li>Graduation Parties</li>
           <li>
             <Link
-              href="/blogs/new-year-eve-party-farmhouse-delhi-ncr"
+              href="/blogs/new-years-eve-party-farmhouse-delhi-ncr"
               className="underline"
             >
               New Year&apos;s Eve Parties

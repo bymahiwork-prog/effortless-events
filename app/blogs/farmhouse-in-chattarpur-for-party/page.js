@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/farmhouse-in-chattarpur-for-party" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Farmhouse in Chattarpur for Party: Areas, Cost & Rules",
 
     description:
       "Which Chattarpur pocket suits your party, what rent and food may cost, Delhi's liquor and music rules, and what to check before you pay an advance.",
 
-    images: ["/Effortless Farm 58.webp"],
+    images: ["/farm-58.webp"],
   },
 };
 
@@ -107,7 +110,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/Effortless Farm 58.webp"
+          src="/farm-58.webp"
+          width={750}
+          height={500}
+          fetchPriority="high"
+          decoding="async"
           alt="Farmhouse in Chattarpur for a party: a modern two-storey farmhouse with a private pool, wooden deck and glass balconies"
           className="w-full rounded-xl mb-10"
         />

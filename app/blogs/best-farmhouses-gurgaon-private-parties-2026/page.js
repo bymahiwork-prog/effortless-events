@@ -33,13 +33,16 @@ export const metadata = {
   ],
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title:
       "Best Farmhouses in Gurgaon for Private Parties in 2026",
 
     description:
       "Explore private farmhouses and luxury villas in Gurgaon for birthdays, pool parties, family gatherings, friends' get-togethers and private celebrations.",
 
-    images: ["/farmhouse03.jpg"],
+    images: ["/farmhouse03.webp"],
   },
 };
 
@@ -87,7 +90,11 @@ export default function BlogPage() {
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
 
         <img
-          src="/farmhouse03.jpg"
+          src="/farmhouse03.webp"
+          width={1600}
+          height={1066}
+          fetchPriority="high"
+          decoding="async"
           alt="Best farmhouses in Gurgaon for private parties"
           className="w-full rounded-xl mb-10"
         />

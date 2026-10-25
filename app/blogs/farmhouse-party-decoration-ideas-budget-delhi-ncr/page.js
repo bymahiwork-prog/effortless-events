@@ -22,12 +22,15 @@ export const metadata = {
   },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Farmhouse Party Decoration Ideas on a Budget in Delhi NCR",
 
     description:
       "How to decorate a farmhouse party in Delhi NCR without overspending: budget tiers, where décor money matters most, DIY vs decorator, lighting and rules.",
 
-    images: ["/decoration-3.jpg"],
+    images: ["/decoration-3.webp"],
   },
 };
 
@@ -81,7 +84,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/decoration-3.jpg"
+          src="/decoration-3.webp"
+          width={736}
+          height={840}
+          fetchPriority="high"
+          decoding="async"
           alt="Farmhouse party decoration ideas on a budget in Delhi NCR: fabric drapes, fairy lights and candle-lit tables at an evening party"
           className="w-full rounded-xl mb-10"
         />
@@ -511,7 +518,7 @@ export default function Page() {
             For New Year&apos;s Eve, a gold-and-black palette with a
             countdown sign is cheap and photographs well; see our{" "}
             <Link
-              href="/blogs/new-year-eve-party-farmhouse-delhi-ncr"
+              href="/blogs/new-years-eve-party-farmhouse-delhi-ncr"
               className="text-black underline font-semibold"
             >
               New Year&apos;s Eve farmhouse party guide

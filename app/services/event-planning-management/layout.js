@@ -7,6 +7,9 @@ export const metadata = {
     "End-to-end event planning and management in Delhi NCR — venues, vendors, budgets, décor, catering and execution for weddings, parties and corporate events.",
   alternates: { canonical: "/services/event-planning-management" },
   openGraph: {
+    type: "website",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     images: ["/og-image.jpg"],
     title: "Event Planning & Management Company in Delhi NCR | Effortless Events",
     description:

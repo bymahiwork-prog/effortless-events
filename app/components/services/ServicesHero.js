@@ -10,7 +10,7 @@ export default function ServicesHero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/event-gallery-1.jpeg"
+          src="/event-gallery-1.webp"
           alt="Elegant event setup by Effortless Events"
           className="h-full w-full object-cover object-center"
         />

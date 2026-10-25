@@ -7,6 +7,9 @@ export const metadata = {
     "Event décor and styling for weddings, birthdays, farmhouse parties and corporate events in Delhi NCR — themes, floral, lighting and stage design.",
   alternates: { canonical: "/services/event-decor-styling" },
   openGraph: {
+    type: "website",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     images: ["/og-image.jpg"],
     title: "Event Décor & Styling in Delhi NCR | Effortless Events",
     description:

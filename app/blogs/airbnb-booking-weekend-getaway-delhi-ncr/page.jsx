@@ -27,6 +27,9 @@ export const metadata = {
   ],
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title:
       "Airbnb Booking for Weekend Getaways with Friends & Family | Effortless Event",
 
@@ -72,6 +75,10 @@ export default function BlogPage() {
 
         <img
           src="/airbnb-booking-weekend-getaway-delhi-ncr-cover.webp"
+          width={1536}
+          height={1024}
+          fetchPriority="high"
+          decoding="async"
           alt="Airbnb Booking for Weekend Getaways in Delhi NCR"
           className="w-full rounded-xl mb-10"
         />

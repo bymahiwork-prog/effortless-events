@@ -30,13 +30,16 @@ export const metadata = {
   ],
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title:
       "How Much Does a Farmhouse Party Cost in Delhi NCR in 2026?",
 
     description:
       "A complete 2026 guide to farmhouse party costs in Delhi NCR, including venue rent, catering, décor, DJ, pool parties and other event expenses.",
 
-    images: ["/event-planning.jpg"],
+    images: ["/event-planning.webp"],
   },
 };
 
@@ -88,7 +91,11 @@ export default function BlogPage() {
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
 
         <img
-          src="/event-planning.jpg"
+          src="/event-planning.webp"
+          width={1200}
+          height={800}
+          fetchPriority="high"
+          decoding="async"
           alt="Farmhouse party and event planning in Delhi NCR"
           className="w-full rounded-xl mb-10"
         />

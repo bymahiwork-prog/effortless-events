@@ -1,10 +1,13 @@
 "use client";
 
 import React from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function PrivacyPolicyPage() {
   return (
     <main className="min-h-screen bg-[#0F0803] text-[#D4C7B8]">
+      <Navbar variant="black" />
 
       {/* =====================================================
           HERO
@@ -28,7 +31,7 @@ export default function PrivacyPolicyPage() {
           </p>
 
           <p className="mt-5 text-sm text-[#8F8173]">
-            Last updated: September 2026
+            Last Updated: October 2026
           </p>
 
         </div>
@@ -55,6 +58,16 @@ export default function PrivacyPolicyPage() {
               <p className="leading-8 mb-4">
                 Effortless Events respects your privacy and is committed to
                 protecting the personal information you share with us.
+              </p>
+
+              <p className="leading-8 mb-4">
+                In this Privacy Policy, &ldquo;Effortless Events&rdquo;,
+                &ldquo;we&rdquo;, &ldquo;us&rdquo; and &ldquo;our&rdquo; mean
+                Effortless Events Pvt. Ltd. &ldquo;Platform&rdquo; means the
+                website effortlessevents.in and the enquiry channels linked
+                from it, such as WhatsApp and phone. &ldquo;Venue
+                Partner&rdquo; means a farmhouse, venue owner or event service
+                provider we work with to arrange your booking or event.
               </p>
 
               <p className="leading-8">
@@ -446,7 +459,7 @@ export default function PrivacyPolicyPage() {
 
               <p className="leading-8 mt-4">
                 Any updated version will be published on this page together
-                with a revised "Last updated" date.
+                with a revised "Last Updated" date.
               </p>
             </section>
 
@@ -485,7 +498,13 @@ export default function PrivacyPolicyPage() {
               <div className="bg-[#17110B] border border-[#2A2118] rounded-[24px] p-6 md:p-8">
 
                 <p className="text-white font-medium mb-2">
-                  Effortless Events
+                  Effortless Events Pvt. Ltd.
+                </p>
+
+                <p className="text-[#B9AA9A] leading-7 mb-3">
+                  L57B, Malviya Nagar, New Delhi 110017
+                  <br />
+                  Phone / WhatsApp: +91 78380 08069
                 </p>
 
                 <p className="text-[#B9AA9A] leading-7">
@@ -516,6 +535,7 @@ export default function PrivacyPolicyPage() {
         </div>
       </section>
 
+      <Footer />
     </main>
   );
 }

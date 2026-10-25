@@ -21,12 +21,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/diwali-party-farmhouse-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Diwali Party at a Farmhouse in Delhi NCR: 2026 Guide",
 
     description:
       "When to book, card party and family ideas, décor, food, cracker rules and a booking checklist for a Diwali party at a Delhi NCR farmhouse.",
 
-    images: ["/event-gallery-1.jpeg"],
+    images: ["/event-gallery-1.webp"],
   },
 };
 
@@ -73,7 +76,11 @@ export default function BlogPage() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/event-gallery-1.jpeg"
+          src="/event-gallery-1.webp"
+          width={800}
+          height={450}
+          fetchPriority="high"
+          decoding="async"
           alt="Diwali party at a farmhouse in Delhi NCR with a lit floral entrance"
           className="w-full rounded-xl mb-10"
         />

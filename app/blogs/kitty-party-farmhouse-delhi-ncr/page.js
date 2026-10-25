@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/kitty-party-farmhouse-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Kitty Party at a Farmhouse in Delhi NCR: 2026 Guide",
 
     description:
       "Weekday farmhouse kitty lunches, special and annual kitties, cost estimates by group size, winter themes, games, a 5-hour run-of-show and a booking checklist.",
 
-    images: ["/Effortless Hp1.webp"],
+    images: ["/hp-1.webp"],
   },
 };
 
@@ -76,7 +79,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/Effortless Hp1.webp"
+          src="/hp-1.webp"
+          width={750}
+          height={500}
+          fetchPriority="high"
+          decoding="async"
           alt="Kitty party at a farmhouse in Delhi NCR: a terrace lounge with wicker chairs, a swing seat, balloons and a green wall"
           className="w-full rounded-xl mb-10"
         />

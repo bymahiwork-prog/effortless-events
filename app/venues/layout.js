@@ -5,7 +5,12 @@ export const metadata = {
   title: "Event Venues in Delhi NCR for Parties, Weddings & Corporate Events",
   description:
     "Browse event venues across Delhi NCR — farmhouses, villas and event spaces in Gurgaon, Noida, Chattarpur and South Delhi for parties, weddings and corporate events.",
+  alternates: { canonical: "/venues" },
   openGraph: {
+    type: "website",
+    siteName: "Effortless Events",
+    locale: "en_IN",
+    url: "/venues",
     images: ["/og-image.jpg"],
     title: "Event Venues in Delhi NCR for Parties, Weddings & Corporate Events | Effortless Events",
     description:

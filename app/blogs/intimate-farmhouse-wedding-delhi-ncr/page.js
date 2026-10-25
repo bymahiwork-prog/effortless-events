@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/intimate-farmhouse-wedding-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Intimate Farmhouse Wedding in Delhi NCR: 2026 Planning Guide",
 
     description:
       "Muhurat dates, guest-count tiers, budget estimates, venue rules and a 10-week checklist for a small farmhouse wedding in Delhi NCR.",
 
-    images: ["/event-gallery-2.jpeg"],
+    images: ["/event-gallery-2.webp"],
   },
 };
 
@@ -76,7 +79,11 @@ export default function BlogPage() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/event-gallery-2.jpeg"
+          src="/event-gallery-2.webp"
+          width={800}
+          height={450}
+          fetchPriority="high"
+          decoding="async"
           alt="Intimate farmhouse wedding in Delhi NCR with a floral mandap on an open lawn"
           className="w-full rounded-xl mb-10"
         />

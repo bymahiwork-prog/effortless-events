@@ -43,6 +43,10 @@ export default function BlogPage() {
 
         <img
           src="/corporate-event-planning-mistakes-cover.webp"
+          width={1400}
+          height={933}
+          fetchPriority="high"
+          decoding="async"
           alt="10 Event Planning Mistakes That Can Ruin Your Corporate Event"
           className="w-full rounded-xl mb-10"
         />

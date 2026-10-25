@@ -49,6 +49,10 @@ export default function BlogPage() {
 
         <img
           src="/best-farmhouses-near-delhi-weekend-getaways-cover.webp"
+          width={1536}
+          height={1024}
+          fetchPriority="high"
+          decoding="async"
           alt="Best Farmhouses Near Delhi for Weekend Getaways"
           className="w-full rounded-xl mb-10"
         />
@@ -682,7 +686,7 @@ export default function BlogPage() {
           </p>
 
           <a
-            href="/farms"
+            href="/farmhouses"
             className="inline-block bg-white text-black px-8 py-4 rounded-lg font-semibold hover:bg-[#D9B56D] transition"
           >
             Explore Farmhouses

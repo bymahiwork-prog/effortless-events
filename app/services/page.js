@@ -15,6 +15,9 @@ export const metadata = {
     "Event planning, venue booking, décor, catering & bar, entertainment and on-ground management for weddings, farmhouse parties and corporate events across Delhi NCR.",
   alternates: { canonical: "/services" },
   openGraph: {
+    type: "website",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     url: "/services",
     title: "Event Management Services in Delhi NCR | Effortless Events",
     description:

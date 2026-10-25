@@ -7,6 +7,9 @@ export const metadata = {
     "The terms and conditions governing use of the Effortless Events website and our venue booking and event planning services.",
   alternates: { canonical: "/terms-and-conditions" },
   openGraph: {
+    type: "website",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     images: ["/og-image.jpg"],
     title: "Terms & Conditions | Effortless Events",
     description:

@@ -43,6 +43,10 @@ export default function BlogPage() {
 
         <img
           src="/airbnb-for-group-stays-and-corporate-travel-cover.webp"
+          width={1600}
+          height={900}
+          fetchPriority="high"
+          decoding="async"
           alt="Why Booking an Airbnb Is the Smart Choice for Group Stays and Corporate Travel"
           className="w-full rounded-xl mb-10"
         />

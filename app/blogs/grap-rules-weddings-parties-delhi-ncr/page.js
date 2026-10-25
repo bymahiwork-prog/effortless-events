@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/grap-rules-weddings-parties-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "GRAP Rules for Weddings & Parties in Delhi NCR (2026)",
 
     description:
       "A stage-by-stage guide for wedding and party hosts in Delhi NCR: generators, tandoors, bonfires, firecrackers, guest cars, vendor trucks and a pre-event checklist.",
 
-    images: ["/party-venues.jpg"],
+    images: ["/party-venues.webp"],
   },
 };
 
@@ -113,7 +116,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/party-venues.jpg"
+          src="/party-venues.webp"
+          width={800}
+          height={1200}
+          fetchPriority="high"
+          decoding="async"
           alt="GRAP rules for weddings and parties in Delhi NCR: an indoor event hall with a floral arch and round tables, a backup when outdoor air quality is poor"
           className="w-full rounded-xl mb-10"
         />

@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/farmhouse-in-greater-noida-for-party" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Farmhouse in Greater Noida for Party: Areas, Cost & Rules",
 
     description:
       "Which part of Greater Noida suits your party, what rent and food may cost, Uttar Pradesh's liquor and music rules, and what to check before you pay.",
 
-    images: ["/Effortless Farm18.jpg"],
+    images: ["/farm-18.webp"],
   },
 };
 
@@ -113,7 +116,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/Effortless Farm18.jpg"
+          src="/farm-18.webp"
+          width={780}
+          height={1040}
+          fetchPriority="high"
+          decoding="async"
           alt="Farmhouse in Greater Noida for a party: wooden farm-stay cottages with a green lawn, potted plants and a garden path"
           className="w-full rounded-xl mb-10"
         />

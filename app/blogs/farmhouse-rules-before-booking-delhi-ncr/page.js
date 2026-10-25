@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/farmhouse-rules-before-booking-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Farmhouse Rules to Check Before Booking in Delhi NCR",
 
     description:
       "Music cut-offs, liquor licences, guest limits, timings, outside vendors and deposits: the farmhouse rules to confirm in writing before you pay an advance in Delhi NCR.",
 
-    images: ["/farmhouse04.jpg"],
+    images: ["/farmhouse04.webp"],
   },
 };
 
@@ -76,7 +79,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/farmhouse04.jpg"
+          src="/farmhouse04.webp"
+          width={1600}
+          height={1066}
+          fetchPriority="high"
+          decoding="async"
           alt="Private farmhouse in Delhi NCR with a pool and lawn seating, the kind of venue whose rules to check before booking"
           className="w-full rounded-xl mb-10"
         />
@@ -612,7 +619,7 @@ export default function Page() {
           </Link>{" "}
           picks up from here, and if you are booking for 31 December, the{" "}
           <Link
-            href="/blogs/new-year-eve-party-farmhouse-delhi-ncr"
+            href="/blogs/new-years-eve-party-farmhouse-delhi-ncr"
             className="text-black underline font-semibold"
           >
             New Year&apos;s Eve farmhouse party guide

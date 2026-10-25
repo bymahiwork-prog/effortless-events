@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/corporate-annual-day-award-night-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Corporate Annual Day & Award Night Planning in Delhi NCR",
 
     description:
       "Venue formats, per-head budget estimates, award categories, employee performances, a 4-hour run-of-show and a 12-week countdown checklist for HR teams.",
 
-    images: ["/event-gallery-5.jpeg"],
+    images: ["/event-gallery-5.webp"],
   },
 };
 
@@ -76,7 +79,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/event-gallery-5.jpeg"
+          src="/event-gallery-5.webp"
+          width={1000}
+          height={561}
+          fetchPriority="high"
+          decoding="async"
           alt="Corporate annual day in Delhi NCR: employees seated at round tables in a hotel ballroom during an award night"
           className="w-full rounded-xl mb-10"
         />

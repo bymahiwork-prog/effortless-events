@@ -30,13 +30,16 @@ export const metadata = {
   ],
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title:
       "10 Best Farmhouses in Delhi NCR for Birthday Parties in 2026",
 
     description:
       "Explore the best farmhouse options for birthday parties across Delhi NCR, including pool farmhouses, luxury villas, overnight stays and private party venues.",
 
-    images: ["/birthdays.jpg"],
+    images: ["/birthdays.webp"],
   },
 };
 
@@ -84,7 +87,11 @@ export default function BlogPage() {
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
 
         <img
-          src="/birthdays.jpg"
+          src="/birthdays.webp"
+          width={735}
+          height={980}
+          fetchPriority="high"
+          decoding="async"
           alt="Best farmhouses in Delhi NCR for birthday parties"
           className="w-full rounded-xl mb-10"
         />

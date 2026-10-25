@@ -10,42 +10,42 @@ const services = [
     title: "Event Planning & Management",
     description:
       "End-to-end planning, budgeting, vendor coordination and flawless execution for stress-free events.",
-    image: "/event-planning.jpg",
+    image: "/event-planning.webp",
   },
   {
     slug: "event-decor-styling",
     title: "Event Décor & Styling",
     description:
       "Creative concepts and stunning décor that transform your vision into an unforgettable experience.",
-    image: "/decoration.jpg",
+    image: "/decoration.webp",
   },
   {
     slug: "catering-bar-services",
     title: "Catering & Bar Services",
     description:
       "Delicious menus, professional service and customized bar setups for every occasion.",
-    image: "/catering.jpg",
+    image: "/catering.webp",
   },
   {
     slug: "venue-booking",
     title: "Venue Booking",
     description:
       "50+ premium venues including farmhouses, villas, banquet halls, rooftops and more.",
-    image: "/party-venues.jpg",
+    image: "/party-venues.webp",
   },
   {
     slug: "entertainment-experiences",
     title: "Entertainment & Experiences",
     description:
       "DJs, live bands, artists and unique experiences that keep your guests engaged and delighted.",
-    image: "/entertainment.jpg",
+    image: "/entertainment.webp",
   },
   {
     slug: "on-ground-event-management",
     title: "On-Ground Event Management",
     description:
       "Our on-site team ensures everything runs smoothly so you can focus on your guests.",
-    image: "/event-management.jpg",
+    image: "/event-management.webp",
   },
 ];
 
@@ -114,6 +114,8 @@ export default function ServicesGrid() {
                 <div className="relative h-44 sm:h-48 overflow-hidden">
 
                   <img
+                  loading="lazy"
+                  decoding="async"
                     src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"

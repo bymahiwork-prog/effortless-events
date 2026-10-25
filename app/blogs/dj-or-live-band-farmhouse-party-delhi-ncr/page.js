@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/dj-or-live-band-farmhouse-party-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "DJ or Live Band for a Farmhouse Party in Delhi NCR?",
 
     description:
       "How to choose between a DJ, a live band or both for a Delhi NCR farmhouse party: cost estimates, space, power, sound rules and a booking checklist.",
 
-    images: ["/entertainment.jpg"],
+    images: ["/entertainment.webp"],
   },
 };
 
@@ -79,7 +82,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/entertainment.jpg"
+          src="/entertainment.webp"
+          width={640}
+          height={640}
+          fetchPriority="high"
+          decoding="async"
           alt="DJ or live band for a farmhouse party in Delhi NCR: a live band performing on an outdoor stage under lantern lights"
           className="w-full rounded-xl mb-10"
         />
@@ -219,7 +226,7 @@ export default function Page() {
         <p className="mb-8">
           This is why DJs dominate birthday parties, bachelorette nights and{" "}
           <Link
-            href="/blogs/new-year-eve-party-farmhouse-delhi-ncr"
+            href="/blogs/new-years-eve-party-farmhouse-delhi-ncr"
             className="text-black underline font-semibold"
           >
             New Year&apos;s Eve parties at farmhouses

@@ -6,44 +6,44 @@ import { ArrowRight } from "lucide-react";
 
 const decorationImages = [
   {
-    image: "/decoration-1.jpg",
+    image: "/decoration-1.webp",
     title: "Wedding Décor",
-    href: "/services/decoration-services",
+    href: "/services/event-decor-styling",
   },
   {
-    image: "/decoration-2.jpg",
+    image: "/decoration-2.webp",
     title: "Floral Styling",
-    href: "/services/decoration-services",
+    href: "/services/event-decor-styling",
   },
   {
-    image: "/decoration-3.jpg",
+    image: "/decoration-3.webp",
     title: "Elegant Celebrations",
-    href: "/services/decoration-services",
+    href: "/services/event-decor-styling",
   },
   {
-    image: "/decoration-4.jpg",
+    image: "/decoration-4.webp",
     title: "Table Styling",
-    href: "/services/decoration-services",
+    href: "/services/event-decor-styling",
   },
   {
-    image: "/decoration-5.jpg",
+    image: "/decoration-5.webp",
     title: "Luxury Event Décor",
-    href: "/services/decoration-services",
+    href: "/services/event-decor-styling",
   },
   {
-    image: "/decoration-6.jpg",
+    image: "/decoration-6.webp",
     title: "Private Celebrations",
-    href: "/services/decoration-services",
+    href: "/services/event-decor-styling",
   },
   {
-    image: "/decoration-7.jpg",
+    image: "/decoration-7.webp",
     title: "Reception Décor",
-    href: "/services/decoration-services",
+    href: "/services/event-decor-styling",
   },
   {
-    image: "/decoration-8.jpg",
+    image: "/decoration-8.webp",
     title: "Custom Event Styling",
-    href: "/services/decoration-services",
+    href: "/services/event-decor-styling",
   },
 ];
 
@@ -100,7 +100,8 @@ export default function DecorationGallery() {
                 <img
                   src={item.image}
                   alt={item.title}
-                  loading={index < 4 ? "eager" : "lazy"}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 

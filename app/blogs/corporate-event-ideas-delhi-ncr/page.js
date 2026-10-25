@@ -45,6 +45,10 @@ export default function BlogPage() {
 
         <img
           src="/corporate-event-ideas-delhi-ncr-cover.webp"
+          width={1400}
+          height={933}
+          fetchPriority="high"
+          decoding="async"
           alt="15 Corporate Event Ideas in Delhi NCR That Will Impress Your Guests"
           className="w-full rounded-xl mb-10"
         />

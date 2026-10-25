@@ -8,25 +8,25 @@ const eventTypes = [
     title: "Weddings",
     description:
       "Make your big day truly magical with our complete planning and execution.",
-    image: "/weddings.jpg",
+    image: "/weddings.webp",
   },
   {
     title: "Birthdays & Parties",
     description:
       "From intimate gatherings to lavish celebrations, we create unforgettable memories.",
-    image: "/birthdays.jpg",
+    image: "/birthdays.webp",
   },
   {
     title: "Corporate Events",
     description:
       "Conferences, launches, annual days and corporate parties executed with professionalism.",
-    image: "/corporate.jpg",
+    image: "/corporate.webp",
   },
   {
     title: "Private Celebrations",
     description:
       "Anniversaries, kitty parties and special gatherings tailored to your needs.",
-    image: "/private-events.jpg",
+    image: "/private-events.webp",
   },
 ];
 
@@ -92,6 +92,8 @@ export default function EventTypes() {
                 ================================================= */}
 
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={event.image}
                   alt={event.title}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -151,10 +153,10 @@ export default function EventTypes() {
         >
 
           <Link
-            href="/services"
+            href="/services/event-planning-management"
             className="inline-flex items-center justify-center border border-[#b38b45] px-7 py-3 text-[10px] sm:text-xs font-semibold tracking-[0.16em] uppercase text-[#8d6a31] transition-all duration-300 hover:bg-[#b38b45] hover:text-white"
           >
-            Explore All Services
+            Start Planning Your Event
           </Link>
 
         </motion.div>

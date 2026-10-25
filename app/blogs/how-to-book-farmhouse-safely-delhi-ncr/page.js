@@ -19,12 +19,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/how-to-book-farmhouse-safely-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "How to Book a Farmhouse Safely in Delhi NCR (Avoid Scams)",
 
     description:
       "Fake listings, cloned websites and vanishing 'owners': how to spot a farmhouse booking scam in Delhi NCR, verify the property and pay the advance safely.",
 
-    images: ["/farmhouse03.jpg"],
+    images: ["/farmhouse03.webp"],
   },
 };
 
@@ -71,7 +74,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/farmhouse03.jpg"
+          src="/farmhouse03.webp"
+          width={1600}
+          height={1066}
+          fetchPriority="high"
+          decoding="async"
           alt="How to book a farmhouse safely in Delhi NCR: a private farmhouse lawn to verify before paying an advance"
           className="w-full rounded-xl mb-10"
         />
@@ -566,7 +573,7 @@ export default function Page() {
           well when everything else is booked. If you are planning for 31
           December, start verification early — our{" "}
           <Link
-            href="/blogs/new-year-eve-party-farmhouse-delhi-ncr"
+            href="/blogs/new-years-eve-party-farmhouse-delhi-ncr"
             className="text-black underline font-semibold"
           >
             New Year&apos;s Eve farmhouse party guide

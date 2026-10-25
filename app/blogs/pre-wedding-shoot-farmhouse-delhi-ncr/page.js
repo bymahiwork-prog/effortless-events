@@ -22,12 +22,15 @@ export const metadata = {
   },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Pre-Wedding Shoot at a Farmhouse in Delhi NCR: 2026 Guide",
 
     description:
       "Why couples book private farmhouses for pre-wedding shoots in Delhi NCR: costs, permits, light, outfits, a shoot-day plan and a booking checklist.",
 
-    images: ["/farmhouse15.png"],
+    images: ["/farmhouse15.webp"],
   },
 };
 
@@ -81,7 +84,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/farmhouse15.png"
+          src="/farmhouse15.webp"
+          width={1536}
+          height={1024}
+          fetchPriority="high"
+          decoding="async"
           alt="Pre-wedding shoot at a farmhouse in Delhi NCR: a modern private farmhouse with lawn and palms in golden-hour light"
           className="w-full rounded-xl mb-10"
         />
@@ -419,7 +426,7 @@ export default function Page() {
           </li>
           <li>
             <strong>Time of day:</strong> in November and December, Delhi&apos;s
-            sunset is roughly 5:25–5:40 PM, so start around 2 PM, use the
+            sunset is roughly 5:25–5:35 PM, so start around 2 PM, use the
             farmhouse interiors in the brighter early afternoon, and save the
             lawn and pool looks for after 4 PM.
           </li>

@@ -7,6 +7,9 @@ export const metadata = {
     "Catering and bar services for weddings, farmhouse parties, birthdays and corporate events across Delhi NCR — menus, live counters, bartending and service staff.",
   alternates: { canonical: "/services/catering-bar-services" },
   openGraph: {
+    type: "website",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     images: ["/og-image.jpg"],
     title: "Catering & Bar Services for Events in Delhi NCR | Effortless Events",
     description:

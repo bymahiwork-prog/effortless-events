@@ -84,15 +84,10 @@ export const metadata: Metadata = {
     ],
   },
 
+  // Only card type here: title/description fall back to each page's
+  // og:title / og:description, so every page shares correctly on X.
   twitter: {
     card: "summary_large_image",
-
-    title:
-      "Effortless Events | Farmhouses, Venues & Event Planning in Delhi NCR",
-
-    description:
-      "Discover premium farmhouses, venues and event planning services across Delhi NCR.",
-
     images: ["/og-image.jpg"],
   },
 

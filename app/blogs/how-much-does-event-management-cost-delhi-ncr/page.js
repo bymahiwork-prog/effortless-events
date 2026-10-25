@@ -9,6 +9,9 @@ export const metadata = {
     "Understand event management costs in Delhi NCR — what corporate events, conferences and private events typically cost, what planner charges include, and how businesses can plan budgets and reduce costs.",
   alternates: { canonical: "/blogs/how-much-does-event-management-cost-delhi-ncr" },
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "How Much Does Event Management Cost in Delhi NCR?",
     description:
       "A complete pricing guide to event management costs in Delhi NCR for businesses, with cost factors, planner charges and budgeting tips.",

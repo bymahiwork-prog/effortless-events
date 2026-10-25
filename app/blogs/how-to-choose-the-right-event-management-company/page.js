@@ -43,6 +43,10 @@ export default function BlogPage() {
 
         <img
           src="/how-to-choose-event-management-company-cover.webp"
+          width={1600}
+          height={900}
+          fetchPriority="high"
+          decoding="async"
           alt="How to Choose the Right Event Management Company"
           className="w-full rounded-xl mb-10"
         />

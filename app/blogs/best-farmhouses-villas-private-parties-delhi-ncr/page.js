@@ -40,6 +40,10 @@ export default function BlogPage() {
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
           src="/farmhouse-guide-cover.webp"
+          width={1536}
+          height={1024}
+          fetchPriority="high"
+          decoding="async"
           alt="Best Farmhouses & Villas for Private Parties in Delhi NCR"
           className="w-full rounded-xl mb-10"
         />

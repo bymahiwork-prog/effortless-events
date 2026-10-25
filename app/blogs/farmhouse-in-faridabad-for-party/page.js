@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/farmhouse-in-faridabad-for-party" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Farmhouse in Faridabad for Party: Areas, Cost & Checks",
 
     description:
       "Which Faridabad farmhouse belt suits your party, what it may cost, the music and liquor rules, and how to avoid booking a property in the Aravalli demolition zone.",
 
-    images: ["/Effortless Farm59.jpg"],
+    images: ["/farm-59.webp"],
   },
 };
 
@@ -105,7 +108,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/Effortless Farm59.jpg"
+          src="/farm-59.webp"
+          width={1600}
+          height={1066}
+          fetchPriority="high"
+          decoding="async"
           alt="Farmhouse in Faridabad for a party: a two-storey farmhouse with a wide green lawn, palms and a gazebo with outdoor seating"
           className="w-full rounded-xl mb-10"
         />

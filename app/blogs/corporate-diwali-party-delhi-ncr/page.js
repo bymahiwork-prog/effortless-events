@@ -20,12 +20,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/corporate-diwali-party-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Corporate Diwali Party in Delhi NCR: Venue & Planning Guide",
 
     description:
       "Dates, venue options, per-head budget estimates, employee-friendly ideas and a 4-week checklist for an office Diwali party in Delhi NCR.",
 
-    images: ["/corporate.jpg"],
+    images: ["/corporate.webp"],
   },
 };
 
@@ -72,7 +75,11 @@ export default function BlogPage() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/corporate.jpg"
+          src="/corporate.webp"
+          width={736}
+          height={1104}
+          fetchPriority="high"
+          decoding="async"
           alt="Corporate Diwali party in Delhi NCR with a staged dinner setup for employees"
           className="w-full rounded-xl mb-10"
         />

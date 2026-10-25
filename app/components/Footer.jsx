@@ -23,6 +23,8 @@ const Footer = () => {
 
             <a href="/" className="inline-block mb-6">
               <img
+                  loading="lazy"
+                  decoding="async"
                 src="/logo.png"
                 alt="Effortless Events"
                 className="h-16 w-auto object-contain"
@@ -51,7 +53,9 @@ const Footer = () => {
                 className="w-11 h-11 rounded-full border border-[#3A2E22] flex items-center justify-center hover:bg-[#C9A34A] hover:border-[#C9A34A] transition-all duration-300"
               >
                 <img
-                  src="/Instagram.png"
+                  loading="lazy"
+                  decoding="async"
+                  src="/instagram.webp"
                   alt="Instagram"
                   className="w-5 h-5 object-contain"
                 />
@@ -67,7 +71,9 @@ const Footer = () => {
                 className="w-11 h-11 rounded-full border border-[#3A2E22] flex items-center justify-center hover:bg-[#C9A34A] hover:border-[#C9A34A] transition-all duration-300"
               >
                 <img
-                  src="/Facebook.jpg"
+                  loading="lazy"
+                  decoding="async"
+                  src="/facebook.webp"
                   alt="Facebook"
                   className="w-5 h-5 object-contain"
                 />
@@ -83,7 +89,9 @@ const Footer = () => {
                 className="w-11 h-11 rounded-full border border-[#3A2E22] flex items-center justify-center hover:bg-[#C9A34A] hover:border-[#C9A34A] transition-all duration-300"
               >
                 <img
-                  src="/Linkedin.jpg"
+                  loading="lazy"
+                  decoding="async"
+                  src="/linkedin.webp"
                   alt="LinkedIn"
                   className="w-5 h-5 object-contain"
                 />

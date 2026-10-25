@@ -48,7 +48,11 @@ export default function BlogPage() {
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
 
         <img
-          src="/Effortless Farm39.jpg"
+          src="/farm-39.webp"
+          width={1600}
+          height={1066}
+          fetchPriority="high"
+          decoding="async"
           alt="Best Farmhouse Activities for Groups: From Pool Parties to Outdoor Games"
           className="w-full rounded-xl mb-10"
         />
@@ -1015,7 +1019,7 @@ export default function BlogPage() {
           </p>
 
           <a
-            href="/farms"
+            href="/farmhouses"
             className="inline-block bg-white text-black px-8 py-4 rounded-lg font-semibold hover:bg-[#D9B56D] transition"
           >
             Explore Farmhouses

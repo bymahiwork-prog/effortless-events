@@ -19,12 +19,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/corporate-team-outing-farmhouse-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Corporate Team Outing at a Farmhouse Near Delhi: 2026 Guide",
 
     description:
       "When to go, what a farmhouse day outing costs per head, team-building activities that work, a sample run-of-day and a booking checklist for Delhi NCR teams.",
 
-    images: ["/Effortless Farm70.webp"],
+    images: ["/farm-70.webp"],
   },
 };
 
@@ -75,7 +78,11 @@ export default function Page() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/Effortless Farm70.webp"
+          src="/farm-70.webp"
+          width={1536}
+          height={1024}
+          fetchPriority="high"
+          decoding="async"
           alt="Corporate team outing at a farmhouse near Delhi: a large private lawn with a stone pathway and shaded seating"
           className="w-full rounded-xl mb-10"
         />

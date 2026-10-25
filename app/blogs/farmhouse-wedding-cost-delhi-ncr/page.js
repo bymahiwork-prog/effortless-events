@@ -19,12 +19,15 @@ export const metadata = {
   alternates: { canonical: "/blogs/farmhouse-wedding-cost-delhi-ncr" },
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title: "Farmhouse Wedding Cost in Delhi NCR: 2026 Budget Guide",
 
     description:
       "Per-plate rates, budget estimates for 150, 300 and 500 guests, hidden charges and money-saving tips for a farmhouse wedding in Delhi NCR.",
 
-    images: ["/weddings.jpg"],
+    images: ["/weddings.webp"],
   },
 };
 
@@ -75,7 +78,11 @@ export default function BlogPage() {
 
       <section className="max-w-6xl mx-auto px-6 pt-32 pb-10">
         <img
-          src="/weddings.jpg"
+          src="/weddings.webp"
+          width={1100}
+          height={1375}
+          fetchPriority="high"
+          decoding="async"
           alt="Farmhouse wedding in Delhi NCR with a decorated mandap and guest seating, used to illustrate farmhouse wedding cost"
           className="w-full rounded-xl mb-10"
         />

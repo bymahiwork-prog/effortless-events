@@ -33,6 +33,9 @@ export const metadata = {
   ],
 
   openGraph: {
+    type: "article",
+    siteName: "Effortless Events",
+    locale: "en_IN",
     title:
       "Best Farmhouses in Delhi NCR for Family Gatherings in 2026",
 
@@ -88,6 +91,10 @@ export default function BlogPage() {
 
         <img
           src="/farmhouse05.webp"
+          width={1536}
+          height={1024}
+          fetchPriority="high"
+          decoding="async"
           alt="Best farmhouses in Delhi NCR for family gatherings"
           className="w-full rounded-xl mb-10"
         />
