@@ -1,8 +1,23 @@
 import type { MetadataRoute } from "next";
 import fs from "node:fs";
 import path from "node:path";
+import { getFarmhouses } from "../lib/farmhouses";
 
 const baseUrl = "https://effortlessevents.in";
+
+// Rebuild the sitemap at most once an hour so new farmhouses appear.
+export const revalidate = 3600;
+
+// Every active farmhouse detail page, so Google can find each listing.
+async function getFarmhouseEntries(): Promise<MetadataRoute.Sitemap> {
+  const { products } = await getFarmhouses({ limit: 100 });
+  return (products || []).map((venue: { id: number | string }) => ({
+    url: `${baseUrl}/farmhouses/${venue.id}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+}
 
 // Every folder in app/blogs that contains a page file is a published post.
 // New posts are picked up automatically at build time.
@@ -58,7 +73,9 @@ function getServiceEntries(): MetadataRoute.Sitemap {
   }
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const farmhouseEntries = await getFarmhouseEntries();
+
   return [
     {
       url: baseUrl,
@@ -73,6 +90,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+
+    ...farmhouseEntries,
 
     {
       url: `${baseUrl}/venues`,
