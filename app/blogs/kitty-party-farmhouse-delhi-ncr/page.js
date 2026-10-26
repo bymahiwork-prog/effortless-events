@@ -725,8 +725,14 @@ export default function Page() {
         <p className="mb-8">
           Choose the farmhouse belt closest to where most members live, so
           the drive stays under an hour each way: Chattarpur, Satbari and
-          Mehrauli for South Delhi groups; Bijwasan and Kapashera for West
-          Delhi and Dwarka; Gwal Pahari and Sohna Road for Gurgaon; the
+          Mehrauli for South Delhi groups;{" "}
+          <Link
+            href="/blogs/farmhouse-in-bijwasan-for-party"
+            className="text-black underline font-semibold"
+          >
+            Bijwasan and Kapashera
+          </Link>{" "}
+          for West Delhi and Dwarka; Gwal Pahari and Sohna Road for Gurgaon; the
           Noida Expressway side and Greater Noida for Noida groups; and the
           Surajkund side for Faridabad.
         </p>

@@ -317,6 +317,14 @@ export default function Page() {
           >
             farmhouses in Gurgaon for private parties
           </Link>
+          ; for a Dwarka, West Delhi or airport-heavy list, see our guide to
+          a{" "}
+          <Link
+            href="/blogs/farmhouse-in-bijwasan-for-party"
+            className="text-black underline font-semibold"
+          >
+            farmhouse in Bijwasan for a party
+          </Link>
           .
         </p>
 
