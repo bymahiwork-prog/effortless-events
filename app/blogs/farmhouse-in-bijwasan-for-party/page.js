@@ -323,6 +323,13 @@ export default function Page() {
           >
             farmhouse in Chattarpur for a party
           </Link>
+          , or for Rohini and North Delhi guests, a{" "}
+          <Link
+            href="/blogs/farmhouse-in-north-delhi-for-party"
+            className="text-black underline font-semibold"
+          >
+            farmhouse in North Delhi for a party
+          </Link>
           .
         </p>
 

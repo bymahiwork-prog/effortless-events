@@ -658,7 +658,15 @@ export default function BlogPage() {
           </li>
           <li>
             <strong>Kapashera, Rajokri and GT Karnal Road</strong> are
-            popular for large guest lists with good road access.
+            popular for large guest lists with good road access (see our
+            guide to a{" "}
+            <Link
+              href="/blogs/farmhouse-in-north-delhi-for-party"
+              className="text-black underline font-semibold"
+            >
+              farmhouse in North Delhi
+            </Link>{" "}
+            for the GT Karnal Road belt).
           </li>
           <li>
             <strong>Sohna Road, Noida, Greater Noida and Faridabad</strong>{" "}
