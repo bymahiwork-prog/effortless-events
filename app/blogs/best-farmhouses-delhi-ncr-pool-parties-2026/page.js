@@ -422,7 +422,15 @@ export default function BlogPage() {
 
         <p className="mb-8">
           Pool party farmhouse prices vary based on location, property size,
-          amenities, guest capacity, day of the week and season.
+          amenities, guest capacity, day of the week and season. In winter,
+          a{" "}
+          <Link
+            href="/blogs/farmhouse-with-heated-pool-near-delhi"
+            className="underline text-black"
+          >
+            farmhouse with a heated pool near Delhi
+          </Link>{" "}
+          may add a separate heating charge.
         </p>
 
         <p className="mb-8">

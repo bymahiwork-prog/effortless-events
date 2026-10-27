@@ -110,7 +110,15 @@ export default function BlogPage() {
           bring cold, foggy nights and pollution rules that affect open fires.
           This guide covers the best dates, what the rules mean for a bonfire,
           how to keep guests warm, what it may cost and what to confirm before
-          you pay an advance.
+          you pay an advance. If you also want an afternoon swim, see our
+          guide to booking a{" "}
+          <Link
+            href="/blogs/farmhouse-with-heated-pool-near-delhi"
+            className="underline text-black"
+          >
+            farmhouse with a heated pool near Delhi
+          </Link>
+          .
         </p>
 
         <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-8 mb-10">
