@@ -2,13 +2,13 @@ export default function OurTeamSection() {
   const directors = [
     {
       name: "Harsimran Singh",
-      title: "Managing Director",
+      title: "Founder",
       image: "/harsimran-singh.webp",
       bio: "Founder of Effortless Events Pvt. Ltd., leading venue partnerships and end-to-end event execution across Delhi NCR.",
     },
     {
       name: "Karan Malhotra",
-      title: "Managing Director",
+      title: "Co-Founder",
       image: "/karan-malhotra.webp",
       bio: "Co-founder of Effortless Events Pvt. Ltd., overseeing client experience, event strategy, and on-ground coordination.",
     },

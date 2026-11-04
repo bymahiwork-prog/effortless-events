@@ -8,12 +8,41 @@ import Footer from "../components/Footer";
 // Listings arrive pre-rendered from the server (see page.js) so search
 // engines see them. If the server could not load them, the page falls
 // back to fetching in the browser exactly as before.
+const PRICE_RANGES = [
+  { value: "under-25k", label: "Under ₹25,000", min: 0, max: 25000 },
+  { value: "25k-50k", label: "₹25,000 – ₹50,000", min: 25000, max: 50000 },
+  { value: "50k-1l", label: "₹50,000 – ₹1,00,000", min: 50000, max: 100000 },
+  { value: "1l-plus", label: "₹1,00,000 and above", min: 100000, max: Infinity },
+];
+
+// Pull the first number out of a price like "₹35,000 / night" or
+// "Starting 1.2 Lakh". Returns null when there is no usable number.
+function parsePrice(value) {
+  if (value === null || value === undefined) return null;
+  const text = String(value).toLowerCase().replace(/,/g, "");
+  const match = text.match(/\d+(\.\d+)?/);
+  if (!match) return null;
+  let amount = parseFloat(match[0]);
+  if (/\b(lakh|lac|l)\b/.test(text.slice(match.index + match[0].length, match.index + match[0].length + 6))) {
+    amount *= 100000;
+  } else if (/^\s*k\b/.test(text.slice(match.index + match[0].length))) {
+    amount *= 1000;
+  }
+  return Number.isFinite(amount) && amount > 0 ? amount : null;
+}
+
+const selectClass =
+  "w-full bg-[#17110B] border border-[#3A2E22] rounded-xl px-4 py-3 text-white outline-none transition focus:border-[#C9A34A] focus:ring-1 focus:ring-[#C9A34A]";
+
 const Farms = ({ initialVenues = null }) => {
   const hasInitial = Array.isArray(initialVenues);
   const [venues, setVenues] = useState(hasInitial ? initialVenues : []);
   const [loading, setLoading] = useState(!hasInitial);
   const [error, setError] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const [locationFilter, setLocationFilter] = useState("all");
+  const [priceFilter, setPriceFilter] = useState("all");
+  const [sortBy, setSortBy] = useState("default");
 
   const fetchFarmhouses = async () => {
     try {
@@ -102,38 +131,95 @@ const Farms = ({ initialVenues = null }) => {
    * =========================================
    */
 
+  // Distinct locations for the location filter, A-Z.
+  const locationOptions = useMemo(() => {
+    const seen = new Map();
+    venues.forEach((venue) => {
+      const label = String(venue.product_location || "").trim();
+      if (label && !seen.has(label.toLowerCase())) {
+        seen.set(label.toLowerCase(), label);
+      }
+    });
+    return [...seen.values()].sort((a, b) => a.localeCompare(b));
+  }, [venues]);
+
+  const filtersActive =
+    searchQuery.trim() !== "" ||
+    locationFilter !== "all" ||
+    priceFilter !== "all" ||
+    sortBy !== "default";
+
+  const clearFilters = () => {
+    setSearchQuery("");
+    setLocationFilter("all");
+    setPriceFilter("all");
+    setSortBy("default");
+  };
+
   const filteredVenues = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
+    const range = PRICE_RANGES.find((r) => r.value === priceFilter);
 
-    if (!query) {
-      return venues;
+    const result = venues.filter((venue) => {
+      const name = String(venue.product_name || "").toLowerCase();
+      const location = String(venue.product_location || "").toLowerCase();
+      const description = String(venue.product_detail || "").toLowerCase();
+      const category = String(venue.category_name || "").toLowerCase();
+
+      if (
+        query &&
+        !(
+          name.includes(query) ||
+          location.includes(query) ||
+          description.includes(query) ||
+          category.includes(query)
+        )
+      ) {
+        return false;
+      }
+
+      if (
+        locationFilter !== "all" &&
+        location.trim() !== locationFilter.toLowerCase()
+      ) {
+        return false;
+      }
+
+      if (range) {
+        const price = parsePrice(venue.product_price);
+        if (price === null || price < range.min || price >= range.max) {
+          return false;
+        }
+      }
+
+      return true;
+    });
+
+    if (sortBy === "price-asc" || sortBy === "price-desc") {
+      const dir = sortBy === "price-asc" ? 1 : -1;
+      // Listings without a price always go last.
+      return [...result].sort((a, b) => {
+        const pa = parsePrice(a.product_price);
+        const pb = parsePrice(b.product_price);
+        if (pa === null && pb === null) return 0;
+        if (pa === null) return 1;
+        if (pb === null) return -1;
+        return (pa - pb) * dir;
+      });
     }
 
-    return venues.filter((venue) => {
-      const name = String(
-        venue.product_name || ""
-      ).toLowerCase();
-
-      const location = String(
-        venue.product_location || ""
-      ).toLowerCase();
-
-      const description = String(
-        venue.product_detail || ""
-      ).toLowerCase();
-
-      const category = String(
-        venue.category_name || ""
-      ).toLowerCase();
-
-      return (
-        name.includes(query) ||
-        location.includes(query) ||
-        description.includes(query) ||
-        category.includes(query)
+    if (sortBy === "name") {
+      return [...result].sort((a, b) =>
+        String(a.product_name || "").localeCompare(
+          String(b.product_name || ""),
+          undefined,
+          { numeric: true }
+        )
       );
-    });
-  }, [venues, searchQuery]);
+    }
+
+    return result;
+  }, [venues, searchQuery, locationFilter, priceFilter, sortBy]);
 
   /*
    * =========================================
@@ -328,6 +414,71 @@ const Farms = ({ initialVenues = null }) => {
 
           </div>
 
+          {/* FILTERS & SORT */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4 max-w-3xl">
+            <label className="block">
+              <span className="block text-xs uppercase tracking-[0.15em] text-[#8F857A] mb-2">
+                Location
+              </span>
+              <select
+                value={locationFilter}
+                onChange={(e) => setLocationFilter(e.target.value)}
+                className={selectClass}
+              >
+                <option value="all">All locations</option>
+                {locationOptions.map((loc) => (
+                  <option key={loc} value={loc}>
+                    {loc}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label className="block">
+              <span className="block text-xs uppercase tracking-[0.15em] text-[#8F857A] mb-2">
+                Price range
+              </span>
+              <select
+                value={priceFilter}
+                onChange={(e) => setPriceFilter(e.target.value)}
+                className={selectClass}
+              >
+                <option value="all">Any price</option>
+                {PRICE_RANGES.map((range) => (
+                  <option key={range.value} value={range.value}>
+                    {range.label}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <label className="block">
+              <span className="block text-xs uppercase tracking-[0.15em] text-[#8F857A] mb-2">
+                Sort by
+              </span>
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className={selectClass}
+              >
+                <option value="default">Newest</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="name">Name: A to Z</option>
+              </select>
+            </label>
+          </div>
+
+          {filtersActive && (
+            <button
+              type="button"
+              onClick={clearFilters}
+              className="mt-3 text-sm text-[#C9A34A] hover:text-[#E1C56E] underline underline-offset-4"
+            >
+              Clear all filters
+            </button>
+          )}
+
           {/* SEARCH STATUS */}
           {searchQuery && (
             <p className="text-[#8F857A] text-sm mt-3">
@@ -418,15 +569,15 @@ const Farms = ({ initialVenues = null }) => {
 
               <p className="text-[#B8AFA5] mb-6">
                 We couldn't find a farmhouse matching
-                your search. Try another name, location
-                or keyword.
+                your search and filters. Try another
+                name, location or price range.
               </p>
 
               <button
-                onClick={() => setSearchQuery("")}
+                onClick={clearFilters}
                 className="px-7 py-3 bg-[#C9A34A] text-[#0F0803] font-medium rounded-md hover:bg-[#D8B25B] transition"
               >
-                Clear Search
+                Clear Filters
               </button>
 
             </div>

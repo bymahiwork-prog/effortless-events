@@ -25,10 +25,10 @@ export default function WhoWeAre() {
           </p>
 
           <p className="text-lg md:text-xl leading-8 text-[#5C5C5C]">
-            We pair an extensive portfolio of 50+ handpicked venues with
-            in-house decoration, catering, and bartending services, giving you
-            a single accountable partner from the first conversation to the
-            final bow.
+            We pair an extensive portfolio of 50+ handpicked venues with our
+            own planning team and a trusted network of décor, catering, and
+            bartending partners, giving you a single accountable partner from
+            the first conversation to the final bow.
           </p>
         </div>
 
