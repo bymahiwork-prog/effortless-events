@@ -239,7 +239,14 @@ export default function BlogPage() {
         <p className="mb-8">
           If space is your biggest priority, looking slightly outside the
           central Gurgaon areas can give you more options for larger lawns,
-          pools and accommodation.
+          pools and accommodation. Our guide to a{" "}
+          <Link
+            href="/blogs/farmhouse-in-manesar-for-party"
+            className="underline font-semibold"
+          >
+            farmhouse in Manesar for a party
+          </Link>{" "}
+          covers one of the biggest of these belts.
         </p>
 
 

@@ -656,7 +656,14 @@ export default function Page() {
           >
             best farmhouses in Gurgaon for private parties
           </Link>{" "}
-          to compare.
+          to compare, or our guide to a{" "}
+          <Link
+            href="/blogs/farmhouse-in-manesar-for-party"
+            className="text-black underline font-semibold"
+          >
+            farmhouse in Manesar for a party
+          </Link>{" "}
+          if your guests are in western Gurgaon.
         </p>
 
         {/* =====================================================
