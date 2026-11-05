@@ -492,7 +492,15 @@ export default function Page() {
           </li>
           <li>
             <strong>Alcohol:</strong> guests who drink eat more starters and
-            eat dinner later, so increase starters by a couple of pieces.
+            eat dinner later, so increase starters by a couple of pieces. For
+            bottle, beer and ice quantities, see{" "}
+            <Link
+              href="/blogs/how-much-alcohol-for-party-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              how much alcohol you need for a party
+            </Link>
+            .
           </li>
           <li>
             <strong>Winter:</strong> soups, hot snacks and chai go faster on

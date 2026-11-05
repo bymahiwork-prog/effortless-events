@@ -574,7 +574,15 @@ export default function BlogPage() {
           >
             ETV Bharat
           </a>
-          ), so do not treat this as a formality.
+          ), so do not treat this as a formality. To size the bar itself,
+          see{" "}
+          <Link
+            href="/blogs/how-much-alcohol-for-party-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            how much alcohol to buy for your guest count
+          </Link>
+          .
         </p>
 
         <h3 className="text-black text-2xl font-bold mt-10 mb-4">
