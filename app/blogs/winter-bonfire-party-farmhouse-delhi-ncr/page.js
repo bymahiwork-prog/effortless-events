@@ -258,7 +258,14 @@ export default function BlogPage() {
           <li>
             <strong>Lohri, around 13 January 2027:</strong> the one winter
             festival built around a fire, popular with Punjabi families,
-            newlyweds and parents of newborns.
+            newlyweds and parents of newborns (see our{" "}
+            <Link
+              href="/blogs/lohri-party-farmhouse-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              Lohri party at a farmhouse guide
+            </Link>
+            ).
           </li>
         </ul>
 

@@ -302,7 +302,14 @@ export default function Page() {
           <li>
             <strong>January:</strong> Lohri (around 13 January) and Makar
             Sankranti make for colourful theme kitties; plan heaters for
-            colder days.
+            colder days, and see our guide to a{" "}
+            <Link
+              href="/blogs/lohri-party-farmhouse-delhi-ncr"
+              className="underline"
+            >
+              Lohri party at a farmhouse
+            </Link>{" "}
+            for fire rules and menu ideas.
           </li>
           <li>
             <strong>February:</strong> mild and sunny again, good for a
