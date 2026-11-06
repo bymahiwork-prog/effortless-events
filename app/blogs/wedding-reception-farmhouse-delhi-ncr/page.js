@@ -720,7 +720,14 @@ export default function Page() {
           </li>
           <li>
             Patio heaters or permission to bring them, and a plan for fog or
-            a rare winter shower.
+            a rare winter shower (see our{" "}
+            <Link
+              href="/blogs/winter-wedding-farmhouse-delhi-ncr"
+              className="underline"
+            >
+              winter wedding cold and fog guide
+            </Link>
+            ).
           </li>
         </ul>
 

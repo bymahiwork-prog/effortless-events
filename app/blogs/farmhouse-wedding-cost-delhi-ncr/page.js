@@ -545,7 +545,15 @@ export default function BlogPage() {
           hall in Delhi NCR. Banquets bundle more into one per-plate rate,
           while farmhouses add open-air costs such as tenting, heaters and
           power backup — but give you exclusive use of the whole property,
-          which is often worth more than the price difference.
+          which is often worth more than the price difference. For December
+          and January dates, our{" "}
+          <Link
+            href="/blogs/winter-wedding-farmhouse-delhi-ncr"
+            className="underline"
+          >
+            winter farmhouse wedding guide
+          </Link>{" "}
+          shows how many heaters and how much cover to plan for.
         </p>
 
         <div className="overflow-x-auto mb-8">
