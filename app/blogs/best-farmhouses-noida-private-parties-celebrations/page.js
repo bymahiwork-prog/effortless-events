@@ -281,8 +281,15 @@ export default function BlogPage() {
         <p className="mb-8">
           Consider where your guests are travelling from. A venue that is easy
           to reach from Noida, Greater Noida, Delhi or Ghaziabad can make the
-          event more convenient for everyone. If most guests live further
-          east, see our guide to a{" "}
+          event more convenient for everyone. For the farm belt along the
+          Expressway, see our guide to a{" "}
+          <Link
+            href="/blogs/farmhouse-in-noida-sector-135-for-party"
+            className="text-black underline font-semibold"
+          >
+            farmhouse in Noida Sector 135 for a party
+          </Link>
+          . If most guests live further east, see our guide to a{" "}
           <Link
             href="/blogs/farmhouse-in-greater-noida-for-party"
             className="text-black underline font-semibold"

@@ -581,6 +581,13 @@ export default function Page() {
           >
             farmhouse in Chattarpur for a party
           </Link>
+          ; for a small pool farm closer to Noida, see our guide to a{" "}
+          <Link
+            href="/blogs/farmhouse-in-noida-sector-135-for-party"
+            className="text-black underline font-semibold"
+          >
+            farmhouse in Noida Sector 135 for a party
+          </Link>
           .
         </p>
 
