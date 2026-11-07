@@ -564,7 +564,17 @@ export default function BlogPage() {
           <li>What are check-in and check-out times, and is early check-in possible?</li>
           <li>Are other guests or events on the property during our stay?</li>
           <li>What is the deposit, and when and how is it refunded?</li>
-          <li>Are pets allowed, and are there dogs on the property?</li>
+          <li>
+            Are pets allowed, and are there dogs on the property? (Bringing
+            your own dog? See our{" "}
+            <Link
+              href="/blogs/pet-friendly-farmhouse-near-delhi"
+              className="underline"
+            >
+              pet-friendly farmhouse guide
+            </Link>
+            .)
+          </li>
           <li>What is the nearest hospital and how long is the drive?</li>
         </ul>
 

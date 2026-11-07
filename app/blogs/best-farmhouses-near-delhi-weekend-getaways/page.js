@@ -497,7 +497,15 @@ export default function BlogPage() {
 
         <p className="mb-8">
           It is also worth checking the property&apos;s rules before bringing
-          decorations, speakers, food, or other equipment.
+          decorations, speakers, food, or other equipment. Travelling with a
+          dog? Our guide to a{" "}
+          <Link
+            href="/blogs/pet-friendly-farmhouse-near-delhi"
+            className="underline"
+          >
+            pet-friendly farmhouse near Delhi
+          </Link>{" "}
+          covers pet rules, fees and what to pack for them.
         </p>
 
         {/* ===================================================== */}
