@@ -330,6 +330,17 @@ export default function BlogPage() {
           everyone can gather together for meals.
         </p>
 
+        <p className="mb-8">
+          Planning one over the school holidays? See our{" "}
+          <Link
+            href="/blogs/family-staycation-villa-near-delhi"
+            className="underline"
+          >
+            family staycation near Delhi guide
+          </Link>{" "}
+          for winter-break dates, costs and child-safety checks.
+        </p>
+
         {/* FRIENDS */}
 
         <h3 className="text-black text-2xl font-bold mt-10 mb-4">

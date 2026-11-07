@@ -438,7 +438,15 @@ export default function Page() {
           weekend (Friday 1 to Sunday 3 January 2027) and sunny Sundays in
           late January and February. Foggy mornings are common in
           December–January, so keep the plan flexible and check the forecast
-          two days out.
+          two days out. If you are booking a heated-pool villa for a quiet
+          family break rather than a party, our{" "}
+          <Link
+            href="/blogs/family-staycation-villa-near-delhi"
+            className="underline"
+          >
+            family staycation near Delhi guide
+          </Link>{" "}
+          covers school-holiday dates and child-safety checks.
         </p>
 
         {/* =====================================================
