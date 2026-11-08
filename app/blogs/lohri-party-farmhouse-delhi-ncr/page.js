@@ -327,6 +327,17 @@ export default function BlogPage() {
             hard to manage with an infant; two or three fire points work
             better.
           </li>
+          <li>
+            If the baby&apos;s naming is still due, some families hold it the
+            same day as an afternoon puja; see our guide to a{" "}
+            <Link
+              href="/blogs/naming-ceremony-farmhouse-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              naming ceremony at a farmhouse
+            </Link>
+            .
+          </li>
         </ul>
 
         <h3 className="text-black text-2xl font-bold mt-10 mb-4">

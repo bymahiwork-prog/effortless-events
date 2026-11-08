@@ -890,7 +890,15 @@ export default function Page() {
           afternoon, book a farmhouse close to home with shade, a washroom and
           an indoor backup, and keep the day short and warm. The blessings,
           the photos and the people around her are what the family will
-          remember.
+          remember. When the baby arrives, the same planning carries over to
+          a{" "}
+          <Link
+            href="/blogs/naming-ceremony-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            naming ceremony at a farmhouse
+          </Link>
+          .
         </p>
       </article>
 
