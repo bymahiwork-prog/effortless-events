@@ -296,6 +296,17 @@ export default function BlogPage() {
           representatives, business partners, and employees.
         </p>
 
+        <p className="mb-8">
+          For dates, venue options, cost estimates and a run-of-show, read our{" "}
+          <Link
+            href="/blogs/product-launch-event-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            product launch event planning guide for Delhi NCR
+          </Link>
+          .
+        </p>
+
         {/* ===================================================== */}
         {/* 8 */}
         {/* ===================================================== */}

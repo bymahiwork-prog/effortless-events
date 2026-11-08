@@ -66,7 +66,8 @@ export default function BlogPage() {
       <article className="max-w-6xl mx-auto px-6 pb-20 text-xl leading-9 text-gray-800">
 
         <p className="mb-8">
-          Planning a successful corporate event involves much more than booking a venue and inviting guests. Whether you&apos;re organising an annual conference, product launch, awards ceremony, networking event, or leadership summit, every decision contributes to the overall experience.
+          Planning a successful corporate event involves much more than booking a venue and inviting guests. Whether you&apos;re organising an annual conference,{" "}
+          <Link href="/blogs/product-launch-event-delhi-ncr" className="text-black underline font-semibold">product launch</Link>, awards ceremony, networking event, or leadership summit, every decision contributes to the overall experience.
         </p>
 
         <p className="mb-8">
