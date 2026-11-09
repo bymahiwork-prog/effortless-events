@@ -537,7 +537,14 @@ export default function BlogPage() {
           . The same report notes that the bar must be screened from public
           view, liquor can be served only to guests over 25 and stock must be
           bought from authorised Delhi sources, so do not plan on bottles
-          bought in Gurgaon or Noida. Venues that hold their own excise
+          bought in Gurgaon or Noida. For a wedding cocktail night, see our{" "}
+          <Link
+            href="/blogs/cocktail-party-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            farmhouse cocktail party guide
+          </Link>
+          . Venues that hold their own excise
           licence do not need a separate permit for each event, as{" "}
           <a
             href="https://www.indiatvnews.com/business/news-delhi-licensed-venues-won-t-need-separate-permit-to-serve-liquor-at-weddings-parties-744660"

@@ -687,7 +687,15 @@ export default function BlogPage() {
         <p className="mb-8">
           Combining them makes sense when the guest list is similar and the
           budget or dates are tight; keeping them separate makes sense when
-          elders and younger guests want very different evenings.
+          elders and younger guests want very different evenings. If you
+          choose a separate evening, our guide to a{" "}
+          <Link
+            href="/blogs/cocktail-party-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            cocktail party at a farmhouse
+          </Link>{" "}
+          covers the bar, permit and timing.
         </p>
 
         <div className="overflow-x-auto mb-8">
