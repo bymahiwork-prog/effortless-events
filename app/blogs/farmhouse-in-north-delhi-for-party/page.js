@@ -306,8 +306,16 @@ export default function Page() {
           Kundli, just past the Singhu border, is in Sonipat district, Haryana.
           It can work well when guests come from both North Delhi and Sonipat,
           but the liquor rules change at the border (see below), and evening
-          traffic at the checkpoint can add time. If most of your guests live
-          in South Delhi instead, compare with a{" "}
+          traffic at the checkpoint can add time. For pool farms and night
+          stays further up NH-44, see our guide to a{" "}
+          <Link
+            href="/blogs/farmhouse-in-sonipat-for-party"
+            className="text-black underline font-semibold"
+          >
+            farmhouse in Sonipat for a party
+          </Link>
+          . If most of your guests live in South Delhi instead, compare with
+          a{" "}
           <Link
             href="/blogs/farmhouse-in-chattarpur-for-party"
             className="text-black underline font-semibold"
