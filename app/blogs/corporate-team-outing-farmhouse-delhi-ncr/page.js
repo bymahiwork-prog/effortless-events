@@ -205,7 +205,15 @@ export default function Page() {
           A farmhouse works for a team outing because you book the whole
           property, not a slot in a shared space. That one difference solves
           most of the problems HR teams run into with adventure parks, malls
-          and resort day packages.
+          and resort day packages. The same applies to a send-off for a
+          colleague; our{" "}
+          <Link
+            href="/blogs/farewell-party-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            farewell party guide
+          </Link>{" "}
+          covers that format.
         </p>
 
         <ul className="list-disc pl-8 space-y-3 mb-10">

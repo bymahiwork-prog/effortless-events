@@ -207,7 +207,15 @@ export default function Page() {
         <p className="mb-8">
           A farmhouse works well for a reunion because the point of the day is
           long, unhurried conversation, and a private property gives you that
-          better than a restaurant, club or banquet hall. Specifically:
+          better than a restaurant, club or banquet hall. (Still in school or
+          college and planning the send-off instead? See our guide to a{" "}
+          <Link
+            href="/blogs/farewell-party-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            farewell party at a farmhouse
+          </Link>
+          .) Specifically:
         </p>
 
         <ul className="list-disc pl-8 space-y-3 mb-10">
