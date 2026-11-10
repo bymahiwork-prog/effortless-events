@@ -543,8 +543,14 @@ export default function BlogPage() {
         <p className="mb-8">
           A farmhouse wedding is not automatically cheaper than a banquet
           hall in Delhi NCR. Banquets bundle more into one per-plate rate,
-          while farmhouses add open-air costs such as tenting, heaters and
-          power backup — but give you exclusive use of the whole property,
+          while farmhouses add open-air costs such as{" "}
+          <Link
+            href="/blogs/german-hangar-tent-wedding-delhi-ncr"
+            className="underline"
+          >
+            tenting or a German hangar
+          </Link>
+          , heaters and power backup — but give you exclusive use of the whole property,
           which is often worth more than the price difference. For December
           and January dates, our{" "}
           <Link

@@ -422,7 +422,14 @@ export default function BlogPage() {
           <li>
             <strong>250 guests:</strong> enclose the dinner and mandap area
             and use heaters inside, plus a few outside at the entrance, bar
-            and photo points.
+            and photo points. Our{" "}
+            <Link
+              href="/blogs/german-hangar-tent-wedding-delhi-ncr"
+              className="underline"
+            >
+              German hangar tent guide
+            </Link>{" "}
+            covers sizes and costs for an enclosed hall.
           </li>
           <li>
             <strong>Mandap:</strong> 2–4 heaters or electric panels placed so
