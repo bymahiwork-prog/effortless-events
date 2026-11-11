@@ -294,7 +294,11 @@ export default function BlogPage() {
           that 279 departures from Delhi airport were delayed, 17 flights were
           cancelled and 24 trains ran late because of dense fog. For a
           wedding, that means late-arriving relatives, slow drives home on
-          expressways and a baraat that may need extra time.
+          expressways and a baraat that may need extra time (see our{" "}
+          <Link href="/blogs/baraat-at-farmhouse-wedding-delhi-ncr" className="underline">
+            baraat at a farmhouse guide
+          </Link>{" "}
+          for timing and route tips).
         </p>
 
         {/* =====================================================

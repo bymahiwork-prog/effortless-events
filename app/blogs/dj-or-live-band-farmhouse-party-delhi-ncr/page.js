@@ -360,7 +360,12 @@ export default function Page() {
         <p className="mb-8 text-base text-gray-500">
           All figures are estimates for 2026 Delhi NCR private events, not
           quotes. Peak wedding dates, Christmas weekend and 31 December usually
-          cost more.
+          cost more. For band, ghodi and dhol prices for the wedding
+          procession itself, see our{" "}
+          <Link href="/blogs/baraat-at-farmhouse-wedding-delhi-ncr" className="underline">
+            baraat at a farmhouse guide
+          </Link>
+          .
         </p>
 
         <h3 className="text-black text-2xl font-semibold mt-10 mb-4">
