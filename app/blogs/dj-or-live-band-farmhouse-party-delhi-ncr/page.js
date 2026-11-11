@@ -255,7 +255,14 @@ export default function Page() {
             sets suit anniversaries and milestone birthdays.
           </li>
           <li>
-            <strong>Wedding functions:</strong> a Sufi night, a mehendi with a
+            <strong>Wedding functions:</strong> a{" "}
+            <Link
+              href="/blogs/sufi-night-farmhouse-wedding-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              Sufi night
+            </Link>
+            , a mehendi with a
             folk ensemble or a cocktail with a Bollywood band are memorable
             centrepieces.
           </li>

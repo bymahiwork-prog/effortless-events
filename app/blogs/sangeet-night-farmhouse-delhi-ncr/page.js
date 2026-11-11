@@ -499,6 +499,13 @@ export default function BlogPage() {
           >
             choosing a DJ or live band for a farmhouse party
           </Link>
+          , or open the evening with a live set using our{" "}
+          <Link
+            href="/blogs/sufi-night-farmhouse-wedding-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            Sufi night at a farmhouse wedding guide
+          </Link>
           .
         </p>
 
