@@ -442,7 +442,15 @@ export default function Page() {
           >
             farmhouse activities for groups
           </Link>
-          .
+          . Combining a first or third birthday with the child&apos;s first
+          haircut? Our{" "}
+          <Link
+            href="/blogs/mundan-ceremony-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            mundan ceremony at a farmhouse guide
+          </Link>{" "}
+          covers muhurat dates, cost and a morning plan.
         </p>
 
         {/* =====================================================

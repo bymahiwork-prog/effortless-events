@@ -667,7 +667,12 @@ export default function Page() {
           <Link href="/blogs/baby-shower-farmhouse-delhi-ncr" className={link}>
             baby shower at a farmhouse guide
           </Link>{" "}
-          covers dates, budget and comfort tips for the mother-to-be.
+          covers dates, budget and comfort tips for the mother-to-be. For an
+          older child&apos;s first haircut, see our{" "}
+          <Link href="/blogs/mundan-ceremony-farmhouse-delhi-ncr" className={link}>
+            mundan ceremony at a farmhouse guide
+          </Link>
+          .
         </p>
 
         <h2 className="text-black text-3xl font-bold mt-12 mb-6">
