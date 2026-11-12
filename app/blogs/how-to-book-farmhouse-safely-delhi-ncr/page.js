@@ -329,7 +329,16 @@ export default function Page() {
             <strong>Confirm who controls the property.</strong> Ask whether
             you are dealing with the owner, a manager or a broker. If it is a
             broker, ask the property itself (caretaker or manager) to
-            confirm your date and name before paying.
+            confirm your date and name before paying. Couples should also
+            confirm the couple and local-ID policy in writing first, as
+            explained in our{" "}
+            <Link
+              href="/blogs/couple-friendly-farmhouse-near-delhi"
+              className="text-black underline font-semibold"
+            >
+              couple-friendly farmhouse guide
+            </Link>
+            .
           </li>
           <li>
             <strong>Cross-check the identity.</strong> Look for the same

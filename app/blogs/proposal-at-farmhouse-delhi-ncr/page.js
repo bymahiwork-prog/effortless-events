@@ -214,7 +214,14 @@ export default function Page() {
           <li>
             <strong>A celebration afterwards.</strong> If the answer is yes,
             you can have dinner, music and a small party in the same place,
-            or stay overnight.
+            or stay overnight (check the owner&apos;s rules first with our{" "}
+            <Link
+              href="/blogs/couple-friendly-farmhouse-near-delhi"
+              className="text-black underline font-semibold"
+            >
+              couple-friendly farmhouse guide
+            </Link>
+            ).
           </li>
         </ul>
 
