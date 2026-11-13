@@ -636,7 +636,14 @@ export default function Page() {
           >
             farmhouse wedding cost guide for Delhi NCR
           </Link>
-          .
+          . Hosting a walima instead? Our{" "}
+          <Link
+            href="/blogs/nikah-walima-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            nikah and walima at a farmhouse guide
+          </Link>{" "}
+          covers dates before Ramadan, halal catering and separate seating.
         </p>
 
         {/* =====================================================

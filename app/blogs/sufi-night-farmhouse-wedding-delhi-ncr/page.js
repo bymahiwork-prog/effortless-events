@@ -581,7 +581,12 @@ export default function BlogPage() {
           <Link href="/blogs/haldi-mehendi-farmhouse-delhi-ncr" className="underline">
             haldi and mehendi farmhouse guide
           </Link>{" "}
-          if you want to combine the Sufi night with the mehendi.
+          if you want to combine the Sufi night with the mehendi. Adding a
+          qawwali to a walima? See our{" "}
+          <Link href="/blogs/nikah-walima-farmhouse-delhi-ncr" className="underline">
+            nikah and walima at a farmhouse guide
+          </Link>
+          .
         </p>
 
         <h2 className="text-black text-3xl font-bold mt-12 mb-6">
