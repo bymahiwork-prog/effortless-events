@@ -663,7 +663,15 @@ export default function Page() {
           >
             farmhouse in Manesar for a party
           </Link>{" "}
-          if your guests are in western Gurgaon.
+          if your guests are in western Gurgaon. If they are closer to Golf
+          Course Extension or Faridabad, compare a{" "}
+          <Link
+            href="/blogs/farmhouse-in-gwal-pahari-for-party"
+            className="text-black underline font-semibold"
+          >
+            farmhouse in Gwal Pahari for a party
+          </Link>
+          .
         </p>
 
         {/* =====================================================

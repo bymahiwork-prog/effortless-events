@@ -293,7 +293,15 @@ export default function Page() {
 
         <p className="mb-8">
           If your guests are split between Delhi and Gurgaon, the
-          Faridabad–Gurgaon Road side keeps both drives reasonable. If most
+          Faridabad–Gurgaon Road side keeps both drives reasonable (see our
+          guide to a{" "}
+          <Link
+            href="/blogs/farmhouse-in-gwal-pahari-for-party"
+            className="text-black underline font-semibold"
+          >
+            farmhouse in Gwal Pahari for a party
+          </Link>{" "}
+          for the Gurgaon end of that road). If most
           of them live in Faridabad or East Delhi, the central sectors and
           Greater Faridabad avoid the hill roads, which can be dark and
           narrow late at night.
