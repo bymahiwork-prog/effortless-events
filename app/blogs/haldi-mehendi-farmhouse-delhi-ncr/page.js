@@ -786,6 +786,13 @@ export default function BlogPage() {
               className="text-black underline font-semibold"
             >
               farmhouse bachelorette party guide
+            </Link>{" "}
+            or our{" "}
+            <Link
+              href="/blogs/bridal-shower-farmhouse-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              bridal shower at a farmhouse guide
             </Link>
           </li>
         </ul>

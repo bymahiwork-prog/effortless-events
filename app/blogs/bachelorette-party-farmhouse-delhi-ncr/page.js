@@ -751,7 +751,15 @@ export default function BlogPage() {
           >
             haldi and mehendi at a farmhouse in Delhi NCR
           </Link>{" "}
-          covers those too.
+          covers those too. If the family also wants a daytime celebration
+          with aunts and cousins, see our{" "}
+          <Link
+            href="/blogs/bridal-shower-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            bridal shower at a farmhouse guide
+          </Link>
+          .
         </p>
 
         {/* =====================================================
