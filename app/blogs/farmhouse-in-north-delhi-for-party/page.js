@@ -235,7 +235,15 @@ export default function Page() {
             (UER-II) runs from NH-44 at Alipur past Bawana, Rohini, Mundka,
             Najafgarh and Dwarka towards IGI Airport, and its first phase
             became operational in August 2025. Guests from Dwarka or flying in
-            no longer have to cross the city centre.
+            no longer have to cross the city centre. (If most of your guests
+            live on that side, a{" "}
+            <Link
+              href="/blogs/farmhouse-in-najafgarh-for-party"
+              className="text-black underline font-semibold"
+            >
+              farmhouse in Najafgarh
+            </Link>{" "}
+            may be closer.)
           </li>
           <li>
             <strong>Food included.</strong> Many venues here are lawns run by

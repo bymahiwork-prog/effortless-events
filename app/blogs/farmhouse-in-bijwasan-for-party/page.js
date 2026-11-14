@@ -330,6 +330,14 @@ export default function Page() {
           >
             farmhouse in North Delhi for a party
           </Link>
+          . If most guests live further west, around Najafgarh, Chhawla or
+          Dhansa Road, see our guide to a{" "}
+          <Link
+            href="/blogs/farmhouse-in-najafgarh-for-party"
+            className="text-black underline font-semibold"
+          >
+            farmhouse in Najafgarh for a party
+          </Link>
           .
         </p>
 
