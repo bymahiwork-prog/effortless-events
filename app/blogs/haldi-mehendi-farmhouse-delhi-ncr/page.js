@@ -332,7 +332,15 @@ export default function BlogPage() {
           >
             sangeet night at a farmhouse guide
           </Link>{" "}
-          for stage, sound and music cut-off planning.
+          for stage, sound and music cut-off planning. For the groom&apos;s
+          side, our{" "}
+          <Link
+            href="/blogs/tilak-ceremony-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            tilak ceremony at a farmhouse guide
+          </Link>{" "}
+          covers the function that often comes earlier in the run-up.
         </p>
 
         <h3 className="text-black text-2xl font-semibold mt-8 mb-4">

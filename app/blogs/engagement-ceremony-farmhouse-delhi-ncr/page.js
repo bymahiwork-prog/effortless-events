@@ -115,7 +115,14 @@ export default function BlogPage() {
           >
             proposal at a farmhouse in Delhi NCR
           </Link>
-          .
+          . If the bride&apos;s family will also do a{" "}
+          <Link
+            href="/blogs/tilak-ceremony-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            tilak ceremony at a farmhouse
+          </Link>
+          , the two can share one venue on the same day.
         </p>
 
         <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-8 mb-10">
