@@ -573,7 +573,15 @@ export default function BlogPage() {
           >
             sangeet night guide
           </Link>{" "}
-          has a full run-of-show built around that cut-off.
+          has a full run-of-show built around that cut-off. If your muhurat
+          falls in daylight, a{" "}
+          <Link
+            href="/blogs/day-wedding-farmhouse-delhi-ncr"
+            className="underline"
+          >
+            day wedding at a farmhouse
+          </Link>{" "}
+          sidesteps both the cut-off and the coldest hours.
         </p>
 
         {/* =====================================================

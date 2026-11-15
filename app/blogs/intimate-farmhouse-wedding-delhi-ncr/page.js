@@ -247,7 +247,15 @@ export default function BlogPage() {
           </li>
           <li>
             <strong>Winter weather:</strong> late November to February is
-            the most comfortable time for open-air ceremonies in Delhi NCR.
+            the most comfortable time for open-air ceremonies in Delhi NCR,
+            especially for a{" "}
+            <Link
+              href="/blogs/day-wedding-farmhouse-delhi-ncr"
+              className="text-black underline font-semibold"
+            >
+              day wedding at a farmhouse
+            </Link>
+            .
           </li>
           <li>
             <strong>Stay options:</strong> some properties have rooms for the
