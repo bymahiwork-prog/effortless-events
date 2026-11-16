@@ -739,7 +739,11 @@ export default function Page() {
           <Link href="/blogs/haldi-mehendi-farmhouse-delhi-ncr" className={link}>
             haldi and mehendi at a farmhouse guide
           </Link>{" "}
-          helps you plan the next ones in the same venue.
+          helps you plan the next ones in the same venue, and our guide to a{" "}
+          <Link href="/blogs/mata-ki-chowki-farmhouse-delhi-ncr" className={link}>
+            mata ki chowki at a farmhouse
+          </Link>{" "}
+          covers the devotional evening many families hold before the wedding.
         </p>
       </article>
 

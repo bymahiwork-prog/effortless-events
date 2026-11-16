@@ -338,7 +338,15 @@ export default function BlogPage() {
           >
             haldi and mehendi at a farmhouse
           </Link>{" "}
-          for the daytime half of the plan.
+          for the daytime half of the plan. If the family also holds a
+          devotional evening before the wedding, see our guide to a{" "}
+          <Link
+            href="/blogs/mata-ki-chowki-farmhouse-delhi-ncr"
+            className={linkClass}
+          >
+            mata ki chowki at a farmhouse
+          </Link>
+          .
         </p>
 
         {/* =====================================================
