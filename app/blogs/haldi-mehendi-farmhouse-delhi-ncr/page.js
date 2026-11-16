@@ -340,7 +340,15 @@ export default function BlogPage() {
           >
             tilak ceremony at a farmhouse guide
           </Link>{" "}
-          covers the function that often comes earlier in the run-up.
+          covers the function that often comes earlier in the run-up. In
+          Punjabi families the mehendi evening often flows into a{" "}
+          <Link
+            href="/blogs/jaggo-ceremony-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            jaggo ceremony at the farmhouse
+          </Link>
+          .
         </p>
 
         <h3 className="text-black text-2xl font-semibold mt-8 mb-4">

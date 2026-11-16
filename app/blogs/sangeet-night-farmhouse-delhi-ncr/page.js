@@ -680,7 +680,16 @@ export default function BlogPage() {
         <p className="mb-8">
           Keep the performance block to 8–12 acts of three to five minutes
           each. Beyond that, guests drift to the food and the energy drops
-          before the dance floor opens.
+          before the dance floor opens. Punjabi families often open the
+          evening with a short lit-pot procession instead — see our guide to
+          a{" "}
+          <Link
+            href="/blogs/jaggo-ceremony-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            jaggo ceremony at a farmhouse
+          </Link>
+          .
         </p>
 
         {/* =====================================================
