@@ -629,6 +629,10 @@ export default function Page() {
           baby in the family is due a namkaran, see our{" "}
           <Link href="/blogs/naming-ceremony-farmhouse-delhi-ncr" className={link}>
             naming ceremony guide
+          </Link>{" "}
+          or, for a first-rice ceremony, our{" "}
+          <Link href="/blogs/annaprashan-ceremony-farmhouse-delhi-ncr" className={link}>
+            annaprashan at a farmhouse guide
           </Link>
           ; many of the same planning steps apply.
         </p>

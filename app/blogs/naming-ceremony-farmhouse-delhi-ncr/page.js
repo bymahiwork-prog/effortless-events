@@ -672,6 +672,11 @@ export default function Page() {
           <Link href="/blogs/mundan-ceremony-farmhouse-delhi-ncr" className={link}>
             mundan ceremony at a farmhouse guide
           </Link>
+          , and for the baby&apos;s first-rice ceremony at five to eight months,
+          our{" "}
+          <Link href="/blogs/annaprashan-ceremony-farmhouse-delhi-ncr" className={link}>
+            annaprashan ceremony at a farmhouse guide
+          </Link>
           .
         </p>
 
