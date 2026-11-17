@@ -467,6 +467,18 @@ export default function Page() {
           </table>
         </div>
 
+        <p className="mb-8">
+          If the launch sits inside a conference or dealer meet, our{" "}
+          <Link
+            href="/blogs/conference-venue-checklist-delhi-ncr"
+            className="underline"
+          >
+            conference venue checklist for Delhi NCR
+          </Link>{" "}
+          covers hall sizing, delegate rates and what to confirm on a site
+          visit.
+        </p>
+
         <h3 className="text-black text-2xl font-bold mt-10 mb-4">
           When does a farmhouse beat a hotel for a launch?
         </h3>

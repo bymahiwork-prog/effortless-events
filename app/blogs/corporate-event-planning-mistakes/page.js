@@ -191,7 +191,11 @@ export default function BlogPage() {
         </ul>
 
         <p className="mb-8">
-          A venue that&apos;s too small feels crowded, while an oversized venue can make even a well-attended event appear empty. Experienced event planners always inspect venues personally before making recommendations.
+          A venue that&apos;s too small feels crowded, while an oversized venue can make even a well-attended event appear empty. Experienced event planners always inspect venues personally before making recommendations. For a conference, take our{" "}
+          <Link href="/blogs/conference-venue-checklist-delhi-ncr" className="underline">
+            conference venue checklist for Delhi NCR
+          </Link>{" "}
+          on every site visit.
         </p>
 
         {/* 4 */}
