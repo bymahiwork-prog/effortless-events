@@ -600,7 +600,14 @@ export default function Page() {
           <li>
             <strong>Family moment:</strong> a short video of messages from
             employees&apos; families, or a family-inclusive daytime annual day
-            for companies with many long-serving staff.
+            for companies with many long-serving staff (see our{" "}
+            <Link
+              href="/blogs/corporate-family-day-delhi-ncr"
+              className="underline"
+            >
+              corporate family day guide
+            </Link>
+            ).
           </li>
           <li>
             <strong>Live polls and photo walls:</strong> QR-code voting for

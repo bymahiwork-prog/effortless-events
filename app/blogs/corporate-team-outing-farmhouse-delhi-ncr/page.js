@@ -213,7 +213,15 @@ export default function Page() {
           >
             farewell party guide
           </Link>{" "}
-          covers that format.
+          covers that format, and if spouses and children are invited, see
+          our{" "}
+          <Link
+            href="/blogs/corporate-family-day-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            corporate family day guide
+          </Link>
+          .
         </p>
 
         <ul className="list-disc pl-8 space-y-3 mb-10">
