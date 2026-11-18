@@ -397,8 +397,14 @@ export default function BlogPage() {
             Hindupad
           </a>{" "}
           places from 16 December 2026 to 14 January 2027. Many Sikh
-          families fix the Anand Karaj by family and gurdwara convenience
-          rather than a muhurat, so their jaggo nights can fall in late
+          families fix the{" "}
+          <Link
+            href="/blogs/sikh-wedding-farmhouse-delhi-ncr"
+            className={linkClass}
+          >
+            Anand Karaj at the gurdwara
+          </Link>{" "}
+          by family and gurdwara convenience rather than a muhurat, so their jaggo nights can fall in late
           December too.
         </p>
 

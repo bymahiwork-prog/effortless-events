@@ -204,7 +204,15 @@ export default function Page() {
           Most North Indian families hold the reception after the wedding,
           and the timing you choose decides almost everything else: whether
           you need one venue or two, how tired the couple will be and how
-          many guests can come. These are the four common formats.
+          many guests can come. These are the four common formats. (For a
+          Sikh wedding, where the Anand Karaj stays at the gurdwara, see our{" "}
+          <Link
+            href="/blogs/sikh-wedding-farmhouse-delhi-ncr"
+            className="underline"
+          >
+            Sikh wedding at a farmhouse guide
+          </Link>
+          .)
         </p>
 
         <div className="overflow-x-auto mb-8">
