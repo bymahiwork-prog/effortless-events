@@ -212,6 +212,13 @@ export default function Page() {
           >
             Sikh wedding at a farmhouse guide
           </Link>
+          ; for a short mandir ceremony followed by a farmhouse party, see our{" "}
+          <Link
+            href="/blogs/arya-samaj-marriage-farmhouse-reception-delhi-ncr"
+            className="underline"
+          >
+            Arya Samaj marriage and farmhouse reception guide
+          </Link>
           .)
         </p>
 

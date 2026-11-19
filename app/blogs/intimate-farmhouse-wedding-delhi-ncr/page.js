@@ -684,6 +684,14 @@ export default function BlogPage() {
           happens after the ceremony. If you are going the Special Marriage
           Act route, file the notice at least five to six weeks before your
           farmhouse date. This is general information, not legal advice.
+          Prefer a short Vedic ceremony? Our guide to an{" "}
+          <Link
+            href="/blogs/arya-samaj-marriage-farmhouse-reception-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            Arya Samaj marriage with a farmhouse reception
+          </Link>{" "}
+          covers that route.
           For timing, costs and a run-of-show for the party itself, see our
           guide to a{" "}
           <Link
