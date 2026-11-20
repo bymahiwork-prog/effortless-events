@@ -593,7 +593,15 @@ export default function Page() {
         <p className="mb-8">
           Gifts should stay voluntary and symbolic. Giving, taking or
           demanding dowry is an offence under the Dowry Prohibition Act, 1961,
-          so keep the tray list about blessings, not bargaining.
+          so keep the tray list about blessings, not bargaining. The same
+          applies to the maternal uncle&apos;s gifts in a{" "}
+          <Link
+            href="/blogs/bhaat-mayra-ceremony-farmhouse-delhi-ncr"
+            className={link}
+          >
+            bhaat (mayra) ceremony
+          </Link>
+          .
         </p>
 
         <h2 className="text-black text-3xl font-bold mt-12 mb-6">

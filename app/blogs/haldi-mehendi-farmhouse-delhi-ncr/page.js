@@ -348,7 +348,14 @@ export default function BlogPage() {
           >
             jaggo ceremony at the farmhouse
           </Link>
-          .
+          , while Rajasthani and Haryanvi families often hold a{" "}
+          <Link
+            href="/blogs/bhaat-mayra-ceremony-farmhouse-delhi-ncr"
+            className="text-black underline font-semibold"
+          >
+            bhaat (mayra) ceremony
+          </Link>{" "}
+          in the same day slot.
         </p>
 
         <h3 className="text-black text-2xl font-semibold mt-8 mb-4">
