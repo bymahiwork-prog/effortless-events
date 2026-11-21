@@ -219,6 +219,13 @@ export default function Page() {
           >
             Arya Samaj marriage and farmhouse reception guide
           </Link>
+          ; and for a church service followed by a lawn reception, see our{" "}
+          <Link
+            href="/blogs/christian-wedding-farmhouse-delhi-ncr"
+            className="underline"
+          >
+            Christian wedding at a farmhouse guide
+          </Link>
           .)
         </p>
 

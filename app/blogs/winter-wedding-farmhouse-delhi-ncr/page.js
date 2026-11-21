@@ -220,7 +220,15 @@ export default function BlogPage() {
           the 12th. The same source notes that Kharmas usually runs from
           mid-December to mid-January, a period when most families avoid
           weddings, so the second block of winter dates follows from late
-          January into February.
+          January into February. Church weddings follow a different calendar;
+          see our{" "}
+          <Link
+            href="/blogs/christian-wedding-farmhouse-delhi-ncr"
+            className="underline"
+          >
+            Christian wedding at a farmhouse guide
+          </Link>{" "}
+          for the Lent 2027 cut-off.
         </p>
 
         <ul className="list-disc pl-8 space-y-3 mb-10">
