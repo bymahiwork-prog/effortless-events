@@ -226,6 +226,13 @@ export default function Page() {
           >
             Christian wedding at a farmhouse guide
           </Link>
+          ; for a late-lagna wedding night followed by a bou bhaat, see our{" "}
+          <Link
+            href="/blogs/bengali-wedding-farmhouse-delhi-ncr"
+            className="underline"
+          >
+            Bengali wedding at a farmhouse guide
+          </Link>
           .)
         </p>
 

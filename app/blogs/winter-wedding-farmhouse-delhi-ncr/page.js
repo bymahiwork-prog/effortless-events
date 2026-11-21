@@ -228,7 +228,15 @@ export default function BlogPage() {
           >
             Christian wedding at a farmhouse guide
           </Link>{" "}
-          for the Lent 2027 cut-off.
+          for the Lent 2027 cut-off. Bengali families follow the panjika
+          instead; our{" "}
+          <Link
+            href="/blogs/bengali-wedding-farmhouse-delhi-ncr"
+            className="underline"
+          >
+            Bengali wedding at a farmhouse guide
+          </Link>{" "}
+          lists those dates.
         </p>
 
         <ul className="list-disc pl-8 space-y-3 mb-10">
