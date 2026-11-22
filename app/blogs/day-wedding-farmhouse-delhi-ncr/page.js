@@ -216,7 +216,15 @@ export default function Page() {
             day vs night wedding guide
           </a>{" "}
           adds that daytime slots are often easier to get and that daytime
-          ceremonies are more common in North India than in the South.
+          ceremonies are more common in North India than in the South. (For
+          a sunrise muhurtham, see our{" "}
+          <Link
+            href="/blogs/south-indian-wedding-farmhouse-delhi-ncr"
+            className={link}
+          >
+            South Indian wedding at a farmhouse guide
+          </Link>
+          .)
         </p>
 
         <p className="mb-8">

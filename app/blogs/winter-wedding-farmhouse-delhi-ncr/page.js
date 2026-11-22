@@ -236,7 +236,15 @@ export default function BlogPage() {
           >
             Bengali wedding at a farmhouse guide
           </Link>{" "}
-          lists those dates.
+          lists those dates. Tamil families skip Margazhi (mid-December to
+          mid-January); see our{" "}
+          <Link
+            href="/blogs/south-indian-wedding-farmhouse-delhi-ncr"
+            className="underline"
+          >
+            South Indian wedding at a farmhouse guide
+          </Link>{" "}
+          for muhurtham dates and morning timing.
         </p>
 
         <ul className="list-disc pl-8 space-y-3 mb-10">
