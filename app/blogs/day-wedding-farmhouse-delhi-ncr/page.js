@@ -579,7 +579,15 @@ export default function Page() {
         <p className="mb-8">
           Serve in two waves: a brunch spread when guests arrive and a proper
           lunch after the pheras. Winter food is the hidden advantage of a
-          Delhi day wedding.
+          Delhi day wedding. A day format also suits families who finish
+          meals before sunset; our{" "}
+          <Link
+            href="/blogs/jain-wedding-farmhouse-delhi-ncr"
+            className="underline"
+          >
+            Jain wedding at a farmhouse guide
+          </Link>{" "}
+          covers that plan.
         </p>
 
         <ul className="list-disc pl-8 space-y-3 mb-8">

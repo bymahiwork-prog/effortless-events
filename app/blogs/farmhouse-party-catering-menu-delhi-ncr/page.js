@@ -823,7 +823,14 @@ export default function Page() {
           Plan dietary needs early: label vegetarian, Jain and non-vegetarian
           dishes, keep vegetarian and non-vegetarian counters apart for family
           events, and ask guests about allergies such as nuts or gluten in the
-          RSVP.
+          RSVP. For a fully Jain event, see our{" "}
+          <Link
+            href="/blogs/jain-wedding-farmhouse-delhi-ncr"
+            className="underline"
+          >
+            Jain wedding at a farmhouse guide
+          </Link>{" "}
+          for food rules and sunset meal timing.
         </p>
 
         {/* =====================================================
