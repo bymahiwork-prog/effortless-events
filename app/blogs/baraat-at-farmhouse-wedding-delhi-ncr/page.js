@@ -549,7 +549,11 @@ export default function BlogPage() {
           <Link href="/blogs/farmhouse-wedding-cost-delhi-ncr" className="underline">
             farmhouse wedding cost guide
           </Link>
-          .
+          . Planning a toran and nikasi too? Our{" "}
+          <Link href="/blogs/marwari-wedding-farmhouse-delhi-ncr" className="underline">
+            Marwari wedding at a farmhouse guide
+          </Link>{" "}
+          maps each ritual to the venue.
         </p>
 
         <h2 className="text-black text-3xl font-bold mt-12 mb-6">

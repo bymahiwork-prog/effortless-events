@@ -217,7 +217,12 @@ export default function Page() {
           describes it as most elaborate in Rajasthani and Marwari weddings,
           known as mameru in Gujarati families and observed in a simpler form
           in Haryana and western Uttar Pradesh, which is why it is so common
-          across Delhi, Gurgaon, Faridabad, Sonipat and Ghaziabad.
+          across Delhi, Gurgaon, Faridabad, Sonipat and Ghaziabad. For where
+          the mayra sits among the other functions, see our{" "}
+          <Link href="/blogs/marwari-wedding-farmhouse-delhi-ncr" className={link}>
+            Marwari wedding at a farmhouse guide
+          </Link>
+          .
         </p>
 
         <p className="mb-8">
