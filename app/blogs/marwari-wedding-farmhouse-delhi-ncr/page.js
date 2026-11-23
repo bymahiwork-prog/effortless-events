@@ -396,7 +396,16 @@ export default function BlogPage() {
           >
             bhaat ceremony guide
           </Link>{" "}
-          covers bhaat nyotna, the gift list and a sample plan.
+          covers bhaat nyotna, the gift list and a sample plan. Gujarati
+          families have a similar gift from the maternal side, the mameru; see
+          our{" "}
+          <Link
+            href="/blogs/gujarati-wedding-farmhouse-delhi-ncr"
+            className={linkClass}
+          >
+            Gujarati wedding at a farmhouse guide
+          </Link>
+          .
         </p>
 
         {/* =====================================================

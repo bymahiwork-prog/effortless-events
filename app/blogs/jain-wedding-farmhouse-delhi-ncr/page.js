@@ -355,7 +355,15 @@ export default function BlogPage() {
           >
             farmhouse catering guide
           </Link>{" "}
-          explains buffet versus live-counter set-ups.
+          explains buffet versus live-counter set-ups. For a full Gujarati
+          vegetarian spread with undhiyu and farsan, see our{" "}
+          <Link
+            href="/blogs/gujarati-wedding-farmhouse-delhi-ncr"
+            className={linkClass}
+          >
+            Gujarati wedding farmhouse guide
+          </Link>
+          .
         </p>
 
         {/* =====================================================
