@@ -368,6 +368,11 @@ export default function BlogPage() {
           <Link href="/blogs/winter-wedding-farmhouse-delhi-ncr" className="underline">
             winter farmhouse wedding guide
           </Link>
+          . For where the baraat and milni fit in a full Punjabi wedding
+          schedule, see our{" "}
+          <Link href="/blogs/punjabi-wedding-farmhouse-delhi-ncr" className="underline">
+            Punjabi wedding at a farmhouse guide
+          </Link>
           .
         </p>
 

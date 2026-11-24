@@ -405,7 +405,15 @@ export default function BlogPage() {
             Anand Karaj at the gurdwara
           </Link>{" "}
           by family and gurdwara convenience rather than a muhurat, so their jaggo nights can fall in late
-          December too.
+          December too. For the full sequence of functions around the jaggo,
+          see our{" "}
+          <Link
+            href="/blogs/punjabi-wedding-farmhouse-delhi-ncr"
+            className={linkClass}
+          >
+            Punjabi wedding at a farmhouse guide
+          </Link>
+          .
         </p>
 
         <div className="overflow-x-auto mb-8">
