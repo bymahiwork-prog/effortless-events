@@ -94,7 +94,15 @@ export default function BlogPage() {
           If you are searching for the perfect{" "}
           <strong>farmhouse near Delhi</strong>, this guide will help you
           understand what to look for, how to choose the right property, and
-          how to make the most of your weekend getaway.
+          how to make the most of your weekend getaway. Planning around the
+          first long weekend of 2027? See our{" "}
+          <Link
+            href="/blogs/republic-day-long-weekend-farmhouse-near-delhi"
+            className="underline"
+          >
+            Republic Day long weekend farmhouse guide
+          </Link>
+          .
         </p>
 
         {/* ===================================================== */}

@@ -288,7 +288,15 @@ export default function BlogPage() {
           If your children are in a Noida or Ghaziabad school, check whether
           the break falls in late December instead. Mixed families with kids
           in different boards often find the overlap is just the New Year
-          weekend, which is why that weekend books out first.
+          weekend, which is why that weekend books out first. For the
+          Republic Day bridge, read our{" "}
+          <Link
+            href="/blogs/republic-day-long-weekend-farmhouse-near-delhi"
+            className="underline"
+          >
+            Republic Day long weekend farmhouse guide
+          </Link>
+          .
         </p>
 
         {/* =====================================================
