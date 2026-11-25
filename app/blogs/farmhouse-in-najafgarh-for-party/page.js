@@ -345,7 +345,14 @@ export default function Page() {
           >
             farmhouse in North Delhi
           </Link>{" "}
-          may be closer.
+          may be closer; and for families along Rohtak Road, a{" "}
+          <Link
+            href="/blogs/farmhouse-in-bahadurgarh-for-party"
+            className="text-black underline font-semibold"
+          >
+            farmhouse in Bahadurgarh for a party
+          </Link>{" "}
+          is just past the Tikri border.
         </p>
 
         {/* =====================================================

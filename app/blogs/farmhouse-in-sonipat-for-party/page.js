@@ -319,7 +319,15 @@ export default function Page() {
             farmhouse in North Delhi for a party
           </Link>{" "}
           on GT Karnal Road or Alipur may save everyone 30–45 minutes each
-          way and keeps you under Delhi&apos;s rules.
+          way and keeps you under Delhi&apos;s rules. For a big family
+          function with guests from West Delhi, a{" "}
+          <Link
+            href="/blogs/farmhouse-in-bahadurgarh-for-party"
+            className="text-black underline font-semibold"
+          >
+            farmhouse in Bahadurgarh for a party
+          </Link>{" "}
+          on Rohtak Road may be closer.
         </p>
 
         {/* =====================================================
