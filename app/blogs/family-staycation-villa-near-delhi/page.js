@@ -340,7 +340,15 @@ export default function BlogPage() {
           >
             day-use vs overnight farmhouse bookings
           </Link>{" "}
-          before you shortlist.
+          before you shortlist. If a parent will be working through the
+          break, see our{" "}
+          <Link
+            href="/blogs/workation-villa-near-delhi"
+            className="underline"
+          >
+            workation villa near Delhi guide
+          </Link>{" "}
+          for the Wi-Fi and power checks to make.
         </p>
 
         {/* =====================================================

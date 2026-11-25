@@ -339,6 +339,14 @@ export default function BlogPage() {
           </a>{" "}
           suggests keeping trips with older or nervous pets to about two to
           three hours. Drive times below are typical and depend on traffic.
+          Staying a week and working from the farm? Read our{" "}
+          <Link
+            href="/blogs/workation-villa-near-delhi"
+            className="underline"
+          >
+            workation villa near Delhi guide
+          </Link>{" "}
+          first.
         </p>
 
         <Table
