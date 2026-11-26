@@ -324,6 +324,13 @@ export default function Page() {
           >
             farmhouse in Ghaziabad for a party
           </Link>
+          , or for families in Meerut and western UP, a{" "}
+          <Link
+            href="/blogs/farmhouse-in-meerut-for-party"
+            className="text-black underline font-semibold"
+          >
+            farmhouse in Meerut for a party
+          </Link>
           .
         </p>
 

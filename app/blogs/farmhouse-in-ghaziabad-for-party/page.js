@@ -611,6 +611,14 @@ export default function Page() {
           >
             farmhouse in Chattarpur for a party
           </Link>
+          . For big wedding lawns further up the Namo Bharat line, see our
+          guide to a{" "}
+          <Link
+            href="/blogs/farmhouse-in-meerut-for-party"
+            className="text-black underline font-semibold"
+          >
+            farmhouse in Meerut for a party
+          </Link>
           .
         </p>
 
