@@ -262,7 +262,16 @@ export default function Page() {
           </a>
           ) said the Delhi–Alwar Namo Bharat corridor&apos;s depot is moving to
           Panchgaon, with the corridor targeted for completion by 2031. For
-          now, plan cabs or a shuttle for anyone not staying over.
+          now, plan cabs or a shuttle for anyone not staying over. If your
+          group wants a longer getaway further down the same highway, see our
+          guide to a{" "}
+          <Link
+            href="/blogs/farmhouse-in-alwar-for-party"
+            className="text-black underline font-semibold"
+          >
+            farmhouse in Alwar for a party
+          </Link>
+          .
         </p>
 
         {/* =====================================================

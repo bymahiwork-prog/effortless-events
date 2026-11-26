@@ -230,7 +230,15 @@ export default function BlogPage() {
           <li>
             <strong>Friday 1 January 2027:</strong> if your group can take
             the day off, New Year&apos;s Eve turns into a four-night stretch
-            to Sunday 3 January, which suits a two-night farmhouse stay.
+            to Sunday 3 January, which suits a two-night farmhouse stay,
+            even somewhere further out like a{" "}
+            <Link
+              href="/blogs/farmhouse-in-alwar-for-party"
+              className="underline"
+            >
+              farmhouse in Alwar
+            </Link>
+            .
           </li>
           <li>
             <strong>Christmas, Friday 25 December 2026:</strong> one week
