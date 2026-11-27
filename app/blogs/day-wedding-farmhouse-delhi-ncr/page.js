@@ -224,6 +224,13 @@ export default function Page() {
           >
             South Indian wedding at a farmhouse guide
           </Link>
+          ; for a Lagan held in daylight as tradition once had it, see our{" "}
+          <Link
+            href="/blogs/kashmiri-pandit-wedding-farmhouse-delhi-ncr"
+            className={link}
+          >
+            Kashmiri Pandit wedding at a farmhouse guide
+          </Link>
           .)
         </p>
 

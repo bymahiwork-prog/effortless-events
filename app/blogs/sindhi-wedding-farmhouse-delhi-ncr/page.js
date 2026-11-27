@@ -974,7 +974,14 @@ export default function BlogPage() {
           >
             Punjabi wedding at a farmhouse guide
           </Link>{" "}
-          shows how the other side&apos;s rituals fit the same days.
+          shows how the other side&apos;s rituals fit the same days, and our{" "}
+          <Link
+            href="/blogs/kashmiri-pandit-wedding-farmhouse-delhi-ncr"
+            className={linkClass}
+          >
+            Kashmiri Pandit wedding at a farmhouse guide
+          </Link>{" "}
+          does the same for a Kashmiri side.
         </p>
       </article>
 
