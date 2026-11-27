@@ -467,7 +467,14 @@ export default function BlogPage() {
           two guides describe four mangal fera. Sources also differ on who
           visits whom for gol dhana, and on whether the sangeet is one or two
           nights before. Follow your family&apos;s custom and confirm the
-          order with your pandit.
+          order with your pandit. Sindhi weddings also have four rounds; our{" "}
+          <Link
+            href="/blogs/sindhi-wedding-farmhouse-delhi-ncr"
+            className={linkClass}
+          >
+            Sindhi wedding at a farmhouse guide
+          </Link>{" "}
+          compares the sources.
         </p>
 
         {/* =====================================================

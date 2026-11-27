@@ -471,7 +471,14 @@ export default function BlogPage() {
           </Link>{" "}
           explains the rules and a same-day plan. Many Delhi families are
           mixed, so settle this early: it decides whether you need a mandap,
-          a gurdwara slot or both.
+          a gurdwara slot or both. Marrying into a Sindhi family? Our{" "}
+          <Link
+            href="/blogs/sindhi-wedding-farmhouse-delhi-ncr"
+            className={linkClass}
+          >
+            Sindhi wedding at a farmhouse guide
+          </Link>{" "}
+          maps lada, saanth and palli pallo to the same farmhouse days.
         </p>
 
         {/* =====================================================
