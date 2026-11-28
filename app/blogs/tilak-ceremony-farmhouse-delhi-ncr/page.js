@@ -200,7 +200,12 @@ export default function Page() {
           formally accepts and honours the groom. It is most closely
           associated with Bihar, Jharkhand and Uttar Pradesh, and also appears
           in Rajasthani weddings, so it is common among the many Delhi NCR
-          families with roots in those states.
+          families with roots in those states. For the full wedding that
+          follows, see our{" "}
+          <Link href="/blogs/bihari-wedding-farmhouse-delhi-ncr" className={link}>
+            Bihari wedding at a farmhouse guide
+          </Link>
+          .
         </p>
 
         <p className="mb-8">
